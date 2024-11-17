@@ -49,6 +49,6 @@ function myfunction() {
     }
     document.getElementById("xemketqua").style.display = "none";
     document.getElementById("ketqua").style.display = "block";
-    document.getElementById("ketqua").innerHTML = "Bạn trả lời đúng " + String(socaudung) + " câu trên " + String(tongsocau) + " câu!";
+    document.getElementById("ketqua").innerHTML = "Bạn trả lời đúng " + String(socaudung) + " câu trên " + String(tongsocau) + " câu nhé!";
     document.getElementById("lamlai").style.display = "block";
 }
