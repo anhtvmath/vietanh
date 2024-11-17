@@ -29,7 +29,7 @@ for (let j = 1; j <= songanhangLC; j++) {
         }
     }
 }
-let socauchonra = 3;
+let socauchonra = 4;
 for (let i=1; i<=socauchonra; i++) {
     let bankLCidx = Math.floor(Math.random()*document.getElementById("bankLC").children.length);
     let bank = document.getElementById("bankLC").children[bankLCidx];
