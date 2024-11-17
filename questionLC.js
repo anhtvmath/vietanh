@@ -1,25 +1,25 @@
-document.getElementById("debaicau1").innerHTML = "Nội dung đề bài câu 1 nhé nhé"; 
+document.getElementById("debaicau1").innerHTML = "Nội dung đề bài câu 1 nha"; 
 document.getElementById("PAdung1").innerHTML = "Phương án đúng câu 1";
 document.getElementById("PA1Cau1").innerHTML = "Phương án sai 1 câu 1";
 document.getElementById("PA2Cau1").innerHTML = "Phương án sai 2 câu 1";
 document.getElementById("PA3Cau1").innerHTML = "Phương án sai 3 câu 1";
 document.getElementById("loigiaicau1").innerHTML = "Lời giải câu 1.<br/>";
 
-document.getElementById("debaicau2").innerHTML = "Nội dung đề bài câu 2 nhé"; 
+document.getElementById("debaicau2").innerHTML = "Nội dung đề bài câu 2 nha"; 
 document.getElementById("PAdung2").innerHTML = "Phương án đúng câu 2";
 document.getElementById("PA1Cau2").innerHTML = "Phương án sai 1 câu 2";
 document.getElementById("PA2Cau2").innerHTML = "Phương án sai 2 câu 2";
 document.getElementById("PA3Cau2").innerHTML = "Phương án sai 3 câu 2";
 document.getElementById("loigiaicau2").innerHTML = "Lời giải câu 2.<br/>";
 
-document.getElementById("debaicau11").innerHTML = "Nội dung đề bài câu 11"; 
+document.getElementById("debaicau11").innerHTML = "Nội dung đề bài câu 11 nha"; 
 document.getElementById("PAdung11").innerHTML = "Phương án đúng câu 11"; 
 document.getElementById("PA1Cau11").innerHTML = "Phương án sai 1 câu 11"; 
 document.getElementById("PA2Cau11").innerHTML = "Phương án sai 2 câu 11"; 
 document.getElementById("PA3Cau11").innerHTML = "Phương án sai 3 câu 11"; 
 document.getElementById("loigiaicau11").innerHTML = "Lời giải câu 11.<br/>";
 
-document.getElementById("debaicau12").innerHTML = "Nội dung đề bài câu 12"; 
+document.getElementById("debaicau12").innerHTML = "Nội dung đề bài câu 12 nha"; 
 document.getElementById("PAdung12").innerHTML = "Phương án đúng câu 12"; 
 document.getElementById("PA1Cau12").innerHTML = "Phương án sai 1 câu 12"; 
 document.getElementById("PA2Cau12").innerHTML = "Phương án sai 2 câu 12"; 
