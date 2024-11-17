@@ -1,4 +1,4 @@
-document.getElementById("debaicau1").innerHTML = "Nội dung đề bài câu 1 nhé"; 
+document.getElementById("debaicau1").innerHTML = "Nội dung đề bài câu 1 nhé nhé"; 
 document.getElementById("PAdung1").innerHTML = "Phương án đúng câu 1";
 document.getElementById("PA1Cau1").innerHTML = "Phương án sai 1 câu 1";
 document.getElementById("PA2Cau1").innerHTML = "Phương án sai 2 câu 1";
