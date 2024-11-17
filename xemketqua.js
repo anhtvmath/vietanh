@@ -14,28 +14,28 @@ function myfunction() {
             if (causoD.value === keycauso.value && causoD.checked === true) socaudung++;
             if (causoA.value === keycauso.value) {
                 document.getElementById("C" + String(i) + "A").style.color = "green";
-                document.getElementById("C" + String(i) + "A").innerHTML += ' <span class="tick">&#10004;</span>'
+                document.getElementById("C" + String(i) + "A").innerHTML += ' <span class="tick">&#10003;</span>'
             } else {
                 document.getElementById("C" + String(i) + "A").style.color = "red";
                 document.getElementById("C" + String(i) + "A").innerHTML += ' <span class="cross">&#10008;</span>'
             }
             if (causoB.value === keycauso.value) {
                 document.getElementById("C" + String(i) + "B").style.color = "green";
-                document.getElementById("C" + String(i) + "B").innerHTML += ' <span class="tick">&#10004;</span>';
+                document.getElementById("C" + String(i) + "B").innerHTML += ' <span class="tick">&#10003;</span>';
             } else {
                 document.getElementById("C" + String(i) + "B").style.color = "red";
                 document.getElementById("C" + String(i) + "B").innerHTML += ' <span class="cross">&#10008;</span>';
             }
             if (causoC.value === keycauso.value) {
                 document.getElementById("C" + String(i) + "C").style.color = "green";
-                document.getElementById("C" + String(i) + "C").innerHTML += ' <span class="tick">&#10004;</span>';
+                document.getElementById("C" + String(i) + "C").innerHTML += ' <span class="tick">&#10003;</span>';
             } else {
                 document.getElementById("C" + String(i) + "C").style.color = "red";
                 document.getElementById("C" + String(i) + "C").innerHTML += ' <span class="cross">&#10008;</span>';
             }
             if (causoD.value === keycauso.value) {
                 document.getElementById("C" + String(i) + "D").style.color = "green";
-                document.getElementById("C" + String(i) + "D").innerHTML += ' <span class="tick">&#10004;</span>';
+                document.getElementById("C" + String(i) + "D").innerHTML += ' <span class="tick">&#10003;</span>';
             } else {
                 document.getElementById("C" + String(i) + "D").style.color = "red";
                 document.getElementById("C" + String(i) + "D").innerHTML += ' <span class="cross">&#10008;</span>';
