@@ -1,11 +1,11 @@
-document.getElementById("debaicau1").innerHTML = "Nội dung đề bài câu 1"; 
+document.getElementById("debaicau1").innerHTML = "Nội dung đề bài câu 1 nhé"; 
 document.getElementById("PAdung1").innerHTML = "Phương án đúng câu 1";
 document.getElementById("PA1Cau1").innerHTML = "Phương án sai 1 câu 1";
 document.getElementById("PA2Cau1").innerHTML = "Phương án sai 2 câu 1";
 document.getElementById("PA3Cau1").innerHTML = "Phương án sai 3 câu 1";
 document.getElementById("loigiaicau1").innerHTML = "Lời giải câu 1.<br/>";
 
-document.getElementById("debaicau2").innerHTML = "Nội dung đề bài câu 2"; 
+document.getElementById("debaicau2").innerHTML = "Nội dung đề bài câu 2 nhé"; 
 document.getElementById("PAdung2").innerHTML = "Phương án đúng câu 2";
 document.getElementById("PA1Cau2").innerHTML = "Phương án sai 1 câu 2";
 document.getElementById("PA2Cau2").innerHTML = "Phương án sai 2 câu 2";
