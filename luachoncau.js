@@ -10,44 +10,39 @@ for (let j=1; j<= songanhangLC; j++) {
     const style = document.createElement('style');
     style.innerHTML = `
         .answer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 15px;
+            display: flex;
+            flex-wrap: wrap;       /* Cho phép nhảy hàng khi hết chỗ */
+            gap: 20px;             /* Khoảng cách giữa các khối A, B, C, D */
             margin: 15px 0;
+            align-items: center;
         }
 
         .answer-item {
-            display: flex;          /* Sử dụng Flexbox cho từng mục */
-            align-items: flex-start; /* Nội dung chữ và nút luôn thẳng hàng ở đỉnh */
-            gap: 8px;               /* Khoảng cách giữa nút và nội dung chữ */
-            cursor: pointer;
-        }
-
-        /* Đảm bảo nút radio và label custom không bị co lại khi chữ quá dài */
-        .answer-item input[type='radio'],
-        .answer-item .custom-radio {
-            flex-shrink: 0; 
-            margin-top: 3px; /* Căn chỉnh nhẹ để khớp với dòng chữ đầu tiên */
+            display: flex;
+            align-items: center;
+            white-space: nowrap;   /* TUYỆT ĐỐI KHÔNG CHO CHỮ XUỐNG DÒNG */
+            flex: 0 0 auto;        /* Độ rộng tự co giãn theo nội dung chữ */
+            min-width: fit-content;
         }
 
         .answer-item span {
-            line-height: 1.5;
-            word-break: break-word; /* Tránh tràn chữ */
+            margin-left: 8px;
+            display: inline-block;
         }
 
-        /* --- ĐIỀU CHỈNH THEO ĐỘ RỘNG MÀN HÌNH --- */
-
-        /* iPad/Tablet: 2 hàng, mỗi hàng 2 cột */
-        @media (max-width: 992px) {
-            .answer-grid {
-                grid-template-columns: repeat(2, 1fr);
+        /* Tự động căn chỉnh dựa trên độ rộng màn hình bằng Media Queries */
+        
+        /* Nếu muốn ép 2 hàng (mỗi hàng 2 câu) khi màn hình đủ rộng */
+        @media (max-width: 992px) and (min-width: 601px) {
+            .answer-item {
+                flex: 0 0 45%;    /* Chiếm gần nửa màn hình để ra 2 cột */
             }
         }
 
-        /* Mobile: 4 hàng dọc */
-        @media (max-width: 500px) {
-            .answer-grid {
-                grid-template-columns: 1fr;
+        /* Nếu màn hình hẹp (Mobile), mỗi phương án chiếm 1 hàng */
+        @media (max-width: 600px) {
+            .answer-item {
+                flex: 0 0 100%;   /* Chiếm toàn bộ chiều rộng hàng */
             }
         }
     `;
@@ -82,9 +77,7 @@ function formcauhoi(i) {
                 "<span id='C" + String(i) + "D'></span>" +
             "</div>" +
         "</div>" +
-        "<span id='dapancau" + String(i) + "' style='display: none;'>" +
-        "<b>Lời giải.</b>" + 
-        "</span>";
+        "<span id='dapancau" + String(i) + "' style='display: none;'><b>Lời giải.</b></span>";
 }
 
 for (let j = 1; j <= songanhangLC; j++) {
