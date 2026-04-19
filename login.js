@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const accounts = [
         { username: "abc", userid: "123" },
-        { username: "student1", userid: "abc1" },
-        { username: "student12", userid: "abc12" },
+        { username: "bon", userid: "123" },
+        { username: "admin", userid: "abc" },
         { username: "student123", userid: "abc123" },
         { username: "student1234", userid: "abc1234" },
         { username: "student12345", userid: "abc12345" },
