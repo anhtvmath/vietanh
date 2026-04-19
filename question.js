@@ -655,7 +655,7 @@ document.getElementById("PA3Cau82").innerHTML = "Thế kỷ XXII";
 document.getElementById("loigiaicau82").innerHTML = "";
 
 // Câu 83
-document.getElementById("debaicau83").innerHTML = "Đổi: $1/2 \\, \\text{tạ} = ... \\, \\mathrm{kg}$";
+document.getElementById("debaicau83").innerHTML = "Đổi: $\\dfrac{1}{2} \\, \\text{tạ} = ... \\, \\mathrm{kg}$";
 document.getElementById("PAdung83").innerHTML = "50";
 document.getElementById("PA1Cau83").innerHTML = "5";
 document.getElementById("PA2Cau83").innerHTML = "100";
