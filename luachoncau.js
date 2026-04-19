@@ -1,4 +1,4 @@
-const songanhangLC = 11;
+const songanhangLC = 20;
 for (let j=1; j<= songanhangLC; j++) {
     let divbankLC = document.createElement("div");
     divbankLC.id = "bankLC"+String(j);
@@ -29,7 +29,7 @@ for (let j = 1; j <= songanhangLC; j++) {
         }
     }
 }
-let socauchonra = 2;
+let socauchonra = 5;
 for (let i=1; i<=socauchonra; i++) {
     let bankLCidx = Math.floor(Math.random()*document.getElementById("bankLC").children.length);
     let bank = document.getElementById("bankLC").children[bankLCidx];
