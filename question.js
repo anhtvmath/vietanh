@@ -103,7 +103,7 @@ document.getElementById("debaicau4").innerHTML =
 "k(" + hesodau(a,"x_i") + hesosau(b,"y_j") + ") & \\text{ khi } x_i\\in\\{"+x1+";"+x2+"\\}, y_j\\in\\{"+y1+";"+y2+";"+y3+"\\}\\\\" + 
 "0 & \\text{ khi khác}\\\\" + 
 "\\end{cases}$$</div>" + 
-"Tìm hàm khối lượng xác suất của biến ngẫu nhiên $X$ nhé.";
+"Tìm hàm khối lượng xác suất của biến ngẫu nhiên $X$.";
 document.getElementById("PAdung4").innerHTML = "$p_X(x)="+phanso(3*a,kq)+"x+"+phanso(b*(y1+y2+y3),kq)+"$ nếu $x\\in\\{"+x1+";"+x2+"\\}$ và $p_X(x)=0$ nếu $x\\notin\\{"+x1+";"+x2+"\\}$";
 document.getElementById("PA1Cau4").innerHTML = "$p_X(x)="+phanso(2*a,kq)+"x+"+phanso(b*(y1+y2+y3),2*kq)+"$ nếu $x\\in\\{"+x1+";"+x2+"\\}$ và $p_X(x)=0$ nếu $x\\notin\\{"+x1+";"+x2+"\\}$";
 document.getElementById("PA2Cau4").innerHTML = "$p_X(x)="+phanso(3*a,kq)+"x+"+phanso(b*(y1+y2+y3),2*kq)+"$ nếu $x\\in\\{"+x1+";"+x2+"\\}$ và $p_X(x)=0$ nếu $x\\notin\\{"+x1+";"+x2+"\\}$";
