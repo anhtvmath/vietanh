@@ -1,161 +1,57 @@
-// --- TRỌN BỘ TRẮC NGHIỆM TIN HỌC LỚP 4 ---
+// --- BỘ CÂU HỎI TOÁN XÁC SUẤT (CẬP NHẬT ĐỊNH DẠNG) ---
 
 // Câu 1
-document.getElementById("debaicau1").innerHTML = "Định dạng nào phù hợp khi tạo bài trình chiếu?";
-document.getElementById("PAdung1").innerHTML = "Tiêu đề kiểu chữ đậm, nội dung kiểu chữ thường.";
-document.getElementById("PA1Cau1").innerHTML = "Tiêu đề kiểu chữ thường, nội dung kiểu chữ đậm.";
-document.getElementById("PA2Cau1").innerHTML = "Tiêu đề kiểu chữ đậm, nội dung kiểu chữ đậm.";
-document.getElementById("PA3Cau1").innerHTML = "Tiêu đề kiểu chữ thường, nội dung kiểu chữ thường.";
-document.getElementById("loigiaicau1").innerHTML = "<br/>";
+document.getElementById("debaicau1").innerHTML = "Cho hai biến cố $A$ và $B$ có $P(A)=0,6$; $P(B)=0,7$ và $P(AB)=0,5$. Xác suất $P(B|A)$ bằng";
+document.getElementById("PAdung1").innerHTML = "$\\dfrac{5}{6}$";
+document.getElementById("PA1Cau1").innerHTML = "$0,7$";
+document.getElementById("PA2Cau1").innerHTML = "$\\dfrac{5}{7}$";
+document.getElementById("PA3Cau1").innerHTML = "$\\dfrac{6}{7}$";
+document.getElementById("loigiaicau1").innerHTML = "Ta có<br/>P(B|A)=\\dfrac{P(AB)}{P(A)}=\\dfrac{0,5}{0,6}=\\dfrac{5}{6}.";
 
 // Câu 2
-document.getElementById("debaicau2").innerHTML = "Phát biểu nào sau đây là sai về hiệu ứng chuyển trang?";
-document.getElementById("PAdung2").innerHTML = "Cả A, B và C đều sai.";
-document.getElementById("PA1Cau2").innerHTML = "Trong một trang trình chiếu, có thể chọn một trong nhiều kiểu hiệu ứng chuyển trang.";
-document.getElementById("PA2Cau2").innerHTML = "Trong một bài trình chiếu có thể có nhiều hiệu ứng chuyển trang khác nhau.";
-document.getElementById("PA3Cau2").innerHTML = "Hiệu ứng chuyển trang giúp cho bài thuyết trình sinh động và hấp dẫn hơn.";
-document.getElementById("loigiaicau2").innerHTML = "<br/>";
+document.getElementById("debaicau2").innerHTML = "Cho hai biến cố $A$ và $B$ có $P(A)=\\dfrac{2}{9}$ và $P(B|A)=\\dfrac{1}{3}$. Tính $P(AB)$.";
+document.getElementById("PAdung2").innerHTML = "$\\dfrac{2}{27}$";
+document.getElementById("PA1Cau2").innerHTML = "$\\dfrac{1}{27}$";
+document.getElementById("PA2Cau2").innerHTML = "$\\dfrac{5}{9}$";
+document.getElementById("PA3Cau2").innerHTML = "$\\dfrac{2}{81}$";
+document.getElementById("loigiaicau2").innerHTML = "Theo công thức nhân xác suất<br/>P(AB)=P(A)P(B|A)=\\dfrac{2}{9}\\cdot\\dfrac{1}{3}=\\dfrac{2}{27}.";
 
 // Câu 3
-document.getElementById("debaicau3").innerHTML = "Trong các phát biểu sau, phát biểu nào đúng về hiệu ứng chuyển trang?";
-document.getElementById("PAdung3").innerHTML = "Chỉ chọn được một hiệu ứng chuyển trang cho mỗi trang chiếu.";
-document.getElementById("PA1Cau3").innerHTML = "Có thể chọn cùng một lúc nhiều hiệu ứng chuyển trang cho một trang chiếu.";
-document.getElementById("PA2Cau3").innerHTML = "Việc tạo hiệu ứng chuyển trang không mang lại tác dụng gì cho bài trình chiếu.";
-document.getElementById("PA3Cau3").innerHTML = "Tất cả các đáp án trên đều đúng.";
-document.getElementById("loigiaicau3").innerHTML = "<br/>";
+document.getElementById("debaicau3").innerHTML = "Cho hai biến cố $A$ và $B$ có $P(A)=0,2$; $P(B)=0,6$ và $P(AB)=0,1$. Xác suất $P(\\overline{A}|B)$ bằng";
+document.getElementById("PAdung3").innerHTML = "$\\dfrac{5}{6}$";
+document.getElementById("PA1Cau3").innerHTML = "$\\dfrac{1}{2}$";
+document.getElementById("PA2Cau3").innerHTML = "$\\dfrac{2}{3}$";
+document.getElementById("PA3Cau3").innerHTML = "$0,8$";
+document.getElementById("loigiaicau3").innerHTML = "Ta có<br/>P(\\overline{A}|B)=\\dfrac{P(\\overline{A}B)}{P(B)}=\\dfrac{P(B)-P(AB)}{P(B)}=\\dfrac{0,6-0,1}{0,6}=\\dfrac{5}{6}.";
 
 // Câu 4
-document.getElementById("debaicau4").innerHTML = "Bài trình chiếu là tập hợp của:";
-document.getElementById("PAdung4").innerHTML = "Các trang chiếu.";
-document.getElementById("PA1Cau4").innerHTML = "Các trang văn bản.";
-document.getElementById("PA2Cau4").innerHTML = "Hình ảnh.";
-document.getElementById("PA3Cau4").innerHTML = "Âm thanh.";
-document.getElementById("loigiaicau4").innerHTML = "<br/>";
+document.getElementById("debaicau4").innerHTML = "Một đội văn nghệ gồm $7$ bạn nam và $6$ bạn nữ. Chọn ra ngẫu nhiên $2$ bạn để biểu diễn một tiết mục. Gọi $A$ là biến cố: \"Có ít nhất một bạn nam trong $2$ bạn được chọn\", $B$ là biến cố: \"Hai bạn được chọn có cùng giới tính\". Xác suất $P(A|B)$ bằng";
+document.getElementById("PAdung4").innerHTML = "$\\dfrac{7}{12}$";
+document.getElementById("PA1Cau4").innerHTML = "$\\dfrac{19}{26}$";
+document.getElementById("PA2Cau4").innerHTML = "$\\dfrac{5}{12}$";
+document.getElementById("PA3Cau4").innerHTML = "$\\dfrac{1}{15}$";
+document.getElementById("loigiaicau4").innerHTML = "Ta có $P(B)=\\dfrac{C_{7}^2+C_{6}^2}{C_{13}^2}=\\dfrac{6}{13}$.<br/>Vì $AB$ là biến cố: \"Hai bạn được chọn đều là nam\" nên $P(AB)=\\dfrac{C_{7}^2}{C_{13}^2}=\\dfrac{7}{26}$.<br/>Do đó<br/>P(A|B)=\\dfrac{P(AB)}{P(B)}=\\dfrac{\\dfrac{7}{26}}{\\dfrac{6}{13}}=\\dfrac{7}{12}.";
 
 // Câu 5
-document.getElementById("debaicau5").innerHTML = "Phương án nào sau đây là tên của phần mềm trình chiếu?";
-document.getElementById("PAdung5").innerHTML = "Microsoft PowerPoint.";
-document.getElementById("PA1Cau5").innerHTML = "Microsoft Word.";
-document.getElementById("PA2Cau5").innerHTML = "Microsoft Excel.";
-document.getElementById("PA3Cau5").innerHTML = "Microsoft Access.";
-document.getElementById("loigiaicau5").innerHTML = "<br/>";
+document.getElementById("debaicau5").innerHTML = "Một nhà máy có hai phân xưởng $I$ và $II$. Phân xưởng $I$ sản xuất $46\\%$ số sản phẩm và phân xưởng $II$ sản xuất $54\\%$ số sản phẩm. Tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $6\\%$ và của phân xưởng $II$ là $5\\%$. Kiểm tra ngẫu nhiên một sản phẩm của nhà máy. Xác suất để sản phẩm đó bị lỗi bằng";
+document.getElementById("PAdung5").innerHTML = "$0,0546$";
+document.getElementById("PA1Cau5").innerHTML = "$0,0506$";
+document.getElementById("PA2Cau5").innerHTML = "$0,0554$";
+document.getElementById("PA3Cau5").innerHTML = "$0,0776$";
+document.getElementById("loigiaicau5").innerHTML = "Gọi $A$ là biến cố: \"Sản phẩm được kiểm tra bị lỗi\" và $B$ là biến cố: \"Sản phẩm được kiểm tra do phân xưởng $I$ sản xuất\".<br/>Vì phân xưởng $I$ sản xuất $46\\%$ số sản phẩm và phân xưởng $II$ sản xuất $54\\%$ số sản phẩm nên $P(B)=0,46$ và $P(\\overline{B})=0,54$.<br/>Vì tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $6\\%$ và của phân xưởng $II$ là $5\\%$ nên $P(A|B)=0,06$ và $P(A|\\overline{B})=0,05$.<br/>Theo công thức xác suất toàn phần<br/>P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=0,46\\cdot 0,06+0,54\\cdot 0,05=0,0546.";
 
 // Câu 6
-document.getElementById("debaicau6").innerHTML = "Để tạo hiệu ứng cho các đối tượng trên trang chiếu, em sử dụng thẻ nào?";
-document.getElementById("PAdung6").innerHTML = "Animations.";
-document.getElementById("PA1Cau6").innerHTML = "Transitions.";
-document.getElementById("PA2Cau6").innerHTML = "Insert.";
-document.getElementById("PA3Cau6").innerHTML = "Design.";
-document.getElementById("loigiaicau6").innerHTML = "<br/>";
+document.getElementById("debaicau6").innerHTML = "Một nhà máy có hai phân xưởng $I$ và $II$. Phân xưởng $I$ sản xuất $46\\%$ số sản phẩm và phân xưởng $II$ sản xuất $54\\%$ số sản phẩm. Tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $2\\%$ và của phân xưởng $II$ là $1\\%$. Kiểm tra ngẫu nhiên một sản phẩm của nhà máy. Biết rằng sản phẩm được kiểm tra bị lỗi. Xác suất để sản phẩm đó do phân xưởng $I$ sản xuất bằng";
+document.getElementById("PAdung6").innerHTML = "$\\dfrac{46}{73}$";
+document.getElementById("PA1Cau6").innerHTML = "$\\dfrac{22}{73}$";
+document.getElementById("PA2Cau6").innerHTML = "$\\dfrac{51}{73}$";
+document.getElementById("PA3Cau6").innerHTML = "$\\dfrac{27}{73}$";
+document.getElementById("loigiaicau6").innerHTML = "Gọi $A$ là biến cố: \"Sản phẩm được kiểm tra bị lỗi\" và $B$ là biến cố: \"Sản phẩm được kiểm tra do phân xưởng $I$ sản xuất\".<br/>Vì phân xưởng $I$ sản xuất $46\\%$ số sản phẩm và phân xưởng $II$ sản xuất $54\\%$ số sản phẩm nên $P(B)=0,46$ và $P(\\overline{B})=0,54$.<br/>Vì tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $2\\%$ và của phân xưởng $II$ là $1\\%$ nên $P(A|B)=0,02$ và $P(A|\\overline{B})=0,01$.<br/>Theo công thức Bayes<br/>P(B|A)=\\dfrac{P(B)P(A|B)}{P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})}=\\dfrac{0,46\\cdot 0,02}{0,46\\cdot 0,02+0,54\\cdot 0,01}=\\dfrac{46}{73}.";
 
 // Câu 7
-document.getElementById("debaicau7").innerHTML = "Phát biểu nào sau đây đúng về hiệu ứng cho đối tượng?";
-document.getElementById("PAdung7").innerHTML = "Có thể tạo nhiều hiệu ứng cho một đối tượng.";
-document.getElementById("PA1Cau7").innerHTML = "Mỗi đối tượng chỉ có duy nhất một hiệu ứng.";
-document.getElementById("PA2Cau7").innerHTML = "Không thể thay đổi thứ tự các hiệu ứng.";
-document.getElementById("PA3Cau7").innerHTML = "Chỉ văn bản mới tạo được hiệu ứng.";
-document.getElementById("loigiaicau7").innerHTML = "<br/>";
-
-// Câu 8
-document.getElementById("debaicau8").innerHTML = "Nhóm hiệu ứng Entrance trong PowerPoint dùng để làm gì?";
-document.getElementById("PAdung8").innerHTML = "Làm đối tượng xuất hiện trên trang chiếu.";
-document.getElementById("PA1Cau8").innerHTML = "Làm đối tượng biến mất khỏi trang chiếu.";
-document.getElementById("PA2Cau8").innerHTML = "Nhấn mạnh đối tượng.";
-document.getElementById("PA3Cau8").innerHTML = "Di chuyển đối tượng.";
-document.getElementById("loigiaicau8").innerHTML = "<br/>";
-
-// Câu 9
-document.getElementById("debaicau9").innerHTML = "Để lưu bài trình chiếu, em sử dụng tổ hợp phím nào?";
-document.getElementById("PAdung9").innerHTML = "Ctrl + S.";
-document.getElementById("PA1Cau9").innerHTML = "Ctrl + P.";
-document.getElementById("PA2Cau9").innerHTML = "Ctrl + C.";
-document.getElementById("PA3Cau9").innerHTML = "Ctrl + V.";
-document.getElementById("loigiaicau9").innerHTML = "<br/>";
-
-// Câu 10
-document.getElementById("debaicau10").innerHTML = "Phần mềm Scratch dùng để làm gì?";
-document.getElementById("PAdung10").innerHTML = "Lập trình tạo trò chơi, phim hoạt hình.";
-document.getElementById("PA1Cau10").innerHTML = "Soạn thảo văn bản.";
-document.getElementById("PA2Cau10").innerHTML = "Tính toán bảng tính.";
-document.getElementById("PA3Cau10").innerHTML = "Vẽ hình cơ bản.";
-document.getElementById("loigiaicau10").innerHTML = "<br/>";
-
-// Câu 11
-document.getElementById("debaicau11").innerHTML = "Trong Scratch, khu vực nào dùng để hiển thị kết quả lập trình?";
-document.getElementById("PAdung11").innerHTML = "Sân khấu (Stage).";
-document.getElementById("PA1Cau11").innerHTML = "Khu vực lệnh.";
-document.getElementById("PA2Cau11").innerHTML = "Khu vực kịch bản.";
-document.getElementById("PA3Cau11").innerHTML = "Khu vực nhân vật.";
-document.getElementById("loigiaicau11").innerHTML = "<br/>";
-
-// Câu 12
-document.getElementById("debaicau12").innerHTML = "Lệnh 'Move 10 steps' trong Scratch có tác dụng gì?";
-document.getElementById("PAdung12").innerHTML = "Di chuyển nhân vật về phía trước 10 bước.";
-document.getElementById("PA1Cau12").innerHTML = "Xoay nhân vật 10 độ.";
-document.getElementById("PA2Cau12").innerHTML = "Thay đổi kích thước nhân vật.";
-document.getElementById("PA3Cau12").innerHTML = "Nói dòng chữ trong 10 giây.";
-document.getElementById("loigiaicau12").innerHTML = "<br/>";
-
-// Câu 13
-document.getElementById("debaicau13").innerHTML = "Nhóm lệnh 'Events' (Sự kiện) thường bắt đầu bằng lệnh nào?";
-document.getElementById("PAdung13").innerHTML = "Khi bấm vào lá cờ xanh.";
-document.getElementById("PA1Cau13").innerHTML = "Khi bấm vào nhân vật.";
-document.getElementById("PA2Cau13").innerHTML = "Khi phím trắng được bấm.";
-document.getElementById("PA3Cau13").innerHTML = "Đợi 1 giây.";
-document.getElementById("loigiaicau13").innerHTML = "<br/>";
-
-// Câu 14
-document.getElementById("debaicau14").innerHTML = "Để lặp lại một hành động nhiều lần trong Scratch, em dùng nhóm lệnh nào?";
-document.getElementById("PAdung14").innerHTML = "Control (Điều khiển).";
-document.getElementById("PA1Cau14").innerHTML = "Motion (Chuyển động).";
-document.getElementById("PA2Cau14").innerHTML = "Looks (Hiển thị).";
-document.getElementById("PA3Cau14").innerHTML = "Sound (Âm thanh).";
-document.getElementById("loigiaicau14").innerHTML = "<br/>";
-
-// Câu 15
-document.getElementById("debaicau15").innerHTML = "Để nhân vật vẽ hình trong Scratch, em cần thêm nhóm lệnh mở rộng nào?";
-document.getElementById("PAdung15").innerHTML = "Pen (Bút vẽ).";
-document.getElementById("PA1Cau15").innerHTML = "Music (Âm nhạc).";
-document.getElementById("PA2Cau15").innerHTML = "Video Sensing.";
-document.getElementById("PA3Cau15").innerHTML = "Text to Speech.";
-document.getElementById("loigiaicau15").innerHTML = "<br/>";
-
-// Câu 16
-document.getElementById("debaicau16").innerHTML = "Lệnh 'Say [Hello!] for 2 seconds' nằm trong nhóm lệnh nào?";
-document.getElementById("PAdung16").innerHTML = "Looks (Hiển thị).";
-document.getElementById("PA1Cau16").innerHTML = "Motion.";
-document.getElementById("PA2Cau16").innerHTML = "Events.";
-document.getElementById("PA3Cau16").innerHTML = "Sensing.";
-document.getElementById("loigiaicau16").innerHTML = "<br/>";
-
-// Câu 17
-document.getElementById("debaicau17").innerHTML = "Để thay đổi trang phục của nhân vật, em dùng lệnh nào?";
-document.getElementById("PAdung17").innerHTML = "Next costume.";
-document.getElementById("PA1Cau17").innerHTML = "Next backdrop.";
-document.getElementById("PA2Cau17").innerHTML = "Move steps.";
-document.getElementById("PA3Cau17").innerHTML = "Turn degrees.";
-document.getElementById("loigiaicau17").innerHTML = "<br/>";
-
-// Câu 18
-document.getElementById("debaicau18").innerHTML = "Có thể đổi tên nhân vật ở đâu trong giao diện Scratch?";
-document.getElementById("PAdung18").innerHTML = "Ở ô Sprite.";
-document.getElementById("PA1Cau18").innerHTML = "Ở khu vực sân khấu.";
-document.getElementById("PA2Cau18").innerHTML = "Ở khu vực kịch bản.";
-document.getElementById("PA3Cau18").innerHTML = "Không thể đổi tên nhân vật.";
-document.getElementById("loigiaicau18").innerHTML = "<br/>";
-
-// Câu 19
-document.getElementById("debaicau19").innerHTML = "Để xóa toàn bộ hình đã vẽ trên sân khấu, em dùng lệnh nào trong nhóm Pen?";
-document.getElementById("PAdung19").innerHTML = "Erase all.";
-document.getElementById("PA1Cau19").innerHTML = "Pen down.";
-document.getElementById("PA2Cau19").innerHTML = "Pen up.";
-document.getElementById("PA3Cau19").innerHTML = "Set pen color.";
-document.getElementById("loigiaicau19").innerHTML = "<br/>";
-
-// Câu 20
-document.getElementById("debaicau20").innerHTML = "Khi muốn nhân vật bắt đầu để lại dấu vết khi di chuyển (vẽ), em dùng lệnh:";
-document.getElementById("PAdung20").innerHTML = "Pen down (Đặt bút).";
-document.getElementById("PA1Cau20").innerHTML = "Pen up (Nhấc bút).";
-document.getElementById("PA2Cau20").innerHTML = "Erase all.";
-document.getElementById("PA3Cau20").innerHTML = "Stamp.";
-document.getElementById("loigiaicau20").innerHTML = "<br/>";
+document.getElementById("debaicau7").innerHTML = "Tỉ lệ người dân đã tiêm vắc xin phòng bệnh $X$ ở một địa phương là $72\\%$. Trong số những người đã tiêm phòng, tỉ lệ mắc bệnh $X$ là $8\\%$; trong số những người chưa tiêm phòng, tỉ lệ mắc bệnh $X$ là $37\\%$. Chọn ngẫu nhiên một người ở địa phương đó. Biết rằng người được chọn mắc bệnh $X$. Xác suất người đó chưa tiêm vắc xin phòng bệnh $X$ bằng";
+document.getElementById("PAdung7").innerHTML = "$\\dfrac{259}{403}$";
+document.getElementById("PA1Cau7").innerHTML = "$\\dfrac{185}{806}$";
+document.getElementById("PA2Cau7").innerHTML = "$\\dfrac{144}{403}$";
+document.getElementById("PA3Cau7").innerHTML = "$\\dfrac{621}{806}$";
+document.getElementById("loigiaicau7").innerHTML = "Gọi $A$ là biến cố: \"Người được chọn đã tiêm vắc xin phòng bệnh\" và $B$ là biến cố: \"Người được chọn mắc bệnh $X$\".<br/>Vì tỉ lệ người dân đã tiêm vắc xin phòng bệnh $X$ ở địa phương là $72\\%$ nên $P(A)=0,72$ và $P(\\overline{A})=0,28$.<br/>Vì tỉ lệ mắc bệnh $X$ trong số những người đã tiêm phòng là $8\\%$ và trong số những người chưa tiêm phòng là $37\\%$ nên $P(B|A)=0,08$ và $P(B|\\overline{A})=0,37$.<br/>Theo công thức Bayes<br/>P(\\overline{A}|B)=\\dfrac{P(\\overline{A})P(B|\\overline{A})}{P(A)P(B|A)+P(\\overline{A})P(B|\\overline{A})}=\\dfrac{0,28\\cdot 0,37}{0,72\\cdot 0,08+0,28\\cdot 0,37}=\\dfrac{259}{403}.";
