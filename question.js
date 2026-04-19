@@ -103,7 +103,7 @@ document.getElementById("debaicau4").innerHTML =
 "k(" + hesodau(a,"x_i") + hesosau(b,"y_j") + ") & \\text{ khi } x_i\\in\\{"+x1+";"+x2+"\\}, y_j\\in\\{"+y1+";"+y2+";"+y3+"\\}\\\\" + 
 "0 & \\text{ khi khác}\\\\" + 
 "\\end{cases}$$</div>" + 
-"Tìm hàm khối lượng xác suất của biến ngẫu nhiên $X$.";
+"Tìm hàm khối lượng xác suất của biến ngẫu nhiên $X$ nhé.";
 document.getElementById("PAdung4").innerHTML = "$p_X(x)="+phanso(3*a,kq)+"x+"+phanso(b*(y1+y2+y3),kq)+"$ nếu $x\\in\\{"+x1+";"+x2+"\\}$ và $p_X(x)=0$ nếu $x\\notin\\{"+x1+";"+x2+"\\}$";
 document.getElementById("PA1Cau4").innerHTML = "$p_X(x)="+phanso(2*a,kq)+"x+"+phanso(b*(y1+y2+y3),2*kq)+"$ nếu $x\\in\\{"+x1+";"+x2+"\\}$ và $p_X(x)=0$ nếu $x\\notin\\{"+x1+";"+x2+"\\}$";
 document.getElementById("PA2Cau4").innerHTML = "$p_X(x)="+phanso(3*a,kq)+"x+"+phanso(b*(y1+y2+y3),2*kq)+"$ nếu $x\\in\\{"+x1+";"+x2+"\\}$ và $p_X(x)=0$ nếu $x\\notin\\{"+x1+";"+x2+"\\}$";
@@ -186,7 +186,7 @@ var ey = (a11+a21)*y1+(a12+a22)*y2+(a13+a23)*y3;
 var exy = x1*y1*a11+x1*y2*a12+x1*y3*a13+x2*y1*a21+x2*y2*a22+x2*y3*a23;
 var cov = 100*exy-ex*ey;
 document.getElementById("debaicau6").innerHTML = "Cho biến ngẫu nhiên rời rạc hai chiều $(X,Y)$ có bảng phân bố xác suất"
-+ vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) + "Hiệp phương sai của hai biến ngẫu nhiên $X,Y$ bằng hehe test";
++ vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) + "Hiệp phương sai của hai biến ngẫu nhiên $X,Y$ bằng";
 document.getElementById("PAdung6").innerHTML = "$"+convert(cov/10000)+"$";
 document.getElementById("PA1Cau6").innerHTML = randomchoicelist(["$"+convert((cov+2)/10000)+"$","$"+convert((cov-8)/10000)+"$"]);    
 document.getElementById("PA2Cau6").innerHTML = randomchoicelist(["$"+convert((cov-2)/10000)+"$","$"+convert((cov+8)/10000)+"$"]);   
@@ -215,7 +215,7 @@ var p2 = convert(a2/100);
 var p3 = convert(a3/100);
 var ex = x1*a1+x2*a2+x3*a3;
 document.getElementById("debaicau7").innerHTML = "Cho biến ngẫu nhiên rời rạc $X$ có bảng phân bố xác suất"
-+ bangphanbo3(x1,x2,x3,p1,p2,p3) + "Tính kỳ vọng $\\Bbb E(X)$ nghe chưa.";
++ bangphanbo3(x1,x2,x3,p1,p2,p3) + "Tính kỳ vọng $\\Bbb E(X)$.";
 document.getElementById("PAdung7").innerHTML = "$\\Bbb E(X)="+convert(ex/100)+"$";
 document.getElementById("PA1Cau7").innerHTML = randomchoicelist(["$\\Bbb E(X)="+convert((ex+2)/100)+"$","$\\Bbb E(X)="+convert((ex-8)/100)+"$"]);    
 document.getElementById("PA2Cau7").innerHTML = randomchoicelist(["$\\Bbb E(X)="+convert((ex-2)/100)+"$","$\\Bbb E(X)="+convert((ex+8)/100)+"$"]);   
