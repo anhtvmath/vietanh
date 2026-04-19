@@ -1,4 +1,4 @@
-const songanhangLC = 34;
+const songanhangLC = 35;
 for (let j=1; j<= songanhangLC; j++) {
     let divbankLC = document.createElement("div");
     divbankLC.id = "bankLC"+String(j);
