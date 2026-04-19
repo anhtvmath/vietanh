@@ -1,3 +1,4 @@
+// --- PHẦN 1: TỪ CÂU 1 ĐẾN CÂU 25 ---
 // Câu 1
 document.getElementById("debaicau1").innerHTML = "Tìm một phân số có mẫu số là 20 và bằng phân số $\\dfrac{3}{4}$ là:";
 document.getElementById("PAdung1").innerHTML = "$\\dfrac{15}{20}$";
@@ -198,6 +199,7 @@ document.getElementById("PA2Cau25").innerHTML = "2020";
 document.getElementById("PA3Cau25").innerHTML = "100";
 document.getElementById("loigiaicau25").innerHTML = "";
 
+// --- PHẦN 2: TỪ CÂU 26 ĐẾN CÂU 50 ---
 // Câu 26
 document.getElementById("debaicau26").innerHTML = "Số gồm 8 chục nghìn và 5 đơn vị viết là:";
 document.getElementById("PAdung26").innerHTML = "80 005";
@@ -391,13 +393,14 @@ document.getElementById("PA3Cau49").innerHTML = "$\\dfrac{1}{3}$";
 document.getElementById("loigiaicau49").innerHTML = "";
 
 // Câu 50
-document.getElementById("debaicau50").innerHTML = "Một hình chữ nhật có chiều dài $1 \\, \\mathrm{m}$, chiều rộng $\\dfrac{1}{2} \\, \\mathrm{m}$. Diện tích là:";
-document.getElementById("PAdung50").innerHTML = "$\\dfrac{1}{2} \\, \\mathrm{m^2}$";
-document.getElementById("PA1Cau50").innerHTML = "$2 \\, \\mathrm{m^2}$";
-document.getElementById("PA2Cau50").innerHTML = "$\\dfrac{3}{2} \\, \\mathrm{m^2}$";
-document.getElementById("PA3Cau50").innerHTML = "$1 \\, \\mathrm{m^2}$";
+document.getElementById("debaicau50").innerHTML = "Một hình chữ nhật có chiều dài 1 m, chiều rộng $\\dfrac{1}{2}$ m. Diện tích là:";
+document.getElementById("PAdung50").innerHTML = "$\\dfrac{1}{2}$ m$^2$";
+document.getElementById("PA1Cau50").innerHTML = "2 m$^2$";
+document.getElementById("PA2Cau50").innerHTML = "$\\dfrac{3}{2}$ m$^2$";
+document.getElementById("PA3Cau50").innerHTML = "1 m$^2$";
 document.getElementById("loigiaicau50").innerHTML = "";
 
+// --- PHẦN 3: TỪ CÂU 51 ĐẾN CÂU 75 ---
 // Câu 51
 document.getElementById("debaicau51").innerHTML = "Tính $\\dfrac{7}{9} - \\dfrac{2}{3}$:";
 document.getElementById("PAdung51").innerHTML = "$\\dfrac{1}{9}$";
@@ -479,95 +482,95 @@ document.getElementById("PA3Cau60").innerHTML = "$\\dfrac{1}{10}$";
 document.getElementById("loigiaicau60").innerHTML = "";
 
 // Câu 61
-document.getElementById("debaicau61").innerHTML = "Một hình chữ nhật có chiều dài $8 \\, \\mathrm{cm}$, chiều rộng $5 \\, \\mathrm{cm}$. Chu vi là:";
-document.getElementById("PAdung61").innerHTML = "$26 \\, \\mathrm{cm}$";
-document.getElementById("PA1Cau61").innerHTML = "$40 \\, \\mathrm{cm}$";
-document.getElementById("PA2Cau61").innerHTML = "$13 \\, \\mathrm{cm}$";
-document.getElementById("PA3Cau61").innerHTML = "$20 \\, \\mathrm{cm}$";
+document.getElementById("debaicau61").innerHTML = "Một hình chữ nhật có chiều dài 8 cm, chiều rộng 5 cm. Chu vi là:";
+document.getElementById("PAdung61").innerHTML = "26 cm";
+document.getElementById("PA1Cau61").innerHTML = "40 cm";
+document.getElementById("PA2Cau61").innerHTML = "13 cm";
+document.getElementById("PA3Cau61").innerHTML = "20 cm";
 document.getElementById("loigiaicau61").innerHTML = "";
 
 // Câu 62
-document.getElementById("debaicau62").innerHTML = "Diện tích hình vuông cạnh $6 \\, \\mathrm{cm}$ là:";
-document.getElementById("PAdung62").innerHTML = "$36 \\, \\mathrm{cm^2}$";
-document.getElementById("PA1Cau62").innerHTML = "$24 \\, \\mathrm{cm}$";
-document.getElementById("PA2Cau62").innerHTML = "$12 \\, \\mathrm{cm^2}$";
-document.getElementById("PA3Cau62").innerHTML = "$36 \\, \\mathrm{cm}$";
+document.getElementById("debaicau62").innerHTML = "Diện tích hình vuông cạnh 6 cm là:";
+document.getElementById("PAdung62").innerHTML = "36 cm$^2$";
+document.getElementById("PA1Cau62").innerHTML = "24 cm";
+document.getElementById("PA2Cau62").innerHTML = "12 cm$^2$";
+document.getElementById("PA3Cau62").innerHTML = "36 cm";
 document.getElementById("loigiaicau62").innerHTML = "";
 
 // Câu 63
-document.getElementById("debaicau63").innerHTML = "Đổi: $2 \\, \\text{yến} = ... \\, \\mathrm{kg}$";
-document.getElementById("PAdung63").innerHTML = "20";
-document.getElementById("PA1Cau63").innerHTML = "200";
-document.getElementById("PA2Cau63").innerHTML = "2";
-document.getElementById("PA3Cau63").innerHTML = "10";
+document.getElementById("debaicau63").innerHTML = "Đổi: 2 yến = ... kg";
+document.getElementById("PAdung63").innerHTML = "20 kg";
+document.getElementById("PA1Cau63").innerHTML = "200 kg";
+document.getElementById("PA2Cau63").innerHTML = "2 kg";
+document.getElementById("PA3Cau63").innerHTML = "10 kg";
 document.getElementById("loigiaicau63").innerHTML = "";
 
 // Câu 64
-document.getElementById("debaicau64").innerHTML = "Đổi: $1 \\, \\mathrm{m^2} = ... \\, \\mathrm{dm^2}$";
-document.getElementById("PAdung64").innerHTML = "100";
-document.getElementById("PA1Cau64").innerHTML = "10";
-document.getElementById("PA2Cau64").innerHTML = "1000";
-document.getElementById("PA3Cau64").innerHTML = "10 000";
+document.getElementById("debaicau64").innerHTML = "Đổi: 1 m$^2$ = ... dm$^2$";
+document.getElementById("PAdung64").innerHTML = "100 dm$^2$";
+document.getElementById("PA1Cau64").innerHTML = "10 dm$^2$";
+document.getElementById("PA2Cau64").innerHTML = "1000 dm$^2$";
+document.getElementById("PA3Cau64").innerHTML = "10 000 dm$^2$";
 document.getElementById("loigiaicau64").innerHTML = "";
 
 // Câu 65
-document.getElementById("debaicau65").innerHTML = "Hình bình hành có đáy $10 \\, \\mathrm{cm}$, chiều cao $5 \\, \\mathrm{cm}$. Diện tích là:";
-document.getElementById("PAdung65").innerHTML = "$50 \\, \\mathrm{cm^2}$";
-document.getElementById("PA1Cau65").innerHTML = "$25 \\, \\mathrm{cm^2}$";
-document.getElementById("PA2Cau65").innerHTML = "$30 \\, \\mathrm{cm^2}$";
-document.getElementById("PA3Cau65").innerHTML = "$15 \\, \\mathrm{cm^2}$";
+document.getElementById("debaicau65").innerHTML = "Hình bình hành có đáy 10 cm, chiều cao 5 cm. Diện tích là:";
+document.getElementById("PAdung65").innerHTML = "50 cm$^2$";
+document.getElementById("PA1Cau65").innerHTML = "25 cm$^2$";
+document.getElementById("PA2Cau65").innerHTML = "30 cm$^2$";
+document.getElementById("PA3Cau65").innerHTML = "15 cm$^2$";
 document.getElementById("loigiaicau65").innerHTML = "";
 
 // Câu 66
-document.getElementById("debaicau66").innerHTML = "Đổi: $3 \\, \\text{tạ} = ... \\, \\mathrm{kg}$";
-document.getElementById("PAdung66").innerHTML = "300";
-document.getElementById("PA1Cau66").innerHTML = "30";
-document.getElementById("PA2Cau66").innerHTML = "3000";
-document.getElementById("PA3Cau66").innerHTML = "3";
+document.getElementById("debaicau66").innerHTML = "Đổi: 3 tạ = ... kg";
+document.getElementById("PAdung66").innerHTML = "300 kg";
+document.getElementById("PA1Cau66").innerHTML = "30 kg";
+document.getElementById("PA2Cau66").innerHTML = "3000 kg";
+document.getElementById("PA3Cau66").innerHTML = "3 kg";
 document.getElementById("loigiaicau66").innerHTML = "";
 
 // Câu 67
 document.getElementById("debaicau67").innerHTML = "Một thế kỷ bằng bao nhiêu năm?";
-document.getElementById("PAdung67").innerHTML = "100";
-document.getElementById("PA1Cau67").innerHTML = "10";
-document.getElementById("PA2Cau67").innerHTML = "1000";
-document.getElementById("PA3Cau67").innerHTML = "12";
+document.getElementById("PAdung67").innerHTML = "100 năm";
+document.getElementById("PA1Cau67").innerHTML = "10 năm";
+document.getElementById("PA2Cau67").innerHTML = "1000 năm";
+document.getElementById("PA3Cau67").innerHTML = "12 năm";
 document.getElementById("loigiaicau67").innerHTML = "";
 
 // Câu 68
-document.getElementById("debaicau68").innerHTML = "Đổi: $2 \\, \\text{phút} \\, 10 \\, \\text{giây} = ... \\, \\text{giây}$";
-document.getElementById("PAdung68").innerHTML = "130";
-document.getElementById("PA1Cau68").innerHTML = "120";
-document.getElementById("PA2Cau68").innerHTML = "210";
-document.getElementById("PA3Cau68").innerHTML = "70";
+document.getElementById("debaicau68").innerHTML = "Đổi: 2 phút 10 giây = ... giây";
+document.getElementById("PAdung68").innerHTML = "130 giây";
+document.getElementById("PA1Cau68").innerHTML = "120 giây";
+document.getElementById("PA2Cau68").innerHTML = "210 giây";
+document.getElementById("PA3Cau68").innerHTML = "70 giây";
 document.getElementById("loigiaicau68").innerHTML = "";
 
 // Câu 69
-document.getElementById("debaicau69").innerHTML = "Hình thoi có đường chéo $8 \\, \\mathrm{cm}$ và $6 \\, \\mathrm{cm}$. Diện tích là:";
-document.getElementById("PAdung69").innerHTML = "$24 \\, \\mathrm{cm^2}$";
-document.getElementById("PA1Cau69").innerHTML = "$48 \\, \\mathrm{cm^2}$";
-document.getElementById("PA2Cau69").innerHTML = "$14 \\, \\mathrm{cm^2}$";
-document.getElementById("PA3Cau69").innerHTML = "$28 \\, \\mathrm{cm^2}$";
+document.getElementById("debaicau69").innerHTML = "Hình thoi có đường chéo 8 cm và 6 cm. Diện tích là:";
+document.getElementById("PAdung69").innerHTML = "24 cm$^2$";
+document.getElementById("PA1Cau69").innerHTML = "48 cm$^2$";
+document.getElementById("PA2Cau69").innerHTML = "14 cm$^2$";
+document.getElementById("PA3Cau69").innerHTML = "28 cm$^2$";
 document.getElementById("loigiaicau69").innerHTML = "";
 
 // Câu 70
-document.getElementById("debaicau70").innerHTML = "Đổi: $5 \\, \\mathrm{dm^2} \\, 2 \\, \\mathrm{cm^2} = ... \\, \\mathrm{cm^2}$";
-document.getElementById("PAdung70").innerHTML = "502";
-document.getElementById("PA1Cau70").innerHTML = "52";
-document.getElementById("PA2Cau70").innerHTML = "520";
-document.getElementById("PA3Cau70").innerHTML = "5002";
+document.getElementById("debaicau70").innerHTML = "Đổi: 5 dm$^2$ 2 cm$^2$ = ... cm$^2$";
+document.getElementById("PAdung70").innerHTML = "502 cm$^2$";
+document.getElementById("PA1Cau70").innerHTML = "52 cm$^2$";
+document.getElementById("PA2Cau70").innerHTML = "520 cm$^2$";
+document.getElementById("PA3Cau70").innerHTML = "5002 cm$^2$";
 document.getElementById("loigiaicau70").innerHTML = "";
 
 // Câu 71
 document.getElementById("debaicau71").innerHTML = "Góc vuông có số đo là:";
-document.getElementById("PAdung71").innerHTML = "$90$ độ";
-document.getElementById("PA1Cau71").innerHTML = "$180$ độ";
-document.getElementById("PA2Cau71").innerHTML = "$60$ độ";
-document.getElementById("PA3Cau71").innerHTML = "$45$ độ";
+document.getElementById("PAdung71").innerHTML = "90 độ";
+document.getElementById("PA1Cau71").innerHTML = "180 độ";
+document.getElementById("PA2Cau71").innerHTML = "60 độ";
+document.getElementById("PA3Cau71").innerHTML = "45 độ";
 document.getElementById("loigiaicau71").innerHTML = "";
 
 // Câu 72
-document.getElementById("debaicau72").innerHTML = "Số thích hợp điền vào $1 \\, \\mathrm{dam^2} = ... \\, \\mathrm{m^2}$ là:";
+document.getElementById("debaicau72").innerHTML = "Số thích hợp điền vào 1 dam$^2$ = ... m$^2$ là:";
 document.getElementById("PAdung72").innerHTML = "100";
 document.getElementById("PA1Cau72").innerHTML = "10";
 document.getElementById("PA2Cau72").innerHTML = "1000";
@@ -575,29 +578,30 @@ document.getElementById("PA3Cau72").innerHTML = "1";
 document.getElementById("loigiaicau72").innerHTML = "";
 
 // Câu 73
-document.getElementById("debaicau73").innerHTML = "Đổi: $2 \\, \\text{tấn} \\, 5 \\, \\mathrm{kg} = ... \\, \\mathrm{kg}$";
-document.getElementById("PAdung73").innerHTML = "2005";
-document.getElementById("PA1Cau73").innerHTML = "2500";
-document.getElementById("PA2Cau73").innerHTML = "2050";
-document.getElementById("PA3Cau73").innerHTML = "250";
+document.getElementById("debaicau73").innerHTML = "Đổi: 2 tấn 5 kg = ... kg";
+document.getElementById("PAdung73").innerHTML = "2005 kg";
+document.getElementById("PA1Cau73").innerHTML = "2500 kg";
+document.getElementById("PA2Cau73").innerHTML = "2050 kg";
+document.getElementById("PA3Cau73").innerHTML = "250 kg";
 document.getElementById("loigiaicau73").innerHTML = "";
 
 // Câu 74
-document.getElementById("debaicau74").innerHTML = "Chu vi hình vuông là $20 \\, \\mathrm{cm}$. Cạnh hình vuông đó là:";
-document.getElementById("PAdung74").innerHTML = "$5 \\, \\mathrm{cm}$";
-document.getElementById("PA1Cau74").innerHTML = "$4 \\, \\mathrm{cm}$";
-document.getElementById("PA2Cau74").innerHTML = "$10 \\, \\mathrm{cm}$";
-document.getElementById("PA3Cau74").innerHTML = "$80 \\, \\mathrm{cm}$";
+document.getElementById("debaicau74").innerHTML = "Chu vi hình vuông là 20 cm. Cạnh hình vuông đó là:";
+document.getElementById("PAdung74").innerHTML = "5 cm";
+document.getElementById("PA1Cau74").innerHTML = "4 cm";
+document.getElementById("PA2Cau74").innerHTML = "10 cm";
+document.getElementById("PA3Cau74").innerHTML = "80 cm";
 document.getElementById("loigiaicau74").innerHTML = "";
 
 // Câu 75
-document.getElementById("debaicau75").innerHTML = "Đổi: $1 \\, \\mathrm{km} = ... \\, \\mathrm{m}$";
-document.getElementById("PAdung75").innerHTML = "1000";
-document.getElementById("PA1Cau75").innerHTML = "100";
-document.getElementById("PA2Cau75").innerHTML = "10";
-document.getElementById("PA3Cau75").innerHTML = "10 000";
+document.getElementById("debaicau75").innerHTML = "Đổi: 1 km = ... m";
+document.getElementById("PAdung75").innerHTML = "1000 m";
+document.getElementById("PA1Cau75").innerHTML = "100 m";
+document.getElementById("PA2Cau75").innerHTML = "10 m";
+document.getElementById("PA3Cau75").innerHTML = "10 000 m";
 document.getElementById("loigiaicau75").innerHTML = "";
 
+// --- PHẦN 4: TỪ CÂU 76 ĐẾN CÂU 100 ---
 // Câu 76
 document.getElementById("debaicau76").innerHTML = "Hình nào có 4 cạnh bằng nhau và 4 góc vuông?";
 document.getElementById("PAdung76").innerHTML = "Hình vuông";
@@ -615,11 +619,11 @@ document.getElementById("PA3Cau77").innerHTML = "Góc vuông";
 document.getElementById("loigiaicau77").innerHTML = "";
 
 // Câu 78
-document.getElementById("debaicau78").innerHTML = "Đổi: $3 \\, \\text{giờ} = ... \\, \\text{phút}$";
-document.getElementById("PAdung78").innerHTML = "180";
-document.getElementById("PA1Cau78").innerHTML = "60";
-document.getElementById("PA2Cau78").innerHTML = "120";
-document.getElementById("PA3Cau78").innerHTML = "300";
+document.getElementById("debaicau78").innerHTML = "Đổi: 3 giờ = ... phút";
+document.getElementById("PAdung78").innerHTML = "180 phút";
+document.getElementById("PA1Cau78").innerHTML = "60 phút";
+document.getElementById("PA2Cau78").innerHTML = "120 phút";
+document.getElementById("PA3Cau78").innerHTML = "300 phút";
 document.getElementById("loigiaicau78").innerHTML = "";
 
 // Câu 79
@@ -631,19 +635,19 @@ document.getElementById("PA3Cau79").innerHTML = "Trùng nhau";
 document.getElementById("loigiaicau79").innerHTML = "";
 
 // Câu 80
-document.getElementById("debaicau80").innerHTML = "Đổi: $4000 \\, \\mathrm{cm^2} = ... \\, \\mathrm{dm^2}$";
-document.getElementById("PAdung80").innerHTML = "40";
-document.getElementById("PA1Cau80").innerHTML = "400";
-document.getElementById("PA2Cau80").innerHTML = "4";
-document.getElementById("PA3Cau80").innerHTML = "4000";
+document.getElementById("debaicau80").innerHTML = "Đổi: 4000 cm$^2$ = ... dm$^2$";
+document.getElementById("PAdung80").innerHTML = "40 dm$^2$";
+document.getElementById("PA1Cau80").innerHTML = "400 dm$^2$";
+document.getElementById("PA2Cau80").innerHTML = "4 dm$^2$";
+document.getElementById("PA3Cau80").innerHTML = "4000 dm$^2$";
 document.getElementById("loigiaicau80").innerHTML = "";
 
 // Câu 81
-document.getElementById("debaicau81").innerHTML = "Diện tích hình chữ nhật là $40 \\, \\mathrm{cm^2}$, chiều dài $8 \\, \\mathrm{cm}$. Chiều rộng là:";
-document.getElementById("PAdung81").innerHTML = "$5 \\, \\mathrm{cm}$";
-document.getElementById("PA1Cau81").innerHTML = "$32 \\, \\mathrm{cm}$";
-document.getElementById("PA2Cau81").innerHTML = "$48 \\, \\mathrm{cm}$";
-document.getElementById("PA3Cau81").innerHTML = "$10 \\, \\mathrm{cm}$";
+document.getElementById("debaicau81").innerHTML = "Diện tích hình chữ nhật là 40 cm$^2$, chiều dài 8 cm. Chiều rộng là:";
+document.getElementById("PAdung81").innerHTML = "5 cm";
+document.getElementById("PA1Cau81").innerHTML = "32 cm";
+document.getElementById("PA2Cau81").innerHTML = "48 cm";
+document.getElementById("PA3Cau81").innerHTML = "10 cm";
 document.getElementById("loigiaicau81").innerHTML = "";
 
 // Câu 82
@@ -655,11 +659,11 @@ document.getElementById("PA3Cau82").innerHTML = "Thế kỷ XXII";
 document.getElementById("loigiaicau82").innerHTML = "";
 
 // Câu 83
-document.getElementById("debaicau83").innerHTML = "Đổi: $\\dfrac{1}{2} \\, \\text{tạ} = ... \\, \\mathrm{kg}$";
-document.getElementById("PAdung83").innerHTML = "50";
-document.getElementById("PA1Cau83").innerHTML = "5";
-document.getElementById("PA2Cau83").innerHTML = "100";
-document.getElementById("PA3Cau83").innerHTML = "20";
+document.getElementById("debaicau83").innerHTML = "Đổi: $\\dfrac{1}{2}$ tạ = ... kg";
+document.getElementById("PAdung83").innerHTML = "50 kg";
+document.getElementById("PA1Cau83").innerHTML = "5 kg";
+document.getElementById("PA2Cau83").innerHTML = "100 kg";
+document.getElementById("PA3Cau83").innerHTML = "20 kg";
 document.getElementById("loigiaicau83").innerHTML = "";
 
 // Câu 84
@@ -671,11 +675,11 @@ document.getElementById("PA3Cau84").innerHTML = "$S = a : h$";
 document.getElementById("loigiaicau84").innerHTML = "";
 
 // Câu 85
-document.getElementById("debaicau85").innerHTML = "Đổi: $7 \\, \\mathrm{m} \\, 5 \\, \\mathrm{cm} = ... \\, \\mathrm{cm}$";
-document.getElementById("PAdung85").innerHTML = "705";
-document.getElementById("PA1Cau85").innerHTML = "75";
-document.getElementById("PA2Cau85").innerHTML = "750";
-document.getElementById("PA3Cau85").innerHTML = "7005";
+document.getElementById("debaicau85").innerHTML = "Đổi: 7 m 5 cm = ... cm";
+document.getElementById("PAdung85").innerHTML = "705 cm";
+document.getElementById("PA1Cau85").innerHTML = "75 cm";
+document.getElementById("PA2Cau85").innerHTML = "750 cm";
+document.getElementById("PA3Cau85").innerHTML = "7005 cm";
 document.getElementById("loigiaicau85").innerHTML = "";
 
 // Câu 86
@@ -687,11 +691,11 @@ document.getElementById("PA3Cau86").innerHTML = "9 876 540";
 document.getElementById("loigiaicau86").innerHTML = "";
 
 // Câu 87
-document.getElementById("debaicau87").innerHTML = "Một hình vuông có chu vi $32 \\, \\mathrm{cm}$. Diện tích là:";
-document.getElementById("PAdung87").innerHTML = "$64 \\, \\mathrm{cm^2}$";
-document.getElementById("PA1Cau87").innerHTML = "$16 \\, \\mathrm{cm^2}$";
-document.getElementById("PA2Cau87").innerHTML = "$32 \\, \\mathrm{cm^2}$";
-document.getElementById("PA3Cau87").innerHTML = "$60 \\, \\mathrm{cm^2}$";
+document.getElementById("debaicau87").innerHTML = "Một hình vuông có chu vi 32 cm. Diện tích là:";
+document.getElementById("PAdung87").innerHTML = "64 cm$^2$";
+document.getElementById("PA1Cau87").innerHTML = "16 cm$^2$";
+document.getElementById("PA2Cau87").innerHTML = "32 cm$^2$";
+document.getElementById("PA3Cau87").innerHTML = "60 cm$^2$";
 document.getElementById("loigiaicau87").innerHTML = "";
 
 // Câu 88
@@ -743,11 +747,11 @@ document.getElementById("PA3Cau93").innerHTML = "3 005 020";
 document.getElementById("loigiaicau93").innerHTML = "";
 
 // Câu 94
-document.getElementById("debaicau94").innerHTML = "Diện tích hình thoi có đường chéo $9 \\, \\mathrm{cm}$ và $4 \\, \\mathrm{cm}$ là:";
-document.getElementById("PAdung94").innerHTML = "$18 \\, \\mathrm{cm^2}$";
-document.getElementById("PA1Cau94").innerHTML = "$36 \\, \\mathrm{cm^2}$";
-document.getElementById("PA2Cau94").innerHTML = "$13 \\, \\mathrm{cm^2}$";
-document.getElementById("PA3Cau94").innerHTML = "$26 \\, \\mathrm{cm^2}$";
+document.getElementById("debaicau94").innerHTML = "Diện tích hình thoi có đường chéo 9 cm và 4 cm là:";
+document.getElementById("PAdung94").innerHTML = "18 cm$^2$";
+document.getElementById("PA1Cau94").innerHTML = "36 cm$^2$";
+document.getElementById("PA2Cau94").innerHTML = "13 cm$^2$";
+document.getElementById("PA3Cau94").innerHTML = "26 cm$^2$";
 document.getElementById("loigiaicau94").innerHTML = "";
 
 // Câu 95
@@ -767,7 +771,7 @@ document.getElementById("PA3Cau96").innerHTML = "100";
 document.getElementById("loigiaicau96").innerHTML = "";
 
 // Câu 97
-document.getElementById("debaicau97").innerHTML = "Hình chữ nhật diện tích $48 \\, \\mathrm{cm^2}$, chiều dài $8 \\, \\mathrm{cm}$. Chu vi là:";
+document.getElementById("debaicau97").innerHTML = "Hình chữ nhật diện tích 48 cm$^2$, chiều dài 8 cm. Chu vi là:";
 document.getElementById("PAdung97").innerHTML = "28 cm";
 document.getElementById("PA1Cau97").innerHTML = "14 cm";
 document.getElementById("PA2Cau97").innerHTML = "20 cm";
@@ -775,11 +779,11 @@ document.getElementById("PA3Cau97").innerHTML = "24 cm";
 document.getElementById("loigiaicau97").innerHTML = "";
 
 // Câu 98
-document.getElementById("debaicau98").innerHTML = "Đổi: $2 \\, \\mathrm{m^2} \\, 5 \\, \\mathrm{dm^2} = ... \\, \\mathrm{dm^2}$";
-document.getElementById("PAdung98").innerHTML = "205";
-document.getElementById("PA1Cau98").innerHTML = "25";
-document.getElementById("PA2Cau98").innerHTML = "250";
-document.getElementById("PA3Cau98").innerHTML = "2005";
+document.getElementById("debaicau98").innerHTML = "Đổi: 2 m$^2$ 5 dm$^2$ = ... dm$^2$";
+document.getElementById("PAdung98").innerHTML = "205 dm$^2$";
+document.getElementById("PA1Cau98").innerHTML = "25 dm$^2$";
+document.getElementById("PA2Cau98").innerHTML = "250 dm$^2$";
+document.getElementById("PA3Cau98").innerHTML = "2005 dm$^2$";
 document.getElementById("loigiaicau98").innerHTML = "";
 
 // Câu 99
