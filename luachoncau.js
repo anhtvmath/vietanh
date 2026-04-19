@@ -5,21 +5,64 @@ for (let j=1; j<= songanhangLC; j++) {
     divbankLC.style.display="none";
     document.getElementById("bankLC").appendChild(divbankLC);
 }
+
+(function() {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .answer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+        .answer-item {
+            display: flex;
+            align-items: center;
+            /* Cố gắng chiếm 200px. Nếu màn hình rộng sẽ dàn hàng ngang, hẹp sẽ tự xuống dòng */
+            flex: 1 1 200px; 
+            min-width: 220px; 
+            padding: 5px;
+        }
+        .answer-item span {
+            margin-left: 8px;
+        }
+        /* Mobile: Ép mỗi đáp án 1 hàng để dễ đọc */
+        @media (max-width: 480px) {
+            .answer-item {
+                flex: 1 1 100%;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+})();
+
 function formcauhoi(i) {
     return "<span id='debaiquestion" + String(i) + "'></span><br/>" + 
         "<input id='key" + String(i) + "' style='display: none;'>" + 
-        "<input id='choice" + String(i) + "A' name='name" + String(i) + "' type='radio' value='A'>" + 
-        "<label class='custom-radio' for='choice" + String(i) + "A' data-label='A'></label><span id='C" + String(i) + "A'></span><br/>" +
-        "<input id='choice" + String(i) + "B' name='name" + String(i) + "' type='radio' value='B'>" + 
-        "<label class='custom-radio' for='choice" + String(i) + "B' data-label='B'></label><span id='C" + String(i) + "B'></span><br/>" + 
-        "<input id='choice" + String(i) + "C' name='name" + String(i) + "' type='radio' value='C'>" + 
-        "<label class='custom-radio' for='choice" + String(i) + "C' data-label='C'></label><span id='C" + String(i) + "C'></span><br/>" +
-        "<input id='choice" + String(i) + "D' name='name" + String(i) + "' type='radio' value='D'>" + 
-        "<label class='custom-radio' for='choice" + String(i) + "D' data-label='D'></label><span id='C" + String(i) + "D'></span><br/>" +
+        "<div class='answer-grid'>" +
+            "<div class='answer-item'>" +
+                "<input id='choice" + String(i) + "A' name='name" + String(i) + "' type='radio' value='A'>" + 
+                "<label class='custom-radio' for='choice" + String(i) + "A' data-label='A'></label><span id='C" + String(i) + "A'></span>" +
+            "</div>" +
+            "<div class='answer-item'>" +
+                "<input id='choice" + String(i) + "B' name='name" + String(i) + "' type='radio' value='B'>" + 
+                "<label class='custom-radio' for='choice" + String(i) + "B' data-label='B'></label><span id='C" + String(i) + "B'></span>" +
+            "</div>" +
+            "<div class='answer-item'>" +
+                "<input id='choice" + String(i) + "C' name='name" + String(i) + "' type='radio' value='C'>" + 
+                "<label class='custom-radio' for='choice" + String(i) + "C' data-label='C'></label><span id='C" + String(i) + "C'></span>" +
+            "</div>" +
+            "<div class='answer-item'>" +
+                "<input id='choice" + String(i) + "D' name='name" + String(i) + "' type='radio' value='D'>" + 
+                "<label class='custom-radio' for='choice" + String(i) + "D' data-label='D'></label><span id='C" + String(i) + "D'></span>" +
+            "</div>" +
+        "</div>" +
         "<span id='dapancau" + String(i) + "' style='display: none;'>" +
         "<b>Lời giải.</b>" + 
         "</span>";
 }
+
 for (let j = 1; j <= songanhangLC; j++) {
     for (let i = j; i <= j; i++) {
         if (document.getElementById("debaicau"+String(i)).innerHTML !== "") {
