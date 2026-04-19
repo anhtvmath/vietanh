@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const accounts = [
-        { username: "haidang", userid: "123" },
+        { username: "Bon", userid: "123" },
         { username: "abc", userid: "123" },
         { username: "abcd", userid: "1234" },
         { username: "admin", userid: "123" }
