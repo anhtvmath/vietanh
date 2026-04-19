@@ -67,7 +67,7 @@ document.getElementById("debaicau3").innerHTML =
 "k(" + hesodau(a,"x_i") + hesosau(b,"y_j") + ") & \\text{ khi } x_i\\in\\{"+x1+";"+x2+"\\}, y_j\\in\\{"+y1+";"+y2+";"+y3+"\\}\\\\" + 
 "0 & \\text{ khi khác}\\\\" + 
 "\\end{cases}$$</div>" + 
-"Tìm hằng số $k$.";
+"Tìm hằng số $k$ nhé.";
 document.getElementById("PAdung3").innerHTML = "$k="+phanso(1,kq)+"$";
 document.getElementById("PA1Cau3").innerHTML = "$k="+phanso(1,2*kq)+"$";
 document.getElementById("PA2Cau3").innerHTML = "$k="+phanso(2,3*kq)+"$";
@@ -186,7 +186,7 @@ var ey = (a11+a21)*y1+(a12+a22)*y2+(a13+a23)*y3;
 var exy = x1*y1*a11+x1*y2*a12+x1*y3*a13+x2*y1*a21+x2*y2*a22+x2*y3*a23;
 var cov = 100*exy-ex*ey;
 document.getElementById("debaicau6").innerHTML = "Cho biến ngẫu nhiên rời rạc hai chiều $(X,Y)$ có bảng phân bố xác suất"
-+ vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) + "Hiệp phương sai của hai biến ngẫu nhiên $X,Y$ bằng";
++ vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) + "Hiệp phương sai của hai biến ngẫu nhiên $X,Y$ bằng nhé!";
 document.getElementById("PAdung6").innerHTML = "$"+convert(cov/10000)+"$";
 document.getElementById("PA1Cau6").innerHTML = randomchoicelist(["$"+convert((cov+2)/10000)+"$","$"+convert((cov-8)/10000)+"$"]);    
 document.getElementById("PA2Cau6").innerHTML = randomchoicelist(["$"+convert((cov-2)/10000)+"$","$"+convert((cov+8)/10000)+"$"]);   
