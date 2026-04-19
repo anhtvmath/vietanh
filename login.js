@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const accounts = [
         { username: "abc", userid: "123" },
         { username: "bon", userid: "123" },
-        { username: "admin", userid: "abc" },
+        { username: "admin", userid: "abc123" },
         { username: "student123", userid: "abc123" },
         { username: "student1234", userid: "abc1234" },
         { username: "student12345", userid: "abc12345" },
