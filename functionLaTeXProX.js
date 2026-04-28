@@ -4,7 +4,7 @@
 \\node at (1,0) {$x_1$};
 \\node at (2,0) {$x_2$};
 \\node at (0,-1) {$\\mathbb{P}$};
-\\node at (1,-1) {$p_1$};
+\\node at (1,-1) {$k_1$};
 \\node at (2,-1) {$p_2$};
 \\draw[shift={(-0.5,0.5)}](0,0) grid (3,-2);
 \\end{tikzpicture}`;
