@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const accounts = [
         { username: "va", userid: "123" },
+        { username: "loind", userid: "123" },
+        { username: "cttinh", userid: "123" },
         { username: "ytkadai", userid: "Leminhkhoi170510" },
         { username: "Trannhucang1982", userid: "Sinhvien116@" },
         { username: "Phạm Hoàng Điệp", userid: "123456" },
