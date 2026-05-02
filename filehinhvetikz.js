@@ -25,7 +25,27 @@ code: String.raw`\begin{tikzpicture}[scale=0.6, font=\footnotesize,line join=rou
 \foreach \i/\g in {S/90,A/-180,B/-90,C/0,M/-90,H/-90} \fill[black] (\i) circle(1pt)+(\g:2.6mm)node[scale=1]{$\i$};
 \end{tikzpicture}`
         },
-        { id: "code3", code: "" },
+        { 
+id: "code3", 
+code: String.raw`\begin{tikzpicture}[scale=0.8, font=\footnotesize,line join=round, line cap=round, >=stealth, every node/.style={scale=0.8}]
+\usetikzlibrary{calc,angles,quotes}
+\def\ab{2}
+\def\ac{5}
+\def\h{3}
+\path
+(0,0) coordinate (A)
+++(-60:\ab) coordinate (B)
+(\ac,0) coordinate (C)
+($(A)+(0,\h)$) coordinate (S)
+;
+\foreach \i in {A,B,C}{\draw (S)--(\i);}
+\draw (A)--(B)--(C);
+\draw[dashed,thin](A)--(C);
+\pic[draw,thin,angle radius=2mm] {right angle = S--A--C};
+\foreach \i/\g in {S/90,A/180,B/-90,C/0}
+\fill[black] (\i) circle(1pt)+(\g:2.5mm)node[scale=1]{$\i$};
+\end{tikzpicture}`
+        },
         { id: "code4", code: "" },
         { id: "code5", code: "" },
         { id: "code6", code: "" },
