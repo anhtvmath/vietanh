@@ -31,7 +31,7 @@ const sidebarHTML = `
                         <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu3')">2.3. Ví dụ 3</button>
                         <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu4')">2.4. Ví dụ 4</button>
                         <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu5')">2.5. Ví dụ 5</button>
-                        <button class="btn btn-success btn-summary" onclick="generateSummary(['c2_nh', 'c2_tp'])">TỔNG HỢP CHƯƠNG 2</button>
+                        <button class="btn btn-success btn-summary" onclick="generateSummary(['tf_vidu1', 'tf_vidu2', 'tf_vidu3', 'tf_vidu4', 'tf_vidu5'])">TỔNG HỢP CHƯƠNG 2</button>
                     </div>
                 </div>
                 <div class="mt-4 pt-3 border-top">
