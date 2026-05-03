@@ -24,10 +24,13 @@ const sidebarHTML = `
                     </div>
                 </div>
                 <div class="chapter-section">
-                    <div class="chapter-title">📖 Chương 2: Nguyên hàm - Tích phân</div>
+                    <div class="chapter-title">📖 Chương 2: Trắc nghiệm đúng sai</div>
                     <div class="d-grid gap-1">
-                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('c2_nh')">2.1. Nguyên hàm cơ bản</button>
-                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('c2_tp')">2.2. Tích phân xác định</button>
+                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu1')">2.1. Ví dụ 1</button>
+                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu2')">2.2. Ví dụ 2</button>
+                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu3')">2.3. Ví dụ 3</button>
+                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu4')">2.4. Ví dụ 4</button>
+                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu5')">2.5. Ví dụ 5</button>
                         <button class="btn btn-success btn-summary" onclick="generateSummary(['c2_nh', 'c2_tp'])">TỔNG HỢP CHƯƠNG 2</button>
                     </div>
                 </div>
@@ -57,8 +60,11 @@ function callQuestion(type) {
         if(type === 'bbt_hambacbactc') return get_BBT_hambacbaCTC();
         if(type === 'nb_hambacbatct') return get_NB_hambacbaTCT();
         if(type === 'db_hambacbactc') return get_DB_hambacbaCTC();
-        if(type === 'c2_nh') return TF_vidu1();
-        if(type === 'c2_tp') return TF_vidu6();
+        if(type === 'tf_vidu1') return TF_vidu1();
+        if(type === 'tf_vidu2') return TF_vidu2();
+        if(type === 'tf_vidu3') return TF_vidu3();
+        if(type === 'tf_vidu4') return TF_vidu4();
+        if(type === 'tf_vidu5') return TF_vidu5();
     } catch (e) { return ""; }
     return "";
 }
