@@ -21,7 +21,13 @@ const headerContent = `
 
     <a href="newpage4.html" style="text-decoration: none;">
         <button type="button" style="background:#34a853; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:10px; text-transform: uppercase; height: 24px;">
-            Tạo đề thi trắc nghiệm từ Ex 
+            Trắc nghiệm lựa chọn 
+        </button>
+    </a>
+
+    <a href="newpage4.html" style="text-decoration: none;">
+        <button type="button" style="background:#34a853; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:10px; text-transform: uppercase; height: 24px;">
+            Trắc nghiệm Đúng Sai 
         </button>
     </a>
     
