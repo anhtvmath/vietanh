@@ -18,6 +18,12 @@ const headerContent = `
             Trang mới 3 
         </button>
     </a>
+
+    <a href="newpage4.html" style="text-decoration: none;">
+        <button type="button" style="background:#34a853; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:10px; text-transform: uppercase; height: 24px;">
+            Tạo đề thi trắc nghiệm từ Ex 
+        </button>
+    </a>
     
     <span style="font-size: 16px; opacity: 0.8; font-weight: normal; margin-left: auto;">
         &copy; 2026 <strong>Trần Việt Anh</strong>. All Rights Reserved.
