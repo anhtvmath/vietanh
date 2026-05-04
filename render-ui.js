@@ -5,7 +5,7 @@ const sidebarHTML = `
             <div class="sidebar">
 
                 <div class="d-grid mb-3">
-                    <button class="btn btn-info text-white fw-bold" onclick="goHome()">🏠 TRANG CHÍNH</button>
+                    <button class="btn btn-info text-white fw-bold" onclick="goHome()">🏠 TRANG CHỦ</button>
                 </div>
 
                 <div class="mb-4">
