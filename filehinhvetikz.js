@@ -3,7 +3,9 @@
 id: "code1",
 code: String.raw`\begin{tikzpicture}[scale=0.6, font=\footnotesize,line join=round, line cap=round, >=stealth, every node/.style={scale=0.8}]
 \usetikzlibrary{calc, angles, quotes}
-\def\ab{2} \def\ac{5} \def\h{4}
+\def\ab{2} 
+\def\ac{5} 
+\def\h{4}
 \path (0,0) coordinate (A) ++(-45:\ab) coordinate (B) (\ac,0) coordinate (C) ($(A)!1/2!(C)$) coordinate (H) ($(H)+(0,\h)$) coordinate (S);
 \foreach \i in {A,B,C}{\draw (S)--(\i);}
 \draw (A)--(B)--(C);
@@ -16,7 +18,9 @@ code: String.raw`\begin{tikzpicture}[scale=0.6, font=\footnotesize,line join=rou
 id: "code2",
 code: String.raw`\begin{tikzpicture}[scale=0.6, font=\footnotesize,line join=round, line cap=round, >=stealth, every node/.style={scale=0.8}]
 \usetikzlibrary{calc, angles, quotes}
-\def\ab{2} \def\ac{4} \def\h{3}
+\def\ab{2} 
+\def\ac{4} 
+\def\h{3}
 \path (0,0) coordinate (A) ++(-60:\ab) coordinate (B) (\ac,0) coordinate (C) ($(B)!1/2!(C)$) coordinate (M) ($(A)!2/3!(M)$) coordinate (H) ($(H)+(0,\h)$) coordinate (S);
 \foreach \i in{A,B,C}{\draw (S)--(\i);};
 \draw (A)--(B)--(C) (S)--(M);
