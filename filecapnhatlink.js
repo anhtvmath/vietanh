@@ -4,19 +4,7 @@ const headerContent = `
         <strong>LaTex Pro X</strong> - Hệ thống hỗ trợ giảng dạy
     </span>
 
-    <a href="taocauhoi.html" style="text-decoration: none; margin-left: 10px;">
-        <button type="button" style="background:#34a853; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:10px; text-transform: uppercase; height: 24px;">
-            Tạo câu hỏi tự động
-        </button>
-    </a>
-
-    <a href="thuvienanh.html" style="text-decoration: none;">
-        <button type="button" style="background:#34a853; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:10px; text-transform: uppercase; height: 24px;">
-            Thư viện ảnh Tikz
-        </button>
-    </a>
-
-    <a href="tracnghiemLC.html" style="text-decoration: none;">
+    <a href="tracnghiemLC.html" style="text-decoration: none; margin-left: 10px;">
         <button type="button" style="background:#34a853; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:10px; text-transform: uppercase; height: 24px;">
             Trắc nghiệm lựa chọn 
         </button>
