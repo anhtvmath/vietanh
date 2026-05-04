@@ -24,12 +24,10 @@ const sidebarHTML = `
                 <div class="chapter-section">
                     <div class="chapter-title">📖 Chương 2: Trắc nghiệm đúng sai</div>
                     <div class="d-grid gap-1">
-                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu1')">2.1. Ví dụ 1</button>
-                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu2')">2.2. Ví dụ 2</button>
-                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu3')">2.3. Ví dụ 3</button>
-                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu4')">2.4. Ví dụ 4</button>
-                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu5')">2.5. Ví dụ 5</button>
-                        <button class="btn btn-success btn-summary" onclick="generateSummary(['tf_vidu1', 'tf_vidu2', 'tf_vidu3', 'tf_vidu4', 'tf_vidu5'])">TỔNG HỢP CHƯƠNG 2</button>
+                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu1')">2.1. Ví dụ đúng sai 1</button>
+                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu2')">2.2. Ví dụ đúng sai 2</button>
+                        <button class="btn btn-outline-success btn-topic" onclick="generateByTopic('tf_vidu3')">2.3. Ví dụ đúng sai 3</button>
+                        <button class="btn btn-success btn-summary" onclick="generateSummary(['tf_vidu1', 'tf_vidu2', 'tf_vidu3'])">TỔNG HỢP CHƯƠNG 2</button>
                     </div>
                 </div>
                 <div class="mt-4 pt-3 border-top">
@@ -59,8 +57,6 @@ function callQuestion(type) {
         if(type === 'tf_vidu1') return TF_vidu1();
         if(type === 'tf_vidu2') return TF_vidu2();
         if(type === 'tf_vidu3') return TF_vidu3();
-        if(type === 'tf_vidu4') return TF_vidu4();
-        if(type === 'tf_vidu5') return TF_vidu5();
     } catch (e) { return ""; }
     return "";
 }
