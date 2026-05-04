@@ -11,6 +11,17 @@ function cleanLatex(text) {
     if (!text) return "";
     let out = text;
 
+    // 1. Chuyển \heva{...} thành cấu trúc gốc của LaTeX
+    out = out.replace(/\\heva\{([\s\S]*?)\}/g, function(match, content) {
+        return "\\left\\{ \\begin{aligned} " + content + " \\end{aligned} \\right.";
+    });
+
+    // 2. Chuyển \khoang{...} thành cấu trúc gốc
+    out = out.replace(/\\hoac\{([\s\S]*?)\}/g, function(match, content) {
+        return "\\left[ \\begin{aligned} " + content + " \\end{aligned} \\right.";
+    });
+
+    // 3. Xử lý tabular sang array như bạn đã làm
     out = out.replace(/\\begin\{tabular\}\{([\s\S]*?)\}([\s\S]*?)\\end\{tabular\}/g, function(m, align, content) {
         let inner = content.replace(/\$/g, ""); 
         return `\\begin{array}{${align}}${inner}\\end{array}`;
@@ -19,17 +30,18 @@ function cleanLatex(text) {
     out = out.replace(/([a-zA-Z0-9])<([a-zA-Z0-9])/g, "$1 < $2");
     out = out.replace(/([a-zA-Z0-9])>([a-zA-Z0-9])/g, "$1 > $2");
     
-    let parts = out.split(/(\\begin\{align\*?\}[\s\S]*?\\end\{align\*?\}|\\begin\{eqnarray\*?\}[\s\S]*?\\end\{eqnarray\*?\}|\\begin\{array\}[\s\S]*?\\end\{array\}|\\begin\{cases\}[\s\S]*?\\end\{cases\}|\$\$[\s\S]*?\$\$)/g);
+    // CẬP NHẬT: Thêm \$[\s\S]*?\$ vào regex split để tách riêng khối toán nội dòng
+    let parts = out.split(/(\\begin\{align\*?\}[\s\S]*?\\end\{align\*?\}|\\begin\{eqnarray\*?\}[\s\S]*?\\end\{eqnarray\*?\}|\\begin\{array\}[\s\S]*?\\end\{array\}|\\begin\{cases\}[\s\S]*?\\end\{cases\}|\$\$[\s\S]*?\$\$|\$[\s\S]*?\$)/g);
     
     for (let i = 0; i < parts.length; i++) {
         if (parts[i]) {
-            const isMathBlock = parts[i].includes('\\begin{align') || 
-                               parts[i].includes('\\begin{eqnarray') || 
-                               parts[i].includes('\\begin{array}') || 
-                               parts[i].includes('\\begin{cases}') ||
-                               parts[i].startsWith('$$');
+            // Kiểm tra xem phần tử này có phải là khối toán học hay không
+            const isMathBlock = parts[i].includes('\\begin{') || 
+                               parts[i].startsWith('$$') || 
+                               parts[i].startsWith('$'); // Thêm kiểm tra dấu $
                                
             if (!isMathBlock) {
+                // Chỉ thay thế \\ thành <br/> ở những phần KHÔNG phải là toán học
                 parts[i] = parts[i].replace(/\\\\(\[[^\]]*\])?/g, "<br/>");
             }
         }
