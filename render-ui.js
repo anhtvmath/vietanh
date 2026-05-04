@@ -15,11 +15,10 @@ const sidebarHTML = `
                 <div class="chapter-section">
                     <div class="chapter-title">📖 Chương 1: Hàm số - Loga</div>
                     <div class="d-grid gap-1">
-                        <button class="btn btn-outline-primary btn-topic" onclick="generateByTopic('pt_matcau')">1.1. Phương trình mặt cầu</button>
-                        <button class="btn btn-outline-primary btn-topic" onclick="generateByTopic('bbt_hambacbactc')">1.2. Nghịch biến hàm số bậc ba - BBT</button>
-                        <button class="btn btn-outline-primary btn-topic" onclick="generateByTopic('nb_hambacbatct')">1.3. Nghịch biến hàm số bậc ba - HS</button>
-                        <button class="btn btn-outline-primary btn-topic" onclick="generateByTopic('db_hambacbactc')">1.4. Đồng biến hàm số bậc ba - HS</button>
-                        <button class="btn btn-primary btn-summary" onclick="generateSummary(['pt_matcau', 'bbt_hambacbactc', 'nb_hambacbatct','db_hambacbactc'])">TỔNG HỢP CHƯƠNG 1</button>
+                        <button class="btn btn-outline-primary btn-topic" onclick="generateByTopic('bbt_hambacbactc')">1.1. Nghịch biến hàm số bậc ba - BBT</button>
+                        <button class="btn btn-outline-primary btn-topic" onclick="generateByTopic('nb_hambacbatct')">1.2. Nghịch biến hàm số bậc ba - HS</button>
+                        <button class="btn btn-outline-primary btn-topic" onclick="generateByTopic('db_hambacbactc')">1.3. Đồng biến hàm số bậc ba - HS</button>
+                        <button class="btn btn-primary btn-summary" onclick="generateSummary(['bbt_hambacbactc', 'nb_hambacbatct','db_hambacbactc'])">TỔNG HỢP CHƯƠNG 1</button>
                     </div>
                 </div>
                 <div class="chapter-section">
@@ -54,8 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function callQuestion(type) {
     try {
-        if(type === 'txd_loga') return TF_template();
-        if(type === 'pt_matcau') return get_PT_Matcau();
         if(type === 'bbt_hambacbactc') return get_BBT_hambacbaCTC();
         if(type === 'nb_hambacbatct') return get_NB_hambacbaTCT();
         if(type === 'db_hambacbactc') return get_DB_hambacbaCTC();
