@@ -17,7 +17,7 @@ const headerContent = `
     </a>
 
     <a href="taocauhoi.html" style="text-decoration: none; margin-left: 10px;">
-        <button type="button" style="background:#1a73e8; color:#1a73e8; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:16px; text-transform: uppercase; height: 24px;">
+        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:16px; text-transform: uppercase; height: 24px;">
             Tạo câu hỏi 
         </button>
     </a>
