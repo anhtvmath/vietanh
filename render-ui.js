@@ -13,7 +13,7 @@ const sidebarHTML = `
                     <input type="number" id="num_input" class="form-control" value="5">
                 </div>
                 <div class="chapter-section">
-                    <div class="chapter-title">📖 Chương 1: Hàm số - Loga</div>
+                    <div class="chapter-title">📖 Chương 1: Hàm số</div>
                     <div class="d-grid gap-1">
                         <button class="btn btn-outline-primary btn-topic" onclick="generateByTopic('bbt_hambacbactc')">1.1. Nghịch biến hàm số bậc ba - BBT</button>
                         <button class="btn btn-outline-primary btn-topic" onclick="generateByTopic('nb_hambacbatct')">1.2. Nghịch biến hàm số bậc ba - HS</button>
