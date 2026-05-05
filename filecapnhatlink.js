@@ -21,6 +21,18 @@ const headerContent = `
             Tạo câu hỏi 
         </button>
     </a>
+
+    <a href="LC.html" style="text-decoration: none; margin-left: 10px;">
+        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:16px; text-transform: uppercase; height: 24px;">
+            Soạn trắc nghiệm lựa chọn
+        </button>
+    </a>
+
+    <a href="TF.html" style="text-decoration: none; margin-left: 10px;">
+        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:16px; text-transform: uppercase; height: 24px;">
+            Soạn trắc nghiệm đúng sai 
+        </button>
+    </a>
     
     <span style="font-size: 16px; opacity: 0.8; font-weight: normal; margin-left: auto;">
         &copy; 2026 <strong>Trần Việt Anh</strong>. All Rights Reserved.
