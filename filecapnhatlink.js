@@ -5,31 +5,31 @@ const headerContent = `
     </span>
 
     <a href="tracnghiemLC.html" style="text-decoration: none; margin-left: 10px;">
-        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:14px; text-transform: uppercase; height: 24px;">
+        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:12px; text-transform: uppercase; height: 24px;">
             Trắc nghiệm lựa chọn 
         </button>
     </a>
 
     <a href="tracnghiemTF.html" style="text-decoration: none;">
-        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:14px; text-transform: uppercase; height: 24px;">
+        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:12px; text-transform: uppercase; height: 24px;">
             Trắc nghiệm Đúng Sai 
         </button>
     </a>
 
     <a href="taocauhoi.html" style="text-decoration: none; margin-left: 10px;">
-        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:14px; text-transform: uppercase; height: 24px;">
+        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:12px; text-transform: uppercase; height: 24px;">
             Tạo câu hỏi 
         </button>
     </a>
 
     <a href="LC.html" style="text-decoration: none; margin-left: 10px;">
-        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:14px; text-transform: uppercase; height: 24px;">
+        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:12px; text-transform: uppercase; height: 24px;">
             Soạn trắc nghiệm lựa chọn
         </button>
     </a>
 
     <a href="TF.html" style="text-decoration: none; margin-left: 10px;">
-        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:14px; text-transform: uppercase; height: 24px;">
+        <button type="button" style="background:#1a73e8; color:white; border:none; border-radius:4px; padding:4px 12px; cursor:pointer; font-weight:bold; font-size:12px; text-transform: uppercase; height: 24px;">
             Soạn trắc nghiệm đúng sai 
         </button>
     </a>
