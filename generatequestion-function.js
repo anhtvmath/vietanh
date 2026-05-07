@@ -18,7 +18,7 @@ function CT_GTCT_hambacbaTCT() {
     var y1 = phanso(Tu_y1, 6);
     var y2 = phanso(Tu_y2, 6);
 
-    var loigiaibegin = "Ta có $f'(x)=" + hesodau(-a, "x^2") + hesosau(a * S, "x") + sodungsau(-a * P) + "$. \\\\\n" +
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(-a, "x^2") + hesosau(a * S, "x") + sodungsau(-a * P) + "$.\\\\\n" +
         "Do đó\n" +
         "$$f'(x)=0 \\Leftrightarrow " + hoachai("x", x1, x2) + "$$\n" +
         "Bảng biến thiên\n" +
