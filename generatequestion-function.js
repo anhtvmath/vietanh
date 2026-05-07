@@ -20,7 +20,7 @@ function CT_GTCT_hambacbaTCT() {
 
     var loigiaibegin = "Ta có $f'(x)=" + hesodau(-a, "x^2") + hesosau(a * S, "x") + sodungsau(-a * P) + "$.\\\\\n" +
         "Do đó\n" +
-        "$$f'(x)=0 \\Leftrightarrow " + hoachai("x", x1, x2) + "$$\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
         "Bảng biến thiên\n" +
         hambacbaTCT("x", "f", x1, x2, y1, y2);
     var loaiCauHoi = randomchoice(1, 4);
@@ -109,7 +109,7 @@ function SBT_DB_hambacbaCTC() {
                "Ta có \n" + 
                "$$f'(x)="+hesodau(a,"x^2")+hesosau(-a*S,"x")+sodungsau(P*a)+".$$\n" + 
                "Do đó \n" + 
-               "$$f'(x) > 0\\Leftrightarrow\\left[\\begin{aligned} & x > "+x2+" \\\\ & x < "+x1+"\\end{aligned}\\right.$$\n" + 
+               "$$f'(x) > 0\\Leftrightarrow\\left[\\begin{array}{l} x > "+x2+" \\\\ x < "+x1+"\\end{array}\\right.$$\n" + 
                "Vậy hàm số đồng biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty)$.\n" + 
                "}\n" +
             "\\end{ex}\n\n";
@@ -152,7 +152,7 @@ function SBT_NB_hambacbaTCT() {
                "Ta có \n" + 
                "$$f'(x)="+hesodau(a,"x^2")+hesosau(-a*S,"x")+sodungsau(P*a)+".$$\n" + 
                "Do đó \n" + 
-               "$$f'(x) < 0\\Leftrightarrow\\left[\\begin{aligned} & x > "+x2+" \\\\ & x < "+x1+"\\end{aligned}\\right.$$\n" + 
+               "$$f'(x) < 0\\Leftrightarrow\\left[\\begin{array}{l} x > "+x2+" \\\\ x < "+x1+"\\end{array}\\right.$$\n" + 
                "Vậy hàm số nghịch biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty)$.\n" + 
                "}\n" +
             "\\end{ex}\n\n";
