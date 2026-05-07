@@ -158,8 +158,21 @@ function convert(number) {
 }
 
 function shuffle(array) {
-    return array.sort(() => Math.random() - 0.5);
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // Trong khi vẫn còn phần tử chưa được xáo trộn
+    while (0 !== currentIndex) {
+        // Chọn một phần tử còn lại
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // Và tráo đổi nó với phần tử hiện tại
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
     }
+    return array;
+}
 
 function randomchoice(min,max) {
     return Math.floor(Math.random()*(max-min+1))+min;
