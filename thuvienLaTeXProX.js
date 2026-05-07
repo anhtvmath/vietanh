@@ -6,8 +6,9 @@ function kiemtrakhacnhau(a, b, c, d) {
     }
 }
 
-def hoachai(x,a,b):
-    return "\\left[\\begin{array}{l} "+x+"="+a+"\\\\"+x+"="+b+"\\end{array}\\right."
+function hoachai(x, a, b) {
+    return "\\left[\\begin{array}{l} " + x + "=" + a + "\\\\" + x + "=" + b + "\\end{array}\\right.";
+}
 
 function hesoxaudau(a, x) {
     if (a === "1") return x;
