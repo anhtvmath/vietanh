@@ -1,3 +1,11 @@
+function kiemtrakhacnhau(a, b, c, d) {
+    if (a !== b && a !== c && a !== d && b !== c && b !== d && c !== d) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function hesoxaudau(a, x) {
     if (a === "1") return x;
     if (a === "-1") return "-" + x;
