@@ -3,7 +3,8 @@ const QuestionBank = {
         t1: [
             SBT_DB_hambacbaCTC,
             SBT_NB_hambacbaTCT,
-            SBT_BBT_hambacbaCTC
+            SBT_BBT_hambacbaCTC,
+            CT_GTCT_hambacbaTCT
         ], 
         t2: [
             c1_d2_v1, 
