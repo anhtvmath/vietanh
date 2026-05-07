@@ -1,3 +1,78 @@
+function CT_GTCT_hambacbaTCT() {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = -2 * a * Math.pow(x1, 3) + 3 * a * S * Math.pow(x1, 2) - 6 * a * P * x1 + 6 * b;
+        Tu_y2 = -2 * a * Math.pow(x2, 3) + 3 * a * S * Math.pow(x2, 2) - 6 * a * P * x2 + 6 * b;
+
+        if (x1 < x2 && Tu_y1 < Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(-a, "x^2") + hesosau(a * S, "x") + sodungsau(-a * P) + "$. \\\\\n" +
+        "Do đó\n" +
+        "$$f'(x)=0 \\Leftrightarrow " + hoachai("x", x1, x2) + "$$\n" +
+        "Bảng biến thiên\n" +
+        hambacbaTCT("x", "f", x1, x2, y1, y2) + "\n";
+    var loaiCauHoi = randomchoice(1, 4);
+    var decauhoi, PA1, PA2, PA3, PA4, loigiai;
+    var cumtuArr = ["Dựa vào ", "Từ "];
+    var cumtu = cumtuArr[randomchoice(0, 1)]; 
+    if (loaiCauHoi === 1) {
+        decauhoi = "Giá trị cực tiểu của hàm số đã cho bằng";
+        PA1 = "{\\True $" + y1 + "$}";
+        PA2 = "{$" + y2 + "$}";
+        PA3 = "{$" + x1 + "$}";
+        PA4 = "{$" + x2 + "$}";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$.";
+    } 
+    else if (loaiCauHoi === 2) {
+        decauhoi = "Giá trị cực đại của hàm số đã cho bằng";
+        PA1 = "{\\True $" + y2 + "$}";
+        PA2 = "{$" + y1 + "$}";
+        PA3 = "{$" + x1 + "$}";
+        PA4 = "{$" + x2 + "$}";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y2 + "$.";
+    } 
+    else if (loaiCauHoi === 3) {
+        decauhoi = "Hàm số đã cho đạt cực tiểu tại";
+        PA1 = "{\\True $" + x1 + "$}";
+        PA2 = "{$" + y2 + "$}";
+        PA3 = "{$" + x2 + "$}";
+        PA4 = "{$" + y1 + "$}";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=" + x1 + "$.";
+    } 
+    else {
+        decauhoi = "Hàm số đã cho đạt cực đại tại";
+        PA1 = "{\\True $" + x2 + "$}";
+        PA2 = "{$" + y2 + "$}";
+        PA3 = "{$" + x1 + "$}";
+        PA4 = "{$" + y1 + "$}";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực đại tại $x=" + x2 + "$.";
+    }
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(-a, 3), "x^3") + hesoxausau(phanso(a * S, 2), "x^2") + hesosau(-a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options); 
+    return "\\begin{ex}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{" + loigiai + "}\n" +
+        "\\end{ex}\n\n";
+}
+
 function SBT_DB_hambacbaCTC() {
         var x1 = randomchoice(-6,6);
         var x2 = randomchoice(-6,6);
