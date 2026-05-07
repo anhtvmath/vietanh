@@ -22,7 +22,7 @@ function CT_GTCT_hambacbaTCT() {
         "Do đó\n" +
         "$$f'(x)=0 \\Leftrightarrow " + hoachai("x", x1, x2) + "$$\n" +
         "Bảng biến thiên\n" +
-        hambacbaTCT("x", "f", x1, x2, y1, y2) + "\n";
+        hambacbaTCT("x", "f", x1, x2, y1, y2);
     var loaiCauHoi = randomchoice(1, 4);
     var decauhoi, PA1, PA2, PA3, PA4, loigiai;
     var cumtuArr = ["Dựa vào ", "Từ "];
