@@ -4,7 +4,8 @@ const QuestionBank = {
             SBT_DB_hambacbaCTC,
             SBT_NB_hambacbaTCT,
             SBT_BBT_hambacbaCTC,
-            CT_GTCT_hambacbaTCT
+            CT_hambacbaTCT,
+            CT_hambacbaCTC
         ], 
         t2: [
             c1_d2_v1, 
