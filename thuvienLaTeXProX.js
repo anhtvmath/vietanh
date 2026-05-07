@@ -166,7 +166,7 @@ function hambacbaCTC(x,f,x1,x2,y1,y2) {
 }
 
 function hambacbaTCT(x, f, x1, x2, y1, y2) {
-    return "$$\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" +
+    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.5]\n" +
     "\\def\\a{8}\n" +
     "\\def\\b{7}\n" +
     "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" +
@@ -193,7 +193,7 @@ function hambacbaTCT(x, f, x1, x2, y1, y2) {
     "\\draw[->,>=stealth] (A)--(B);\n" +
     "\\draw[->,>=stealth] (B)--(C);\n" +
     "\\draw[->,>=stealth] (C)--(D);\n" +
-    "\\end{tikzpicture}$$";
+    "\\end{tikzpicture}$$\n";
 }
 
 function convert(number) {
