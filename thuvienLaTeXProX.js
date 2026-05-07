@@ -153,6 +153,37 @@ function hambacbaCTC(x,f,x1,x2,y1,y2) {
     "\\end{tikzpicture}$$\n";
 }
 
+function hambacbaTCT(x, f, x1, x2, y1, y2) {
+    return "$$\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" +
+    "\\def\\a{8}\n" +
+    "\\def\\b{7}\n" +
+    "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" +
+    "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
+    "\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);\n" +
+    "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
+    "\\path\n" +
+    "(0,0) node{$" + x + "$}\n" +
+    "(0,-1) node{$" + f + "'(" + x + ")$}\n" +
+    "(0,-4) node{$" + f + "(" + x + ")$}\n" +
+    "(1,0) node{$-\\infty$}\n" +
+    "(1,-2) node(A){$-\\infty$}\n" +
+    "(3,0) node{$" + x1 + "$}\n" +
+    "(3,-1) node{$0$}\n" +
+    "(3,-5) node(B){$" + y1 + "$}\n" +
+    "(5,0) node{$" + x2 + "$}\n" +
+    "(5,-1) node{$0$}\n" +
+    "(5,-3) node(C){$" + y2 + "$}\n" +
+    "(7,0) node{$+\\infty$}\n" +
+    "(7,-6) node(D){$-\\infty$}\n" +
+    "(2,-1) node{$-$}\n" +
+    "(4,-1) node{$+$}\n" +
+    "(6,-1) node{$-$};\n" +
+    "\\draw[->,>=stealth] (A)--(B);\n" +
+    "\\draw[->,>=stealth] (B)--(C);\n" +
+    "\\draw[->,>=stealth] (C)--(D);\n" +
+    "\\end{tikzpicture}$$";
+}
+
 function convert(number) {
     return number.toString().replace('.', ',');
 }
