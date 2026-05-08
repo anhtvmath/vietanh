@@ -18,7 +18,7 @@ function tenham_CT1() {
     var loigiai = "Ta có\n" +
         "$$f'(x)=0\\Leftrightarrow -x^2" + hesosau(-a - b, "x") + sodungsau(-a * b) + "=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + (-b) + "\\end{array}\\right.$$\n" +
         "Bảng xét dấu của đạo hàm\n" +
-        bangxetdauTCT("x", "f", -b, -a) + "\n" +
+        bangxetdauTCT("x", "f", -b, -a)  +
         cumtu + "số điểm cực trị của hàm số đã bằng $2$.";
 
     var options = [PA1, PA2, PA3, PA4];
