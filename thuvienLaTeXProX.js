@@ -1,3 +1,75 @@
+function hamtrungphuongCTCT(a, b, c) {
+    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    "\\def\\a{10}\n" +
+    "\\def\\b{7}\n" +
+    "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" +
+    "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
+    "\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);\n" +
+    "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
+    "\\path\n" +
+    "(0,0) node{$x$}\n" +
+    "(0,-1) node{$f'(x)$}\n" +
+    "(0,-4) node{$f(x)$}\n" +
+    "(1,0) node{$-\\infty$}\n" +
+    "(1,-6) node(A){$-\\infty$}\n" +
+    "(3,0) node{$" + (-a) + "$}\n" +
+    "(3,-1) node{$0$}\n" +
+    "(3,-2) node(B){$" + b + "$}\n" +
+    "(5,0) node{$0$}\n" +
+    "(5,-1) node{$0$}\n" +
+    "(5,-5) node(C){$" + c + "$}\n" +
+    "(7,0) node{$" + a + "$}\n" +
+    "(7,-1) node{$0$}\n" +
+    "(7,-2) node(D){$" + b + "$}\n" +
+    "(9,0) node{$+\\infty$}\n" +
+    "(9,-6) node(E){$-\\infty$}\n" +
+    "(2,-1) node{$+$}\n" +
+    "(4,-1) node{$-$}\n" +
+    "(6,-1) node{$+$}\n" +
+    "(8,-1) node{$-$};\n" +
+    "\\draw[->,>=stealth] (A)--(B);\n" +
+    "\\draw[->,>=stealth] (B)--(C);\n" +
+    "\\draw[->,>=stealth] (C)--(D);\n" +
+    "\\draw[->,>=stealth] (D)--(E);\n" +
+    "\\end{tikzpicture}$$\n";
+}
+
+function hamtrungphuongTCTC(a, b, c) {
+    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    "\\def\\a{10}\n" +
+    "\\def\\b{7}\n" +
+    "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" +
+    "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
+    "\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);\n" +
+    "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
+    "\\path\n" +
+    "(0,0) node{$x$}\n" +
+    "(0,-1) node{$f'(x)$}\n" +
+    "(0,-4) node{$f(x)$}\n" +
+    "(1,0) node{$-\\infty$}\n" +
+    "(1,-2) node(A){$+\\infty$}\n" +
+    "(3,0) node{$" + (-a) + "$}\n" +
+    "(3,-1) node{$0$}\n" +
+    "(3,-6) node(B){$" + b + "$}\n" +
+    "(5,0) node{$0$}\n" +
+    "(5,-1) node{$0$}\n" +
+    "(5,-3) node(C){$" + c + "$}\n" +
+    "(7,0) node{$" + a + "$}\n" +
+    "(7,-1) node{$0$}\n" +
+    "(7,-6) node(D){$" + b + "$}\n" +
+    "(9,0) node{$+\\infty$}\n" +
+    "(9,-2) node(E){$+\\infty$}\n" +
+    "(2,-1) node{$-$}\n" +
+    "(4,-1) node{$+$}\n" +
+    "(6,-1) node{$-$}\n" +
+    "(8,-1) node{$+$};\n" +
+    "\\draw[->,>=stealth] (A)--(B);\n" +
+    "\\draw[->,>=stealth] (B)--(C);\n" +
+    "\\draw[->,>=stealth] (C)--(D);\n" +
+    "\\draw[->,>=stealth] (D)--(E);\n" +
+    "\\end{tikzpicture}$$\n";
+}
+
 function bangxetdauCTC(x, f, x1, x2) {
     return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
     "\\def\\a{8}\n" +
