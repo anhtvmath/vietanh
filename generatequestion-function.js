@@ -172,7 +172,7 @@ function CT_hambacbaCTC() {
         "Do đó\n" +
         "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
         "Bảng biến thiên\n" +
-        hambacbaCTC("x", "f", x1, x2, y1, y2) + "\n";
+        hambacbaCTC("x", "f", x1, x2, y1, y2);
     var loaiCauHoi = randomchoice(1, 4);
     var decauhoi, PA1, PA2, PA3, PA4, loigiai;
     var cumtuArr = ["Dựa vào ", "Từ "];
