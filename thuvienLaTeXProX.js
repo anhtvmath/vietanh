@@ -1,3 +1,121 @@
+function bangxetdauCTC(x, f, x1, x2) {
+    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    "\\def\\a{8}\n" +
+    "\\def\\b{2}\n" +
+    "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
+    "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
+    "\\path\n" +
+    "(0,0) node{$" + x + "$}\n" +
+    "(1,0) node{$-\\infty$}\n" +
+    "(3,0) node{$" + x1 + "$}\n" +
+    "(5,0) node{$" + x2 + "$}\n" +
+    "(7,0) node{$+\\infty$}\n" +
+    "(0,-1) node{$" + f + "'(" + x + ")$}\n" +
+    "(2,-1) node{$+$}\n" +
+    "(3,-1) node{$0$}\n" +
+    "(4,-1) node{$-$}\n" +
+    "(5,-1) node{$0$}\n" +
+    "(6,-1) node{$+$};\n" +
+    "\\end{tikzpicture}$$\n";
+}
+
+function bangxetdauTCT(x, f, x1, x2) {
+    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    "\\def\\a{8}\n" +
+    "\\def\\b{2}\n" +
+    "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
+    "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
+    "\\path\n" +
+    "(0,0) node{$" + x + "$}\n" +
+    "(1,0) node{$-\\infty$}\n" +
+    "(3,0) node{$" + x1 + "$}\n" +
+    "(5,0) node{$" + x2 + "$}\n" +
+    "(7,0) node{$+\\infty$}\n" +
+    "(0,-1) node{$" + f + "'(" + x + ")$}\n" +
+    "(2,-1) node{$-$}\n" +
+    "(3,-1) node{$0$}\n" +
+    "(4,-1) node{$+$}\n" +
+    "(5,-1) node{$0$}\n" +
+    "(6,-1) node{$-$};\n" +
+    "\\end{tikzpicture}$$\n";
+}
+
+function bangxetdauCTCT(x, f, x1, x2, x3) {
+    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    "\\def\\a{10}\n" +
+    "\\def\\b{2}\n" +
+    "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
+    "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
+    "\\path\n" +
+    "(0,0) node{$" + x + "$}\n" +
+    "(1,0) node{$-\\infty$}\n" +
+    "(3,0) node{$" + x1 + "$}\n" +
+    "(5,0) node{$" + x2 + "$}\n" +
+    "(7,0) node{$" + x3 + "$}\n" +
+    "(9,0) node{$+\\infty$}\n" +
+    "(0,-1) node{$" + f + "'(" + x + ")$}\n" +
+    "(2,-1) node{$+$}\n" +
+    "(3,-1) node{$0$}\n" +
+    "(4,-1) node{$-$}\n" +
+    "(5,-1) node{$0$}\n" +
+    "(6,-1) node{$+$}\n" +
+    "(7,-1) node{$0$}\n" +
+    "(8,-1) node{$-$};\n" +
+    "\\end{tikzpicture}$$\n";
+}
+
+function bangxetdauCTTC(x, f, x1, x2, x3) {
+    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    "\\def\\a{10}\n" +
+    "\\def\\b{2}\n" +
+    "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
+    "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
+    "\\path\n" +
+    "(0,0) node{$" + x + "$}\n" +
+    "(1,0) node{$-\\infty$}\n" +
+    "(3,0) node{$" + x1 + "$}\n" +
+    "(5,0) node{$" + x2 + "$}\n" +
+    "(7,0) node{$" + x3 + "$}\n" +
+    "(9,0) node{$+\\infty$}\n" +
+    "(0,-1) node{$" + f + "'(" + x + ")$}\n" +
+    "(2,-1) node{$+$}\n" +
+    "(3,-1) node{$0$}\n" +
+    "(4,-1) node{$-$}\n" +
+    "(5,-1) node{$0$}\n" +
+    "(6,-1) node{$-$}\n" +
+    "(7,-1) node{$0$}\n" +
+    "(8,-1) node{$+$};\n" +
+    "\\end{tikzpicture}$$\n";
+}
+
+function bangxetdauTCTCT(x, f, x1, x2, x3, x4) {
+    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    "\\begin{tikzpicture}[line width=1.2pt,xscale=1.1,yscale=0.7]\n" +
+    "\\def\\a{12}\n" +
+    "\\def\\b{2}\n" +
+    "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
+    "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
+    "\\path\n" +
+    "(0,0) node{$" + x + "$}\n" +
+    "(1,0) node{$-\\infty$}\n" +
+    "(3,0) node{$" + x1 + "$}\n" +
+    "(5,0) node{$" + x2 + "$}\n" +
+    "(7,0) node{$" + x3 + "$}\n" +
+    "(9,0) node{$" + x4 + "$}\n" +
+    "(11,0) node{$+\\infty$}\n" +
+    "(0,-1) node{$" + f + "'(" + x + ")$}\n" +
+    "(2,-1) node{$-$}\n" +
+    "(3,-1) node{$0$}\n" +
+    "(4,-1) node{$+$}\n" +
+    "(5,-1) node{$0$}\n" +
+    "(6,-1) node{$-$}\n" +
+    "(7,-1) node{$0$}\n" +
+    "(8,-1) node{$+$}\n" +
+    "(9,-1) node{$0$}\n" +
+    "(10,-1) node{$-$};\n" +
+    "\\end{tikzpicture}$$\n";
+}
+
 function ngoacnew(a) {
     if (a === 0) {
         return "x";
