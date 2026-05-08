@@ -35,7 +35,7 @@ function tenham_CT3() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{ex}\n\n";
 }
 
 function tenham_CT2() {
@@ -75,7 +75,7 @@ function tenham_CT2() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{ex}\n\n";
 }
 
 function tenham_CT1() {
