@@ -1,4 +1,4 @@
-function tenham() {
+function tenham1() {
     var a, b;
     while (true) {
         a = randomchoice(-6, 7);
