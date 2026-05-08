@@ -9,7 +9,8 @@ const QuestionBank = {
             tenham1,
             tenham2,
             tenham3,
-            tenham4
+            tenham4,
+            tenham_CT1
         ], 
         t2: [
             c1_d2_v1, 
