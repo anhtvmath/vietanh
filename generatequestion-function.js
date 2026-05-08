@@ -219,7 +219,8 @@ function CT_hambacbaCTC() {
         options[1] + "\n" +
         options[2] + "\n" +
         options[3] + "\n" +
-        "\\loigiai{" + loigiai + "}\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
         "\\end{ex}\n\n";
 }
 
@@ -292,7 +293,8 @@ function CT_hambacbaTCT() {
         options[1] + "\n" +
         options[2] + "\n" +
         options[3] + "\n" +
-        "\\loigiai{" + loigiai + "}\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
         "\\end{ex}\n\n";
 }
 
