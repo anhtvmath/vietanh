@@ -322,6 +322,8 @@ function hambacbaTCT(x, f, x1, x2, y1, y2) {
     "\\end{tikzpicture}$$\n";
 }
 
+
+
 function convert(number) {
     return number.toString().replace('.', ',');
 }
