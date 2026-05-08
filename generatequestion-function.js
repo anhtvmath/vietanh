@@ -415,7 +415,8 @@ function SBT_BBT_hambacbaCTC() {
             options[1] + "\n" +
             options[2] + "\n" +
             options[3] + "\n" +
-            "\\loigiai{Dựa vào bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in ("+x1+";"+x2+")$. Do đó hàm số đã cho nghịch biến trên khoảng $("+x1+";"+x2+")$.}\n" +
+            "\\loigiai{Dựa vào bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in ("+x1+";"+x2+")$. Do đó hàm số đã cho nghịch biến trên khoảng $("+x1+";"+x2+")$.\n" + 
+            "}\n" +
             "\\end{ex}\n\n";
     }
 
@@ -441,7 +442,8 @@ function get_TXD_Loga() {
             options[1] + "\n" +
             options[2] + "\n" +
             options[3] + "\n" +
-            "\\loigiai{Điều kiện: $x"+sodungsau(b)+">0\\Leftrightarrow x>"+ (-b)+".$}\n" +
+            "\\loigiai{Điều kiện: $x"+sodungsau(b)+">0\\Leftrightarrow x>"+ (-b)+"$.\n" + 
+            "}\n" +
             "\\end{ex}\n\n";
     }
 
