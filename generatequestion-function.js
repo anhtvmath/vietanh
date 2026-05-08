@@ -7,7 +7,6 @@ function tenham_CT1() {
     }
 
     var debai = "Cho hàm số $y=f(x)$ có đạo hàm $f'(x)=-x^2" + hesosau(-a - b, "x") + sodungsau(-a * b) + "$ với mọi $x\\in\\Bbb R$. Số điểm cực trị của hàm số đã bằng";
-    
     var PA1 = "{\\True $2$}";
     var PA2 = "{$4$}";
     var PA3 = "{$1$}";
