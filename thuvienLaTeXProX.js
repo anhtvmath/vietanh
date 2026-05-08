@@ -1,3 +1,15 @@
+function ngoacnew(a) {
+    if (a === 0) {
+        return "x";
+    }
+    if (a > 0) {
+        return "(x+" + a + ")";
+    }
+    if (a < 0) {
+        return "(x" + a + ")";
+    }
+}
+
 function kiemtrakhacnhau(a, b, c, d) {
     if (a !== b && a !== c && a !== d && b !== c && b !== d && c !== d) {
         return true;
