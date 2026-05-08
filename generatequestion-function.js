@@ -1,3 +1,42 @@
+function tenham() {
+    var a, b;
+    while (true) {
+        a = randomchoice(-6, 7);
+        b = randomchoice(-6, 7);
+        if (b > a) break;
+    }
+
+    var debai = "Cho hàm số $y=f(x)$ có đạo hàm $f'(x)=-x^2" + hesosau(-a - b, "x") + sodungsau(-a * b) + "$ với mọi $x\\in\\Bbb R$. Hàm số đã cho đồng biến trên khoảng nào dưới đây?";
+    
+    var PAtrue = "(" + (-b) + ";" + (-a) + ")";
+    var PA1 = "{\\True $" + PAtrue + "$}";
+    
+    // Sử dụng randomchoice theo chỉ số để chọn PA2
+    var PA2_options = ["(" + (-a) + ";+\\infty)", "(-\\infty;" + (-b) + ")"];
+    var PA2 = "{$" + PA2_options[randomchoice(0, 1)] + "$}";
+    
+    var PA3 = "{$(" + (-b) + ";+\\infty)$}";
+    var PA4 = "{$(-\\infty;" + (-a) + ")$}";
+
+    var loigiai = "Ta có\n" +
+        "$$f'(x)>0\\Leftrightarrow -x^2" + hesosau(-a - b, "x") + sodungsau(-a * b) + ">0\\Leftrightarrow" + (-b) + "<x<" + (-a) + " .$$\n" +
+        "Do đó hàm số đã cho đồng biến trên khoảng $" + PAtrue + "$.";
+
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    return "\\begin{ex}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{ex}\n\n";
+}
 function CT_hambacbaCTC() {
     var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
     while (true) {
