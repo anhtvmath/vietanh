@@ -34,7 +34,7 @@ function hamtrungphuongCTCT(a, b, c) {
 }
 
 function hamtrungphuongTCTC(a, b, c) {
-    return "$$\\begin{tikzpicture}[thick,xscale=0.7,yscale=0.4]\n" +
+    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.4]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{7}\n" +
     "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
