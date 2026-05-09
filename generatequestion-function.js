@@ -1,11 +1,11 @@
-function CT_DT_giatriCD_hamTCT() {
+function CT_DT_giatriCD_hambacbaTCT() {
     // 1. Danh sách 15 bộ mẫu (a, b, c, d)
     var boMau = [
         [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
         [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -2], [-1, 3, 0, -1], [-1, 3, 0, 0],
         [-1, -3, 0, 0], [-1, -3, 0, 1], [-1, -3, 0, 2], [-1, -3, 0, 3], [-1, -3, 0, 4]
     ];
-
+    
     // Chọn ngẫu nhiên 1 bộ
     var index = randomchoice(0, boMau.length - 1);
     var boChon = boMau[index];
@@ -14,33 +14,37 @@ function CT_DT_giatriCD_hamTCT() {
     var c = boChon[2];
     var d = boChon[3];
 
-    // 2. Tính toán giá trị cực đại
+    // 2. Tính toán giá trị cực đại (y_CD)
+    // Bộ 1: x = 1 là điểm cực đại
+    // Bộ 2: x = 2 là điểm cực đại
+    // Bộ 3: x = 0 là điểm cực đại
     var giaTriCucDai;
     if (b === 0 && c === 3) {
-        giaTriCucDai = 2 + d;      // x = 1
+        giaTriCucDai = 2 + d;      // x = 1 => y = -1 + 3 + d
     } else if (b === 3 && c === 0) {
-        giaTriCucDai = 4 + d;      // x = 2
+        giaTriCucDai = 4 + d;      // x = 2 => y = -8 + 12 + d
     } else {
-        giaTriCucDai = d;          // x = 0 (Bộ 3)
+        giaTriCucDai = d;          // x = 0 => y = d
     }
 
-    // 3. Lấy mã TikZ từ hàm veDoThiString
-    var fullCode = dothibacba_a_am(a, b, c, d);
-    var codehinhve = fullCode.substring(fullCode.indexOf("$$\\begin{tikzpicture}"));
-
-    // 4. Tạo phương án (Giá trị cực đại đúng là PA1)
+    // Lấy mã hình vẽ từ hàm vẽ đồ thị đã tinh chỉnh
+    var codehinhve = dothibacba_a_am(a, b, c, d);
+    
+    // 3. Thiết lập các phương án
     var PA1 = "{\\True $" + giaTriCucDai + "$}";
     var PA2 = "{$" + (giaTriCucDai - 2) + "$}";
     var PA3 = "{$" + (giaTriCucDai + 2) + "$}";
-    var PA4 = "{$" + (giaTriCucDai - 1) + "$}";
+    var PA4 = "{$" + (giaTriCucDai - 4) + "$}"; // Đổi nhẹ để tránh trùng lặp tùy d
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
+    // 4. Nội dung câu hỏi và lời giải
     var debai1 = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.";
     var debai2 = "Giá trị cực đại của hàm số đã cho bằng";
-    var loigiai = "Dựa vào đồ thị, ta thấy điểm cực đại của đồ thị hàm số có tung độ bằng " + giaTriCucDai + ". Vậy giá trị cực đại của hàm số là $y_{CĐ} = " + giaTriCucDai + ".$";
+    var loigiai = "Dựa vào đồ thị, ta thấy điểm cực đại của đồ thị hàm số có tung độ bằng " + giaTriCucDai + ". Vậy giá trị cực đại của hàm số là $y_{\\mathrm{CĐ}} = " + giaTriCucDai + ".$";
 
+    // 5. Trả về kết quả theo định dạng LaTeX (ex)
     var stringResult = "\\begin{ex}\n" +
         debai1 + "\n" +
         codehinhve + "\n" +
