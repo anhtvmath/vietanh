@@ -1,4 +1,51 @@
-function SBT_BBT_hamtrungphuongCTCT() {
+
+function SBT_BBT_NB_hamtrungphuongCTCT() {
+    var a, b, c;
+    while (true) {
+        a = randomchoice(1, 6);
+        b = randomchoice(-6, 7);
+        c = randomchoice(-6, 7);
+        if (b > c) break;
+    }
+
+    var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
+        hamtrungphuongCTCT(a, b, c) +
+        "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
+
+    var PAtrue_options = ["(" + (-a) + ";0)", "(" + a + ";+\\infty)"];
+    var PAtrue = PAtrue_options[randomchoice(0, 1)];
+
+    var PA1 = "{\\True $" + PAtrue + "$}";
+    var PA2 = "{$(" + 0 + ";" + a + ")$}";
+    var PA3 = "{$(-\\infty;" + (-a) + ")$}";
+
+    var PA4_options = ["(" + (-a) + ";" + a + ")", "(-\\infty;" + a + ")", "(" + (-a) + ";+\\infty)"];
+    var PA4 = "{$" + PA4_options[randomchoice(0, 2)] + "$}";
+
+    var cumtuArr = ["Dựa vào ", "Từ "];
+    var ketluanArr = [" Do đó ", " Vậy "];
+    var cumtu = cumtuArr[randomchoice(0, 1)];
+    var ketluan = ketluanArr[randomchoice(0, 1)];
+
+    var loigiai = cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + ".$";
+
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    return "\\begin{ex}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{ex}\n\n";
+}
+
+function SBT_BBT_DB_hamtrungphuongCTCT() {
     var a, b, c;
     while (true) {
         a = randomchoice(1, 6);
@@ -26,7 +73,7 @@ function SBT_BBT_hamtrungphuongCTCT() {
     var cumtu = cumtuArr[randomchoice(0, 1)];
     var ketluan = ketluanArr[randomchoice(0, 1)];
 
-    var loigiai = cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + "$.";
+    var loigiai = cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
