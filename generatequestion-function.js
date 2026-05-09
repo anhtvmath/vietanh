@@ -1,4 +1,71 @@
+function dothi1() {
+    var cArr = [-2, 0, 2];
+    var c = cArr[randomchoice(0, 2)];
 
+    var vitri1 = (c === 1) ? "below left" : "below right";
+    var vitri2 = (c === -2) ? "above" : "below";
+    var vitri3 = (c === 2) ? "below" : "above";
+
+    var gach1 = "";
+    if (c !== 2) {
+        gach1 = "\\draw (0," + (c - 2) + ") node[left]{$" + (c - 2) + "$} circle (1pt);\n";
+    }
+
+    var gach2 = "";
+    if (c !== -2) {
+        gach2 = "\\draw (0," + (c + 2) + ") node[right]{$" + (c + 2) + "$} circle (1pt);\n";
+    }
+
+    var gach3 = "";
+    if (c !== -2) {
+        gach3 = "\\draw[dashed] (-1,0) -- (-1," + (c + 2) + ") -- (0," + (c + 2) + ");\n";
+    }
+
+    var gach4 = "";
+    if (c !== 2) {
+        gach4 = "\\draw[dashed] (1,0) -- (1," + (c - 2) + ") -- (0," + (c - 2) + ");\n";
+    }
+
+    var debai = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên. Hàm số đã cho đạt cực tiểu tại";
+
+    var codehinhve = "\\begin{center}\n" +
+        "\\begin{tikzpicture}[>=stealth,thick,scale=0.8]\n" +
+        "\\draw[->,line width = 1pt] (-2.5,0) -- (2.5,0) node[below]{$x$};\n" +
+        "\\draw[->,line width = 1pt] (0," + (c - 3) + ") -- (0," + (c + 3) + ") node[right]{$y$};\n" +
+        "\\draw (0,0) node[" + vitri1 + "]{\\footnotesize $O$} circle (1.2pt);\n" +
+        "\\draw (-1,0) node[" + vitri2 + "]{$-1$} circle (1pt);\n" +
+        "\\draw (1,0) node[" + vitri3 + "]{$1$} circle (1pt);\n" +
+        gach1 +
+        gach2 +
+        gach3 +
+        gach4 +
+        "\\draw[thick,samples=200,domain=-2.07:2.07] plot(\\x,{(\\x)^3-3*(\\x)" + sodungsau(c) + "});\n" +
+        "\\end{tikzpicture}\n" +
+        "\\end{center}";
+
+    var PA1 = "{\\True $x=1$}";
+    var PA2 = "{$x=-1$}";
+    var PA3 = "{$x=" + (c - 2) + "$}";
+    var PA4 = "{$x=" + (c + 2) + "$}";
+
+    var loigiai = "Dựa vào đồ thị, ta thấy hàm số đã cho đạt cực tiểu tại $x=1$.";
+
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    return "\\begin{ex}\n" +
+        debai + "\n" +
+        codehinhve + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{ex}\n\n";
+}
 function SBT_BBT_NB_hamtrungphuongCTCT() {
     var a, b, c;
     while (true) {
