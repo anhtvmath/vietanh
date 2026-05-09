@@ -13,7 +13,8 @@ const QuestionBank = {
             tenham_CT1,
             tenham_CT2,
             tenham_CT3,
-            SBT_DB_hamtrungphuongTCTC
+            SBT_DB_hamtrungphuongTCTC,
+            SBT_NB_hamtrungphuongTCTC
         ], 
         t2: [
             c1_d2_v1, 
