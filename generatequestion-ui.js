@@ -18,7 +18,8 @@ const QuestionBank = {
             SBT_DB_hamtrungphuongCTCT,
             SBT_NB_hamtrungphuongCTCT,
             CT_HS_hamtrungphuongCTCT,
-            CT_BBT_hamtrungphuongCTCT
+            CT_BBT_hamtrungphuongCTCT,
+            SBT_BBT_hamtrungphuongCTCT
         ], 
         t2: [
             c1_d2_v1, 
