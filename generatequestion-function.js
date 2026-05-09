@@ -1,4 +1,4 @@
-function CT_DT_dondieu_hambacbaTCT() {
+function SBT_DT_hambacbaTCT() {
     var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
     var boMau = [
         [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
