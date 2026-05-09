@@ -1,26 +1,6 @@
 const QuestionBank = {
     ch1: { 
         t1: [
-            SBT_DB_hambacbaCTC,
-            SBT_NB_hambacbaTCT,
-            SBT_BBT_hambacbaCTC,
-            CT_hambacbaTCT,
-            CT_hambacbaCTC,
-            tenham1,
-            tenham2,
-            tenham3,
-            tenham4,
-            tenham_CT1,
-            tenham_CT2,
-            tenham_CT3,
-            SBT_DB_hamtrungphuongTCTC,
-            SBT_NB_hamtrungphuongTCTC,
-            SBT_DB_hamtrungphuongCTCT,
-            SBT_NB_hamtrungphuongCTCT,
-            CT_HS_hamtrungphuongCTCT,
-            CT_BBT_hamtrungphuongCTCT,
-            SBT_BBT_NB_hamtrungphuongCTCT,
-            SBT_BBT_DB_hamtrungphuongCTCT,
             dothi1
         ], 
         t2: [
