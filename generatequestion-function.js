@@ -1,7 +1,6 @@
 function dothi1() {
     var cArr = [-2, 0, 2];
     var c = cArr[randomchoice(0, 2)];
-
     var vitri1 = (c === 1) ? "below left" : "below right";
     var vitri2 = (c === -2) ? "above" : "below";
     var vitri3 = (c === 2) ? "below" : "above";
@@ -28,10 +27,9 @@ function dothi1() {
 
     var debai = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên. Hàm số đã cho đạt cực tiểu tại";
 
-    var codehinhve = "\\begin{center}\n" +
-        "\\begin{tikzpicture}[>=stealth,thick,scale=0.8]\n" +
-        "\\draw[->,line width = 1pt] (-2.5,0) -- (2.5,0) node[below]{$x$};\n" +
-        "\\draw[->,line width = 1pt] (0," + (c - 3) + ") -- (0," + (c + 3) + ") node[right]{$y$};\n" +
+    var codehinhve = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.8]\n" +
+        "\\draw[->,line width = 1.2pt] (-2.5,0) -- node[below, pos = 0.99]{$x$}(2.5,0);\n" +
+        "\\draw[->,line width = 1.2pt] (0," + (c - 3) + ") -- node[right, pos = 0.99]{$y$}(0," + (c + 3) + ");\n" +
         "\\draw (0,0) node[" + vitri1 + "]{\\footnotesize $O$} circle (1.2pt);\n" +
         "\\draw (-1,0) node[" + vitri2 + "]{$-1$} circle (1pt);\n" +
         "\\draw (1,0) node[" + vitri3 + "]{$1$} circle (1pt);\n" +
@@ -40,8 +38,7 @@ function dothi1() {
         gach3 +
         gach4 +
         "\\draw[thick,samples=200,domain=-2.07:2.07] plot(\\x,{(\\x)^3-3*(\\x)" + sodungsau(c) + "});\n" +
-        "\\end{tikzpicture}\n" +
-        "\\end{center}";
+        "\\end{tikzpicture}$$\n" 
 
     var PA1 = "{\\True $x=1$}";
     var PA2 = "{$x=-1$}";
