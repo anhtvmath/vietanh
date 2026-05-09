@@ -82,6 +82,7 @@ function hamtrungphuongCTCT(a, b, c) {
     return "$$\\begin{tikzpicture}[thick,xscale=0.9,yscale=0.5]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{7}\n" +
+	"\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
     "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
     "\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);\n" +
     "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
@@ -117,6 +118,7 @@ function hamtrungphuongTCTC(a, b, c) {
     return "$$\\begin{tikzpicture}[thick,xscale=0.9,yscale=0.5]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{7}\n" +
+	"\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
     "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
     "\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);\n" +
     "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" +
