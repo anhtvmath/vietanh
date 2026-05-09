@@ -12,9 +12,9 @@ function dothibacba_a_am(a, b, c, d) {
         var conf1 = {
             "-2": { yLim: "-5", nO: "below left", n1: "above", n2: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-1,-4) -- (0,-4)", d2: "(1,0) -- (0,0)" },
             "-1": { yLim: "-4", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-3) node[right]{$-3$} circle (1pt);\n\\draw (0,1) node[left]{$1$} circle (1pt);", d1: "(-1,-3) -- (0,-3)", d2: "(1,1) -- (0,1)" },
-            "0":  { yLim: "-3,1", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-2) node[right]{$-2$} circle (1pt);\n\\draw (0,2) node[left]{$2$} circle (1pt);", d1: "(-1,-2) -- (0,-2)", d2: "(1,2) -- (0,2)" },
-            "1":  { yLim: "-2,1", nO: "below right", n1: "above", n2: "below", yNodes: "\\draw (0,-1) node[right]{$-1$} circle (1pt);\n\\draw (0,3) node[left]{$3$} circle (1pt);", d1: "(-1,-1) -- (0,-1)", d2: "(1,3) -- (0,3)" },
-            "2":  { yLim: "-1,3", nO: "below left", n1: "below", n2: "below", yNodes: "\\draw (0,4) node[left]{$4$} circle (1pt);", d1: "(-1,0) -- (0,0)", d2: "(1,4) -- (0,4)" }
+            "0":  { yLim: "-3", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-2) node[right]{$-2$} circle (1pt);\n\\draw (0,2) node[left]{$2$} circle (1pt);", d1: "(-1,-2) -- (0,-2)", d2: "(1,2) -- (0,2)" },
+            "1":  { yLim: "-2", nO: "below right", n1: "above", n2: "below", yNodes: "\\draw (0,-1) node[right]{$-1$} circle (1pt);\n\\draw (0,3) node[left]{$3$} circle (1pt);", d1: "(-1,-1) -- (0,-1)", d2: "(1,3) -- (0,3)" },
+            "2":  { yLim: "-1", nO: "below left", n1: "below", n2: "below", yNodes: "\\draw (0,4) node[left]{$4$} circle (1pt);", d1: "(-1,0) -- (0,0)", d2: "(1,4) -- (0,4)" }
         };
         var c1 = conf1[d];
         if (c1) {
