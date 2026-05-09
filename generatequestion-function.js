@@ -28,8 +28,8 @@ function dothi1() {
     var debai1 = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.";
     var debai2 = "Hàm số đã cho đạt cực tiểu tại";
     var codehinhve = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.8]\n" +
-        "\\draw[->,line width = 1.2pt] (-2.5,0) -- node[below, pos = 0.99]{$x$}(2.5,0);\n" +
-        "\\draw[->,line width = 1.2pt] (0," + (c - 3) + ") -- node[right, pos = 0.99]{$y$}(0," + (c + 3) + ");\n" +
+        "\\draw[->,line width = 1.2pt] (-2.5,0) -- node[below, pos = 0.97]{$x$}(2.5,0);\n" +
+        "\\draw[->,line width = 1.2pt] (0," + (c - 3) + ") -- node[right, pos = 0.97]{$y$}(0," + (c + 3) + ");\n" +
         "\\draw (0,0) node[" + vitri1 + "]{\\footnotesize $O$} circle (1.2pt);\n" +
         "\\draw (-1,0) node[" + vitri2 + "]{$-1$} circle (1pt);\n" +
         "\\draw (1,0) node[" + vitri3 + "]{$1$} circle (1pt);\n" +
