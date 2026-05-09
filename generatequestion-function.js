@@ -25,8 +25,8 @@ function dothi1() {
         gach4 = "\\draw[dashed] (1,0) -- (1," + (c - 2) + ") -- (0," + (c - 2) + ");\n";
     }
 
-    var debai = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên. Hàm số đã cho đạt cực tiểu tại";
-
+    var debai1 = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.";
+    var debai2 = "Hàm số đã cho đạt cực tiểu tại";
     var codehinhve = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.8]\n" +
         "\\draw[->,line width = 1.2pt] (-2.5,0) -- node[below, pos = 0.99]{$x$}(2.5,0);\n" +
         "\\draw[->,line width = 1.2pt] (0," + (c - 3) + ") -- node[right, pos = 0.99]{$y$}(0," + (c + 3) + ");\n" +
@@ -39,20 +39,20 @@ function dothi1() {
         gach4 +
         "\\draw[thick,samples=200,domain=-2.07:2.07] plot(\\x,{(\\x)^3-3*(\\x)" + sodungsau(c) + "});\n" +
         "\\end{tikzpicture}$$" 
-
     var PA1 = "{\\True $x=1$}";
     var PA2 = "{$x=-1$}";
     var PA3 = "{$x=" + (c - 2) + "$}";
     var PA4 = "{$x=" + (c + 2) + "$}";
 
-    var loigiai = "Dựa vào đồ thị, ta thấy hàm số đã cho đạt cực tiểu tại $x=1$.";
+    var loigiai = "Dựa vào đồ thị, ta thấy hàm số đã cho đạt cực tiểu tại $x=1.$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
     return "\\begin{ex}\n" +
-        debai + "\n" +
+        debai1 + "\n" +
         codehinhve + "\n" +
+        debai2
         "\\choice\n" +
         options[0] + "\n" +
         options[1] + "\n" +
