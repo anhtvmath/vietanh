@@ -21,7 +21,8 @@ const QuestionBank = {
             CT_BBT_hamtrungphuongCTCT,
             SBT_BBT_NB_hamtrungphuongCTCT,
             SBT_BBT_DB_hamtrungphuongCTCT,
-            dothi1
+            dothi1,
+            CT_DT_giatriCD_hamTCT
         ], 
         t2: [
             c1_d2_v1, 
