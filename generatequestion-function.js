@@ -1,3 +1,63 @@
+function CT_DT_giatriCD_hamTCT() {
+    // 1. Danh sách 19 bộ mẫu (a, b, c, d)
+    var boMau = [
+        [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
+        [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -2], [-1, 3, 0, -1], [-1, 3, 0, 0], [-1, 3, 0, 1], [-1, 3, 0, 2],
+        [-1, -3, 0, -2], [-1, -3, 0, -1], [-1, -3, 0, 0], [-1, -3, 0, 1], [-1, -3, 0, 2], [-1, -3, 0, 3], [-1, -3, 0, 4]
+    ];
+
+    // Chọn ngẫu nhiên 1 bộ
+    var index = randomchoice(0, boMau.length - 1);
+    var boChon = boMau[index];
+    var a = boChon[0];
+    var b = boChon[1];
+    var c = boChon[2];
+    var d = boChon[3];
+
+    // 2. Tính toán giá trị cực đại
+    var giaTriCucDai;
+    if (b === 0 && c === 3) {
+        giaTriCucDai = 2 + d;      // x = 1
+    } else if (b === 3 && c === 0) {
+        giaTriCucDai = 4 + d;      // x = 2
+    } else {
+        giaTriCucDai = d;          // x = 0 (Bộ 3)
+    }
+
+    // 3. Lấy mã TikZ từ hàm veDoThiString
+    var fullCode = dothibacba_a_am(a, b, c, d);
+    var codehinhve = fullCode.substring(fullCode.indexOf("$$\\begin{tikzpicture}"));
+
+    // 4. Tạo phương án (Giá trị cực đại đúng là PA1)
+    var PA1 = "{\\True $" + giaTriCucDai + "$}";
+    var PA2 = "{$" + (giaTriCucDai - 2) + "$}";
+    var PA3 = "{$" + (giaTriCucDai + 2) + "$}";
+    var PA4 = "{$" + (giaTriCucDai - 1) + "$}";
+
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    var debai1 = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.";
+    var debai2 = "Giá trị cực đại của hàm số đã cho bằng";
+    var loigiai = "Dựa vào đồ thị, ta thấy điểm cực đại của đồ thị hàm số có tung độ bằng " + giaTriCucDai + ". Vậy giá trị cực đại của hàm số là $y_{CĐ} = " + giaTriCucDai + ".$";
+
+    var stringResult = "\\begin{ex}\n" +
+        debai1 + "\n" +
+        codehinhve + "\n" +
+        debai2 + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{ex}\n\n";
+        
+    return stringResult;
+}
+
 function dothi1() {
     var cArr = [-2, 0, 2];
     var c = cArr[randomchoice(0, 2)];
