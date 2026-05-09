@@ -38,7 +38,7 @@ function dothi1() {
         gach3 +
         gach4 +
         "\\draw[thick,samples=200,domain=-2.07:2.07] plot(\\x,{(\\x)^3-3*(\\x)" + sodungsau(c) + "});\n" +
-        "\\end{tikzpicture}$$\n" 
+        "\\end{tikzpicture}$$" 
 
     var PA1 = "{\\True $x=1$}";
     var PA2 = "{$x=-1$}";
