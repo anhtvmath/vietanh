@@ -1,9 +1,77 @@
-/**
- * Hàm sinh câu hỏi trắc nghiệm cực trị hàm bậc ba
- * Tự động chọn ngẫu nhiên 1 trong 4 dạng: yCD, yCT, xCD, xCT
- */
+function CT_DT_dondieu_hambacbaTCT() {
+    var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
+    var boMau = [
+        [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
+        [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -2], [-1, 3, 0, -1], [-1, 3, 0, 0],
+        [-1, -3, 0, 0], [-1, -3, 0, 1], [-1, -3, 0, 2], [-1, -3, 0, 3], [-1, -3, 0, 4]
+    ];
+    var index = randomchoice(0, boMau.length - 1);
+    var boChon = boMau[index];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    
+    var x1, x2, y1, y2;
+    // Xác định x1, x2 (hoành độ) và y1, y2 (tung độ cực trị) để làm nhiễu
+    if (b === 0 && c === 3) { 
+        x1 = -1; x2 = 1; y1 = d - 2; y2 = d + 2; 
+    } else if (b === 3 && c === 0) { 
+        x1 = 0;  x2 = 2; y1 = d;     y2 = d + 4; 
+    } else { 
+        x1 = -2; x2 = 0; y1 = d - 4; y2 = d; 
+    }
+    
+    var PA1, PA2, PA3, PA4, cauHoiTxt, loigiaiTxt;
+
+    if (loai === "ĐB") {
+        cauHoiTxt = "Hàm số đã cho đồng biến trên khoảng nào dưới đây?";
+        var khoangDung = "(" + x1 + ";" + x2 + ")";
+        PA1 = "{\\True $" + khoangDung + "$}";
+        PA2 = "{$(" + y1 + ";" + y2 + ")$}"; 
+        PA3 = "{$(-\\infty;" + x1 + ")$}";
+        PA4 = "{$(" + x2 + ";+\\infty)$}";
+        loigiaiTxt = "Dựa vào đồ thị, ta thấy trên khoảng $" + khoangDung + "$ đồ thị hàm số đi lên từ trái sang phải. Vậy hàm số đồng biến trên khoảng $" + khoangDung + ".$";   
+    } else {
+        cauHoiTxt = "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
+        var khoangDung;
+        if (randomchoice(0, 1) === 0) {
+            khoangDung = "(-\\infty;" + x1 + ")";
+        } else {
+            khoangDung = "(" + x2 + ";+\\infty)";
+        }
+        PA1 = "{\\True $" + khoangDung + "$}";
+        PA2 = "{$(" + x1 + ";" + x2 + ")$}"; 
+        var nhieuQuocDan = [
+            "{$" + "(-\\infty;" + x2 + ")$}",
+            "{$" + "(" + x1 + ";+\\infty)$}",
+            "{$" + "(-\\infty;+\\infty)$}"
+        ];
+        
+        shuffle(nhieuQuocDan);
+        PA3 = nhieuQuocDan[0];
+        PA4 = nhieuQuocDan[1];
+
+        loigiaiTxt = "Dựa vào đồ thị, ta thấy đồ thị hàm số đi xuống từ trái sang phải trên các khoảng $(-\\infty;" + x1 + ")$ và $(" + x2 + ";+\\infty)$. " + 
+                     "Trong các phương án đã cho, chỉ có khoảng $" + khoangDung + "$ là thỏa mãn.";
+    }
+
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    var codehinhve = dothibacba_a_am(a, b, c, d);
+    return "\\begin{ex}\n" +
+           "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.\n" +
+           codehinhve + "\n" +
+           cauHoiTxt + "\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{\n" +
+           loigiaiTxt + "\n" +
+           "}\n" +
+           "\\end{ex}\n\n";
+}
+
 function CT_DT_giatriCD_hambacbaTCT() {
-    // 1. Tự động chọn ngẫu nhiên loại câu hỏi
     var cacDang = ["yCD", "yCT", "xCD", "xCT"];
     var loaiCauHoi = cacDang[randomchoice(0, cacDang.length - 1)];
 
@@ -81,71 +149,6 @@ function CT_DT_giatriCD_hambacbaTCT() {
            "\\end{ex}\n\n";
 }
 
-function dothi1() {
-    var cArr = [-2, 0, 2];
-    var c = cArr[randomchoice(0, 2)];
-    var vitri1 = (c === 1) ? "below left" : "below right";
-    var vitri2 = (c === -2) ? "above" : "below";
-    var vitri3 = (c === 2) ? "below" : "above";
-
-    var gach1 = "";
-    if (c !== 2) {
-        gach1 = "\\draw (0," + (c - 2) + ") node[left]{$" + (c - 2) + "$} circle (1pt);\n";
-    }
-
-    var gach2 = "";
-    if (c !== -2) {
-        gach2 = "\\draw (0," + (c + 2) + ") node[right]{$" + (c + 2) + "$} circle (1pt);\n";
-    }
-
-    var gach3 = "";
-    if (c !== -2) {
-        gach3 = "\\draw[dashed] (-1,0) -- (-1," + (c + 2) + ") -- (0," + (c + 2) + ");\n";
-    }
-
-    var gach4 = "";
-    if (c !== 2) {
-        gach4 = "\\draw[dashed] (1,0) -- (1," + (c - 2) + ") -- (0," + (c - 2) + ");\n";
-    }
-
-    var debai1 = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.";
-    var debai2 = "Hàm số đã cho đạt cực tiểu tại";
-    var codehinhve = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.8]\n" +
-        "\\draw[->,line width = 1.2pt] (-2.5,0) -- node[below, pos = 0.97]{$x$}(2.5,0);\n" +
-        "\\draw[->,line width = 1.2pt] (0," + (c - 3) + ") -- node[right, pos = 0.97]{$y$}(0," + (c + 3) + ");\n" +
-        "\\draw (0,0) node[" + vitri1 + "]{\\footnotesize $O$} circle (1.2pt);\n" +
-        "\\draw (-1,0) node[" + vitri2 + "]{$-1$} circle (1pt);\n" +
-        "\\draw (1,0) node[" + vitri3 + "]{$1$} circle (1pt);\n" +
-        gach1 +
-        gach2 +
-        gach3 +
-        gach4 +
-        "\\draw[thick,samples=200,domain=-2.07:2.07] plot(\\x,{(\\x)^3-3*(\\x)" + sodungsau(c) + "});\n" +
-        "\\end{tikzpicture}$$" 
-    var PA1 = "{\\True $x=1$}";
-    var PA2 = "{$x=-1$}";
-    var PA3 = "{$x=" + (c - 2) + "$}";
-    var PA4 = "{$x=" + (c + 2) + "$}";
-
-    var loigiai = "Dựa vào đồ thị, ta thấy hàm số đã cho đạt cực tiểu tại $x=1.$";
-
-    var options = [PA1, PA2, PA3, PA4];
-    shuffle(options);
-
-    return "\\begin{ex}\n" +
-        debai1 + "\n" +
-        codehinhve + "\n" +
-        debai2 +
-        "\\choice\n" +
-        options[0] + "\n" +
-        options[1] + "\n" +
-        options[2] + "\n" +
-        options[3] + "\n" +
-        "\\loigiai{\n" +
-        loigiai + "\n" +
-        "}\n" +
-        "\\end{ex}\n\n";
-}
 function SBT_BBT_NB_hamtrungphuongCTCT() {
     var a, b, c;
     while (true) {
