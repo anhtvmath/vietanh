@@ -33,8 +33,7 @@ function dothibacba_a_am(a, b, c, d) {
             "-2": { yMin: -2.5, yMax: 2.6, dom: 3.02, nO: "below left", yNodes: "\\draw (0,-2) node[below left]{$-2$} circle (1pt);\n\\draw (0,2) node[left]{$2$} circle (1pt);", dash: "(2,2) -- (0,2)" },
             "-1": { yMin: -1.5,  yMax: 3.6, dom: 3.03, nO: "above right", yNodes: "\\draw (0,-1) node[below left]{$-1$} circle (1pt);\n\\draw (0,3) node[left]{$3$} circle (1pt);", dash: "(2,3) -- (0,3)" },
             "0":  { yMin: -0.8,  yMax: 4.6, dom: 3.07, nO: "below left",  yNodes: "\\draw (0,4) node[left]{$4$} circle (1pt);", dash: "(2,4) -- (0,4)" },
-            "1":  { yMin: -0.8,  yMax: 5.6, dom: 3.17, nO: "below left",  yNodes: "\\draw (0,1) node[below left]{$1$} circle (1pt);\n\\draw (0,5) node[left]{$5$} circle (1pt);", dash: "(2,5) -- (0,5)" },
-            "2":  { yMin: -0.8,  yMax: 6.6, dom: 3.25, nO: "below left",  yNodes: "\\draw (0,2) node[below left]{$2$} circle (1pt);\n\\draw (0,6) node[left]{$6$} circle (1pt);", dash: "(2,6) -- (0,6)" }
+            "1":  { yMin: -0.8,  yMax: 5.6, dom: 3.17, nO: "below left",  yNodes: "\\draw (0,1) node[below left]{$1$} circle (1pt);\n\\draw (0,5) node[left]{$5$} circle (1pt);", dash: "(2,5) -- (0,5)" }
         };
         var c2 = conf2[d];
         if (c2) {
@@ -53,7 +52,6 @@ function dothibacba_a_am(a, b, c, d) {
     // BỘ 3: y = -x^3 - 3x^2 + d
     else if (a === -1 && b === -3 && c === 0) {
         var conf3 = {
-            "-2": { yMin: -6.4, yMax: 0.9, nO: "above right", n2B: "above", yNodes: "\\draw (0,-2) node[above right]{$-2$} circle (1pt);\n\\draw (0,-6) node[right]{$-6$} circle (1pt);", d1: "(-2,-6) -- (0,-6)", dom: "-3.25:1.03" },
             "-1": { yMin: -5.5, yMax: 0.9, nO: "above right", n2B: "above", yNodes: "\\draw (0,-1) node[above right]{$-1$} circle (1pt);\n\\draw (0,-5) node[right]{$-5$} circle (1pt);", d1: "(-2,-5) -- (0,-5)", dom: "-3.16:1.04" },
             "0":  { yMin: -4.4, yMax: 0.9, nO: "above right", n2B: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-2,-4) -- (0,-4)", dom: "-3.06:1.03" },
             "1":  { yMin: -3.4, yMax: 1.9,   nO: "below left",  n2B: "above", yNodes: "\\draw (0,1) node[above right]{$1$} circle (1pt);\n\\draw (0,-3) node[right]{$-3$} circle (1pt);", d1: "(-2,-3) -- (0,-3)", dom: "-3.05:1.03" },
