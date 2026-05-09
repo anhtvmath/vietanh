@@ -1,3 +1,101 @@
+function SBT_NB_hamtrungphuongCTCT() {
+    var a, b, c;
+    while (true) {
+        a = randomchoice(1, 5);
+        b = randomchoice(-6, 7);
+        c = randomchoice(-6, 7);
+        if (b > c) break;
+    }
+
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(c - b, Math.pow(a, 4)), "x^4") + hesoxausau(phanso(2 * (b - c), Math.pow(a, 2)), "x^2") + sodungsau(c) + "$ với mọi $x\\in\\Bbb R$. Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
+
+    var PAtrue_options = ["(" + (-a) + ";0)", "(" + a + ";+\\infty)"];
+    var PAtrue = PAtrue_options[randomchoice(0, 1)];
+
+    var PA1 = "{\\True $" + PAtrue + "$}";
+    var PA2 = "{$(" + 0 + ";" + a + ")$}";
+    var PA3 = "{$(-\\infty;" + (-a) + ")$}";
+    
+    var PA4_options = ["(" + (-a) + ";" + a + ")", "(-\\infty;" + a + ")", "(" + (-a) + ";+\\infty)"];
+    var PA4 = "{$" + PA4_options[randomchoice(0, 2)] + "$}";
+
+    var cumtuArr = ["Dựa vào ", "Từ "];
+    var ketluanArr = [" Do đó ", " Vậy "];
+    var cumtu = cumtuArr[randomchoice(0, 1)];
+    var ketluan = ketluanArr[randomchoice(0, 1)];
+
+    var loigiai = "Ta có $f'(x)=" + hesoxaudau(phanso(4 * (c - b), Math.pow(a, 4)), "x^3") + hesoxausau(phanso(4 * (b - c), Math.pow(a, 2)), "x") + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
+        "Bảng biến thiên\n" +
+        hamtrungphuongCTCT(a, b, c) + 
+        cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + "$.";
+
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    return "\\begin{ex}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{ex}\n\n";
+}
+
+function SBT_DB_hamtrungphuongCTCT() {
+    var a, b, c;
+    while (true) {
+        a = randomchoice(1, 5);
+        b = randomchoice(-6, 7);
+        c = randomchoice(-6, 7);
+        if (b > c) break;
+    }
+
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(c - b, Math.pow(a, 4)), "x^4") + hesoxausau(phanso(2 * (b - c), Math.pow(a, 2)), "x^2") + sodungsau(c) + "$ với mọi $x\\in\\Bbb R$. Hàm số đã cho đồng biến trên khoảng nào dưới đây?";
+
+    var PAtrue_options = ["(0;" + a + ")", "(-\\infty;" + (-a) + ")"];
+    var PAtrue = PAtrue_options[randomchoice(0, 1)];
+
+    var PA1 = "{\\True $" + PAtrue + "$}";
+    var PA2 = "{$(" + (-a) + ";0)$}";
+    var PA3 = "{$(" + a + ";+\\infty)$}";
+
+    var PA4_options = ["(" + (-a) + ";" + a + ")", "(-\\infty;" + a + ")", "(" + (-a) + ";+\\infty)"];
+    var PA4 = "{$" + PA4_options[randomchoice(0, 2)] + "$}";
+
+    var cumtuArr = ["Dựa vào ", "Từ "];
+    var ketluanArr = [" Do đó ", " Vậy "];
+    var cumtu = cumtuArr[randomchoice(0, 1)];
+    var ketluan = ketluanArr[randomchoice(0, 1)];
+
+    var loigiai = "Ta có $f'(x)=" + hesoxaudau(phanso(4 * (c - b), Math.pow(a, 4)), "x^3") + hesoxausau(phanso(4 * (b - c), Math.pow(a, 2)), "x") + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
+        "Bảng biến thiên\n" +
+        hamtrungphuongCTCT(a, b, c) + 
+        cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + "$.";
+
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    return "\\begin{ex}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{ex}\n\n";
+}
+
 function SBT_NB_hamtrungphuongTCTC() {
     var a, b, c;
     while (true) {
