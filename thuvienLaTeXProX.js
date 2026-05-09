@@ -7,7 +7,7 @@ function dothibacba_a_am(a, b, c, d) {
 
     var result = "";
     // Định nghĩa style trục tọa độ chung
-    var axisX = "\\draw[->,>=stealth, line width = 1.2pt] (-2.8,0)--node[below, pos = 0.99]{$x$}(2.8,0);\n";
+    var axisX = "\\draw[->,>=stealth, line width = 1.2pt] (-2.8,0)--node[below, pos = 0.9]{$x$}(2.8,0);\n";
     var axisY_start = "\\draw[->,>=stealth, line width = 1.2pt] (0,";
 
     // BỘ 1: y = -x^3 + 3x + d
@@ -23,7 +23,7 @@ function dothibacba_a_am(a, b, c, d) {
         if (c1) {
             result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.8]\n" +
                 axisX + 
-                axisY_start + c1.yLim.split(',')[0] + ")--node[right, pos = 0.99]{$y$}(0," + c1.yLim.split(',')[1] + ");\n" +
+                axisY_start + c1.yLim.split(',')[0] + ")--node[right, pos = 0.9]{$y$}(0," + c1.yLim.split(',')[1] + ");\n" +
                 "\\draw (0,0) node[" + c1.nO + "]{$O$} circle (1.2pt);\n" +
                 "\\draw (-1,0) node[" + c1.n1 + "]{$-1$} circle (1pt);\n" +
                 "\\draw (1,0) node[" + c1.n2 + "]{$1$} circle (1pt);\n" +
@@ -50,7 +50,7 @@ function dothibacba_a_am(a, b, c, d) {
         if (c2) {
             result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.7]\n" +
                 "\\draw[->,>=stealth, line width = 1.2pt] (-1.8,0)--node[below, pos = 0.99]{$x$}(4,0);\n" +
-                axisY_start + c2.yLim.split(',')[0] + ")--node[right, pos = 0.99]{$y$}(0," + c2.yLim.split(',')[1] + ");\n" +
+                axisY_start + c2.yLim.split(',')[0] + ")--node[right, pos = 0.9]{$y$}(0," + c2.yLim.split(',')[1] + ");\n" +
                 "\\draw (0,0) node[" + c2.nO + "]{$O$} circle (1.2pt);\n" +
                 "\\draw (2,0) node[below]{$2$} circle (1pt);\n" +
                 c2.yNodes + "\n" +
@@ -75,7 +75,7 @@ function dothibacba_a_am(a, b, c, d) {
         if (c3) {
             result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.7]\n" +
                 "\\draw[->,>=stealth, line width = 1.2pt] (-3.8,0)--node[below, pos = 0.99]{$x$}(2,0);\n" +
-                axisY_start + c3.yLim.split(',')[0] + ")--node[right, pos = 0.99]{$y$}(0," + c3.yLim.split(',')[1] + ");\n" +
+                axisY_start + c3.yLim.split(',')[0] + ")--node[right, pos = 0.9]{$y$}(0," + c3.yLim.split(',')[1] + ");\n" +
                 "\\draw (0,0) node[" + c3.nO + "]{$O$} circle (1.2pt);\n" +
                 "\\draw (-2,0) node[" + c3.n2B + "]{$-2$} circle (1pt);\n" +
                 c3.yNodes + "\n" +
