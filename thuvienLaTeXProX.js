@@ -6,28 +6,31 @@ function dothibacba_a_am(a, b, c, d) {
     if (d !== 0) fText += (d > 0 ? "+" : "") + d;
 
     var result = "";
+    // Định nghĩa style trục tọa độ chung
+    var axisX = "\\draw[->,>=stealth, line width = 1.2pt] (-2.8,0)--node[below, pos = 0.99]{$x$}(2.8,0);\n";
+    var axisY_start = "\\draw[->,>=stealth, line width = 1.2pt] (0,";
 
     // BỘ 1: y = -x^3 + 3x + d
     if (b === 0 && c === 3) {
         var conf1 = {
-            "-2": { yLim: "-5,1", nO: "below left", n1: "above", n2: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-1,-4) -- (0,-4)", d2: "(1,0) -- (0,0)" },
-            "-1": { yLim: "-4,2", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-3) node[right]{$-3$} circle (1pt);\n\\draw (0,1) node[left]{$1$} circle (1pt);", d1: "(-1,-3) -- (0,-3)", d2: "(1,1) -- (0,1)" },
-            "0":  { yLim: "-3,3", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-2) node[right]{$-2$} circle (1pt);\n\\draw (0,2) node[left]{$2$} circle (1pt);", d1: "(-1,-2) -- (0,-2)", d2: "(1,2) -- (0,2)" },
-            "1":  { yLim: "-2,4", nO: "below right", n1: "above", n2: "below", yNodes: "\\draw (0,-1) node[right]{$-1$} circle (1pt);\n\\draw (0,3) node[left]{$3$} circle (1pt);", d1: "(-1,-1) -- (0,-1)", d2: "(1,3) -- (0,3)" },
-            "2":  { yLim: "-1,5", nO: "below left", n1: "below", n2: "below", yNodes: "\\draw (0,4) node[left]{$4$} circle (1pt);", d1: "(-1,0) -- (0,0)", d2: "(1,4) -- (0,4)" }
+            "-2": { yLim: "-5.2,1.5", nO: "below left", n1: "above", n2: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-1,-4) -- (0,-4)", d2: "(1,0) -- (0,0)" },
+            "-1": { yLim: "-4.2,2.5", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-3) node[right]{$-3$} circle (1pt);\n\\draw (0,1) node[left]{$1$} circle (1pt);", d1: "(-1,-3) -- (0,-3)", d2: "(1,1) -- (0,1)" },
+            "0":  { yLim: "-3.2,3.5", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-2) node[right]{$-2$} circle (1pt);\n\\draw (0,2) node[left]{$2$} circle (1pt);", d1: "-1,-2) -- (0,-2)", d2: "(1,2) -- (0,2)" },
+            "1":  { yLim: "-2.2,4.5", nO: "below right", n1: "above", n2: "below", yNodes: "\\draw (0,-1) node[right]{$-1$} circle (1pt);\n\\draw (0,3) node[left]{$3$} circle (1pt);", d1: "(-1,-1) -- (0,-1)", d2: "(1,3) -- (0,3)" },
+            "2":  { yLim: "-1.2,5.5", nO: "below left", n1: "below", n2: "below", yNodes: "\\draw (0,4) node[left]{$4$} circle (1pt);", d1: "(-1,0) -- (0,0)", d2: "(1,4) -- (0,4)" }
         };
         var c1 = conf1[d];
         if (c1) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
-                "\\draw[->,line width = 1pt] (-2.5,0) -- (2.5,0) node[below]{$x$};\n" +
-                "\\draw[->,line width = 1pt] (0," + c1.yLim.split(',')[0] + ") -- (0," + c1.yLim.split(',')[1] + ") node[right]{$y$};\n" +
-                "\\draw (0,0) node[" + c1.nO + "]{$O$} circle (1.2pt);\n" + // Đã hiện nhãn O
+            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.8]\n" +
+                axisX + 
+                axisY_start + c1.yLim.split(',')[0] + ")--node[right, pos = 0.99]{$y$}(0," + c1.yLim.split(',')[1] + ");\n" +
+                "\\draw (0,0) node[" + c1.nO + "]{$O$} circle (1.2pt);\n" +
                 "\\draw (-1,0) node[" + c1.n1 + "]{$-1$} circle (1pt);\n" +
                 "\\draw (1,0) node[" + c1.n2 + "]{$1$} circle (1pt);\n" +
                 c1.yNodes + "\n" +
                 "\\draw[dashed] (-1,0) -- " + c1.d1 + ";\n" +
                 "\\draw[dashed] (1,0) -- " + c1.d2 + ";\n" +
-                "\\draw[thick,samples=200,domain=-2.07:2.07] plot(\\x,{-(\\x)^3+3*(\\x)" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
+                "\\draw[thick,samples=200,domain=-2.1:2.1] plot(\\x,{-(\\x)^3+3*(\\x)" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
                 "\\end{tikzpicture}$$";
         }
     }
@@ -35,24 +38,24 @@ function dothibacba_a_am(a, b, c, d) {
     // BỘ 2: y = -x^3 + 3x^2 + d
     else if (b === 3 && c === 0) {
         var conf2 = {
-            "-4": { yLim: "-4.75,1", dom: "3.03", nO: "above left", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", dash: "(2,0) -- (0,0)" },
-            "-3": { yLim: "-3.75,2", dom: "3.03", nO: "below left", yNodes: "\\draw (0,-3) node[right]{$-3$} circle (1pt);\n\\draw (0,1) node[left]{$1$} circle (1pt);", dash: "(2,1) -- (0,1)" },
-            "-2": { yLim: "-2.75,3", dom: "3.02", nO: "below left", yNodes: "\\draw (0,-2) node[right]{$-2$} circle (1pt);\n\\draw (0,2) node[left]{$2$} circle (1pt);", dash: "(2,2) -- (0,2)" },
-            "-1": { yLim: "-1.8,4",  dom: "3.03", nO: "above right", yNodes: "\\draw (0,-1) node[right]{$-1$} circle (1pt);\n\\draw (0,3) node[left]{$3$} circle (1pt);", dash: "(2,3) -- (0,3)" },
-            "0":  { yLim: "-1.0,5",  dom: "3.07", nO: "below left",  yNodes: "\\draw (0,4) node[left]{$4$} circle (1pt);", dash: "(2,4) -- (0,4)" },
-            "1":  { yLim: "-1.1,6",  dom: "3.17", nO: "below left",  yNodes: "\\draw (0,1) node[left]{$1$} circle (1pt);\n\\draw (0,5) node[left]{$5$} circle (1pt);", dash: "(2,5) -- (0,5)" },
-            "2":  { yLim: "-1.1,7",  dom: "3.25", nO: "below left",  yNodes: "\\draw (0,2) node[left]{$2$} circle (1pt);\n\\draw (0,6) node[left]{$6$} circle (1pt);", dash: "(2,6) -- (0,6)" }
+            "-4": { yLim: "-5,1.5", dom: "3.1", nO: "above left", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", dash: "(2,0) -- (0,0)" },
+            "-3": { yLim: "-4,2.5", dom: "3.1", nO: "below left", yNodes: "\\draw (0,-3) node[right]{$-3$} circle (1pt);\n\\draw (0,1) node[left]{$1$} circle (1pt);", dash: "(2,1) -- (0,1)" },
+            "-2": { yLim: "-3,3.5", dom: "3.1", nO: "below left", yNodes: "\\draw (0,-2) node[right]{$-2$} circle (1pt);\n\\draw (0,2) node[left]{$2$} circle (1pt);", dash: "(2,2) -- (0,2)" },
+            "-1": { yLim: "-2,4.5", dom: "3.1", nO: "above right", yNodes: "\\draw (0,-1) node[right]{$-1$} circle (1pt);\n\\draw (0,3) node[left]{$3$} circle (1pt);", dash: "(2,3) -- (0,3)" },
+            "0":  { yLim: "-1.2,5.5", dom: "3.2", nO: "below left",  yNodes: "\\draw (0,4) node[left]{$4$} circle (1pt);", dash: "(2,4) -- (0,4)" },
+            "1":  { yLim: "-1.2,6.5", dom: "3.3", nO: "below left",  yNodes: "\\draw (0,1) node[left]{$1$} circle (1pt);\n\\draw (0,5) node[left]{$5$} circle (1pt);", dash: "(2,5) -- (0,5)" },
+            "2":  { yLim: "-1.2,7.5", dom: "3.4", nO: "below left",  yNodes: "\\draw (0,2) node[left]{$2$} circle (1pt);\n\\draw (0,6) node[left]{$6$} circle (1pt);", dash: "(2,6) -- (0,6)" }
         };
         var c2 = conf2[d];
         if (c2) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
-                "\\draw[->,line width = 1pt] (-1.6,0) -- (3.7,0) node[below]{$x$};\n" +
-                "\\draw[->,line width = 1pt] (0," + c2.yLim.split(',')[0] + ") -- (0," + c2.yLim.split(',')[1] + ") node[right]{$y$};\n" +
-                "\\draw (0,0) node[" + c2.nO + "]{$O$} circle (1.2pt);\n" + // Nhãn O rõ ràng
+            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.7]\n" +
+                "\\draw[->,>=stealth, line width = 1.2pt] (-1.8,0)--node[below, pos = 0.99]{$x$}(4,0);\n" +
+                axisY_start + c2.yLim.split(',')[0] + ")--node[right, pos = 0.99]{$y$}(0," + c2.yLim.split(',')[1] + ");\n" +
+                "\\draw (0,0) node[" + c2.nO + "]{$O$} circle (1.2pt);\n" +
                 "\\draw (2,0) node[below]{$2$} circle (1pt);\n" +
                 c2.yNodes + "\n" +
                 "\\draw[dashed] (2,0) -- " + c2.dash + ";\n" +
-                "\\draw[thick,samples=200,domain=-1.04:" + c2.dom + "] plot(\\x,{-(\\x)^3+3*(\\x)^2" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
+                "\\draw[thick,samples=200,domain=-1.1:" + c2.dom + "] plot(\\x,{-(\\x)^3+3*(\\x)^2" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
                 "\\end{tikzpicture}$$";
         }
     }
@@ -60,19 +63,19 @@ function dothibacba_a_am(a, b, c, d) {
     // BỘ 3: y = -x^3 - 3x^2 + d
     else if (b === -3 && c === 0) {
         var conf3 = {
-            "-2": { yLim: "-7,1.1", nO: "above right", n2B: "above", yNodes: "\\draw (0,-2) node[above right]{$-2$} circle (1pt);\n\\draw (0,-6) node[right]{$-6$} circle (1pt);", d1: "(-2,-6) -- (0,-6)", dom: "-3.27:1.06" },
-            "-1": { yLim: "-6,1.1", nO: "above right", n2B: "above", yNodes: "\\draw (0,-1) node[above right]{$-1$} circle (1pt);\n\\draw (0,-5) node[right]{$-5$} circle (1pt);", d1: "(-2,-5) -- (0,-5)", dom: "-3.18:1.06" },
-            "0":  { yLim: "-5,1.1", nO: "above right", n2B: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-2,-4) -- (0,-4)", dom: "-3.06:1.06" },
-            "1":  { yLim: "-4,2",   nO: "below left",  n2B: "above", yNodes: "\\draw (0,1) node[above right]{$1$} circle (1pt);\n\\draw (0,-3) node[right]{$-3$} circle (1pt);", d1: "(-2,-3) -- (0,-3)", dom: "-3.05:1.06" },
-            "2":  { yLim: "-3,3",   nO: "below left",  n2B: "above", yNodes: "\\draw (0,2) node[above right]{$2$} circle (1pt);\n\\draw (0,-2) node[right]{$-2$} circle (1pt);", d1: "(-2,-2) -- (0,-2)", dom: "-3.06:1.06" },
-            "3":  { yLim: "-2,4",   nO: "below left",  n2B: "above", yNodes: "\\draw (0,3) node[above right]{$3$} circle (1pt);\n\\draw (0,-1) node[right]{$-1$} circle (1pt);", d1: "(-2,-1) -- (0,-1)", dom: "-3.06:1.06" },
-            "4":  { yLim: "-1,5",   nO: "above right", n2B: "below", yNodes: "\\draw (0,4) node[above right]{$4$} circle (1pt);", d1: "(-2,0) -- (0,0)", dom: "-3.06:1.06" }
+            "-2": { yLim: "-7.2,1.5", nO: "above right", n2B: "above", yNodes: "\\draw (0,-2) node[above right]{$-2$} circle (1pt);\n\\draw (0,-6) node[right]{$-6$} circle (1pt);", d1: "(-2,-6) -- (0,-6)", dom: "-3.3:1.1" },
+            "-1": { yLim: "-6.2,1.5", nO: "above right", n2B: "above", yNodes: "\\draw (0,-1) node[above right]{$-1$} circle (1pt);\n\\draw (0,-5) node[right]{$-5$} circle (1pt);", d1: "(-2,-5) -- (0,-5)", dom: "-3.2:1.1" },
+            "0":  { yLim: "-5.2,1.5", nO: "above right", n2B: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-2,-4) -- (0,-4)", dom: "-3.1:1.1" },
+            "1":  { yLim: "-4.2,2.5", nO: "below left",  n2B: "above", yNodes: "\\draw (0,1) node[above right]{$1$} circle (1pt);\n\\draw (0,-3) node[right]{$-3$} circle (1pt);", d1: "(-2,-3) -- (0,-3)", dom: "-3.1:1.1" },
+            "2":  { yLim: "-3.2,3.5", nO: "below left",  n2B: "above", yNodes: "\\draw (0,2) node[above right]{$2$} circle (1pt);\n\\draw (0,-2) node[right]{$-2$} circle (1pt);", d1: "(-2,-2) -- (0,-2)", dom: "-3.1:1.2" },
+            "3":  { yLim: "-2.2,4.5", nO: "below left",  n2B: "above", yNodes: "\\draw (0,3) node[above right]{$3$} circle (1pt);\n\\draw (0,-1) node[right]{$-1$} circle (1pt);", d1: "(-2,-1) -- (0,-1)", dom: "-3.1:1.3" },
+            "4":  { yLim: "-1.5,5.5", nO: "above right", n2B: "below", yNodes: "\\draw (0,4) node[above right]{$4$} circle (1pt);", d1: "(-2,0) -- (0,0)", dom: "-3.1:1.4" }
         };
         var c3 = conf3[d];
         if (c3) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
-                "\\draw[->,line width = 1pt] (-3.6,0) -- (1.7,0) node[below]{$x$};\n" +
-                "\\draw[->,line width = 1pt] (0," + c3.yLim.split(',')[0] + ") -- (0," + c3.yLim.split(',')[1] + ") node[right]{$y$};\n" +
+            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.7]\n" +
+                "\\draw[->,>=stealth, line width = 1.2pt] (-3.8,0)--node[below, pos = 0.99]{$x$}(2,0);\n" +
+                axisY_start + c3.yLim.split(',')[0] + ")--node[right, pos = 0.99]{$y$}(0," + c3.yLim.split(',')[1] + ");\n" +
                 "\\draw (0,0) node[" + c3.nO + "]{$O$} circle (1.2pt);\n" +
                 "\\draw (-2,0) node[" + c3.n2B + "]{$-2$} circle (1pt);\n" +
                 c3.yNodes + "\n" +
