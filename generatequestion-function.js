@@ -29,7 +29,7 @@ function SBT_NB_hamtrungphuongCTCT() {
         "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
         "Bảng biến thiên\n" +
         hamtrungphuongCTCT(a, b, c) + 
-        cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + "$.";
+        cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + ".$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -78,7 +78,7 @@ function SBT_DB_hamtrungphuongCTCT() {
         "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
         "Bảng biến thiên\n" +
         hamtrungphuongCTCT(a, b, c) + 
-        cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + "$.";
+        cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -127,7 +127,7 @@ function SBT_NB_hamtrungphuongTCTC() {
         "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
         "Bảng biến thiên\n" +
         hamtrungphuongTCTC(a, b, c) + 
-        cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + "$.";
+        cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + ".$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -176,7 +176,7 @@ function SBT_DB_hamtrungphuongTCTC() {
         "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
         "Bảng biến thiên\n" +
         hamtrungphuongTCTC(a, b, c) + 
-        cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + "$.";
+        cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -216,7 +216,7 @@ function tenham_CT3() {
         "$$f'(x)=0\\Leftrightarrow x^2" + hesosau(a + b, "x") + sodungsau(a * b) + "=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + (-b) + "\\end{array}\\right.$$\n" +
         "Bảng xét dấu của đạo hàm\n" +
         bangxetdauCTC("x", "f", -b, -a) + 
-        cumtu + "số điểm cực trị của hàm số đã bằng $2$.";
+        cumtu + "số điểm cực trị của hàm số đã bằng $2.$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -256,7 +256,7 @@ function tenham_CT2() {
         "$$f'(x)=0\\Leftrightarrow " + ngoacnew(a) + ngoacnew(b) + "=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + (-b) + "\\end{array}\\right.$$\n" +
         "Bảng xét dấu của đạo hàm\n" +
         bangxetdauCTC("x", "f", -b, -a) + 
-        cumtu + "số điểm cực trị của hàm số đã bằng $2$.";
+        cumtu + "số điểm cực trị của hàm số đã bằng $2.$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -295,7 +295,7 @@ function tenham_CT1() {
         "$$f'(x)=0\\Leftrightarrow -x^2" + hesosau(-a - b, "x") + sodungsau(-a * b) + "=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + (-b) + "\\end{array}\\right.$$\n" +
         "Bảng xét dấu của đạo hàm\n" +
         bangxetdauTCT("x", "f", -b, -a)  +
-        cumtu + "số điểm cực trị của hàm số đã bằng $2$.";
+        cumtu + "số điểm cực trị của hàm số đã bằng $2.$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -333,7 +333,7 @@ function tenham4() {
 
     var loigiai = "Ta có\n" +
         "$$f'(x)>0\\Leftrightarrow " + ngoacnew(a) + ngoacnew(b) + ">0\\Leftrightarrow\\left[\\begin{array}{l} x>" + (-a) + "\\\\ x<" + (-b) + "\\end{array}\\right.$$\n" +
-        "Do đó hàm số đã cho đồng biến trên khoảng $" + PAtrue + "$.";
+        "Do đó hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -371,7 +371,7 @@ function tenham3() {
 
     var loigiai = "Ta có\n" +
         "$$f'(x)>0\\Leftrightarrow x^2" + hesosau(a + b, "x") + sodungsau(a * b) + ">0\\Leftrightarrow\\left[\\begin{array}{l} x>" + (-a) + "\\\\ x<" + (-b) + "\\end{array}\\right.$$\n" +
-        "Do đó hàm số đã cho đồng biến trên khoảng $" + PAtrue + "$.";
+        "Do đó hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -409,7 +409,7 @@ function tenham2() {
     
     var loigiai = "Ta có\n" +
         "$$f'(x)<0\\Leftrightarrow -x^2" + hesosau(-a - b, "x") + sodungsau(-a * b) + "<0\\Leftrightarrow\\left[\\begin{array}{l} x>" + (-a) + "\\\\ x<" + (-b) + "\\end{array}\\right.$$\n" +
-        "Do đó hàm số đã cho nghịch biến trên khoảng $" + PAtrue + "$.";
+        "Do đó hàm số đã cho nghịch biến trên khoảng $" + PAtrue + ".$";
         
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -449,7 +449,7 @@ function tenham1() {
 
     var loigiai = "Ta có\n" +
         "$$f'(x)>0\\Leftrightarrow -x^2" + hesosau(-a - b, "x") + sodungsau(-a * b) + ">0\\Leftrightarrow" + (-b) + "<x<" + (-a) + " .$$\n" +
-        "Do đó hàm số đã cho đồng biến trên khoảng $" + PAtrue + "$.";
+        "Do đó hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
 
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -498,7 +498,7 @@ function CT_hambacbaCTC() {
         PA2 = "{$" + y1 + "$}";
         PA3 = "{$" + x1 + "$}";
         PA4 = "{$" + x2 + "$}";
-        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y2 + "$.";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y2 + ".$";
     } 
     else if (loaiCauHoi === 2) {
         decauhoi = "Giá trị cực đại của hàm số đã cho bằng";
@@ -506,7 +506,7 @@ function CT_hambacbaCTC() {
         PA2 = "{$" + y2 + "$}";
         PA3 = "{$" + x1 + "$}";
         PA4 = "{$" + x2 + "$}";
-        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y1 + "$.";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y1 + ".$";
     } 
     else if (loaiCauHoi === 3) {
         decauhoi = "Hàm số đã cho đạt cực tiểu tại";
@@ -514,7 +514,7 @@ function CT_hambacbaCTC() {
         PA2 = "{$" + y2 + "$}";
         PA3 = "{$" + x1 + "$}";
         PA4 = "{$" + y1 + "$}";
-        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=" + x2 + "$.";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=" + x2 + ".$";
     } 
     else {
         decauhoi = "Hàm số đã cho đạt cực đại tại";
@@ -522,7 +522,7 @@ function CT_hambacbaCTC() {
         PA2 = "{$" + y2 + "$}";
         PA3 = "{$" + x2 + "$}";
         PA4 = "{$" + y1 + "$}";
-        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực đại tại $x=" + x1 + "$.";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực đại tại $x=" + x1 + ".$";
     }
     var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(a, 3), "x^3") + hesoxausau(phanso(-a * S, 2), "x^2") + hesosau(a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
     var options = [PA1, PA2, PA3, PA4];
@@ -572,7 +572,7 @@ function CT_hambacbaTCT() {
         PA2 = "{$" + y2 + "$}";
         PA3 = "{$" + x1 + "$}";
         PA4 = "{$" + x2 + "$}";
-        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$.";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y1 + ".$";
     } 
     else if (loaiCauHoi === 2) {
         decauhoi = "Giá trị cực đại của hàm số đã cho bằng";
@@ -580,7 +580,7 @@ function CT_hambacbaTCT() {
         PA2 = "{$" + y1 + "$}";
         PA3 = "{$" + x1 + "$}";
         PA4 = "{$" + x2 + "$}";
-        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y2 + "$.";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y2 + ".$";
     } 
     else if (loaiCauHoi === 3) {
         decauhoi = "Hàm số đã cho đạt cực tiểu tại";
@@ -588,7 +588,7 @@ function CT_hambacbaTCT() {
         PA2 = "{$" + y2 + "$}";
         PA3 = "{$" + x2 + "$}";
         PA4 = "{$" + y1 + "$}";
-        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=" + x1 + "$.";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=" + x1 + ".$";
     } 
     else {
         decauhoi = "Hàm số đã cho đạt cực đại tại";
@@ -596,7 +596,7 @@ function CT_hambacbaTCT() {
         PA2 = "{$" + y2 + "$}";
         PA3 = "{$" + x1 + "$}";
         PA4 = "{$" + y1 + "$}";
-        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực đại tại $x=" + x2 + "$.";
+        loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực đại tại $x=" + x2 + ".$";
     }
     var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(-a, 3), "x^3") + hesoxausau(phanso(a * S, 2), "x^2") + hesosau(-a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
     var options = [PA1, PA2, PA3, PA4];
@@ -650,7 +650,7 @@ function SBT_DB_hambacbaCTC() {
                "$$f'(x)="+hesodau(a,"x^2")+hesosau(-a*S,"x")+sodungsau(P*a)+".$$\n" + 
                "Do đó \n" + 
                "$$f'(x) > 0\\Leftrightarrow\\left[\\begin{array}{l} x > "+x2+" \\\\ x < "+x1+"\\end{array}\\right.$$\n" + 
-               "Vậy hàm số đồng biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty)$.\n" + 
+               "Vậy hàm số đồng biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty).$\n" + 
                "}\n" +
             "\\end{ex}\n\n";
     }
@@ -693,7 +693,7 @@ function SBT_NB_hambacbaTCT() {
                "$$f'(x)="+hesodau(a,"x^2")+hesosau(-a*S,"x")+sodungsau(P*a)+".$$\n" + 
                "Do đó \n" + 
                "$$f'(x) < 0\\Leftrightarrow\\left[\\begin{array}{l} x > "+x2+" \\\\ x < "+x1+"\\end{array}\\right.$$\n" + 
-               "Vậy hàm số nghịch biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty)$.\n" + 
+               "Vậy hàm số nghịch biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty).$\n" + 
                "}\n" +
             "\\end{ex}\n\n";
     }
@@ -730,7 +730,7 @@ function SBT_BBT_hambacbaCTC() {
             options[1] + "\n" +
             options[2] + "\n" +
             options[3] + "\n" +
-            "\\loigiai{Dựa vào bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in ("+x1+";"+x2+")$. Do đó hàm số đã cho nghịch biến trên khoảng $("+x1+";"+x2+")$.\n" + 
+            "\\loigiai{Dựa vào bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in ("+x1+";"+x2+")$. Do đó hàm số đã cho nghịch biến trên khoảng $("+x1+";"+x2+").$\n" + 
             "}\n" +
             "\\end{ex}\n\n";
     }
@@ -757,7 +757,7 @@ function get_TXD_Loga() {
             options[1] + "\n" +
             options[2] + "\n" +
             options[3] + "\n" +
-            "\\loigiai{Điều kiện: $x"+sodungsau(b)+">0\\Leftrightarrow x>"+ (-b)+"$.\n" + 
+            "\\loigiai{Điều kiện: $x"+sodungsau(b)+">0\\Leftrightarrow x>"+ (-b)+".$\n" + 
             "}\n" +
             "\\end{ex}\n\n";
     }
@@ -807,7 +807,7 @@ function get_PT_Matcau() {
             content += "\\loigiai{\n" + 
                 "Ta có\n" +  
                 "$$x^2+y^2+z^2"+hesosau(-2*a,"x")+hesosau(-2*b,"y")+hesosau(-2*c,"z")+sodungsau(d)+"=0\\Leftrightarrow "+bachai("x",a)+"+"+bachai("y",b)+"+"+bachai("z",c)+"="+(a*a+b*b+c*c-d)+".$$\n"+
-                "Do đó mặt cầu có tâm $I("+(a)+";"+(b)+";"+(c)+")$ và bán kính $R="+canbachai(a*a+b*b+c*c-d)+"$.\n" +
+                "Do đó mặt cầu có tâm $I("+(a)+";"+(b)+";"+(c)+")$ và bán kính $R="+canbachai(a*a+b*b+c*c-d)+".$\n" +
                 "}\n" +
                 "\\end{ex}\n\n"; 
         }
