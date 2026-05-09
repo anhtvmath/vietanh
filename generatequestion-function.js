@@ -52,7 +52,7 @@ function dothi1() {
     return "\\begin{ex}\n" +
         debai1 + "\n" +
         codehinhve + "\n" +
-        debai2
+        debai2 +
         "\\choice\n" +
         options[0] + "\n" +
         options[1] + "\n" +
