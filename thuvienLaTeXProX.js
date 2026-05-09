@@ -10,17 +10,17 @@ function dothibacba_a_am(a, b, c, d) {
     // BỘ 1: y = -x^3 + 3x + d
     if (b === 0 && c === 3) {
         var conf1 = {
-            "-2": { yLim: "-5,1", nO: "below left", n1: "above", n2: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-1,-4) -- (0,-4)", d2: "(1,0) -- (0,0)" },
-            "-1": { yLim: "-4,2", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-3) node[right]{$-3$} circle (1pt);\n\\draw (0,1) node[left]{$1$} circle (1pt);", d1: "(-1,-3) -- (0,-3)", d2: "(1,1) -- (0,1)" },
-            "0":  { yLim: "-3,3", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-2) node[right]{$-2$} circle (1pt);\n\\draw (0,2) node[left]{$2$} circle (1pt);", d1: "(-1,-2) -- (0,-2)", d2: "(1,2) -- (0,2)" },
-            "1":  { yLim: "-2,4", nO: "below right", n1: "above", n2: "below", yNodes: "\\draw (0,-1) node[right]{$-1$} circle (1pt);\n\\draw (0,3) node[left]{$3$} circle (1pt);", d1: "(-1,-1) -- (0,-1)", d2: "(1,3) -- (0,3)" },
-            "2":  { yLim: "-1,5", nO: "below left", n1: "below", n2: "below", yNodes: "\\draw (0,4) node[left]{$4$} circle (1pt);", d1: "(-1,0) -- (0,0)", d2: "(1,4) -- (0,4)" }
+            "-2": { yLim: "-5", nO: "below left", n1: "above", n2: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-1,-4) -- (0,-4)", d2: "(1,0) -- (0,0)" },
+            "-1": { yLim: "-4", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-3) node[right]{$-3$} circle (1pt);\n\\draw (0,1) node[left]{$1$} circle (1pt);", d1: "(-1,-3) -- (0,-3)", d2: "(1,1) -- (0,1)" },
+            "0":  { yLim: "-3,1", nO: "below left", n1: "above", n2: "below", yNodes: "\\draw (0,-2) node[right]{$-2$} circle (1pt);\n\\draw (0,2) node[left]{$2$} circle (1pt);", d1: "(-1,-2) -- (0,-2)", d2: "(1,2) -- (0,2)" },
+            "1":  { yLim: "-2,1", nO: "below right", n1: "above", n2: "below", yNodes: "\\draw (0,-1) node[right]{$-1$} circle (1pt);\n\\draw (0,3) node[left]{$3$} circle (1pt);", d1: "(-1,-1) -- (0,-1)", d2: "(1,3) -- (0,3)" },
+            "2":  { yLim: "-1,3", nO: "below left", n1: "below", n2: "below", yNodes: "\\draw (0,4) node[left]{$4$} circle (1pt);", d1: "(-1,0) -- (0,0)", d2: "(1,4) -- (0,4)" }
         };
         var c1 = conf1[d];
         if (c1) {
             result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
                 "\\draw[->,line width = 1pt] (-2.5,0) -- node[below, pos = 0.98]{$x$}(2.5,0);\n" +
-                "\\draw[->,line width = 1pt] (0," + c1.yLim.split(',')[0] + ") -- node[right, pos = 0.98]{$y$}(0," + c1.yLim.split(',')[1] + ");\n" +
+                "\\draw[->,line width = 1pt] (0," + c1.yLim.split(',')[0] + ") -- node[right, pos = 0.97]{$y$}(0," + c1.yLim.split(',')[1] + ");\n" +
                 "\\draw (0,0) node[" + c1.nO + "]{$O$} circle (1.2pt);\n" + // Đã hiện nhãn O
                 "\\draw (-1,0) node[" + c1.n1 + "]{$-1$} circle (1pt);\n" +
                 "\\draw (1,0) node[" + c1.n2 + "]{$1$} circle (1pt);\n" +
@@ -47,7 +47,7 @@ function dothibacba_a_am(a, b, c, d) {
         if (c2) {
             result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
                 "\\draw[->,line width = 1pt] (-1.6,0) -- node[below, pos = 0.98]{$x$}(3.7,0);\n" +
-                "\\draw[->,line width = 1pt] (0," + c2.yLim.split(',')[0] + ") -- node[right, pos = 0.98]{$y$}(0," + c2.yLim.split(',')[1] + ");\n" +
+                "\\draw[->,line width = 1pt] (0," + c2.yLim.split(',')[0] + ") -- node[right, pos = 0.97]{$y$}(0," + c2.yLim.split(',')[1] + ");\n" +
                 "\\draw (0,0) node[" + c2.nO + "]{$O$} circle (1.2pt);\n" + // Nhãn O rõ ràng
                 "\\draw (2,0) node[below]{$2$} circle (1pt);\n" +
                 c2.yNodes + "\n" +
@@ -72,7 +72,7 @@ function dothibacba_a_am(a, b, c, d) {
         if (c3) {
             result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
                 "\\draw[->,line width = 1pt] (-3.6,0) -- node[below, pos = 0.98]{$x$}(1.7,0);\n" +
-                "\\draw[->,line width = 1pt] (0," + c3.yLim.split(',')[0] + ") -- node[right, pos = 0.98]{$y$}(0," + c3.yLim.split(',')[1] + ");\n" +
+                "\\draw[->,line width = 1pt] (0," + c3.yLim.split(',')[0] + ") -- node[right, pos = 0.97]{$y$}(0," + c3.yLim.split(',')[1] + ");\n" +
                 "\\draw (0,0) node[" + c3.nO + "]{$O$} circle (1.2pt);\n" +
                 "\\draw (-2,0) node[" + c3.n2B + "]{$-2$} circle (1pt);\n" +
                 c3.yNodes + "\n" +
