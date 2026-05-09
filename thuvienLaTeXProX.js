@@ -59,15 +59,16 @@ function dothibacba_a_am(a, b, c, d) {
 
     // BỘ 3: y = -x^3 - 3x^2 + d
     else if (b === -3 && c === 0) {
-        var conf3 = {
-            "-2": { yLim: "-7,1.1", nO: "above right", n2B: "above", yNodes: "\\draw (0,-2) node[above right]{$-2$} circle (1pt);\n\\draw (0,-6) node[right]{$-6$} circle (1pt);", d1: "(-2,-6) -- (0,-6)", dom: "-3.27:1.06" },
-            "-1": { yLim: "-6,1.1", nO: "above right", n2B: "above", yNodes: "\\draw (0,-1) node[above right]{$-1$} circle (1pt);\n\\draw (0,-5) node[right]{$-5$} circle (1pt);", d1: "(-2,-5) -- (0,-5)", dom: "-3.18:1.06" },
-            "0":  { yLim: "-5,1.1", nO: "above right", n2B: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-2,-4) -- (0,-4)", dom: "-3.06:1.06" },
-            "1":  { yLim: "-4,2",   nO: "below left",  n2B: "above", yNodes: "\\draw (0,1) node[above right]{$1$} circle (1pt);\n\\draw (0,-3) node[right]{$-3$} circle (1pt);", d1: "(-2,-3) -- (0,-3)", dom: "-3.05:1.06" },
-            "2":  { yLim: "-3,3",   nO: "above right", n2B: "above", yNodes: "\\draw (0,2) node[above right]{$2$} circle (1pt);\n\\draw (0,-2) node[right]{$-2$} circle (1pt);", d1: "(-2,-2) -- (0,-2)", dom: "-3.06:1.06" },
-            "3":  { yLim: "-2,4",   nO: "above right", n2B: "above", yNodes: "\\draw (0,3) node[above right]{$3$} circle (1pt);\n\\draw (0,-1) node[right]{$-1$} circle (1pt);", d1: "(-2,-1) -- (0,-1)", dom: "-3.06:1.06" },
-            "4":  { yLim: "-1,5",   nO: "above right", n2B: "below", yNodes: "\\draw (0,4) node[above right]{$4$} circle (1pt);", d1: "(-2,0) -- (0,0)", dom: "-3.06:1.06" }
-        };
+	    var conf3 = {
+	        "-2": { yLim: "-7,1.1", nO: "above right", n2B: "above", yNodes: "\\draw (0,-2) node[above right]{$-2$} circle (1pt);\n\\draw (0,-6) node[right]{$-6$} circle (1pt);", d1: "(-2,-6) -- (0,-6)", dom: "-3.27:1.06" },
+	        "-1": { yLim: "-6,1.1", nO: "above right", n2B: "above", yNodes: "\\draw (0,-1) node[above right]{$-1$} circle (1pt);\n\\draw (0,-5) node[right]{$-5$} circle (1pt);", d1: "(-2,-5) -- (0,-5)", dom: "-3.18:1.06" },
+	        "0":  { yLim: "-5,1.1", nO: "above right", n2B: "above", yNodes: "\\draw (0,-4) node[right]{$-4$} circle (1pt);", d1: "(-2,-4) -- (0,-4)", dom: "-3.06:1.06" },
+	        "1":  { yLim: "-4,2",   nO: "below left",  n2B: "above", yNodes: "\\draw (0,1) node[above right]{$1$} circle (1pt);\n\\draw (0,-3) node[right]{$-3$} circle (1pt);", d1: "(-2,-3) -- (0,-3)", dom: "-3.05:1.06" },
+	        // Điều chỉnh d=2 ở đây:
+	        "2":  { yLim: "-3,3",   nO: "below left",  n2B: "above", yNodes: "\\draw (0,2) node[above right]{$2$} circle (1pt);\n\\draw (0,-2) node[right]{$-2$} circle (1pt);", d1: "(-2,-2) -- (0,-2)", dom: "-3.06:1.06" },
+	        "3":  { yLim: "-2,4",   nO: "below left",  n2B: "above", yNodes: "\\draw (0,3) node[above right]{$3$} circle (1pt);\n\\draw (0,-1) node[right]{$-1$} circle (1pt);", d1: "(-2,-1) -- (0,-1)", dom: "-3.06:1.06" },
+	        "4":  { yLim: "-1,5",   nO: "above right", n2B: "below", yNodes: "\\draw (0,4) node[above right]{$4$} circle (1pt);", d1: "(-2,0) -- (0,0)", dom: "-3.06:1.06" }
+	    };
         var c3 = conf3[d];
         if (c3) {
             result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
