@@ -22,7 +22,9 @@ const QuestionBank = {
             SBT_BBT_NB_hamtrungphuongCTCT,
             SBT_BBT_DB_hamtrungphuongCTCT,
             SBT_DT_hambacbaTCT,
-            CT_DT_giatriCD_hambacbaTCT
+            SBT_DT_hambacbaCTC,
+            CT_DT_giatriCT_hambacbaTCT,
+            CT_DT_giatriCT_hambacbaCTC
         ], 
         t2: [
             c1_d2_v1, 
