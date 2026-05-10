@@ -159,6 +159,88 @@ function SBT_DT_hambacbaTCT() {
            "\\end{ex}\n\n";
 }
 
+function CT_DT_giatriCT_hambacbaCTC() {
+    var cacDang = ["yCD", "yCT", "xCD", "xCT"];
+    var loaiCauHoi = cacDang[randomchoice(0, cacDang.length - 1)];
+
+    // BỘ MẪU CHO a = 1 (a dương)
+    var boMau = [
+        [1, 0, -3, -2], [1, 0, -3, -1], [1, 0, -3, 0], [1, 0, -3, 1], [1, 0, -3, 2], // Cực trị -1, 1
+        [1, -3, 0, -2], [1, -3, 0, -1], [1, -3, 0, 0], [1, -3, 0, 1], [1, -3, 0, 2], [1, -3, 0, 3], [1, -3, 0, 4], [1, -3, 0, 5], // Cực trị 0, 2
+        [1, 3, 0, -4], [1, 3, 0, -3], [1, 3, 0, -2], [1, 3, 0, -1], [1, 3, 0, 0], [1, 3, 0, 1], [1, 3, 0, 2] // Cực trị -2, 0
+    ];
+    
+    var index = randomchoice(0, boMau.length - 1);
+    var boChon = boMau[index];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    
+    var x_CD, y_CD, x_CT, y_CT;
+    // Với a > 0: Điểm bên trái là Cực đại, điểm bên phải là Cực tiểu
+    if (b === 0 && c === -3) { // Bộ x = -1 và x = 1
+        x_CD = -1; y_CD = d + 2;
+        x_CT = 1;  y_CT = d - 2;
+    } else if (b === -3 && c === 0) { // Bộ x = 0 và x = 2
+        x_CD = 0;  y_CD = d;
+        x_CT = 2;  y_CT = d - 4;
+    } else { // Bộ x = -2 và x = 0
+        x_CD = -2; y_CD = d + 4;
+        x_CT = 0;  y_CT = d;
+    }
+
+    var cauHoiConfig = {
+        "yCD": { txt: "Giá trị cực đại", ans: y_CD, sym: "y_{\\mathrm{CĐ}}", note: "tung độ điểm cực đại" },
+        "yCT": { txt: "Giá trị cực tiểu", ans: y_CT, sym: "y_{\\mathrm{CT}}", note: "tung độ điểm cực tiểu" },
+        "xCD": { txt: "Điểm cực đại", ans: x_CD, sym: "x_{\\mathrm{CĐ}}", note: "hoành độ điểm cực đại" },
+        "xCT": { txt: "Điểm cực tiểu", ans: x_CT, sym: "x_{\\mathrm{CT}}", note: "hoành độ điểm cực tiểu" }
+    };
+
+    var selected = cauHoiConfig[loaiCauHoi];
+    
+    // XỬ LÝ LỌC TRÙNG PHƯƠNG ÁN (Sử dụng xCD, xCT, yCD, yCT làm nhiễu)
+    var rawValues = [y_CD, y_CT, x_CD, x_CT];
+    var uniqueDistractors = [...new Set(rawValues)].filter(v => v !== selected.ans);
+
+    var offset = 1;
+    while (uniqueDistractors.length < 3) {
+        var nPlus = selected.ans + offset;
+        var nMinus = selected.ans - offset;
+        if (!uniqueDistractors.includes(nPlus) && nPlus !== selected.ans) uniqueDistractors.push(nPlus);
+        if (uniqueDistractors.length < 3 && !uniqueDistractors.includes(nMinus) && nMinus !== selected.ans) uniqueDistractors.push(nMinus);
+        offset++;
+    }
+    var finalDist = uniqueDistractors.slice(0, 3);
+
+    var PA1 = "{\\True $" + selected.ans + "$}";
+    var PA2 = "{$" + finalDist[0] + "$}";
+    var PA3 = "{$" + finalDist[1] + "$}";
+    var PA4 = "{$" + finalDist[2] + "$}";
+    
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    // Gọi hàm vẽ đồ thị a dương
+    var codehinhve = dothibacba_a_duong(a, b, c, d);
+    
+    var debai1 = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.";
+    var debai2 = selected.txt + " của hàm số đã cho bằng";
+    var loigiai = "Dựa vào đồ thị, ta thấy " + selected.note + " của đồ thị hàm số là $" + selected.ans + "$. " +
+                  "Vậy " + selected.txt.toLowerCase() + " của hàm số là $" + selected.sym + "=" + selected.ans + ".$";
+
+    return "\\begin{ex}\n" +
+           debai1 + "\n" +
+           codehinhve + "\n" +
+           debai2 + "\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{\n" +
+           loigiai + "\n" +
+           "}\n" +
+           "\\end{ex}\n\n";
+}
+
 function CT_DT_giatriCT_hambacbaTCT() {
     var cacDang = ["yCD", "yCT", "xCD", "xCT"];
     var loaiCauHoi = cacDang[randomchoice(0, cacDang.length - 1)];
@@ -219,8 +301,8 @@ function CT_DT_giatriCT_hambacbaTCT() {
     var codehinhve = dothibacba_a_am(a, b, c, d);
     var debai1 = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.";
     var debai2 = selected.txt + " của hàm số đã cho bằng";
-    var loigiai = "Dựa vào đồ thị, ta thấy " + selected.note + " của đồ thị hàm số là " + selected.ans + ". " +
-                  "Vậy " + selected.txt.toLowerCase() + " của hàm số là $" + selected.sym + " = " + selected.ans + ".$";
+    var loigiai = "Dựa vào đồ thị, ta thấy " + selected.note + " của đồ thị hàm số là $" + selected.ans + "$. " +
+                  "Vậy " + selected.txt.toLowerCase() + " của hàm số là $" + selected.sym + "=" + selected.ans + ".$";
 
     return "\\begin{ex}\n" +
            debai1 + "\n" +
