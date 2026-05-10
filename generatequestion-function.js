@@ -1,3 +1,92 @@
+function SBT_DT_hambacbaCTC() {
+    // Với a > 0: Nghịch biến nằm giữa (x1, x2), Đồng biến nằm 2 bên vô cực
+    var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
+    
+    // BỘ MẪU CHO a = 1
+    var boMau = [
+        [1, 0, -3, -2], [1, 0, -3, -1], [1, 0, -3, 0], [1, 0, -3, 1], [1, 0, -3, 2], // Cực trị -1, 1
+        [1, -3, 0, -2], [1, -3, 0, -1], [1, -3, 0, 0], [1, -3, 0, 1], [1, -3, 0, 2], [1, -3, 0, 3], [1, -3, 0, 4], [1, -3, 0, 5], // Cực trị 0, 2
+        [1, 3, 0, -4], [1, 3, 0, -3], [1, 3, 0, -2], [1, 3, 0, -1], [1, 3, 0, 0], [1, 3, 0, 1], [1, 3, 0, 2] // Cực trị -2, 0
+    ];
+    
+    var index = randomchoice(0, boMau.length - 1);
+    var boChon = boMau[index];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    
+    var x1, x2, y1, y2;
+    // Xác định hoành độ và tung độ cực trị (x1 luôn bé hơn x2)
+    // Với a = 1: y1 là Cực đại, y2 là Cực tiểu. Do đó y1 > y2.
+    if (b === 0 && c === -3) { 
+        x1 = -1; x2 = 1; y1 = d + 2; y2 = d - 2; 
+    } else if (b === -3 && c === 0) { 
+        x1 = 0;  x2 = 2; y1 = d;     y2 = d - 4; 
+    } else { 
+        x1 = -2; x2 = 0; y1 = d + 4; y2 = d; 
+    }
+    
+    var PA1, PA2, PA3, PA4, cauHoiTxt, loigiaiTxt;
+
+    if (loai === "NB") {
+        // HÀM NGHỊCH BIẾN (Khoảng giữa)
+        cauHoiTxt = "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
+        var khoangDung = "(" + x1 + ";" + x2 + ")";
+        PA1 = "{\\True $" + khoangDung + "$}";
+        // Nhiễu bằng tung độ cực trị: vì a > 0 nên y2 < y1, viết (y2; y1) cho đúng quy tắc khoảng
+        PA2 = "{$(" + y2 + ";" + y1 + ")$}"; 
+        PA3 = "{$(-\\infty;" + x1 + ")$}";
+        PA4 = "{$(" + x2 + ";+\\infty)$}";
+        
+        loigiaiTxt = "Dựa vào đồ thị, ta thấy trên khoảng $" + khoangDung + "$ đồ thị hàm số đi xuống từ trái sang phải. Vậy hàm số nghịch biến trên khoảng $" + khoangDung + ".$";   
+
+    } else {
+        // HÀM ĐỒNG BIẾN (Hai nhánh vô cực)
+        cauHoiTxt = "Hàm số đã cho đồng biến trên khoảng nào dưới đây?";
+        
+        var khoangDung;
+        if (randomchoice(0, 1) === 0) {
+            khoangDung = "(-\\infty;" + x1 + ")";
+        } else {
+            khoangDung = "(" + x2 + ";+\\infty)";
+        }
+        
+        PA1 = "{\\True $" + khoangDung + "$}";
+        PA2 = "{$(" + x1 + ";" + x2 + ")$}"; // Nhiễu bằng khoảng nghịch biến
+
+        var nhieuQuocDan = [
+            "{$(-\\infty;" + x2 + ")$}",
+            "{$(" + x1 + ";+\\infty)$}",
+            "{$(-\\infty;+\\infty)$}"
+        ];
+        
+        shuffle(nhieuQuocDan);
+        PA3 = nhieuQuocDan[0];
+        PA4 = nhieuQuocDan[1];
+
+        loigiaiTxt = "Dựa vào đồ thị, ta thấy đồ thị hàm số đi lên từ trái sang phải trên các khoảng $(-\\infty;" + x1 + ")$ và $(" + x2 + ";+\\infty)$. " + 
+                     "Trong các phương án đã cho, có khoảng $" + khoangDung + "$ là thỏa mãn.";
+    }
+
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    // Vẽ đồ thị a dương
+    var codehinhve = dothibacba_a_duong(a, b, c, d);
+    
+    return "\\begin{ex}\n" +
+           "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.\n" +
+           codehinhve + "\n" +
+           cauHoiTxt + "\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{\n" +
+           loigiaiTxt + "\n" +
+           "}\n" +
+           "\\end{ex}\n\n";
+}
+
 function SBT_DT_hambacbaTCT() {
     var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
     var boMau = [
@@ -40,11 +129,10 @@ function SBT_DT_hambacbaTCT() {
         PA1 = "{\\True $" + khoangDung + "$}";
         PA2 = "{$(" + x1 + ";" + x2 + ")$}"; 
         var nhieuQuocDan = [
-            "{$" + "(-\\infty;" + x2 + ")$}",
-            "{$" + "(" + x1 + ";+\\infty)$}",
-            "{$" + "(-\\infty;+\\infty)$}"
+            "{$(-\\infty;" + x2 + ")$}",
+            "{$(" + x1 + ";+\\infty)$}",
+            "{$(-\\infty;+\\infty)$}"
         ];
-        
         shuffle(nhieuQuocDan);
         PA3 = nhieuQuocDan[0];
         PA4 = nhieuQuocDan[1];
