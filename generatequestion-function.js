@@ -159,7 +159,7 @@ function SBT_DT_hambacbaTCT() {
            "\\end{ex}\n\n";
 }
 
-function CT_DT_giatriCD_hambacbaTCT() {
+function CT_DT_giatriCT_hambacbaTCT() {
     var cacDang = ["yCD", "yCT", "xCD", "xCT"];
     var loaiCauHoi = cacDang[randomchoice(0, cacDang.length - 1)];
 
