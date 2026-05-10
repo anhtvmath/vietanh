@@ -61,7 +61,7 @@ function dothibacba_a_duong(a, b, c, d) {
             "-1": { yMin: -1.8, yMax: 3.7, xMin: "-3.3", xMax: "1.3", ysc: 0.8, nO: "above left = -1px",  n2: "below", yNodes: "\\draw (0,-1) node[below left = -1px]{$-1$} circle (1pt);\n\\draw (0,3) node[right]{$3$} circle (1pt);", dash: "(-2,3) -- (0,3)", dom: "-3.06:1.04" },
             "0":  { yMin: -0.8, yMax: 4.8, xMin: "-3.3", xMax: "1.4", ysc: 0.8, nO: "below left = -1px",  n2: "below", yNodes: "\\draw (0,4) node[right]{$4$} circle (1pt);", dash: "(-2,4) -- (0,4)", dom: "-3.07:1.05" },
             "1":  { yMin: -0.9, yMax: 5.8, xMin: "-3.4", xMax: "1.4", ysc: 0.7, nO: "below left",         n2: "below", yNodes: "\\draw (0,1) node[below left]{$1$} circle (1pt);\n\\draw (0,5) node[right]{$5$} circle (1pt);", dash: "(-2,5) -- (0,5)", dom: "-3.17:1.06" },
-            "2":  { yMin: -0.9, yMax: 6.8, xMin: "-3.5", xMax: "1.5", ysc: 0.7, nO: "below left = -1px",  n2: "below", yNodes: "\\draw (0,2) node[below left = -1px]{$2$} circle (1pt);\n\\draw (0,6) node[right]{$6$} circle (1pt);", dash: "(-2,6) -- (0,6)", dom: "-3.25:1.05" }
+            "2":  { yMin: -0.9, yMax: 6.8, xMin: "-3.6", xMax: "1.5", ysc: 0.7, nO: "below left = -1px",  n2: "below", yNodes: "\\draw (0,2) node[below left = -1px]{$2$} circle (1pt);\n\\draw (0,6) node[right]{$6$} circle (1pt);", dash: "(-2,6) -- (0,6)", dom: "-3.25:1.05" }
         };
         var c3 = conf3[d];
         if (c3) {
