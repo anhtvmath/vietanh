@@ -5,8 +5,8 @@ function hammoi() {
     return `Đề bài toán hoặc câu dẫn Latex có công thức $\sqrt{a}$ là\\\\
 Vậy ta có.............\\\\
 \\noindent Do đó ta có
-${haiHamNgauNhien} Tiếp theo ta có đồ thị của hàm số bậc ba TCT
-${CT_DT_giatriCT_hambacbaTCT()} Đồ thị hàm số CTC
+${haiHamNgauNhien}Tiếp theo ta có đồ thị của hàm số bậc ba TCT
+${CT_DT_giatriCT_hambacbaTCT()}Đồ thị hàm số CTC
 ${CT_DT_giatriCT_hambacbaCTC()}
 `;
 }
