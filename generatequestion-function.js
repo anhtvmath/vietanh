@@ -1,11 +1,11 @@
 function hammoi() {
     return `Nội dung chữ trước khi gọi hàm 1...
-    Do đó ta có
-    ${tenham1()}
-    Nội dung chữ giữa hàm 1 và hàm 2...
-    ${tenham2()}
-    Nội dung kết thúc.
-    `;
+Do đó ta có
+${tenham1()}
+Nội dung chữ giữa hàm 1 và hàm 2...
+${tenham2()}
+Nội dung kết thúc.
+`;
 }
 
 function SBT_DT_hambacbaCTC() {
