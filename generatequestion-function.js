@@ -1,10 +1,10 @@
 function hammoi() {
-    return `
-        Nội dung chữ trước khi gọi hàm 1...
-        ${tenham1()}
-        Nội dung chữ giữa hàm 1 và hàm 2...
-        ${tenham2()}
-        Nội dung kết thúc.
+    return `Nội dung chữ trước khi gọi hàm 1...
+    Do đó ta có
+    ${tenham1()}
+    Nội dung chữ giữa hàm 1 và hàm 2...
+    ${tenham2()}
+    Nội dung kết thúc.
     `;
 }
 
