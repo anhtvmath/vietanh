@@ -1,18 +1,16 @@
 function hammoi() {
-    // 1. Đưa danh sách các hàm vào một mảng
     var dsHam = [tenham1(), tenham2(), tenham3(), tenham4(), tenham5(), tenham6()];
-
-    // 2. Xáo trộn mảng (sử dụng hàm shuffle bạn đã có sẵn trong thư viện)
     shuffle(dsHam);
-
-    // 3. Lấy 3 hàm đầu tiên sau khi đã xáo trộn
-    var baHamNgauNhien = dsHam[0] + dsHam[1];
-
-    // 4. Trả về kết quả
-    return `Cho biến ngẫu nhiên $X$ có\\\\
+    var haiHamNgauNhien = dsHam[0] + dsHam[1];
+    return `Đề bài toán hoặc câu dẫn Latex có công thức $\sqrt{a}$ là\\\\
 Vậy ta có.............\\\\
 \\noindent Do đó ta có
-${baHamNgauNhien}`;
+${haiHamNgauNhien}
+Tiếp theo ta có đồ thị của hàm số bậc ba TCT
+CT_DT_giatriCT_hambacbaTCT
+Đồ thị hàm số CTC
+CT_DT_giatriCT_hambacbaCTC
+`;
 }
 
 function SBT_DT_hambacbaCTC() {
