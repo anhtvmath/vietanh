@@ -1,3 +1,13 @@
+function hammoi() {
+    return `
+        Nội dung chữ trước khi gọi hàm 1...
+        ${tenham1()}
+        Nội dung chữ giữa hàm 1 và hàm 2...
+        ${tenham2()}
+        Nội dung kết thúc.
+    `;
+}
+
 function SBT_DT_hambacbaCTC() {
     // Với a > 0: Nghịch biến nằm giữa (x1, x2), Đồng biến nằm 2 bên vô cực
     var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
