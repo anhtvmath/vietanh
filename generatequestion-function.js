@@ -424,7 +424,7 @@ function SBT_BBT_DB_hamtrungphuongCTCT() {
         "\\end{ex}\n";
 }
 
-function CT_BBT_hamtrungphuongCTCT() {
+function CT_BBT_hamtrungphuongCTCT(loai) {
     var a, b, c;
     while (true) {
         a = randomchoice(1, 6);
@@ -451,7 +451,7 @@ function CT_BBT_hamtrungphuongCTCT() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -461,7 +461,7 @@ function CT_BBT_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
 function CT_HS_hamtrungphuongCTCT() {
