@@ -7,9 +7,9 @@ Vậy ta có.............\\\\
 \\noindent Do đó ta có
 ${haiHamNgauNhien}
 Tiếp theo ta có đồ thị của hàm số bậc ba TCT
-${CT_DT_giatriCT_hambacbaTCT}
+${CT_DT_giatriCT_hambacbaTCT()}
 Đồ thị hàm số CTC
-${CT_DT_giatriCT_hambacbaCTC}
+${CT_DT_giatriCT_hambacbaCTC()}
 `;
 }
 
