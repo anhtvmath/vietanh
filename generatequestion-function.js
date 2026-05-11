@@ -1,6 +1,7 @@
 function hammoi() {
     return `Nội dung chữ trước khi gọi hàm 1...
 Do đó ta có
+Do đó ta có
 ${tenham1()}
 Nội dung chữ giữa hàm 1 và hàm 2...
 ${tenham2()}
