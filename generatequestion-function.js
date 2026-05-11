@@ -6,7 +6,7 @@ function hammoi() {
     shuffle(dsHam);
 
     // 3. Lấy 3 hàm đầu tiên sau khi đã xáo trộn
-    var baHamNgauNhien = dsHam[0] + dsHam[1] + dsHam[2];
+    var baHamNgauNhien = dsHam[0] + dsHam[1];
 
     // 4. Trả về kết quả
     return `Cho biến ngẫu nhiên $X$ có\\\\
