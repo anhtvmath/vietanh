@@ -101,7 +101,7 @@ function SBT_DT_hambacbaCTC() {
            "\\loigiai{\n" +
            loigiaiTxt + "\n" +
            "}\n" +
-           "\\end{ex}\n\n";
+           "\\end{ex}\n";
 }
 
 function SBT_DT_hambacbaTCT() {
@@ -173,7 +173,7 @@ function SBT_DT_hambacbaTCT() {
            "\\loigiai{\n" +
            loigiaiTxt + "\n" +
            "}\n" +
-           "\\end{ex}\n\n";
+           "\\end{ex}\n";
 }
 
 function CT_DT_giatriCT_hambacbaCTC() {
@@ -255,7 +255,7 @@ function CT_DT_giatriCT_hambacbaCTC() {
            "\\loigiai{\n" +
            loigiai + "\n" +
            "}\n" +
-           "\\end{ex}\n\n";
+           "\\end{ex}\n";
 }
 
 function CT_DT_giatriCT_hambacbaTCT() {
@@ -333,7 +333,7 @@ function CT_DT_giatriCT_hambacbaTCT() {
            "\\loigiai{\n" +
            loigiai + "\n" +
            "}\n" +
-           "\\end{ex}\n\n";
+           "\\end{ex}\n";
 }
 
 function SBT_BBT_NB_hamtrungphuongCTCT() {
@@ -379,7 +379,7 @@ function SBT_BBT_NB_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function SBT_BBT_DB_hamtrungphuongCTCT() {
@@ -425,7 +425,7 @@ function SBT_BBT_DB_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function CT_BBT_hamtrungphuongCTCT() {
@@ -465,7 +465,7 @@ function CT_BBT_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function CT_HS_hamtrungphuongCTCT() {
@@ -508,7 +508,7 @@ function CT_HS_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function SBT_NB_hamtrungphuongCTCT() {
@@ -557,7 +557,7 @@ function SBT_NB_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function SBT_DB_hamtrungphuongCTCT() {
@@ -606,7 +606,7 @@ function SBT_DB_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function SBT_NB_hamtrungphuongTCTC() {
@@ -655,7 +655,7 @@ function SBT_NB_hamtrungphuongTCTC() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function SBT_DB_hamtrungphuongTCTC() {
@@ -704,7 +704,7 @@ function SBT_DB_hamtrungphuongTCTC() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function tenham_CT3() {
@@ -744,7 +744,7 @@ function tenham_CT3() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function tenham_CT2() {
@@ -784,7 +784,7 @@ function tenham_CT2() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function tenham_CT1() {
@@ -823,7 +823,7 @@ function tenham_CT1() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function tenham4() {
@@ -861,7 +861,7 @@ function tenham4() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function tenham3() {
@@ -899,7 +899,7 @@ function tenham3() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function tenham2() {
@@ -937,7 +937,7 @@ function tenham2() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function tenham1() {
@@ -977,7 +977,7 @@ function tenham1() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 function CT_hambacbaCTC() {
     var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
@@ -1049,7 +1049,7 @@ function CT_hambacbaCTC() {
         options[3] + "\n" +
         "\\loigiai{" + loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function CT_hambacbaTCT() {
@@ -1123,7 +1123,7 @@ function CT_hambacbaTCT() {
         options[3] + "\n" +
         "\\loigiai{" + loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function SBT_DB_hambacbaCTC() {
@@ -1165,7 +1165,7 @@ function SBT_DB_hambacbaCTC() {
                "$$f'(x) > 0\\Leftrightarrow\\left[\\begin{array}{l} x > "+x2+" \\\\ x < "+x1+"\\end{array}\\right.$$\n" + 
                "Vậy hàm số đồng biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty).$\n" + 
                "}\n" +
-            "\\end{ex}\n\n";
+            "\\end{ex}\n";
     }
 
 
@@ -1208,7 +1208,7 @@ function SBT_NB_hambacbaTCT() {
                "$$f'(x) < 0\\Leftrightarrow\\left[\\begin{array}{l} x > "+x2+" \\\\ x < "+x1+"\\end{array}\\right.$$\n" + 
                "Vậy hàm số nghịch biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty).$\n" + 
                "}\n" +
-            "\\end{ex}\n\n";
+            "\\end{ex}\n";
     }
 
 function SBT_BBT_hambacbaCTC() {
@@ -1245,7 +1245,7 @@ function SBT_BBT_hambacbaCTC() {
             options[3] + "\n" +
             "\\loigiai{Dựa vào bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in ("+x1+";"+x2+")$. Do đó hàm số đã cho nghịch biến trên khoảng $("+x1+";"+x2+").$\n" + 
             "}\n" +
-            "\\end{ex}\n\n";
+            "\\end{ex}\n";
     }
 
 
@@ -1272,7 +1272,7 @@ function get_TXD_Loga() {
             options[3] + "\n" +
             "\\loigiai{Điều kiện: $x"+sodungsau(b)+">0\\Leftrightarrow x>"+ (-b)+".$\n" + 
             "}\n" +
-            "\\end{ex}\n\n";
+            "\\end{ex}\n";
     }
 
 
@@ -1322,7 +1322,7 @@ function get_PT_Matcau() {
                 "$$x^2+y^2+z^2"+hesosau(-2*a,"x")+hesosau(-2*b,"y")+hesosau(-2*c,"z")+sodungsau(d)+"=0\\Leftrightarrow "+bachai("x",a)+"+"+bachai("y",b)+"+"+bachai("z",c)+"="+(a*a+b*b+c*c-d)+".$$\n"+
                 "Do đó mặt cầu có tâm $I("+(a)+";"+(b)+";"+(c)+")$ và bán kính $R="+canbachai(a*a+b*b+c*c-d)+".$\n" +
                 "}\n" +
-                "\\end{ex}\n\n"; 
+                "\\end{ex}\n"; 
         }
         return content;
     }
@@ -1509,7 +1509,7 @@ function TF_template() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function TF_vidu1() {
@@ -1597,7 +1597,7 @@ function TF_vidu1() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 }
 
 function TF_vidu2() {
@@ -1800,7 +1800,7 @@ function TF_vidu3() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
         
     return cauhoi;
 }
@@ -1901,7 +1901,7 @@ function TF_vidu4() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 
     return cauhoi;
 }
@@ -2002,7 +2002,7 @@ function TF_vidu5() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 
     return cauhoi;
 }
@@ -2106,7 +2106,7 @@ function TF_vidu6() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 
     return cauhoi;
 }
@@ -2201,7 +2201,7 @@ function TF_vidu() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{ex}\n";
 
     return cauhoi;
 }
@@ -2287,5 +2287,5 @@ function get_XS_Hiepphuongsai() {
             options[2] + "\n" +
             options[3] + "\n" +
             "\\loigiai{\n}" +
-            "\\end{ex}\n\n";
+            "\\end{ex}\n";
     }
