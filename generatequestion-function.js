@@ -2290,3 +2290,19 @@ function get_XS_Hiepphuongsai(loai) {
             "\\loigiai{\n}" +
             "\\end{"+loai+"}\n";
     }
+
+
+    function tenham3(loai) { return `\\begin{${loai}}\n [1.1.2.a] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham4(loai) { return `\\begin{${loai}}\n [1.1.2.b] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham5(loai) { return `\\begin{${loai}}\n [1.2.1.a] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham6(loai) { return `\\begin{${loai}}\n [1.2.1.b] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham7(loai) { return `\\begin{${loai}}\n [1.2.2.a] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham8(loai) { return `\\begin{${loai}}\n [1.2.2.b] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham9(loai) { return `\\begin{${loai}}\n [2.1.1.a] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham10(loai) { return `\\begin{${loai}}\n [2.1.1.b] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham11(loai) { return `\\begin{${loai}}\n [2.1.2.a] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham12(loai) { return `\\begin{${loai}}\n [2.1.2.b] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham13(loai) { return `\\begin{${loai}}\n [2.2.1.a] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham14(loai) { return `\\begin{${loai}}\n [2.2.1.b] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham15(loai) { return `\\begin{${loai}}\n [2.2.2.a] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
+    function tenham16(loai) { return `\\begin{${loai}}\n [2.2.2.b] Nội dung...\n\\choice{A}{B}{\\True C}{D}\n\\end{${loai}}\n`; }
