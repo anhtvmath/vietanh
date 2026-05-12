@@ -1,7 +1,5 @@
-function ngaunhien(danhSach) {
-    if (!Array.isArray(danhSach) || danhSach.length === 0) return "";
-    const index = Math.floor(Math.random() * danhSach.length);
-    return danhSach[index];
+function ngaunhien(mang) {
+    return mang[Math.floor(Math.random() * mang.length)];
 }
 
 function dothibacba_a_duong(a, b, c, d) {
