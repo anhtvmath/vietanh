@@ -11,7 +11,8 @@ Vậy ta ${ngaunhien(["có", "được", "đạt", "have", "get"])} công thức
 \\noindent Do đó ta có ngẫu nhiên công thức toán ${ngaunhien(["$\\sin x$", "$\\cos x$", "$\\dfrac{a}{b}$"])} sau đây:
 ${baHamNgauNhien}Tiếp theo ta có đồ thị của hàm số bậc ba TCT
 ${CT_DT_giatriCT_hambacbaTCT('no')}Và đồ thị khác
-${CT_DT_giatriCT_hambacbaCTC('nono')}
+${CT_DT_giatriCT_hambacbaCTC('nono')}Và đồ thị ngẫu nhiên 
+${ngaunhien([CT_DT_giatriCT_hambacbaCTC('ex'), CT_DT_giatriCT_hambacbaTCT('em')])}
 `;
 }
 
