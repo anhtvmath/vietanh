@@ -15,12 +15,6 @@ ${CT_DT_giatriCT_hambacbaCTC('nono')}
 `;
 }
 
-function ngaunhien(danhSach) {
-    if (!Array.isArray(danhSach) || danhSach.length === 0) return "";
-    const index = Math.floor(Math.random() * danhSach.length);
-    return danhSach[index];
-}
-
 function SBT_DT_hambacbaCTC(loai) {
     // Với a > 0: Nghịch biến nằm giữa (x1, x2), Đồng biến nằm 2 bên vô cực
     var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
