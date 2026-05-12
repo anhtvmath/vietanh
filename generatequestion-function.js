@@ -7,14 +7,19 @@ function hammoi() {
     shuffle(dsHam);
     var baHamNgauNhien = dsHam[0] + dsHam[1];
     return `Đề bài toán hoặc câu dẫn Latex có công thức $\sqrt{a}$ là\\\\
-Vậy ta có.............\\\\
-\\noindent Do đó ta có
+Vậy ta ${ngaunhien["có", "được", "đạt", "have", "get"]} công thức sau đây\\\\
+\\noindent Do đó ta có ngẫu nhiên công thức toán ${ngaunhien["$\\sin x$", "$\\cos x$", "$\\dfrac{a}{b}$"]} sau đây:
 ${baHamNgauNhien}Tiếp theo ta có đồ thị của hàm số bậc ba TCT
 ${CT_DT_giatriCT_hambacbaTCT('no')}Và đồ thị khác
 ${CT_DT_giatriCT_hambacbaCTC('nono')}
 `;
 }
 
+function ngaunhien(danhSach) {
+    if (!Array.isArray(danhSach) || danhSach.length === 0) return "";
+    const index = Math.floor(Math.random() * danhSach.length);
+    return danhSach[index];
+}
 
 function SBT_DT_hambacbaCTC(loai) {
     // Với a > 0: Nghịch biến nằm giữa (x1, x2), Đồng biến nằm 2 bên vô cực
