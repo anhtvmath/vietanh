@@ -10,14 +10,13 @@ function hammoi() {
 Vậy ta có.............\\\\
 \\noindent Do đó ta có
 ${baHamNgauNhien}Tiếp theo ta có đồ thị của hàm số bậc ba TCT
-${CT_DT_giatriCT_hambacbaTCT('no')}
-Và đồ thị khác
+${CT_DT_giatriCT_hambacbaTCT('no')}Và đồ thị khác
 ${CT_DT_giatriCT_hambacbaCTC('nono')}
 `;
 }
 
 
-function SBT_DT_hambacbaCTC() {
+function SBT_DT_hambacbaCTC(loai) {
     // Với a > 0: Nghịch biến nằm giữa (x1, x2), Đồng biến nằm 2 bên vô cực
     var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
     
@@ -91,7 +90,7 @@ function SBT_DT_hambacbaCTC() {
     // Vẽ đồ thị a dương
     var codehinhve = dothibacba_a_duong(a, b, c, d);
     
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
            "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.\n" +
            codehinhve + "\n" +
            cauHoiTxt + "\n" +
@@ -103,10 +102,10 @@ function SBT_DT_hambacbaCTC() {
            "\\loigiai{\n" +
            loigiaiTxt + "\n" +
            "}\n" +
-           "\\end{ex}\n";
+           "\\end{"+loai+"}\n";
 }
 
-function SBT_DT_hambacbaTCT() {
+function SBT_DT_hambacbaTCT(loai) {
     var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
     var boMau = [
         [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
@@ -163,7 +162,7 @@ function SBT_DT_hambacbaTCT() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
     var codehinhve = dothibacba_a_am(a, b, c, d);
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
            "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.\n" +
            codehinhve + "\n" +
            cauHoiTxt + "\n" +
@@ -175,10 +174,10 @@ function SBT_DT_hambacbaTCT() {
            "\\loigiai{\n" +
            loigiaiTxt + "\n" +
            "}\n" +
-           "\\end{ex}\n";
+           "\\end{"+loai+"}\n";
 }
 
-function CT_DT_giatriCT_hambacbaCTC() {
+function CT_DT_giatriCT_hambacbaCTC(loai) {
     var cacDang = ["yCD", "yCT", "xCD", "xCT"];
     var loaiCauHoi = cacDang[randomchoice(0, cacDang.length - 1)];
 
@@ -245,7 +244,7 @@ function CT_DT_giatriCT_hambacbaCTC() {
     var loigiai = "Dựa vào đồ thị, ta thấy " + selected.note + " của đồ thị hàm số là $" + selected.ans + "$. " +
                   "Vậy " + selected.txt.toLowerCase() + " của hàm số là $" + selected.sym + "=" + selected.ans + ".$";
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
            debai1 + "\n" +
            codehinhve + "\n" +
            debai2 + "\n" +
@@ -257,10 +256,10 @@ function CT_DT_giatriCT_hambacbaCTC() {
            "\\loigiai{\n" +
            loigiai + "\n" +
            "}\n" +
-           "\\end{ex}\n";
+           "\\end{"+loai+"}\n";
 }
 
-function CT_DT_giatriCT_hambacbaTCT() {
+function CT_DT_giatriCT_hambacbaTCT(loai) {
     var cacDang = ["yCD", "yCT", "xCD", "xCT"];
     var loaiCauHoi = cacDang[randomchoice(0, cacDang.length - 1)];
 
@@ -323,7 +322,7 @@ function CT_DT_giatriCT_hambacbaTCT() {
     var loigiai = "Dựa vào đồ thị, ta thấy " + selected.note + " của đồ thị hàm số là $" + selected.ans + "$. " +
                   "Vậy " + selected.txt.toLowerCase() + " của hàm số là $" + selected.sym + "=" + selected.ans + ".$";
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
            debai1 + "\n" +
            codehinhve + "\n" +
            debai2 + "\n" +
@@ -335,7 +334,7 @@ function CT_DT_giatriCT_hambacbaTCT() {
            "\\loigiai{\n" +
            loigiai + "\n" +
            "}\n" +
-           "\\end{ex}\n";
+           "\\end{"+loai+"}\n";
 }
 
 function SBT_BBT_NB_hamtrungphuongCTCT(loai) {
@@ -384,7 +383,7 @@ function SBT_BBT_NB_hamtrungphuongCTCT(loai) {
         "\\end{"+loai+"}\n";
 }
 
-function SBT_BBT_DB_hamtrungphuongCTCT() {
+function SBT_BBT_DB_hamtrungphuongCTCT(loai) {
     var a, b, c;
     while (true) {
         a = randomchoice(1, 6);
@@ -417,7 +416,7 @@ function SBT_BBT_DB_hamtrungphuongCTCT() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -427,7 +426,7 @@ function SBT_BBT_DB_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
 function CT_BBT_hamtrungphuongCTCT(loai) {
@@ -470,7 +469,7 @@ function CT_BBT_hamtrungphuongCTCT(loai) {
         "\\end{"+loai+"}\n";
 }
 
-function CT_HS_hamtrungphuongCTCT() {
+function CT_HS_hamtrungphuongCTCT(loai) {
     var a, b, c;
     while (true) {
         a = randomchoice(1, 4);
@@ -500,7 +499,7 @@ function CT_HS_hamtrungphuongCTCT() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -510,10 +509,10 @@ function CT_HS_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function SBT_NB_hamtrungphuongCTCT() {
+function SBT_NB_hamtrungphuongCTCT(loai) {
     var a, b, c;
     while (true) {
         a = randomchoice(1, 5);
@@ -549,7 +548,7 @@ function SBT_NB_hamtrungphuongCTCT() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -559,10 +558,10 @@ function SBT_NB_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function SBT_DB_hamtrungphuongCTCT() {
+function SBT_DB_hamtrungphuongCTCT(loai) {
     var a, b, c;
     while (true) {
         a = randomchoice(1, 5);
@@ -598,7 +597,7 @@ function SBT_DB_hamtrungphuongCTCT() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -608,10 +607,10 @@ function SBT_DB_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function SBT_NB_hamtrungphuongTCTC() {
+function SBT_NB_hamtrungphuongTCTC(loai) {
     var a, b, c;
     while (true) {
         a = randomchoice(1, 4);
@@ -647,7 +646,7 @@ function SBT_NB_hamtrungphuongTCTC() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -657,10 +656,10 @@ function SBT_NB_hamtrungphuongTCTC() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function SBT_DB_hamtrungphuongTCTC() {
+function SBT_DB_hamtrungphuongTCTC(loai) {
     var a, b, c;
     while (true) {
         a = randomchoice(1, 6);
@@ -696,7 +695,7 @@ function SBT_DB_hamtrungphuongTCTC() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -706,10 +705,10 @@ function SBT_DB_hamtrungphuongTCTC() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function tenham_CT3() {
+function tenham_CT3(loai) {
     var a, b;
     while (true) {
         a = randomchoice(-6, 7);
@@ -736,7 +735,7 @@ function tenham_CT3() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -746,10 +745,10 @@ function tenham_CT3() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function tenham_CT2() {
+function tenham_CT2(loai) {
     var a, b;
     while (true) {
         a = randomchoice(-6, 7);
@@ -776,7 +775,7 @@ function tenham_CT2() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -786,10 +785,10 @@ function tenham_CT2() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function tenham_CT1() {
+function tenham_CT1(loai) {
     var a, b;
     while (true) {
         a = randomchoice(-6, 7);
@@ -815,7 +814,7 @@ function tenham_CT1() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -825,10 +824,10 @@ function tenham_CT1() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function tenham4() {
+function tenham4(loai) {
     var a, b;
     while (true) {
         a = randomchoice(-6, 7);
@@ -853,7 +852,7 @@ function tenham4() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -863,10 +862,10 @@ function tenham4() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function tenham3() {
+function tenham3(loai) {
     var a, b;
     while (true) {
         a = randomchoice(-6, 7);
@@ -891,7 +890,7 @@ function tenham3() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -901,10 +900,10 @@ function tenham3() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function tenham2() {
+function tenham2(loai) {
     var a, b;
     while (true) {
         a = randomchoice(-6, 7);
@@ -929,7 +928,7 @@ function tenham2() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
     
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -939,10 +938,10 @@ function tenham2() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function tenham1() {
+function tenham1(loai) {
     var a, b;
     while (true) {
         a = randomchoice(-6, 7);
@@ -969,7 +968,7 @@ function tenham1() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -979,9 +978,9 @@ function tenham1() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
-function CT_hambacbaCTC() {
+function CT_hambacbaCTC(loai) {
     var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
     while (true) {
         x1 = randomchoice(-6, 7);
@@ -1042,7 +1041,7 @@ function CT_hambacbaCTC() {
     var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(a, 3), "x^3") + hesoxausau(phanso(-a * S, 2), "x^2") + hesosau(a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options); 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -1051,10 +1050,10 @@ function CT_hambacbaCTC() {
         options[3] + "\n" +
         "\\loigiai{" + loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function CT_hambacbaTCT() {
+function CT_hambacbaTCT(loai) {
     var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
     while (true) {
         x1 = randomchoice(-6, 7);
@@ -1116,7 +1115,7 @@ function CT_hambacbaTCT() {
     var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(-a, 3), "x^3") + hesoxausau(phanso(a * S, 2), "x^2") + hesosau(-a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options); 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -1125,10 +1124,10 @@ function CT_hambacbaTCT() {
         options[3] + "\n" +
         "\\loigiai{" + loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function SBT_DB_hambacbaCTC() {
+function SBT_DB_hambacbaCTC(loai) {
         var x1 = randomchoice(-6,6);
         var x2 = randomchoice(-6,6);
         while (x1 >= x2) {
@@ -1152,7 +1151,7 @@ function SBT_DB_hambacbaCTC() {
         phuongAntrue
         ];
         shuffle(options);
-        return "\\begin{ex}\n" +
+        return "\\begin{"+loai+"}\n" +
             "Cho hàm số $f(x)="+hesoxaudau(phanso(a,3),"x^3")+hesoxausau(phanso(-a*S,2),"x^2")+hesosau(P*a,"x")+sodungsau(b)+"$ " + 
             "với mọi $x\\in\\Bbb R$. Hàm số đã cho đồng biến trên khoảng nào dưới đây?\n" + 
             "\\choice\n" +
@@ -1167,11 +1166,11 @@ function SBT_DB_hambacbaCTC() {
                "$$f'(x) > 0\\Leftrightarrow\\left[\\begin{array}{l} x > "+x2+" \\\\ x < "+x1+"\\end{array}\\right.$$\n" + 
                "Vậy hàm số đồng biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty).$\n" + 
                "}\n" +
-            "\\end{ex}\n";
+            "\\end{"+loai+"}\n";
     }
 
 
-function SBT_NB_hambacbaTCT() {
+function SBT_NB_hambacbaTCT(loai) {
         var x1 = randomchoice(-6,6);
         var x2 = randomchoice(-6,6);
         while (x1 >= x2) {
@@ -1195,7 +1194,7 @@ function SBT_NB_hambacbaTCT() {
         phuongAntrue
         ];
         shuffle(options);
-        return "\\begin{ex}\n" +
+        return "\\begin{"+loai+"}\n" +
             "Cho hàm số $f(x)="+hesoxaudau(phanso(a,3),"x^3")+hesoxausau(phanso(-a*S,2),"x^2")+hesosau(P*a,"x")+sodungsau(b)+"$ " + 
             "với mọi $x\\in\\Bbb R$. Hàm số đã cho nghịch biến trên khoảng nào dưới đây?\n" + 
             "\\choice\n" +
@@ -1210,7 +1209,7 @@ function SBT_NB_hambacbaTCT() {
                "$$f'(x) < 0\\Leftrightarrow\\left[\\begin{array}{l} x > "+x2+" \\\\ x < "+x1+"\\end{array}\\right.$$\n" + 
                "Vậy hàm số nghịch biến trên các khoảng $(-\\infty;"+x1+")$ và $("+x2+";+\\infty).$\n" + 
                "}\n" +
-            "\\end{ex}\n";
+            "\\end{"+loai+"}\n";
     }
 
 function SBT_BBT_hambacbaCTC(loai) {
@@ -1252,7 +1251,7 @@ function SBT_BBT_hambacbaCTC(loai) {
 
 
 
-function get_TXD_Loga() {
+function get_TXD_Loga(loai) {
         var a = randomchoice(2,15); 
         var b = randomchoice(-10,10);
         while (b == 0) {
@@ -1265,7 +1264,7 @@ function get_TXD_Loga() {
         "{$["+(-b)+";+\\infty)$}"
         ];
         shuffle(options);
-        return "\\begin{ex}\n" +
+        return "\\begin{"+loai+"}\n" +
             "Tập xác định của hàm số $y=\\log_"+format(a)+"(x"+sodungsau(b)+")$ là\n" +
             "\\choice\n" +
             options[0] + "\n" +
@@ -1274,7 +1273,7 @@ function get_TXD_Loga() {
             options[3] + "\n" +
             "\\loigiai{Điều kiện: $x"+sodungsau(b)+">0\\Leftrightarrow x>"+ (-b)+".$\n" + 
             "}\n" +
-            "\\end{ex}\n";
+            "\\end{"+loai+"}\n";
     }
 
 
@@ -1286,7 +1285,7 @@ function get_TXD_Loga() {
 
     
 
-function get_PT_Matcau() {
+function get_PT_Matcau(loai) {
         var a = randomchoice(-6,6);
         var b = randomchoice(-6,6);
         var c = randomchoice(-6,6);
@@ -1304,7 +1303,7 @@ function get_PT_Matcau() {
         "{$I("+(-a)+";"+(-b)+";"+(-c)+"), R="+(a*a+b*b+c*c-d)+"$}"
         ];
         shuffle(options);
-        var content = "\\begin{ex}\n" +
+        var content = "\\begin{"+loai+"}\n" +
             "Trong không gian với hệ trục tọa độ $Oxyz$, tìm tọa độ tâm $I$ và bán kính $R$ của mặt cầu $(S): x^2+y^2+z^2"+hesosau(-2*a,"x")+hesosau(-2*b,"y")+hesosau(-2*c,"z")+sodungsau(d)+"=0$.\n" +
             "\\choice\n" +
             options[0] + "\n" +
@@ -1324,7 +1323,7 @@ function get_PT_Matcau() {
                 "$$x^2+y^2+z^2"+hesosau(-2*a,"x")+hesosau(-2*b,"y")+hesosau(-2*c,"z")+sodungsau(d)+"=0\\Leftrightarrow "+bachai("x",a)+"+"+bachai("y",b)+"+"+bachai("z",c)+"="+(a*a+b*b+c*c-d)+".$$\n"+
                 "Do đó mặt cầu có tâm $I("+(a)+";"+(b)+";"+(c)+")$ và bán kính $R="+canbachai(a*a+b*b+c*c-d)+".$\n" +
                 "}\n" +
-                "\\end{ex}\n"; 
+                "\\end{"+loai+"}\n"; 
         }
         return content;
     }
@@ -1413,7 +1412,7 @@ function c2_d3_v3() {
 
 
 
-function TF_template() {
+function TF_template(loai) {
     var x1 = randomchoice(-6, 6);
     var x2 = randomchoice(-6, 6);
     var a = randomchoice(-4, 4);
@@ -1501,7 +1500,7 @@ function TF_template() {
         "\\itemch " + LGcauCD[1] + "\n" +
         "\\end{itemchoice}";
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choiceTFt\n" +
         "{" + PAcauAB[0] + "}\n" +
@@ -1511,10 +1510,10 @@ function TF_template() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function TF_vidu1() {
+function TF_vidu1(loai) {
     var a = randomchoice(1, 9);
     var b = randomchoice(1, 9);
     var c = randomchoice(1, 9);
@@ -1589,7 +1588,7 @@ function TF_vidu1() {
         "\\itemch " + LGcauCD[1] + "\n" +
         "\\end{itemchoice}";
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choiceTF\n" +
         "{" + PAcauAB[0] + "}\n" +
@@ -1599,10 +1598,10 @@ function TF_vidu1() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
-function TF_vidu2() {
+function TF_vidu2(loai) {
     var m = randomchoice(5, 10);
     var n = randomchoice(5, 10);
 
@@ -1688,7 +1687,7 @@ function TF_vidu2() {
         "\\itemch " + LGcauCD[1] + "\n" +
         "\\end{itemchoice}";
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choiceTF\n" +
         "{" + PAcauAB[0] + "}\n" +
@@ -1698,10 +1697,10 @@ function TF_vidu2() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n\n";
+        "\\end{"+loai+"}\n\n";
 }
 
-function TF_vidu3() {
+function TF_vidu3(loai) {
     var a = randomchoice(60, 90);
     var b = randomchoice(4, 10);
     var c = randomchoice(20, 40);
@@ -1792,7 +1791,7 @@ function TF_vidu3() {
         "\\itemch " + LGcauCD[1] + "\n" +
         "\\end{itemchoice}";
         
-    var cauhoi = "\\begin{ex}\n" +
+    var cauhoi = "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choiceTF\n" +
         "{" + PAcauAB[0] + "}\n" +
@@ -1802,12 +1801,12 @@ function TF_vidu3() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
         
     return cauhoi;
 }
 
-function TF_vidu4() {
+function TF_vidu4(loai) {
     var a = randomchoice(60, 90);
     var b = randomchoice(34, 49);
     var c = randomchoice(10, 39);
@@ -1893,7 +1892,7 @@ function TF_vidu4() {
         "\\itemch " + LGcauCD[1] + "\n" +
         "\\end{itemchoice}";
 
-    var cauhoi = "\\begin{ex}\n" +
+    var cauhoi = "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choiceTF\n" +
         "{" + PAcauAB[0] + "}\n" +
@@ -1903,12 +1902,12 @@ function TF_vidu4() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 
     return cauhoi;
 }
 
-function TF_vidu5() {
+function TF_vidu5(loai) {
     var a = randomchoice(3, 9);
     var b = randomchoice(3, 9);
     var c = randomchoice(3, 9);
@@ -1994,7 +1993,7 @@ function TF_vidu5() {
         "\\itemch " + LGcauCD[1] + "\n" +
         "\\end{itemchoice}";
 
-    var cauhoi = "\\begin{ex}\n" +
+    var cauhoi = "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choiceTF\n" +
         "{" + PAcauAB[0] + "}\n" +
@@ -2004,12 +2003,12 @@ function TF_vidu5() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 
     return cauhoi;
 }
 
-function TF_vidu6() {
+function TF_vidu6(loai) {
     var hl_I = randomchoice(40, 70);
     var hl_II = randomchoice(40, 70);
     var khl_I = randomchoice(10, 30);
@@ -2098,7 +2097,7 @@ function TF_vidu6() {
         "\\itemch " + LGcauCD[1] + "\n" +
         "\\end{itemchoice}";
 
-    var cauhoi = "\\begin{ex}\n" +
+    var cauhoi = "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choiceTF\n" +
         "{" + PAcauAB[0] + "}\n" +
@@ -2108,7 +2107,7 @@ function TF_vidu6() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 
     return cauhoi;
 }
@@ -2116,7 +2115,7 @@ function TF_vidu6() {
 
 
 
-function TF_vidu() {
+function TF_vidu(loai) {
     var a = randomchoice(15, 40);
     var a1 = randomchoice(60, 85);
     var c = randomchoice(10, 30);
@@ -2193,7 +2192,7 @@ function TF_vidu() {
         "\\itemch " + LGcauCD[1] + "\n" +
         "\\end{itemchoice}";
 
-    var cauhoi = "\\begin{ex}\n" +
+    var cauhoi = "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choiceTFt\n" +
         "{" + PAcauAB[0] + "}\n" +
@@ -2203,12 +2202,12 @@ function TF_vidu() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 
     return cauhoi;
 }
 
-function get_XS_Hiepphuongsai() {
+function get_XS_Hiepphuongsai(loai) {
         var y1 = randomchoice(-4,4);
         var y2 = randomchoice(-4,4);
         var y3 = randomchoice(-4,4);
@@ -2280,7 +2279,7 @@ function get_XS_Hiepphuongsai() {
         phuongAn4
         ];
         shuffle(options);
-        return "\\begin{ex}\n" +
+        return "\\begin{"+loai+"}\n" +
             "Cho biến ngẫu nhiên rời rạc hai chiều $(X,Y)$ có bảng phân bố xác suất\n" + 
             vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) + "Hiệp phương sai của hai biến ngẫu nhiên $X,Y$ bằng\n" +  
             "\\choice\n" +
@@ -2289,5 +2288,5 @@ function get_XS_Hiepphuongsai() {
             options[2] + "\n" +
             options[3] + "\n" +
             "\\loigiai{\n}" +
-            "\\end{ex}\n";
+            "\\end{"+loai+"}\n";
     }
