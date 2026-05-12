@@ -332,7 +332,7 @@ function CT_DT_giatriCT_hambacbaTCT() {
            "\\end{ex}\n";
 }
 
-function SBT_BBT_NB_hamtrungphuongCTCT() {
+function SBT_BBT_NB_hamtrungphuongCTCT(loai) {
     var a, b, c;
     while (true) {
         a = randomchoice(1, 6);
@@ -365,7 +365,7 @@ function SBT_BBT_NB_hamtrungphuongCTCT() {
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
 
-    return "\\begin{ex}\n" +
+    return "\\begin{"+loai+"}\n" +
         debai + "\n" +
         "\\choice\n" +
         options[0] + "\n" +
@@ -375,7 +375,7 @@ function SBT_BBT_NB_hamtrungphuongCTCT() {
         "\\loigiai{\n" +
         loigiai + "\n" +
         "}\n" +
-        "\\end{ex}\n";
+        "\\end{"+loai+"}\n";
 }
 
 function SBT_BBT_DB_hamtrungphuongCTCT() {
@@ -1207,7 +1207,7 @@ function SBT_NB_hambacbaTCT() {
             "\\end{ex}\n";
     }
 
-function SBT_BBT_hambacbaCTC() {
+function SBT_BBT_hambacbaCTC(loai) {
         var x1 = randomchoice(-6,-1);
         var x2 = randomchoice(1,6);
         var y1 = randomchoice(1,6);
@@ -1231,7 +1231,7 @@ function SBT_BBT_hambacbaCTC() {
         phuongAn4
         ];
         shuffle(options);
-        return "\\begin{ex}\n" +
+        return "\\begin{"+loai+"}\n" +
             "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
             hambacbaCTC("x","f",x1,x2,y1,y2) + "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?\n" + 
             "\\choice\n" +
@@ -1241,7 +1241,7 @@ function SBT_BBT_hambacbaCTC() {
             options[3] + "\n" +
             "\\loigiai{Dựa vào bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in ("+x1+";"+x2+")$. Do đó hàm số đã cho nghịch biến trên khoảng $("+x1+";"+x2+").$\n" + 
             "}\n" +
-            "\\end{ex}\n";
+            "\\end{"+loai+"}\n";
     }
 
 
