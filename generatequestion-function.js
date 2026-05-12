@@ -6,7 +6,31 @@ function hammoi() {
     ];
     shuffle(dsHam);
     var baHamNgauNhien = dsHam[0] + dsHam[1];
-    return `Đề bài toán hoặc câu dẫn Latex có công thức $\sqrt{a}$ là\\\\
+    return `\\section{XÁC SUẤT CÓ ĐIỀU KIỆN}
+\\subsection{KIẾN THỨC CẦN NHỚ}
+\\subsubsection{Xác suất có điều kiện}
+\\begin{dn}
+Cho hai biến cố $A$ và $B$. Xác suất của biến cố $A$ khi biến cố $B$ đã xảy ra được gọi là {\\it xác suất của $A$ với điều kiện $B$}. Kí hiệu là $P(A|B)$. Khi $P(B)>0$ thì
+$$P(A|B)=\\dfrac{P(AB)}{P(B)}.$$
+\\end{dn}
+$\\bullet$ Từ công thức xác suất có điều kiện, với $P(B)>0$, ta có {\\it công thức nhân xác suất} cho hai biến cố $P(AB)=P(B)P(A|B)$.\\\\
+$\\bullet$ Theo công thức nhân xác suất $P(BA)=P(A)P(B|A)$. Vì $AB=BA$ nên $P(AB)=P(BA)=P(A)P(B|A)$. Kết hợp với $P(AB)=P(B)P(A|B)$, ta suy ra với $P(A)>0, P(B)>0$
+$$\\boxed{P(AB)=P(A)P(B|A)=P(B)P(A|B)\\Rightarrow P(B|A)=\\dfrac{P(B)P(A|B)}{P(A)}}$$
+\\subsubsection{Công thức xác suất toàn phần, công thức Bayes}
+\\begin{dn}
+Cho hai biến cố $A$ và $B$ ${ngaunhien([" với ", " thỏa mãn "])} $0<P(B)<1$. Khi đó ta có {\\it công thức xác suất toàn phần}
+$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B}).$$
+\\end{dn}
+\\begin{dn}
+Cho hai biến cố $A$ và $B$ ${ngaunhien([" với ", " thỏa mãn "])} $P(A)>0$ và $0<P(B)<1$. Khi đó ta có {\\it công thức Bayes}
+$$P(B|A)=\\dfrac{P(B)P(A|B)}{P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})}.$$
+\\end{dn}
+\\begin{nx}
+Vì $P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})$ nên ta có thể viết công thức Bayes ở dưới dạng
+$$P(B|A)=\\dfrac{P(B)P(A|B)}{P(A)}.$$
+\\end{nx}
+\\subsection{MỘT SỐ VÍ DỤ}
+Đề bài toán hoặc câu dẫn Latex có công thức $\sqrt{a}$ là\\\\
 Vậy ta ${ngaunhien(["có", "được", "đạt", "have", "get"])} công thức sau đây\\\\
 \\noindent Do đó ta có ngẫu nhiên công thức toán ${ngaunhien(["$\\sin x$", "$\\cos x$", "$\\dfrac{a}{b}$"])} sau đây:
 ${baHamNgauNhien}Tiếp theo ta có đồ thị của hàm số bậc ba TCT
