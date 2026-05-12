@@ -2,11 +2,10 @@ function hammoi() {
     var dsHam = [
         SBT_BBT_NB_hamtrungphuongCTCT('hello'),  
         SBT_BBT_hambacbaCTC('xinchao'),
-        CT_BBT_hamtrungphuongCTCT('hilu'),
-        CT_DT_giatriCT_hambacbaTCT('yes')
+        CT_BBT_hamtrungphuongCTCT('hilu')
     ];
     shuffle(dsHam);
-    var baHamNgauNhien = dsHam[0] + dsHam[1] + dsHam[2];
+    var baHamNgauNhien = dsHam[0] + dsHam[1];
     return `Đề bài toán hoặc câu dẫn Latex có công thức $\sqrt{a}$ là\\\\
 Vậy ta có.............\\\\
 \\noindent Do đó ta có
