@@ -1,15 +1,22 @@
 function hammoi() {
-    var dsHam = [tenham1(), tenham2(), tenham3(), tenham4(), tenham5(), tenham6()];
+    var dsHam = [
+        SBT_BBT_NB_hamtrungphuongCTCT('hello'),  
+        SBT_BBT_hambacbaCTC('xinchao'),
+        CT_BBT_hamtrungphuongCTCT('hilu'),
+        CT_DT_giatriCT_hambacbaTCT('yes')
+    ];
     shuffle(dsHam);
-    var haiHamNgauNhien = dsHam[0] + dsHam[1];
+    var baHamNgauNhien = dsHam[0] + dsHam[1] + dsHam[2];
     return `Đề bài toán hoặc câu dẫn Latex có công thức $\sqrt{a}$ là\\\\
 Vậy ta có.............\\\\
 \\noindent Do đó ta có
-${haiHamNgauNhien}Tiếp theo ta có đồ thị của hàm số bậc ba TCT
-${CT_DT_giatriCT_hambacbaTCT()}Đồ thị hàm số CTC
-${CT_DT_giatriCT_hambacbaCTC()}
+${baHamNgauNhien}Tiếp theo ta có đồ thị của hàm số bậc ba TCT
+${CT_DT_giatriCT_hambacbaTCT('no')}
+Và đồ thị khác
+${CT_DT_giatriCT_hambacbaCTC('nono')}
 `;
 }
+
 
 function SBT_DT_hambacbaCTC() {
     // Với a > 0: Nghịch biến nằm giữa (x1, x2), Đồng biến nằm 2 bên vô cực
