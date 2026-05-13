@@ -5,5 +5,5 @@ const USERS = [
     { user: "hocsinh", pass: "789", name: "Em Trần Văn B" },
     { user: "latex_pro", pass: "pro123", name: "Chuyên gia LaTeX" },
     { user: "bon", pass: "456", name: "Trần Nguyễn Hải Đăng" },
-    { user: "minh", pass: "234", name: "Trần Nguyên Minh" },
+    { user: "minh", pass: "234", name: "Trần Nguyên Minh" }
 ];
