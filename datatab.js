@@ -17,9 +17,9 @@
 \\def\\ac{5} 
 \\def\\h{4}
 \\path (0,0) coordinate (A) ++(-45:\\ab) coordinate (B) (\\ac,0) coordinate (C) ($(A)!1/2!(C)$) coordinate (H) ($(H)+(0,\\h)$) coordinate (S);
-\draw (S)--(A);
-\draw (S)--(B);
-\draw (S)--(C);
+\\draw (S)--(A);
+\\draw (S)--(B);
+\\draw (S)--(C);
 \\draw (A)--(B)--(C);
 \\draw[dashed,thin](A)--(C);
 \\draw[dashed,thin] (S)--(H);
