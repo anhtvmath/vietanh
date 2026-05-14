@@ -1,4 +1,14 @@
-
+    const choptamgiaccomatbenvuongday = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+\\draw[->,line width = 1pt] (-2.5,0) -- (2.5,0) node[below]{$x$};
+\\draw[->,line width = 1pt] (0,-4.4) -- (0,0.8) node[right]{$y$};
+\\draw (0,0) node[below left]{\footnotesize $O$} circle (1.2pt);
+\\draw (-1,0) node[above]{$-1$} circle (1pt);
+\\draw (1,0) node[above]{$1$} circle (1pt);
+\\draw (0,-4) node[right]{$-4$} circle (1pt);
+\\draw[dashed] (-1,0) -- (-1,-4) -- (0,-4);
+\\draw[dashed] (1,0) -- (1,0) -- (0,0);
+\\draw[thick,samples=200,domain=-2.06:2.03] plot(\\x,{-(\\x)^3+3*(\\x)-2});
+\\end{tikzpicture}`;
     const choptamgiacdeu = `\\begin{tikzpicture}[scale=0.6, font=\\footnotesize,line join=round, line cap=round, >=stealth, every node/.style={scale=0.8}]
 \\usetikzlibrary{calc, angles, quotes}
 \\def\\ab{2} 
