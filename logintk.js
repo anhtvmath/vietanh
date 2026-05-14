@@ -7,5 +7,5 @@ const USERS = [
     { user: "tctoan", pass: "21101994", name: "Thầy Thái Công Toãn" },
     { user: "xuxutit", pass: "Mt@000131", name: "Thầy Đỗ Minh Tuân" },
     { user: "lamdang", pass: "123", name: "Cô Đặng Thị Lâm" },
-    { user: "minhnho", pass: "234", name: "Trần Nguyên Minh" }
+    { user: "sondt", pass: "Latex@123456", name: "Thầy Đinh Thái Sơn" }
 ];
