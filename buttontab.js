@@ -102,6 +102,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-math" onclick="insertAtCursor('\\\\coordinate (M) at (intersection of A--B and C--D);')">Giao điểm</button>
             </div>
 
+            <span class="menu-label">Đồ thị hàm số</span>
+            <div class="submenu">
+                <button class="btn-math" onclick="insertAtCursor(BBThambacbaCTC)">Hàm $y=-x^3+3x-2$</button>
+                
+            </div>
+
+        
+
             <span class="menu-label">Hình học không gian</span>
             <div class="submenu">
                 <button class="btn-math" onclick="insertAtCursor(choptamgiacdeu)">Hình chóp tam giác đều</button>
