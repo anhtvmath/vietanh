@@ -97,6 +97,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="menu-label">Hình học không gian</span>
             <div class="submenu">
                 <button class="btn-math" onclick="insertAtCursor(choptamgiacdeu)">Hình chóp tam giác đều</button>
+                <button class="btn-math" onclick="insertAtCursor(chotamgiac)
+                
+                (choptamgiac)">
+                
+                Hình chóp tam giác có mặt bên vuông góc với đáy</button>
             </div>
 
             <span class="menu-label">Tập hợp số</span>
