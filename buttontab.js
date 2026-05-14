@@ -33,6 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-math" onclick="insertAtCursor('\\\\parallel')">$\\parallel$</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\perp')">$\\perp$</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\sim')">$\\sim$</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\widehat{ABC}')">$\\widehat{ABC}$</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\triangle')">$\\triangle$</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\cdot')">$\\cdot$</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\subset')">$\\subset$</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\supset')">$\\supset$</button>
             </div>
 
             <span class="menu-label">Biến đổi</span>
