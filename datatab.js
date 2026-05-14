@@ -11,6 +11,20 @@
 \\pic[draw,angle eccentricity=1.8,angle radius=2mm]{right angle=C--H--S};
 \\foreach \\i/\\g in {S/90,A/-180,B/-90,C/0,M/-90,H/-90} \\fill[black] (\\i) circle(1pt)+(\\g:2.6mm)node[scale=1]{$\\i$};
 \\end{tikzpicture}`;
+    const choptamgiacdeumatbenvuongday = `\\begin{tikzpicture}[scale=0.6, font=\\footnotesize,line join=round, line cap=round, >=stealth, every node/.style={scale=0.8}]
+\\usetikzlibrary{calc, angles, quotes}
+\\def\\ab{2} 
+\\def\\ac{5} 
+\\def\\h{4}
+\\path (0,0) coordinate (A) ++(-45:\\ab) coordinate (B) (\\ac,0) coordinate (C) ($(A)!1/2!(C)$) coordinate (H) ($(H)+(0,\h)$) coordinate (S);
+\\foreach \\i in {A,B,C} {\draw (S)--(\\i);}
+\draw (A)--(B)--(C);
+\draw[dashed,thin](A)--(C) (S)--(H);
+\pic[draw,thin,angle radius=2mm] {right angle = S--H--C};
+\foreach \\i/\\g in {S/90,A/180,B/-90,C/0,H/-90} \\fill[black] (\\i) circle(1pt)+(\\g:2.5mm)node[scale=1]{$\i$};
+\end{tikzpicture}
+
+`;
 
 
     const gocbatky = `\\pic[draw, angle radius=2.5mm,"\\scriptsize $30^\\circ$"]{angle = C--B--A}`;
