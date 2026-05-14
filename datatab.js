@@ -1,4 +1,4 @@
-    const choptamgiaccomatbenvuongday = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+    const hambacba1 = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
 \\draw[->,line width = 1pt] (-2.5,0) -- (2.5,0) node[below]{$x$};
 \\draw[->,line width = 1pt] (0,-4.4) -- (0,0.8) node[right]{$y$};
 \\draw (0,0) node[below left]{\footnotesize $O$} circle (1.2pt);
