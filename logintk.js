@@ -6,7 +6,7 @@ const USERS = [
     { user: "loind", pass: "123", name: "Thầy Nguyễn Đức Lợi" },
     { user: "tctoan", pass: "21101994", name: "Thầy Thái Công Toãn" },
     { user: "ntt", pass: "ntt123", name: "Thầy Nguyễn Thái Thông" },
-    { user: "xuxutit", pass: "Mt@000131", name: "Thầy Đỗ Minh Tuân" },
+    { user: "xuxutit", pass: "1", name: "Thầy Đỗ Minh Tuân" },
     { user: "lamdang", pass: "123", name: "Cô Đặng Thị Lâm" },
     { user: "huucuong", pass: "123", name: "Thầy Nguyễn Hữu Cường" },
     { user: "sondt", pass: "Latex@123456", name: "Thầy Đinh Thái Sơn" }
