@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-math" onclick="insertAtCursor('\\\\displaystyle\\\\int\\\\limits_{a}^{b}\\\\mathrm{d}x')">$\\displaystyle\\int_{a}^{b}$</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\displaystyle\\\\lim\\\\limits_{x \\\\to x_0}')">$\\lim$</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\dfrac{a}{b}')">$\\dfrac{a}{b}$</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\parallel')">$\\parallel$</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\perp')">$\\perp$</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\sim')">$\\sim$</button>
             </div>
 
             <span class="menu-label">Biến đổi</span>
