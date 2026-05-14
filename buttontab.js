@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-math" onclick="insertAtCursor(BBThamphanthucTT)">Hàm phân thức + + </button>
             </div>
 
-            <span class="menu-label">TikZ & Hình học</span>
+            <span class="menu-label">TikZ</span>
             <div class="submenu">
                 <button class="btn-math" onclick="insertAtCursor('\\\\begin{tikzpicture}\\n\\\\usetikzlibrary{calc, positioning, arrows.meta, shapes.geometric, intersections, quotes, angles}\\n\\n\\\\end{tikzpicture}')">Khởi tạo Tikz</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\coordinate (A) at (?,?);\\n\\\\draw[fill=black] (A) node[left,right,above,below]{$A$} circle(1.2pt);')">Vẽ điểm</button>
@@ -92,6 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-math" onclick="insertAtCursor('\\\\pic[draw, angle radius = 2.5mm]{right angle = A--H--B};')">Góc vuông</button>
                 <button class="btn-math" onclick="insertAtCursor(gocbatky)">Góc bất kỳ</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\coordinate (M) at (intersection of A--B and C--D);')">Giao điểm</button>
+            </div>
+
+            <span class="menu-label">Hình học không gian</span>
+            <div class="submenu">
+                <button class="btn-math" onclick="insertAtCursor(BBThambacbaCTC)">Hình chóp tam giác đều</button>
             </div>
 
             <span class="menu-label">Tập hợp số</span>
