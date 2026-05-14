@@ -5,7 +5,7 @@ const USERS = [
     { user: "haianh", pass: "123", name: "Cô Chu Hải Anh" },
     { user: "loind", pass: "123", name: "Thầy Nguyễn Đức Lợi" },
     { user: "tctoan", pass: "21101994", name: "Thầy Thái Công Toãn" },
-    { user: "loind1", pass: "123", name: "Thầy Nguyễn Đức Lợi 1" },
+    { user: "xuxutit", pass: "Mt@000131", name: "Thầy Đỗ Minh Tuân" },
     { user: "loind2", pass: "123", name: "Thầy Nguyễn Đức Lợi 2" },
     { user: "minhnho", pass: "234", name: "Trần Nguyên Minh" }
 ];
