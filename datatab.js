@@ -9,7 +9,7 @@
 \\draw (A)--(B)--(C) (S)--(M);
 \\draw[dashed] (A)--(C) (A)--(M) (S)--(H);
 \\pic[draw,angle eccentricity=1.8,angle radius=2mm]{right angle=C--H--S};
-\\foreach \\i/\\g in {S/90,A/-180,B/-90,C/0,M/-90,H/-90} \\fill[black] (\\i) circle(1pt)+(\g:2.6mm)node[scale=1]{$\\i$};
+\\foreach \\i/\\g in {S/90,A/-180,B/-90,C/0,M/-90,H/-90} \\fill[black] (\\i) circle(1pt)+(\\g:2.6mm)node[scale=1]{$\\i$};
 \end{tikzpicture}`;
 
 
