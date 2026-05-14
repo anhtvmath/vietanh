@@ -3,7 +3,7 @@
 \\draw[->,line width = 1pt] (0,-4.4) -- (0,0.8) node[right]{$y$};
 \\draw (0,0) node[below left]{\\footnotesize $O$} circle (1.2pt);
 \\draw (-1,0) node[above]{$-1$} circle (1pt);
-\\draw (1,0) node[above]{$1$} circle (1pt);
+\\draw (1,0) node[above]{$1$} circle (1pt); 
 \\draw (0,-4) node[right]{$-4$} circle (1pt);
 \\draw[dashed] (-1,0) -- (-1,-4) -- (0,-4);
 \\draw[dashed] (1,0) -- (1,0) -- (0,0);
