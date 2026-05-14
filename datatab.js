@@ -5,12 +5,12 @@
 \\def\\ac{4} 
 \\def\\h{3}
 \\path (0,0) coordinate (A) ++(-60:\\ab) coordinate (B) (\\ac,0) coordinate (C) ($(B)!1/2!(C)$) coordinate (M) ($(A)!2/3!(M)$) coordinate (H) ($(H)+(0,\\h)$) coordinate (S);
-\\foreach \\i in{A,B,C}{\draw (S)--(\\i);};
+\\foreach \\i in{A,B,C}{\\draw (S)--(\\i);};
 \\draw (A)--(B)--(C) (S)--(M);
 \\draw[dashed] (A)--(C) (A)--(M) (S)--(H);
 \\pic[draw,angle eccentricity=1.8,angle radius=2mm]{right angle=C--H--S};
 \\foreach \\i/\\g in {S/90,A/-180,B/-90,C/0,M/-90,H/-90} \\fill[black] (\\i) circle(1pt)+(\\g:2.6mm)node[scale=1]{$\\i$};
-\end{tikzpicture}`;
+\\end{tikzpicture}`;
 
 
     const gocbatky = `\\pic[draw, angle radius=2.5mm,"\\scriptsize $30^\\circ$"]{angle = C--B--A}`;
