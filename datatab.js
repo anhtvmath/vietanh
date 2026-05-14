@@ -22,7 +22,7 @@
 \\draw[dashed,thin](A)--(C) (S)--(H);
 \\pic[draw,thin,angle radius=2mm] {right angle = S--H--C};
 \\foreach \\i/\\g in {S/90,A/180,B/-90,C/0,H/-90} \\fill[black] (\\i) circle(1pt)+(\\g:2.5mm)node[scale=1]{$\\i$};
-\end{tikzpicture}`;
+\\end{tikzpicture}`;
 
 
     const gocbatky = `\\pic[draw, angle radius=2.5mm,"\\scriptsize $30^\\circ$"]{angle = C--B--A}`;
