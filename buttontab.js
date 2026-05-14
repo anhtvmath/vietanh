@@ -104,8 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <span class="menu-label">Đồ thị hàm số</span>
             <div class="submenu">
-                <button class="btn-math" onclick="insertAtCursor(hambacba1)">Hàm $y=-x^3+3x-2$</button>
-                
+                <button class="btn-math" onclick="insertAtCursor(hambacba1)">$y=-x^3+3x-2$</button> 
             </div>
 
         
