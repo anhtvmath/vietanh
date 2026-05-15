@@ -9,6 +9,44 @@
 \\draw[dashed] (1,0) -- (1,0) -- (0,0);
 \\draw[thick,samples=200,domain=-2.06:2.03] plot(\\x,{-(\\x)^3+3*(\\x)-2});
 \\end{tikzpicture}`;
+    const hambacba2 = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+\\draw[->,line width = 1pt] (-2.5,0) -- (2.5,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-3.4) -- (0,1.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-1,0) node[above]{$-1$} circle (1pt);
+\\draw (1,0) node[below]{$1$} circle (1pt);
+\\draw (0,-3) node[right]{$-3$} circle (1pt);
+\\draw (0,1) node[left]{$1$} circle (1pt);
+\\draw[dashed] (-1,0) -- (-1,-3) -- (0,-3);
+\\draw[dashed] (1,0) -- (1,1) -- (0,1);
+\\draw[thick,samples=200,domain=-2.06:2.03] plot(\\x,{-(\\x)^3+3*(\\x)-1});
+\\end{tikzpicture}`;
+    const hambacba3 = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+\\draw[->,line width = 1pt] (-2.5,0) -- (2.5,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-2.4) -- (0,2.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-1,0) node[above]{$-1$} circle (1pt);
+\\draw (1,0) node[below]{$1$} circle (1pt);
+\\draw (0,-2) node[right]{$-2$} circle (1pt);
+\\draw (0,2) node[left]{$2$} circle (1pt);
+\\draw[dashed] (-1,0) -- (-1,-2) -- (0,-2);
+\\draw[dashed] (1,0) -- (1,2) -- (0,2);
+\\draw[thick,samples=200,domain=-2.06:2.03] plot(\\x,{-(\\x)^3+3*(\\x)});
+\\end{tikzpicture}`;
+    const hambacba4 = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+\\draw[->,line width = 1pt] (-2.5,0) -- (2.5,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-1.4) -- (0,3.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below right]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-1,0) node[above]{$-1$} circle (1pt);
+\\draw (1,0) node[below]{$1$} circle (1pt);
+\\draw (0,-1) node[right]{$-1$} circle (1pt);
+\\draw (0,3) node[left]{$3$} circle (1pt);
+\\draw[dashed] (-1,0) -- (-1,-1) -- (0,-1);
+\\draw[dashed] (1,0) -- (1,3) -- (0,3);
+\\draw[thick,samples=200,domain=-2.06:2.03] plot(\\x,{-(\\x)^3+3*(\\x)+1});
+\\end{tikzpicture}`;
+
+
     const choptamgiacdeu = `\\begin{tikzpicture}[scale=0.6, font=\\footnotesize,line join=round, line cap=round, >=stealth, every node/.style={scale=0.8}]
 \\usetikzlibrary{calc, angles, quotes}
 \\def\\ab{2} 
