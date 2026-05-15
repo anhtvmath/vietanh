@@ -192,7 +192,210 @@
 \\draw[dashed] (-2,0) -- (-2,0) -- (0,0);
 \\draw[thick,samples=200,domain=-3.06:1.04] plot(\\x,{-(\\x)^3-3*(\\x)^2+4});
 \\end{tikzpicture}`;
-
+    const hambacba20 = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+\\draw[->,line width = 1pt] (-2.3,0) -- (2.5,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-4.4) -- (0,0.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below right = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-1,0) node[above]{$-1$} circle (1pt);
+\\draw (1,0) node[above]{$1$} circle (1pt);
+\\draw (0,-4) node[left]{$-4$} circle (1pt);
+\\draw[dashed] (-1,0) -- (-1,0) -- (0,0);
+\\draw[dashed] (1,0) -- (1,-4) -- (0,-4);
+\\draw[thick,samples=200,domain=-2.02:2.05] plot(\\x,{(\\x)^3-3*(\\x)-2});
+\\end{tikzpicture}`;
+    const hambacba21 = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+\\draw[->,line width = 1pt] (-2.3,0) -- (2.5,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-3.3) -- (0,1.7) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below right = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-1,0) node[below]{$-1$} circle (1pt);
+\\draw (1,0) node[above]{$1$} circle (1pt);
+\\draw (0,-3) node[left]{$-3$} circle (1pt);
+\\draw (0,1) node[right]{$1$} circle (1pt);
+\\draw[dashed] (-1,0) -- (-1,1) -- (0,1);
+\\draw[dashed] (1,0) -- (1,-3) -- (0,-3);
+\\draw[thick,samples=200,domain=-2.02:2.05] plot(\\x,{(\\x)^3-3*(\\x)-1});
+\\end{tikzpicture}`;
+    const hambacba22 = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+\\draw[->,line width = 1pt] (-2.3,0) -- (2.5,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-2.3) -- (0,2.6) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[above right = -2px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-1,0) node[below]{$-1$} circle (1pt);
+\\draw (1,0) node[above]{$1$} circle (1pt);
+\\draw (0,-2) node[left]{$-2$} circle (1pt);
+\\draw (0,2) node[right]{$2$} circle (1pt);
+\\draw[dashed] (-1,0) -- (-1,2) -- (0,2);
+\\draw[dashed] (1,0) -- (1,-2) -- (0,-2);
+\\draw[thick,samples=200,domain=-2.02:2.04] plot(\\x,{(\\x)^3-3*(\\x)});
+\\end{tikzpicture}`;
+    const hambacba23 = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+\\draw[->,line width = 1pt] (-2.3,0) -- (2.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-1.3) -- (0,3.6) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -2px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-1,0) node[below]{$-1$} circle (1pt);
+\\draw (1,0) node[above]{$1$} circle (1pt);
+\\draw (0,-1) node[left]{$-1$} circle (1pt);
+\\draw (0,3) node[right]{$3$} circle (1pt);
+\\draw[dashed] (-1,0) -- (-1,3) -- (0,3);
+\\draw[dashed] (1,0) -- (1,-1) -- (0,-1);
+\\draw[thick,samples=200,domain=-2.02:2.04] plot(\\x,{(\\x)^3-3*(\\x)+1});
+\\end{tikzpicture}`;
+    const hambacba24 = `\\begin{tikzpicture}[>=stealth,thick,scale=0.9]
+\\draw[->,line width = 1pt] (-2.3,0) -- (2.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-0.7) -- (0,4.6) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below right = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-1,0) node[below]{$-1$} circle (1pt);
+\\draw (1,0) node[below]{$1$} circle (1pt);
+\\draw (0,4) node[right]{$4$} circle (1pt);
+\\draw[dashed] (-1,0) -- (-1,4) -- (0,4);
+\\draw[dashed] (1,0) -- (1,0) -- (0,0);
+\\draw[thick,samples=200,domain=-2.04:2.04] plot(\\x,{(\\x)^3-3*(\\x)+2});
+\\end{tikzpicture}`;
+    const hambacba25 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.7]
+\\draw[->,line width = 1pt] (-1.3,0) -- (3.6,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-6.4) -- (0,0.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (2,0) node[above]{$2$} circle (1pt);
+\\draw (0,-2) node[above left]{$-2$} circle (1pt);
+\\draw (0,-6) node[left]{$-6$} circle (1pt);
+\\draw[dashed] (2,0) -- (2,-6) -- (0,-6);
+\\draw[thick,samples=200,domain=-1.03:3.24] plot(\\x,{(\\x)^3-3*(\\x)^2-2});
+\\end{tikzpicture}`;
+    const hambacba26 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.7]
+\\draw[->,line width = 1pt] (-1.4,0) -- (3.5,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-5.6) -- (0,1.2) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[above left = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (2,0) node[above]{$2$} circle (1pt);
+\\draw (0,-1) node[above left = -2px]{$-1$} circle (1pt);
+\\draw (0,-5) node[left]{$-5$} circle (1pt);
+\\draw[dashed] (2,0) -- (2,-5) -- (0,-5);
+\\draw[thick,samples=200,domain=-1.04:3.18] plot(\\x,{(\\x)^3-3*(\\x)^2-1});
+\\end{tikzpicture}`;
+    const hambacba27 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.7]
+\\draw[->,line width = 1pt] (-1.4,0) -- (3.6,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-4.6) -- (0,1.1) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[above left = -2px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (2,0) node[above]{$2$} circle (1pt);
+\\draw (0,-4) node[left]{$-4$} circle (1pt);
+\\draw[dashed] (2,0) -- (2,-4) -- (0,-4);
+\\draw[thick,samples=200,domain=-1.05:3.08] plot(\\x,{(\\x)^3-3*(\\x)^2});
+\\end{tikzpicture}`;
+    const hambacba28 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-1.5,0) -- (3.5,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-3.7) -- (0,1.9) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below right = -2px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (2,0) node[above]{$2$} circle (1pt);
+\\draw (0,1) node[above left = -2px]{$1$} circle (1pt);
+\\draw (0,-3) node[left]{$-3$} circle (1pt);
+\\draw[dashed] (2,0) -- (2,-3) -- (0,-3);
+\\draw[thick,samples=200,domain=-1.06:3.03] plot(\\x,{(\\x)^3-3*(\\x)^2+1});
+\\end{tikzpicture}`;
+    const hambacba29 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-1.3,0) -- (3.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-2.5) -- (0,2.86) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -2px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (2,0) node[above]{$2$} circle (1pt);
+\\draw (0,2) node[above left = -1px]{$2$} circle (1pt);
+\\draw (0,-2) node[left]{$-2$} circle (1pt);
+\\draw[dashed] (2,0) -- (2,-2) -- (0,-2);
+\\draw[thick,samples=200,domain=-1.04:3.02] plot(\\x,{(\\x)^3-3*(\\x)^2+2});
+\\end{tikzpicture}`;
+    const hambacba30 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-1.3,0) -- (3.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-1.5) -- (0,3.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -2px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (2,0) node[above]{$2$} circle (1pt);
+\\draw (0,3) node[above left = -1px]{$3$} circle (1pt);
+\\draw (0,-1) node[left]{$-1$} circle (1pt);
+\\draw[dashed] (2,0) -- (2,-1) -- (0,-1);
+\\draw[thick,samples=200,domain=-1.04:3.02] plot(\\x,{(\\x)^3-3*(\\x)^2+3});
+\\end{tikzpicture}`;
+    const hambacba31 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-1.3,0) -- (3.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-0.8) -- (0,4.9) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -2px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (2,0) node[below]{$2$} circle (1pt);
+\\draw (0,4) node[above left = -1px]{$4$} circle (1pt);
+\\draw[dashed] (2,0) -- (2,0) -- (0,0);
+\\draw[thick,samples=200,domain=-1.07:3.04] plot(\\x,{(\\x)^3-3*(\\x)^2+4});
+\\end{tikzpicture}`;
+    const hambacba32 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.7]
+\\draw[->,line width = 1pt] (-1.4,0) -- (3.3,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-0.7) -- (0,5.9) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -2px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (2,0) node[below]{$2$} circle (1pt);
+\\draw (0,5) node[above left = -1px]{$5$} circle (1pt);
+\\draw (0,1) node[left]{$1$} circle (1pt);
+\\draw[dashed] (2,0) -- (2,1) -- (0,1);
+\\draw[thick,samples=200,domain=-1.15:3.04] plot(\\x,{(\\x)^3-3*(\\x)^2+5});
+\\end{tikzpicture}`;
+    const hambacba33 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-3.3,0) -- (1.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-4.7) -- (0,1) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -2px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-2,0) node[above]{$-2$} circle (1pt);
+\\draw (0,-4) node[below left = -1px]{$-4$} circle (1pt);
+\\draw[dashed] (-2,0) -- (-2,0) -- (0,0);
+\\draw[thick,samples=200,domain=-3.04:1.07] plot(\\x,{(\\x)^3+3*(\\x)^2-4});
+\\end{tikzpicture}`;
+    const hambacba34 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-3.3,0) -- (1.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-3.7) -- (0,1.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[above right = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-2,0) node[below]{$-2$} circle (1pt);
+\\draw (0,-3) node[below left = -1px]{$-3$} circle (1pt);
+\\draw (0,1) node[right]{$1$} circle (1pt);
+\\draw[dashed] (-2,0) -- (-2,1) -- (0,1);
+\\draw[thick,samples=200,domain=-3.05:1.05] plot(\\x,{(\\x)^3+3*(\\x)^2-3});
+\\end{tikzpicture}`;
+    const hambacba35 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-3.3,0) -- (1.3,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-2.7) -- (0,2.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[above right]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-2,0) node[below]{$-2$} circle (1pt);
+\\draw (0,-2) node[below left]{$-2$} circle (1pt);
+\\draw (0,2) node[right]{$2$} circle (1pt);
+\\draw[dashed] (-2,0) -- (-2,2) -- (0,2);
+\\draw[thick,samples=200,domain=-3.05:1.04] plot(\\x,{(\\x)^3+3*(\\x)^2-2});
+\\end{tikzpicture}`;
+    const hambacba36 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-3.3,0) -- (1.3,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-1.8) -- (0,3.7) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[above left = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-2,0) node[below]{$-2$} circle (1pt);
+\\draw (0,-1) node[below left = -1px]{$-1$} circle (1pt);
+\\draw (0,3) node[right]{$3$} circle (1pt);
+\\draw[dashed] (-2,0) -- (-2,3) -- (0,3);
+\\draw[thick,samples=200,domain=-3.06:1.04] plot(\\x,{(\\x)^3+3*(\\x)^2-1});
+\\end{tikzpicture}`;
+    const hambacba37 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-3.3,0) -- (1.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-0.8) -- (0,4.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-2,0) node[below]{$-2$} circle (1pt);
+\\draw (0,4) node[right]{$4$} circle (1pt);
+\\draw[dashed] (-2,0) -- (-2,4) -- (0,4);
+\\draw[thick,samples=200,domain=-3.07:1.05] plot(\\x,{(\\x)^3+3*(\\x)^2});
+\\end{tikzpicture}`;
+    const hambacba38 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.7]
+\\draw[->,line width = 1pt] (-3.4,0) -- (1.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-0.9) -- (0,5.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-2,0) node[below]{$-2$} circle (1pt);
+\\draw (0,1) node[below left]{$1$} circle (1pt);
+\\draw (0,5) node[right]{$5$} circle (1pt);
+\\draw[dashed] (-2,0) -- (-2,5) -- (0,5);
+\\draw[thick,samples=200,domain=-3.17:1.06] plot(\\x,{(\\x)^3+3*(\\x)^2+1});
+\\end{tikzpicture}`;
+    const hambacba39 = `\\begin{tikzpicture}[>=stealth,thick,yscale=0.7]
+\\draw[->,line width = 1pt] (-3.6,0) -- (1.5,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-0.9) -- (0,6.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-2,0) node[below]{$-2$} circle (1pt);
+\\draw (0,2) node[below left = -1px]{$2$} circle (1pt);
+\\draw (0,6) node[right]{$6$} circle (1pt);
+\\draw[dashed] (-2,0) -- (-2,6) -- (0,6);
+\\draw[thick,samples=200,domain=-3.25:1.05] plot(\\x,{(\\x)^3+3*(\\x)^2+2});
+\\end{tikzpicture}`;
     const choptamgiacdeu = `\\begin{tikzpicture}[scale=0.6, font=\\footnotesize,line join=round, line cap=round, >=stealth, every node/.style={scale=0.8}]
 \\usetikzlibrary{calc, angles, quotes}
 \\def\\ab{2} 
