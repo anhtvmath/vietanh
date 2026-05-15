@@ -428,6 +428,51 @@
 \\end{tikzpicture}`;
 
     const gocbatky = `\\pic[draw, angle radius=2.5mm,"\\scriptsize $30^\\circ$"]{angle = C--B--A}`;
+
+    const BBThambachaiTC = `\\begin{tikzpicture}[thick,xscale = 0.95,yscale = 0.65]
+\\node at (0,0) {$x$};
+\\node at (1,0) {$-\\infty$};
+\\node at (3,0) {$x_1$};
+\\node at (5,0) {$+\\infty$};
+\\node at (0,-1) {$f'(x)$};
+\\node at (2,-1) {$-$};
+\\node at (3,-1) {$0$};
+\\node at (4,-1) {$+$};
+\\node at (0,-3) {$f(x)$};
+\\node (A) at (1,-2) {$+\\infty$};
+\\node (B) at (3,-4){$y_1$};
+\\node (C) at (5,-2){$+\\infty$};
+\\draw (-0.5,-0.5)--(5.5,-0.5);
+\\draw (-0.5,-1.5)--(5.5,-1.5);
+\\draw (0.5,0.5)--(0.5,-4.5);
+\\draw (-0.5,-4.5) rectangle (5.5,0.5);
+\\draw[->,>=stealth] (A)--(B);
+\\draw[->,>=stealth] (B)--(C);
+\\end{tikzpicture}`;
+
+const BBThambachaiCT = `\\begin{tikzpicture}[thick,xscale = 0.95,yscale = 0.65]
+\\node at (0,0) {$x$};
+\\node at (1,0) {$-\\infty$};
+\\node at (3,0) {$x_1$};
+\\node at (5,0) {$+\\infty$};
+\\node at (0,-1) {$f'(x)$};
+\\node at (2,-1) {$+$};
+\\node at (3,-1) {$0$};
+\\node at (4,-1) {$-$};
+\\node at (0,-3) {$f(x)$};
+\\node (A) at (1,-4) {$-\\infty$};
+\\node (B) at (3,-2){$y_1$};
+\\node (C) at (5,-4){$-\\infty$};
+\\draw (-0.5,-0.5)--(5.5,-0.5);
+\\draw (-0.5,-1.5)--(5.5,-1.5);
+\\draw (0.5,0.5)--(0.5,-4.5);
+\\draw (-0.5,-4.5) rectangle (5.5,0.5);
+\\draw[->,>=stealth] (A)--(B);
+\\draw[->,>=stealth] (B)--(C);
+\\end{tikzpicture}`;
+
+
+
     const BBThambacbaCTC = `\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]
 \\def\\a{8}
 \\def\\b{7}
