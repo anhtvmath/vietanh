@@ -9,5 +9,6 @@ const USERS = [
     { user: "xuxutit", pass: "1", name: "Thầy Đỗ Minh Tuân" },
     { user: "lamdang", pass: "123", name: "Cô Đặng Thị Lâm" },
     { user: "huucuong", pass: "123", name: "Thầy Nguyễn Hữu Cường" },
+    { user: "vanminhthoai", pass: "2002", name: "Thầy Văn Minh Thoại" },
     { user: "sondt", pass: "Latex@123456", name: "Thầy Đinh Thái Sơn" }
 ];
