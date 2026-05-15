@@ -432,7 +432,7 @@
     const BBThambac2trenbac1CTTC = `\\begin{tikzpicture}[thick, xscale=1.2,yscale=0.6]
 \\node at (0,0) {$x$};
 \\node at (1,0) {$-\\infty$};
-\\node at (3,0) {$x1_$};
+\\node at (3,0) {$x_1$};
 \\node at (5,0) {$a$};
 \\node at (7,0) {$x_2$};
 \\node at (9,0) {$+\\infty$};
@@ -449,6 +449,38 @@
 \\node (C2) at (5.4,-2){$+\\infty$};
 \\node (D) at (7,-6) {$y_2$};
 \\node (E) at (9,-2) {$+\\infty$};
+\\node at (0,-4) {$f(x)$};
+\\draw[double distance=1pt] (5,-0.5)--(5,-6.5);
+\\draw[->,>=stealth] (A)--(B);
+\\draw[->,>=stealth] (B)--(C1);
+\\draw[->,>=stealth] (C2)--(D);
+\\draw[->,>=stealth] (D)--(E);
+\\draw (-0.5,-0.5)--(9.5,-0.5);
+\\draw (-0.5,-1.5)--(9.5,-1.5);
+\\draw (0.5,0.5)--(0.5,-6.5);
+\\draw (-0.5,-6.5) rectangle (9.5,0.5);
+\\end{tikzpicture}`;
+
+    const BBThambac2trenbac1TCCT = `\\begin{tikzpicture}[thick,xscale=1.2,yscale=0.6]
+\\node at (0,0) {$x$};
+\\node at (1,0) {$-\\infty$};
+\\node at (3,0) {$x_1$};
+\\node at (5,0) {$a$};
+\\node at (7,0) {$x_2$};
+\\node at (9,0) {$+\\infty$};
+\\node at (0,-1) {$f'(x)$};
+\\node at (2,-1) {$-$};
+\\node at (3,-1) {$0$};
+\\node at (4,-1) {$+$};
+\\node at (6,-1) {$+$};
+\\node at (7,-1) {$0$};
+\\node at (8,-1) {$-$};
+\\node (A) at (1,-2) {$+\\infty$};
+\\node (B) at (3,-6) {$y_1$};
+\\node (C1) at (4.6,-2){$+\\infty$};
+\\node (C2) at (5.4,-6){$-\\infty$};
+\\node (D) at (7,-2) {$y_2$};
+\\node (E) at (9,-6) {$-\\infty$};
 \\node at (0,-4) {$f(x)$};
 \\draw[double distance=1pt] (5,-0.5)--(5,-6.5);
 \\draw[->,>=stealth] (A)--(B);
