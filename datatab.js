@@ -429,7 +429,7 @@
 
     const gocbatky = `\\pic[draw, angle radius=2.5mm,"\\scriptsize $30^\\circ$"]{angle = C--B--A}`;
 
-    const BBThambac2trenbac1CTTC = `\\begin{tikzpicture}[thick, xscale=1.2,yscale=0.6]
+    const BBThambac2trenbac1CTTC = `\\begin{tikzpicture}[thick, xscale=1.1,yscale=0.6]
 \\node at (0,0) {$x$};
 \\node at (1,0) {$-\\infty$};
 \\node at (3,0) {$x_1$};
@@ -461,7 +461,7 @@
 \\draw (-0.5,-6.5) rectangle (9.5,0.5);
 \\end{tikzpicture}`;
 
-    const BBThambac2trenbac1TCCT = `\\begin{tikzpicture}[thick,xscale=1.2,yscale=0.6]
+    const BBThambac2trenbac1TCCT = `\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.6]
 \\node at (0,0) {$x$};
 \\node at (1,0) {$-\\infty$};
 \\node at (3,0) {$x_1$};
