@@ -107,7 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-math" onclick="insertAtCursor(hambacba1)">$y=-x^3+3x-2$</button> 
                 <button class="btn-math" onclick="insertAtCursor(hambacba2)">$y=-x^3+3x-1$</button> 
                 <button class="btn-math" onclick="insertAtCursor(hambacba3)">$y=-x^3+3x$</button> 
-                <button class="btn-math" onclick="insertAtCursor(hambacba4)">$y=-x^3+3x+1$</button> 
+                <button class="btn-math" onclick="insertAtCursor(hambacba4)">$y=-x^3+3x+1$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba5)">$y=-x^3+3x+2$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba6)">$y=-x^3+3x^2-4$</button>
             </div>
 
         
