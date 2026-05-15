@@ -11,5 +11,7 @@ const USERS = [
     { user: "huucuong", pass: "123", name: "Thầy Nguyễn Hữu Cường" },
     { user: "nvc", pass: "abc123", name: "Thầy Nguyễn Văn Cường" },
     { user: "vanminhthoai", pass: "2002", name: "Thầy Văn Minh Thoại" },
+    { user: "dvk", pass: "123", name: "Thầy Dương Vĩ Khang" },
+    { user: "at", pass: "123", name: "Thầy Bùi Trần Đức Anh Thái" },
     { user: "sondt", pass: "Latex@123456", name: "Thầy Đinh Thái Sơn" }
 ];
