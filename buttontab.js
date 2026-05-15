@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-math" onclick="insertAtCursor(BBThamphanthucTT)">Hàm phân thức - - </button>
                 <button class="btn-math" onclick="insertAtCursor(BBThamphanthucTT)">Hàm phân thức + + </button>
                 <button class="btn-math" onclick="insertAtCursor(BBThambac2trenbac1CTTC)">Hàm bậc hai trên bậc nhất + - - +</button>
+                <button class="btn-math" onclick="insertAtCursor(BBThambac2trenbac1TCCT)">Hàm bậc hai trên bậc nhất - + + -</button>
             </div>
 
             <span class="menu-label">TikZ</span>
