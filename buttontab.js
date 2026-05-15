@@ -80,6 +80,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <span class="menu-label">Bảng biến thiên</span>
             <div class="submenu">
+                <button class="btn-math" onclick="insertAtCursor(BBThambachaiCT)">Hàm bậc 2 + -</button>
+                <button class="btn-math" onclick="insertAtCursor(BBThambachaiTC)">Hàm bậc 2 - +</button>
+                
                 <button class="btn-math" onclick="insertAtCursor(BBThambacbaCTC)">Hàm bậc 3 + - +</button>
                 <button class="btn-math" onclick="insertAtCursor(BBThambacbaTCT)">Hàm bậc 3 - + -</button>
                 <button class="btn-math" onclick="insertAtCursor(BBThamtrungphuongCTCT)">Hàm trùng phương + - + - </button>
