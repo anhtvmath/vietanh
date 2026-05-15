@@ -122,7 +122,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-math" onclick="insertAtCursor(hambacba16)">$y=-x^3-3x^2+1$</button>
                 <button class="btn-math" onclick="insertAtCursor(hambacba17)">$y=-x^3-3x^2+2$</button>
                 <button class="btn-math" onclick="insertAtCursor(hambacba18)">$y=-x^3-3x^2+3$</button>
-                <button class="btn-math" onclick="insertAtCursor(hambacba19)">$y=-x^3-3x^2+4$</button>  
+                <button class="btn-math" onclick="insertAtCursor(hambacba19)">$y=-x^3-3x^2+4$</button> 
+                <button class="btn-math" onclick="insertAtCursor(hambacba20)">$y=x^3-3x-2$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba21)">$y=x^3-3x-1$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba22)">$y=x^3-3x$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba23)">$y=x^3-3x+1$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba24)">$y=x^3-3x+2$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba25)">$y=x^3-3x^2-2$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba26)">$y=x^3-3x^2-1$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba27)">$y=x^3-3x^2$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba28)">$y=x^3-3x^2+1$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba29)">$y=x^3-3x^2+2$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba30)">$y=x^3-3x^2+3$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba31)">$y=x^3-3x^2+4$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba32)">$y=x^3-3x^2+5$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba33)">$y=x^3+3x^2-4$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba34)">$y=x^3+3x^2-3$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba35)">$y=x^3+3x^2-2$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba36)">$y=x^3+3x^2-1$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba37)">$y=x^3+3x^2$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba38)">$y=x^3+3x^2+1$</button>
+                <button class="btn-math" onclick="insertAtCursor(hambacba39)">$y=x^3+3x^2+2$</button>
             </div>
 
             <span class="menu-label">Hình học không gian</span>
