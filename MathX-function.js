@@ -42,7 +42,7 @@ ${ngaunhien([CT_DT_giatriCT_hambacbaCTC('ex'), CT_DT_giatriCT_hambacbaTCT('em')]
 
 function SBT_DT_hambacbaCTC(loai) {
     // Với a > 0: Nghịch biến nằm giữa (x1, x2), Đồng biến nằm 2 bên vô cực
-    var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
+    var dang = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
     
     // BỘ MẪU CHO a = 1
     var boMau = [
@@ -68,7 +68,7 @@ function SBT_DT_hambacbaCTC(loai) {
     
     var PA1, PA2, PA3, PA4, cauHoiTxt, loigiaiTxt;
 
-    if (loai === "NB") {
+    if (dang === "NB") {
         // HÀM NGHỊCH BIẾN (Khoảng giữa)
         cauHoiTxt = "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
         var khoangDung = "(" + x1 + ";" + x2 + ")";
@@ -130,7 +130,7 @@ function SBT_DT_hambacbaCTC(loai) {
 }
 
 function SBT_DT_hambacbaTCT(loai) {
-    var loai = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
+    var dang = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
     var boMau = [
         [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
         [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -2], [-1, 3, 0, -1], [-1, 3, 0, 0],
@@ -152,7 +152,7 @@ function SBT_DT_hambacbaTCT(loai) {
     
     var PA1, PA2, PA3, PA4, cauHoiTxt, loigiaiTxt;
 
-    if (loai === "ĐB") {
+    if (dang === "ĐB") {
         cauHoiTxt = "Hàm số đã cho đồng biến trên khoảng nào dưới đây?";
         var khoangDung = "(" + x1 + ";" + x2 + ")";
         PA1 = "{\\True $" + khoangDung + "$}";
