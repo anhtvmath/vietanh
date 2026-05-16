@@ -8,8 +8,16 @@ function shuffleArray(array) {
 function clearInput() { document.getElementById("latexInput").value = ""; document.getElementById("latexInput").focus(); }
 
 function cleanLatex(text) {
+   
     if (!text) return "";
+    text = text.replace(/\\immini(?:\[.*?\])?\s*{([\s\S]*?)}\s*{([\s\S]*?)}/g, function(match, content, figure) {
+            return content.trim() + "\n" + figure.trim();
+        });
+    text = text.replace(/\\begin{tikzpicture(?![}])/g, "\\begin{tikzpicture}");
+    text = text.replace(/(\\end{tikzpicture})\s*}/g, "$1");
     let out = text;
+    out = out.replace(/\$\$[\s\r\n]*(___TIKZ_PLACEHOLDER_\d+___)[\s\r\n]*\$\$/g, "$1");
+    out = out.replace(/\\begin\{center\}[\s\r\n]*(___TIKZ_PLACEHOLDER_\d+___)[\s\r\n]*\\end\{center\}/g, "$1");
 
     // 1. Chuyển \heva{...} thành cấu trúc gốc của LaTeX
     out = out.replace(/\\heva\{([\s\S]*?)\}/g, function(match, content) {
@@ -21,10 +29,26 @@ function cleanLatex(text) {
         return "\\left[ \\begin{aligned} " + content + " \\end{aligned} \\right.";
     });
 
-    // 3. Xử lý tabular sang array như bạn đã làm
-    out = out.replace(/\\begin\{tabular\}\{([\s\S]*?)\}([\s\S]*?)\\end\{tabular\}/g, function(m, align, content) {
-        let inner = content.replace(/\$/g, ""); 
-        return `\\begin{array}{${align}}${inner}\\end{array}`;
+    // 3. TỰ ĐỘNG CHUYỂN TABULAR SANG TABLE HTML
+    // Sử dụng Regex tách biệt rõ ràng để tránh nuốt code giữa đề bài và lời giải
+    out = out.replace(/(?:(?:\$\$|\\begin\{center\})\s*)?\\begin\{tabular\}\{([\s\S]*?)\}([\s\S]*?)\\end\{tabular\}(?:\s*(?:\$\$|\\end\{center\}))?/g, function(match, align, content) {
+        let rows = content.split(/\\\\/);
+        let tableHtml = '<table border="1" cellpadding="6" style="border-collapse: collapse; text-align:center; margin: 15px auto; font-size: inherit; line-height: 1.3;">';
+        
+        rows.forEach(row => {
+            let cleanRow = row.replace(/\\hline/g, "").trim();
+            if (cleanRow === "") return;
+            
+            tableHtml += '<tr>';
+            let cells = cleanRow.split('&');
+            cells.forEach(cell => {
+                tableHtml += `<td>${cell.trim()}</td>`;
+            });
+            tableHtml += '</tr>';
+        });
+        
+        tableHtml += '</table>';
+        return tableHtml;
     });
 
     out = out.replace(/([a-zA-Z0-9])<([a-zA-Z0-9])/g, "$1 < $2");
