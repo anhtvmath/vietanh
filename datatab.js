@@ -1,3 +1,21 @@
+    const bangtansoghepnhom4 = `\\begin{center}
+\\begin{tabular}{|c|c|c|c|c|c|c|}
+\\hline
+Nhóm & $[a_1; a_2)$ & $[a_2; a_3)$ & $[a_3; a_4)$ & $[a_4; a_5)$ \\\\
+\\hline
+Tần số & $n_1$ & $n_2$ & $n_3$ & $n_4$ \\\\
+\\hline
+\\end{tabular}
+\\end{center}`;
+    const bangtansoghepnhom5 = `\\begin{center}
+\\begin{tabular}{|c|c|c|c|c|c|}
+\\hline
+Nhóm & $[a_1; a_2)$ & $[a_2; a_3)$ & $[a_3; a_4)$ & $[a_4; a_5)$ & $[a_5; a_6)$ \\\\
+\\hline
+Tần số & $n_1$ & $n_2$ & $n_3$ & $n_4$ & $n_5$ \\\\
+\\hline
+\\end{tabular}
+\\end{center}`;
     const bangtansoghepnhom6 = `\\begin{center}
 \\begin{tabular}{|c|c|c|c|c|c|c|}
 \\hline
