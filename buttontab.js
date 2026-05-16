@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <span class="menu-label">TikZ</span>
             <div class="submenu">
-                <button class="btn-math" onclick="insertAtCursor('\\\\begin{tikzpicture}\\n\\\\usetikzlibrary{calc, positioning, arrows.meta, shapes.geometric, intersections, quotes, angles}\\n\\n\\\\end{tikzpicture}')">Khởi tạo Tikz</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\\n\\\\usetikzlibrary{calc, positioning, arrows.meta, shapes.geometric, intersections, quotes, angles}\\n\\n\\\\end{tikzpicture}')">Khởi tạo Tikz</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\coordinate (A) at (?,?);\\n\\\\draw[fill=black] (A) node[left,right,above,below]{$A$} circle(1.2pt);')">Vẽ điểm</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\draw (0,0) circle(2);')">Vẽ đường tròn</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\draw[->,>=stealth, line width = 1.2pt] (-4,0)--node[below, pos = 0.99]{$x$}(4,0);')">Trục hoành</button>
