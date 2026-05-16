@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <span class="menu-label">Biến đổi</span>
             <div class="submenu" style="grid-template-columns: 1fr;">
-                <button class="btn-math" onclick="insertAtCursor(imini)">imini</button>
+                <button class="btn-math" onclick="insertAtCursor(immini)">immini</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\begin{align*}\\na &= b \\\\\\\\\\n  &= c\\n\\\\end{align*}')">
                 \\begin{align*}
                 a &= b \\\\
