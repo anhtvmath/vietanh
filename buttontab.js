@@ -95,7 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <span class="menu-label">Bảng tần số ghép nhóm</span>
             <div class="submenu" style="grid-template-columns: 1fr;">
+                <button class="btn-math" onclick="insertAtCursor(bangtansoghepnhom4)">Bảng tần số ghép nhóm 4</button>
+                <button class="btn-math" onclick="insertAtCursor(bangtansoghepnhom5)">Bảng tần số ghép nhóm 5</button>
                 <button class="btn-math" onclick="insertAtCursor(bangtansoghepnhom6)">Bảng tần số ghép nhóm 6</button>
+                <button class="btn-math" onclick="insertAtCursor(bangtansoghepnhom7)">Bảng tần số ghép nhóm 7</button>
             </div>
 
             <span class="menu-label">TikZ</span>
