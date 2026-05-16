@@ -93,6 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn-math" onclick="insertAtCursor(BBThambac2trenbac1TCCT)">Hàm bậc hai trên bậc nhất - + + -</button>
             </div>
 
+            <span class="menu-label">Bảng biến thiên</span>
+            <div class="submenu">
+                <button class="btn-math" onclick="insertAtCursor(bangtansoghepnhom6)">Bảng tần số ghép nhóm 6</button>
+            </div>
+
             <span class="menu-label">TikZ</span>
             <div class="submenu">
                 <button class="btn-math" onclick="insertAtCursor('\\\\begin{tikzpicture}\\n\\\\usetikzlibrary{calc, positioning, arrows.meta, shapes.geometric, intersections, quotes, angles}\\n\\n\\\\end{tikzpicture}')">Khởi tạo Tikz</button>
