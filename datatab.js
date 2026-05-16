@@ -1,3 +1,4 @@
+    const immini =`\\immini[thm]{\n\n}\n{\n\n}`;
     const bangtansoghepnhom4 = `\\begin{center}
 \\begin{tabular}{|c|c|c|c|c|c|c|}
 \\hline
