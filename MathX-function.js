@@ -1,3 +1,58 @@
+function viduLC_KBT_1(loai) {
+    var value_range = Array.from({ length: 11 }, (_, i) => i + 2); // [2, 3, ..., 12]
+    var max_repeats = 2;
+
+    var sokhoang = randomchoice(4, 7);
+    var a = randomchoice(15, 20);
+    var h = randomchoice(2, 6);
+
+    // Tạo danh sách khoảng intervals
+    var intervals = [];
+    for (var i = 0; i <= sokhoang; i++) {
+        intervals.push(String(a + i * h));
+    }
+
+    // Gọi hàm generateValues đã viết từ trước
+    var values = generateValues(sokhoang, value_range, max_repeats);
+
+    var danhsach = [sokhoang - 2, sokhoang - 1, sokhoang + 1, sokhoang + 2];
+    var dsten = ["ông Thắng", "ông Dũng", "ông Nam", "ông Hùng", "ông Tiến", "ông Tuấn", "ông Hải", "ông Thịnh", "bà Oanh", "bà Lan", "bà Giang", "bà Hòa", "bà Hạnh", "bà Nga"];
+    var name = dsten[randomchoice(0, dsten.length - 1)];
+
+    var debai = "Hằng ngày " + name + " đều đi xe buýt từ nhà đến cơ quan. Dưới đây là bảng thống kê thời gian của những lần " + name + " đi xe buýt từ nhà đến cơ quan.\n" +
+                taobanglatex("Thời gian (phút)", intervals, "Số lần", values) + "\n" +
+                "Khoảng biến thiên (đơn vị: phút) của mẫu số liệu ghép nhóm trên là";
+
+    // Chọn ngẫu nhiên và xóa phần tử khỏi danhsach bằng splice
+    var n1 = danhsach.splice(randomchoice(0, danhsach.length - 1), 1)[0];
+    var n2 = danhsach.splice(randomchoice(0, danhsach.length - 1), 1)[0];
+    var n3 = danhsach.splice(randomchoice(0, danhsach.length - 1), 1)[0];
+
+    var options = [
+        "{\\True $" + (sokhoang * h) + "$}",
+        "{$" + (n1 * h) + "$}",
+        "{$" + (n2 * h) + "$}",
+        "{$" + (n3 * h) + "$}"
+    ];
+
+    shuffle(options);
+
+    var loigiai = "Khoảng biến thiên của mẫu số liệu ghép nhóm trên là $" + (a + sokhoang * h) + "-" + a + "=" + (sokhoang * h) + "$ (phút).";
+
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
 function hammoi() {
     var dsHam = [
         SBT_BBT_NB_hamtrungphuongCTCT('hello'),  
