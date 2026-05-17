@@ -1433,14 +1433,32 @@ function c2_d3_v3() {
     return `\\begin{ex}\nMột hình vuông có cạnh dài $${canh}$ cm. Tổng độ dài 4 cạnh của hình vuông đó là:\n\\choice{${canh}}{\\True ${canh*4}}{${canh*2}}{0}\n\\loigiai{Hình vuông có 4 cạnh bằng nhau. Tổng là: $${canh} \\times 4 = ${canh*4}$ cm.}\n\\end{ex}\n\n`;
 }
 
-function dienkhuyet(loai) {
+function dienkhuyet1(loai) {
     var a = randomchoice(-5, 5);
     var b = randomchoice(-10, 10);
     while (a === 0) {
         a = randomchoice(-5, 5);
     }
     var ketqua = a + b; 
-    var debai = "Cho $" + a + "$ và $" + b + "$.";
+    var debai = "Tính tổng $" + a + "$ và $" + b + "$.";
+    var loigiai = "Ta có: $" + a + " + " + b + " = " + ketqua + "$.";
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\shortans[oly]{" + ketqua + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function dienkhuyet2(loai) {
+    var a = randomchoice(-5, 5);
+    var b = randomchoice(-10, 10);
+    while (a === 0) {
+        a = randomchoice(-5, 5);
+    }
+    var ketqua = a - b; 
+    var debai = "Tính hiệu $" + a + "$ và $" + b + "$.";
     var loigiai = "Ta có: $" + a + " + " + b + " = " + ketqua + "$.";
     return "\\begin{" + loai + "}\n" +
         debai + "\n" +
