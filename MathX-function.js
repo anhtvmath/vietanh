@@ -2,7 +2,7 @@ function viduLC_KBT_1(loai) {
     var value_range = Array.from({ length: 11 }, (_, i) => i + 2); // [2, 3, ..., 12]
     var max_repeats = 2;
 
-    var sokhoang = randomchoice(4, 7);
+    var sokhoang = randomchoice(4, 10);
     var a = randomchoice(15, 20);
     var h = randomchoice(2, 6);
 
