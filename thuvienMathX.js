@@ -1,3 +1,25 @@
+function generateValues(size, valueRange, maxRepeats) {
+    const values = [];
+    const counts = {}; // Dùng Object để đếm số lần xuất hiện (thay cho Counter)
+
+    while (values.length < size) {
+        // Chọn ngẫu nhiên một phần tử từ mảng valueRange (tương đương random.choice)
+        const randomIndex = Math.floor(Math.random() * valueRange.length);
+        const value = valueRange[randomIndex];
+
+        // Lấy số lần xuất hiện hiện tại của phần tử (nếu chưa có thì mặc định là 0)
+        const currentCount = counts[value] || 0;
+
+        // Nếu số lần xuất hiện chưa đạt mức tối đa thì thêm vào mảng
+        if (currentCount < maxRepeats) {
+            values.push(value);
+            counts[value] = currentCount + 1; // Cập nhật lại bộ đếm
+        }
+    }
+
+    return values;
+}
+
 function taobanglatex(text1, intervals, text2, values) {
     const num_intervals = intervals.length - 1;
     const num_values = values.length;
