@@ -1,3 +1,44 @@
+function taobanglatex(text1, intervals, text2, values) {
+    const num_intervals = intervals.length - 1;
+    const num_values = values.length;
+
+    // Kiểm tra tính hợp lệ của dữ liệu đầu vào
+    if (num_intervals !== num_values) {
+        throw new Error("Số khoảng thời gian phải khớp với số giá trị.");
+    }
+
+    // Tạo mảng các chuỗi khoảng (intervals)
+    const interval_strings_arr = [];
+    for (let i = 0; i < num_intervals; i++) {
+        interval_strings_arr.push(`$[${intervals[i]}; ${intervals[i+1]})$`);
+    }
+
+    const interval_strings = interval_strings_arr.join(" & ");
+    
+    // Biến đổi các giá trị thành dạng $value$ và nối lại bằng &
+    const values_str = values.map(value => `$${value}$`).join(" & ");
+
+    // Tạo phần định dạng cột (c|c|c...)
+    const column_format = Array(num_intervals).fill("c").join("|");
+
+    // Dựng chuỗi LaTeX hoàn chỉnh
+    const latex_table = `\\begin{center}
+\\begin{tabular}{|c|${column_format}|}
+\\hline
+${text1} & ${interval_strings} \\\\
+\\hline
+${text2} & ${values_str} \\\\
+\\hline
+\\end{tabular}
+\\end{center}`;
+
+    return latex_table;
+}
+
+
+
+
+
 function ngaunhien(mang) {
     return mang[Math.floor(Math.random() * mang.length)];
 }
