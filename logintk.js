@@ -25,5 +25,6 @@ const USERS = [
     { user: "tbh", pass: "123", name: "Thầy Trần Bá Hưng" },
     { user: "tnc", pass: "123", name: "Thầy Trần Như Cang" },
     { user: "ntv", pass: "123", name: "Thầy Nguyễn Tiến Vũ" },
+    { user: "lhl", pass: "123", name: "Thầy Lê Hoàng Lâm" },
     { user: "lsv", pass: "123", name: "Thầy Lê Sơn Vương" }
 ];
