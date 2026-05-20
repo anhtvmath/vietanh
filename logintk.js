@@ -3,7 +3,6 @@ const USERS = [
     { user: "va", pass: "go", name: "Thầy Trần Việt Anh" },
     { user: "bon", pass: "123", name: "con Trần Nguyễn Hải Đăng" },
     { user: "0907291079", pass: "abc123", name: "Thầy Đoàn Văn Lãm" },
-    { user: "haianh", pass: "123", name: "Cô Chu Hải Anh" },
     { user: "loind", pass: "123", name: "Thầy Nguyễn Đức Lợi" },
     { user: "tctoan", pass: "21101994", name: "Thầy Thái Công Toãn" },
     { user: "ntt", pass: "ntt123", name: "Thầy Nguyễn Thái Thông" },
