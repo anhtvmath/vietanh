@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { username: "van", userid: "123" },
         { username: "ytkadai", userid: "Leminhkhoi170510" },
         { username: "Trannhucang1982", userid: "Sinhvien116@" },
-        { username: "Phạm Hoàng Điệp", userid: "123456" },
-        { username: "doanhien", userid: "1234A@" },
         { username: "abcd", userid: "1234" },
         { username: "admin", userid: "123" }
     ];
