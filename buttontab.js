@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="menu-label">Cơ bản</span>
             <div class="submenu">
                 <button class="btn-math" onclick="insertAtCursor('\\\\neq')">$\\neq$</button>
+                <button class="btn-math" onclick="insertAtCursor('\\\\equiv')">$\\equiv$</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\forall')">$\\forall$</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\exists')">$\\exists$</button>
                 <button class="btn-math" onclick="insertAtCursor('\\\\in')">$\\in$</button>
