@@ -1,6 +1,6 @@
 const USERS = [
-    { user: "admin", pass: "123456789", name: "Thầy Việt Anh Toán" },
-    { user: "va", pass: "go", name: "Thầy Trần Việt Anh" },
+    { user: "admin", pass: "123456789", name: "Thầy Việt Anh Toán", role: "vip"},
+    { user: "va", pass: "go", name: "Thầy Trần Việt Anh", role: "vip"},
     { user: "bon", pass: "123", name: "con Trần Nguyễn Hải Đăng" },
     { user: "0907291079", pass: "abc123", name: "Thầy Đoàn Văn Lãm" },
     { user: "loind", pass: "123", name: "Thầy Nguyễn Đức Lợi" },
