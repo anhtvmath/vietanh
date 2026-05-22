@@ -104,10 +104,24 @@ function TIM_DT_hambacbaCTC(loai) {
     var index = randomchoice(0, boMau.length - 1);
     var boChon = boMau[index];
     var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var b_sai, c_sai;
+    if (b !== 0) {
+        b_sai = -b; // Đổi dấu b
+        c_sai = c;  // Giữ nguyên c
+    } else {
+        b_sai = b;  // Giữ nguyên b (bằng 0)
+        c_sai = -c; // Đổi dấu c
+    }
+    var d_sai;
+    if (d >= 0) {
+        d_sai = d - 1; // Nếu d dương hoặc bằng 0, thì trừ đi 1
+    } else {
+        d_sai = d + 1; // Nếu d âm, thì cộng thêm 1
+    }
     var hamDung = hesodau(a,"x^3")+hesosau(b,"x^2")+hesosau(c,"x")+sodungsau(d);
-    var hamsai2 = hesodau(a,"x^3")+hesosau(b,"x^2")+hesosau(c,"x")+sodungsau(d+1);
-    var hamsai3 = hesodau(-a,"x^3")+hesosau(-b,"x^2")+hesosau(-c,"x")+sodungsau(-d-1);
-    var hamsai4 = hesodau(-a,"x^3")+hesosau(-b,"x^2")+hesosau(-c,"x")+sodungsau(-d);
+    var hamsai2 = hesodau(a,"x^3")+hesosau(b,"x^2")+hesosau(c,"x")+sodungsau(d_sai);
+    var hamsai3 = hesodau(-a,"x^3")+hesosau(-b,"x^2")+hesosau(-c,"x")+sodungsau(d);
+    var hamsai4 = hesodau(a,"x^3")+hesosau(b_sai,"x^2")+hesosau(c_sai,"x")+sodungsau(d);
     var PA1 = "{\\True $y=" + hamDung + "$}";
     var PA2 = "{$y=" + hamsai2 + "$}"; 
     var PA3 = "{$y=" + hamsai3 + "$}"; 
