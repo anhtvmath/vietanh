@@ -95,6 +95,42 @@ ${ngaunhien([CT_DT_giatriCT_hambacbaCTC('ex'), CT_DT_giatriCT_hambacbaTCT('em')]
 `;
 }
 
+function TIM_DT_hambacbaCTC(loai) {
+    var boMau = [
+        [1, 0, -3, -2], [1, 0, -3, -1], [1, 0, -3, 0], [1, 0, -3, 1], [1, 0, -3, 2], // Cực trị -1, 1
+        [1, -3, 0, -2], [1, -3, 0, -1], [1, -3, 0, 0], [1, -3, 0, 1], [1, -3, 0, 2], [1, -3, 0, 3], [1, -3, 0, 4], [1, -3, 0, 5], // Cực trị 0, 2
+        [1, 3, 0, -4], [1, 3, 0, -3], [1, 3, 0, -2], [1, 3, 0, -1], [1, 3, 0, 0], [1, 3, 0, 1], [1, 3, 0, 2] // Cực trị -2, 0
+    ];
+    var index = randomchoice(0, boMau.length - 1);
+    var boChon = boMau[index];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var hamDung = hesodau(a,"x^3")+hesosau(b,"x^2")+hesosau(c,"x")+sodungsau(d);
+    var hamsai2 = hesodau(a,"x^3")+hesosau(-b,"x^2")+hesosau(-c,"x")+sodungsau(d);
+    var hamsai3 = hesodau(-a,"x^3")+hesosau(b,"x^2")+hesosau(c,"x")+sodungsau(d);
+    var hamsai4 = hesodau(-a,"x^3")+hesosau(-b,"x^2")+hesosau(-c,"x")+sodungsau(d);
+    var PA1 = "{\\True $" + hamDung + "$}";
+    var PA2 = "{$" + hamsai2 + "$}"; 
+    var PA3 = "{$" + hamsai3 + "$}"; 
+    var PA4 = "{$" + hamsai4 + "$}"; 
+    var loigiaiTxt = "Đồ thị hàm số $" + hamDung + "$."
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    var codehinhve = dothibacba_a_duong(a, b, c, d);
+    return "\\begin{"+loai+"}\n" +
+           "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.\n" +
+           codehinhve + "\n" +
+           "Đồ thị hàm số trên là đồ thị hàm số nào?" + "\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{\n" +
+           loigiaiTxt + "\n" +
+           "}\n" +
+           "\\end{"+loai+"}\n";
+}
+
 function SBT_DT_hambacbaCTC(loai) {
     // Với a > 0: Nghịch biến nằm giữa (x1, x2), Đồng biến nằm 2 bên vô cực
     var dang = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
