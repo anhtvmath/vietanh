@@ -144,6 +144,55 @@ function TIM_DT_hambacbaCTC(loai) {
            "\\end{"+loai+"}\n";
 }
 
+function TIM_DT_hambacbaTCT(loai) {
+    var boMau = [
+        [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
+        [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -2], [-1, 3, 0, -1], [-1, 3, 0, 0],
+        [-1, -3, 0, 0], [-1, -3, 0, 1], [-1, -3, 0, 2], [-1, -3, 0, 3], [-1, -3, 0, 4]
+    ];
+    var index = randomchoice(0, boMau.length - 1);
+    var boChon = boMau[index];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var b_sai, c_sai;
+    if (b !== 0) {
+        b_sai = -b; // Đổi dấu b
+        c_sai = c;  // Giữ nguyên c
+    } else {
+        b_sai = b;  // Giữ nguyên b (bằng 0)
+        c_sai = -c; // Đổi dấu c
+    }
+    var d_sai;
+    if (d >= 0) {
+        d_sai = d - 1; // Nếu d dương hoặc bằng 0, thì trừ đi 1
+    } else {
+        d_sai = d + 1; // Nếu d âm, thì cộng thêm 1
+    }
+    var hamDung = hesodau(a,"x^3")+hesosau(b,"x^2")+hesosau(c,"x")+sodungsau(d);
+    var hamsai2 = hesodau(a,"x^3")+hesosau(b,"x^2")+hesosau(c,"x")+sodungsau(d_sai);
+    var hamsai3 = hesodau(-a,"x^3")+hesosau(-b,"x^2")+hesosau(-c,"x")+sodungsau(d);
+    var hamsai4 = hesodau(a,"x^3")+hesosau(b_sai,"x^2")+hesosau(c_sai,"x")+sodungsau(d);
+    var PA1 = "{\\True $y=" + hamDung + "$}";
+    var PA2 = "{$y=" + hamsai2 + "$}"; 
+    var PA3 = "{$y=" + hamsai3 + "$}"; 
+    var PA4 = "{$y=" + hamsai4 + "$}"; 
+    var loigiaiTxt = "Đường cong như hình vẽ là đồ thị hàm số $y=" + hamDung + ".$"
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    var codehinhve = dothibacba_a_am(a, b, c, d);
+    return "\\begin{"+loai+"}\n" +
+           "Hàm số nào dưới đây có đồ thị là đường cong như hình vẽ:\n" +
+           codehinhve + "\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{\n" +
+           loigiaiTxt + "\n" +
+           "}\n" +
+           "\\end{"+loai+"}\n";
+}
+
 function SBT_DT_hambacbaCTC(loai) {
     // Với a > 0: Nghịch biến nằm giữa (x1, x2), Đồng biến nằm 2 bên vô cực
     var dang = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
