@@ -107,7 +107,7 @@ function TIM_DT_hambacbaCTC(loai) {
     var hamDung = hesodau(a,"x^3")+hesosau(b,"x^2")+hesosau(c,"x")+sodungsau(d);
     var hamsai2 = hesodau(a,"x^3")+hesosau(b,"x^2")+hesosau(c,"x")+sodungsau(d+1);
     var hamsai3 = hesodau(-a,"x^3")+hesosau(-b,"x^2")+hesosau(-c,"x")+sodungsau(d-1);
-    var hamsai4 = hesodau(-a,"x^3")+hesosau(-b,"x^2")+hesosau(-c,"x")+sodungsau(d);
+    var hamsai4 = hesodau(-a,"x^3")+hesosau(-b,"x^2")+hesosau(-c,"x")+sodungsau(-d);
     var PA1 = "{\\True $y=" + hamDung + "$}";
     var PA2 = "{$y=" + hamsai2 + "$}"; 
     var PA3 = "{$y=" + hamsai3 + "$}"; 
