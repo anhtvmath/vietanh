@@ -66,7 +66,7 @@ function ngaunhien(mang) {
 }
 
 
-function hamtrungphuong_a_duong(a, b, c) {
+function dothihamtrungphuong_a_duong(a, b, c) {
     var result = "";
 
     // BỘ 1: y = x^4 - 2x^2 + c (Cực trị tại x = 0, x = -1, x = 1)
