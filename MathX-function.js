@@ -95,6 +95,115 @@ ${ngaunhien([CT_DT_giatriCT_hambacbaCTC('ex'), CT_DT_giatriCT_hambacbaTCT('em')]
 `;
 }
 
+
+function SBT_DT_hamtrungphuongTCTC(loai) {
+    // Với a > 0 và b < 0: 
+    // - Đồng biến (đồ thị đi lên) trên: (x1; 0) và (x2; +\infty)
+    // - Nghịch biến (đồ thị đi xuống) trên: (-\infty; x1) và (0; x2)
+    // (Trong đó x1 là cực tiểu bên trái, x2 là cực tiểu bên phải)
+    var dang = randomchoice(0, 1) === 0 ? "ĐB" : "NB";
+    
+    // BỘ MẪU CHO HÀM TRÙNG PHƯƠNG A DƯƠNG (Khớp 100% với hàm vẽ của bạn)
+    var boMau = [
+        // [a, b, c]
+        [1, -2, -3], [1, -2, -2], [1, -2, -1], [1, -2, 0], [1, -2, 1], [1, -2, 2], // Bộ 1: Cực trị tại -1, 0, 1
+        [0.25, -2, -3], [0.25, -2, -2], [0.25, -2, -1], [0.25, -2, 0], [0.25, -2, 1], [0.25, -2, 2] // Bộ 2: Cực trị tại -2, 0, 2
+    ];
+    
+    var index = randomchoice(0, boMau.length - 1);
+    var boChon = boMau[index];
+    var a = boChon[0], b = boChon[1], c = boChon[2];
+    
+    // Xác định hoành độ cực trị (x1 < 0 < x2)
+    var x1, x2;
+    if (a === 1 && b === -2) { 
+        x1 = -1; x2 = 1; 
+    } else { 
+        x1 = -2; x2 = 2; 
+    }
+    
+    var PA1, PA2, PA3, PA4, cauHoiTxt, loigiaiTxt;
+
+    if (dang === "ĐB") {
+        // HÀM ĐỒNG BIẾN (Đi lên trên khoảng (x1; 0) và (x2; +\infty))
+        cauHoiTxt = "Hàm số đã cho đồng biến trên khoảng nào dưới đây?";
+        
+        var khoangDung;
+        if (randomchoice(0, 1) === 0) {
+            khoangDung = "(" + x1 + ";0)";
+        } else {
+            khoangDung = "(" + x2 + ";+\\infty)";
+        }
+        
+        PA1 = "{\\True $" + khoangDung + "$}";
+        var nhieuQuocDan = [
+            "{$(-\\infty;0)$}",
+            "{$(0;+\\infty)$}",
+            "{$(-\\infty;" + x2 + ")$}",
+            "{$(" + x1 + ";+\\infty)$}",
+            "{$(-\\infty;" + x1 + ")$}",
+            "{$(0;" + x2 + ")$}"
+        ];
+        shuffle(nhieuQuocDan);
+        PA2 = nhieuQuocDan[0];
+        PA3 = nhieuQuocDan[1];
+        PA4 = nhieuQuocDan[2];
+        
+        loigiaiTxt = "Dựa vào đồ thị, ta thấy đồ thị hàm số đi lên từ trái sang phải trên các khoảng $(" + x1 + ";0)$ và $(" + x2 + ";+\\infty)$. " + 
+                     "Trong các phương án đã cho, có khoảng $" + khoangDung + "$ là thỏa mãn.";
+
+    } else {
+        // HÀM NGHỊCH BIẾN (Đi xuống trên khoảng (-\infty; x1) và (0; x2))
+        cauHoiTxt = "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
+        
+        var khoangDung;
+        if (randomchoice(0, 1) === 0) {
+            khoangDung = "(-\\infty;" + x1 + ")";
+        } else {
+            khoangDung = "(0;" + x2 + ")";
+        }
+        
+        PA1 = "{\\True $" + khoangDung + "$}";
+        
+        var nhieuQuocDan = [
+            "{$(-\\infty;0)$}",
+            "{$(0;+\\infty)$}",
+            "{$(-\\infty;" + x2 + ")$}",
+            "{$(" + x1 + ";+\\infty)$}",
+            "{$(" + x1 + ";0)$}", 
+            "{$(" + x2 + ";+\\infty)$}"
+        ];
+        shuffle(nhieuQuocDan);
+        PA2 = nhieuQuocDan[0];
+        PA3 = nhieuQuocDan[1];
+        PA4 = nhieuQuocDan[2];
+        
+        loigiaiTxt = "Dựa vào đồ thị, ta thấy đồ thị hàm số đi xuống từ trái sang phải trên các khoảng $(-\\infty;" + x1 + ")$ và $(0;" + x2 + ")$. " + 
+                     "Trong các phương án đã cho, có khoảng $" + khoangDung + "$ là thỏa mãn.";
+    }
+
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    // Gọi hàm vẽ đồ thị trùng phương a dương đã khớp 100% của bạn
+    var codehinhve = dothihamtrungphuong_a_duong(a, b, c);
+    
+    return "\\begin{" + loai + "}\n" +
+           "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.\n" +
+           codehinhve + "\n" +
+           cauHoiTxt + "\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{\n" +
+           loigiaiTxt + "\n" +
+           "}\n" +
+           "\\end{" + loai + "}\n";
+}
+
+
 function TIM_DT_hambacbaCTC(loai) {
     var boMau = [
         [1, 0, -3, -2], [1, 0, -3, -1], [1, 0, -3, 0], [1, 0, -3, 1], [1, 0, -3, 2], // Cực trị -1, 1
