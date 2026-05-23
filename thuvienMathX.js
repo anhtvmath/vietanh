@@ -65,6 +65,66 @@ function ngaunhien(mang) {
     return mang[Math.floor(Math.random() * mang.length)];
 }
 
+
+function hamtrungphuong_a_duong(a, b, c) {
+    var result = "";
+
+    // BỘ 1: y = x^4 - 2x^2 + c (Cực trị tại x = 0, x = -1, x = 1)
+    if (a === 1 && b === -2) {
+        var conf1 = {
+            "-3": { yMin: -4.7, yMax: 1.4, scale: 0.8, nO: "below right = -1.5px", nC: "above left = -1.5px", nMin: "below left = -1.5px", cNode: "\\draw (0,-3) node[above left = -1.5px]{$-3$} circle (1pt);", minNode: "\\draw (0,-4) node[below left = -1.5px]{$-4$} circle (1pt);", dash: "\\draw[dashed] (1,0) -- (1,-4) -- (0,-4);\n\\draw[dashed] (-1,0) -- (-1,-4) -- (0,-4);", dom: "-1.8:1.8", xMin: "-2.1", xMax: "2.1", posRight: "0.97", circleO: "1.2pt", circleX: "1pt" },
+            "-2": { yMin: -3.7, yMax: 1.1, scale: 0.8, nO: "below right = -1.5px", nC: "above left = -1.5px", nMin: "below left = -1.5px", cNode: "\\draw (0,-2) node[above left = -1.5px]{$-2$} circle (1pt);", minNode: "\\draw (0,-3) node[below left = -1.5px]{$-3$} circle (1pt);", dash: "\\draw[dashed] (1,0) -- (1,-3) -- (0,-3);\n\\draw[dashed] (-1,0) -- (-1,-3) -- (0,-3);", dom: "-1.71:1.71", xMin: "-2.1", xMax: "2.1", posRight: "0.96", circleO: "1.2pt", circleX: "1pt" },
+            "-1": { yMin: -2.5, yMax: 0.9, scale: 1.1, nO: "below right = -1.5px", nC: "above left = -1.5px", nMin: "below left = -1.5px", cNode: "\\draw (0,-1) node[above left = -1.5px]{$-1$} circle (0.8pt);", minNode: "\\draw (0,-2) node[below left = -1.5px]{$-2$} circle (0.8pt);", dash: "\\draw[dashed] (1,0) -- (1,-2) -- (0,-2);\n\\draw[dashed] (-1,0) -- (-1,-2) -- (0,-2);", dom: "-1.62:1.62", xMin: "-1.9", xMax: "1.9", posRight: "0.96", circleO: "1pt", circleX: "0.8pt" },
+            "0":  { yMin: -1.5, yMax: 1.1, scale: 1.1, nO: "above right = -1px",    nC: "below left = -1.5px",  nMin: "",                    cNode: "\\draw (0,-1) node[below left = -1.5px]{$-1$} circle (0.7pt);", minNode: "",                                               dash: "\\draw[dashed] (1,0) -- (1,-1) -- (0,-1);\n\\draw[dashed] (-1,0) -- (-1,-1) -- (0,-1);", dom: "-1.53:1.53", xMin: "-1.8", xMax: "1.8", posRight: "0.96", circleO: "1pt", circleX: "0.7pt" },
+            "1":  { yMin: -0.6, yMax: 2.2, scale: 1.1, nO: "below right = -1.5px", nC: "above left = -2px",    nMin: "",                    cNode: "\\draw (0,1) node[above left = -2px]{$1$} circle (0.6pt);",     minNode: "",                                               dash: "",                                                                                                    dom: "-1.53:1.53", xMin: "-1.8", xMax: "1.8", posRight: "0.96", circleO: "0.9pt", circleX: "0.6pt" },
+            "2":  { yMin: -0.7, yMax: 3,   scale: 1.1, nO: "below right = -1.5px", nC: "above left = -1.5px",  nMin: "below left = -1.5px", cNode: "\\draw (0,2) node[above left = -1.5px]{$2$} circle (0.7pt);",     minNode: "\\draw (0,1) node[below left = -1.5px]{$1$} circle (0.7pt);", dash: "\\draw[dashed] (1,0) -- (1,1) -- (0,1);\n\\draw[dashed] (-1,0) -- (-1,1) -- (0,1);",   dom: "-1.5:1.5",   xMin: "-1.9", xMax: "1.9", posRight: "0.97", circleO: "0.9pt", circleX: "0.7pt" }
+        };
+        var c1 = conf1[c];
+        if (c1) {
+            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=" + c1.scale + "]\n" +
+                "\\draw[->,line width = 1pt] (" + c1.xMin + ",0) -- (" + c1.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
+                "\\draw[->,line width = 1pt] (0," + c1.yMin + ") -- (0," + c1.yMax + ") node[right, pos = " + c1.posRight + "]{$y$};\n" +
+                "\\draw (0,0) node[" + c1.nO + "]{\\footnotesize $O$} circle (" + c1.circleO + ");\n" +
+                "\\draw (-1,0) node[" + (c === 1 || c === 2 ? "below" : "above") + "]{$-1$} circle (" + c1.circleX + ");\n" +
+                "\\draw (1,0) node[" + (c === 1 || c === 2 ? "below" : "above") + "]{$1$} circle (" + c1.circleX + ");\n" +
+                c1.cNode + "\n" +
+                (c1.minNode !== "" ? c1.minNode + "\n" : "") +
+                (c1.dash !== "" ? c1.dash + "\n" : "") +
+                "\\draw[thick,samples=200,domain=" + c1.dom + "] plot(\\x,{(\\x)^4-2*(\\x)^2" + (c >= 0 ? (c === 0 ? "" : "+" + c) : c) + "});\n" +
+                "\\end{tikzpicture}$$";
+        }
+    }
+
+    // BỘ 2: y = 0.25*x^4 - 2x^2 + c (Cực trị tại x = 0, x = -2, x = 2)
+    else if (a === 0.25 && b === -2) {
+        var conf2 = {
+            "-3": { yMin: -7.9, yMax: 2,   scale: 0.5, nO: "below right = -1.5px", nC: "above left = -1.5px", nMin: "below left = -1.5px", cNode: "\\draw (0,-3) node[above left = -1.5px]{$-3$} circle (1.6pt);", minNode: "\\draw (0,-7) node[below left = -1.5px]{$-7$} circle (1.6pt);", dash: "\\draw[dashed] (2,0) -- (2,-7) -- (0,-7);\n\\draw[dashed] (-2,0) -- (-2,-7) -- (0,-7);", dom: "-3.12:3.12", xMin: "-3.8", xMax: "3.8", posRight: "0.97", circleO: "2pt", circleX: "1.6pt" },
+            "-2": { yMin: -7,   yMax: 2,   scale: 0.5, nO: "below right = -1.5px", nC: "above left = -1.5px", nMin: "below left = -1.5px", cNode: "\\draw (0,-2) node[above left = -1.5px]{$-2$} circle (1.6pt);", minNode: "\\draw (0,-6) node[below left = -1.5px]{$-6$} circle (1.6pt);", dash: "\\draw[dashed] (2,0) -- (2,-6) -- (0,-6);\n\\draw[dashed] (-2,0) -- (-2,-6) -- (0,-6);", dom: "-3.06:3.06", xMin: "-3.8", xMax: "3.8", posRight: "0.97", circleO: "2pt", circleX: "1.6pt" },
+            "-1": { yMin: -6,   yMax: 2.2, scale: 0.5, nO: "above right = -1.5px", nC: "above left = -2px",    nMin: "below left = -2px",    cNode: "\\draw (0,-1) node[above left = -2px]{$-1$} circle (1.6pt);",   minNode: "\\draw (0,-5) node[below left = -2px]{$-5$} circle (1.6pt);",   dash: "\\draw[dashed] (2,0) -- (2,-5) -- (0,-5);\n\\draw[dashed] (-2,0) -- (-2,-5) -- (0,-5);", dom: "-3.02:3.02", xMin: "-3.7", xMax: "3.7", posRight: "0.97", circleO: "2pt", circleX: "1.6pt" },
+            "0":  { yMin: -5,   yMax: 2.2, scale: 0.5, nO: "above right = -1.5px", nC: "below left = -1.5px",  nMin: "",                    cNode: "\\draw (0,-4) node[below left = -1.5px]{$-4$} circle (1.6pt);", minNode: "",                                               dash: "\\draw[dashed] (2,0) -- (2,-4) -- (0,-4);\n\\draw[dashed] (-2,0) -- (-2,-4) -- (0,-4);", dom: "-2.94:2.94", xMin: "-3.7", xMax: "3.7", posRight: "0.96", circleO: "2pt", circleX: "1.6pt" },
+            "1":  { yMin: -3.8, yMax: 2.4, scale: 0.6, nO: "below right = -1.5px", nC: "above left = -2px",    nMin: "below left = -2px",    cNode: "\\draw (0,1) node[above left = -2px]{$1$} circle (1.3pt);",     minNode: "\\draw (0,-3) node[below left = -2px]{$-3$} circle (1.3pt);",   dash: "\\draw[dashed] (2,0) -- (2,-3) -- (0,-3);\n\\draw[dashed] (-2,0) -- (-2,-3) -- (0,-3);", dom: "-2.9:2.9",   xMin: "-3.5", xMax: "3.5", posRight: "0.96", circleO: "1.8pt", circleX: "1.3pt" },
+            "2":  { yMin: -2.8, yMax: 3.5, scale: 0.6, nO: "below right = -1.5px", nC: "above left = -1.5px",  nMin: "below left = -1.5px", cNode: "\\draw (0,2) node[above left = -1.5px]{$2$} circle (1.3pt);",     minNode: "\\draw (0,-2) node[below left = -1.5px]{$-2$} circle (1.3pt);", dash: "\\draw[dashed] (2,0) -- (2,-2) -- (0,-2);\n\\draw[dashed] (-2,0) -- (-2,-2) -- (0,-2);", dom: "-2.9:2.9",   xMin: "-3.5", xMax: "3.5", posRight: "0.96", circleO: "1.8pt", circleX: "1.3pt" }
+        };
+        var c2 = conf2[c];
+        if (c2) {
+            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=" + c2.scale + "]\n" +
+                "\\draw[->,line width = 1pt] (" + c2.xMin + ",0) -- (" + c2.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
+                "\\draw[->,line width = 1pt] (0," + c2.yMin + ") -- (0," + c2.yMax + ") node[right, pos = " + c2.posRight + "]{$y$};\n" +
+                "\\draw (0,0) node[" + c2.nO + "]{\\footnotesize $O$} circle (" + c2.circleO + ");\n" +
+                "\\draw (-2,0) node[above]{$-2$} circle (" + c2.circleX + ");\n" +
+                "\\draw (2,0) node[above]{$2$} circle (" + c2.circleX + ");\n" +
+                c2.cNode + "\n" +
+                (c2.minNode !== "" ? c2.minNode + "\n" : "") +
+                (c2.dash !== "" ? c2.dash + "\n" : "") +
+                "\\draw[thick,samples=200,domain=" + c2.dom + "] plot(\\x,{(1/4)*(\x)^4-2*(\x)^2" + (c >= 0 ? (c === 0 ? "" : "+" + c) : c) + "});\n" +
+                "\\end{tikzpicture}$$";
+        }
+    }
+    return result;
+}
+
+
+
 function dothibacba_a_duong(a, b, c, d) {
     var result = "";
 
