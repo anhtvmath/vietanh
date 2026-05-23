@@ -116,7 +116,7 @@ function dothihamtrungphuong_a_duong(a, b, c) {
                 c2.cNode + "\n" +
                 (c2.minNode !== "" ? c2.minNode + "\n" : "") +
                 (c2.dash !== "" ? c2.dash + "\n" : "") +
-                "\\draw[thick,samples=200,domain=" + c2.dom + "] plot(\\x,{(1/4)*(\x)^4-2*(\x)^2" + (c >= 0 ? (c === 0 ? "" : "+" + c) : c) + "});\n" +
+                "\\draw[thick,samples=200,domain=" + c2.dom + "] plot(\\x,{(1/4)*(\\x)^4-2*(\\x)^2" + (c >= 0 ? (c === 0 ? "" : "+" + c) : c) + "});\n" +
                 "\\end{tikzpicture}$$";
         }
     }
