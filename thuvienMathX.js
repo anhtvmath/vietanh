@@ -664,7 +664,7 @@ function hambacbaTCT(x, f, x1, x2, y1, y2) {
     "(0,-1) node{$" + f + "'(" + x + ")$}\n" +
     "(0,-4) node{$" + f + "(" + x + ")$}\n" +
     "(1,0) node{$-\\infty$}\n" +
-    "(1,-2) node(A){$-\\infty$}\n" +
+    "(1,-2) node(A){$+\\infty$}\n" +
     "(3,0) node{$" + x1 + "$}\n" +
     "(3,-1) node{$0$}\n" +
     "(3,-5) node(B){$" + y1 + "$}\n" +
