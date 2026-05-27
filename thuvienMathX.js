@@ -105,7 +105,7 @@ function dothihamtrungphuong_a_duong(a, b, c) {
         };
         var c2 = conf2[c];
         if (c2) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=" + c2.scale + "]\n" +
+            result = "\\begin{tikzpicture}[>=stealth,thick,scale=" + c2.scale + "]\n" +
                 "\\draw[->,line width = 1pt] (" + c2.xMin + ",0) -- (" + c2.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
                 "\\draw[->,line width = 1pt] (0," + c2.yMin + ") -- (0," + c2.yMax + ") node[right, pos = " + c2.posRight + "]{$y$};\n" +
                 "\\draw (0,0) node[" + c2.nO + "]{\\footnotesize $O$} circle (" + c2.circleO + ");\n" +
@@ -115,7 +115,7 @@ function dothihamtrungphuong_a_duong(a, b, c) {
                 (c2.minNode !== "" ? c2.minNode + "\n" : "") +
                 (c2.dash !== "" ? c2.dash + "\n" : "") +
                 "\\draw[thick,samples=200,domain=" + c2.dom + "] plot(\\x,{(1/4)*(\\x)^4-2*(\\x)^2" + (c >= 0 ? (c === 0 ? "" : "+" + c) : c) + "});\n" +
-                "\\end{tikzpicture}$$";
+                "\\end{tikzpicture}";
         }
     }
     return result;
@@ -314,7 +314,7 @@ function dothibacba_a_duong(a, b, c, d) {
         };
         var c1 = conf1[d];
         if (c1) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
+            result = "\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
                 "\\draw[->,line width = 1pt] (-2.3,0) -- (2.5,0) node[below, pos = 0.98]{$x$};\n" +
                 "\\draw[->,line width = 1pt] (0," + c1.yMin + ") -- (0," + c1.yMax + ") node[right, pos = 0.97]{$y$};\n" +
                 "\\draw (0,0) node[" + c1.nO + "]{\\footnotesize $O$} circle (1.2pt);\n" +
@@ -324,7 +324,7 @@ function dothibacba_a_duong(a, b, c, d) {
                 "\\draw[dashed] (-1,0) -- " + c1.d1 + ";\n" +
                 "\\draw[dashed] (1,0) -- " + c1.d2 + ";\n" +
                 "\\draw[thick,samples=200,domain=" + c1.dom + "] plot(\\x,{(\\x)^3-3*(\\x)" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
-                "\\end{tikzpicture}$$";
+                "\\end{tikzpicture}";
         }
     }
 
@@ -342,7 +342,7 @@ function dothibacba_a_duong(a, b, c, d) {
         };
         var c2 = conf2[d];
         if (c2) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,yscale=" + c2.ysc + "]\n" +
+            result = "\\begin{tikzpicture}[>=stealth,thick,yscale=" + c2.ysc + "]\n" +
                 "\\draw[->,line width = 1pt] (" + c2.xMin + ",0) -- (" + c2.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
                 "\\draw[->,line width = 1pt] (0," + c2.yMin + ") -- (0," + c2.yMax + ") node[right, pos = 0.97]{$y$};\n" +
                 "\\draw (0,0) node[" + c2.nO + "]{\\footnotesize $O$} circle (1.2pt);\n" +
@@ -350,7 +350,7 @@ function dothibacba_a_duong(a, b, c, d) {
                 c2.yNodes + "\n" +
                 "\\draw[dashed] (2,0) -- " + c2.dash + ";\n" +
                 "\\draw[thick,samples=200,domain=" + c2.dom + "] plot(\\x,{(\\x)^3-3*(\\x)^2" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
-                "\\end{tikzpicture}$$";
+                "\\end{tikzpicture}";
         }
     }
 
@@ -367,7 +367,7 @@ function dothibacba_a_duong(a, b, c, d) {
         };
         var c3 = conf3[d];
         if (c3) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,yscale=" + c3.ysc + "]\n" +
+            result = "\\begin{tikzpicture}[>=stealth,thick,yscale=" + c3.ysc + "]\n" +
                 "\\draw[->,line width = 1pt] (" + c3.xMin + ",0) -- (" + c3.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
                 "\\draw[->,line width = 1pt] (0," + c3.yMin + ") -- (0," + c3.yMax + ") node[right, pos = 0.97]{$y$};\n" +
                 "\\draw (0,0) node[" + c3.nO + "]{\\footnotesize $O$} circle (1.2pt);\n" +
@@ -375,7 +375,7 @@ function dothibacba_a_duong(a, b, c, d) {
                 c3.yNodes + "\n" +
                 "\\draw[dashed] (-2,0) -- " + c3.dash + ";\n" +
                 "\\draw[thick,samples=200,domain=" + c3.dom + "] plot(\\x,{(\\x)^3+3*(\\x)^2" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
-                "\\end{tikzpicture}$$";
+                "\\end{tikzpicture}";
         }
     }
     return result;
@@ -394,7 +394,7 @@ function dothibacba_a_am(a, b, c, d) {
         };
         var c1 = conf1[d];
         if (c1) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
+            result = "\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
                 "\\draw[->,>=stealth, line width = 1pt] (-2.5,0)--node[below, pos = 0.98]{$x$}(2.5,0);\n" +
                 "\\draw[->,>=stealth, line width = 1pt] (0," + c1.yMin + ")--node[right, pos = 0.97]{$y$}(0," + c1.yMax + ");\n" +
                 "\\draw (0,0) node[" + c1.nO + "]{\\footnotesize $O$} circle (1.2pt);\n" +
@@ -404,7 +404,7 @@ function dothibacba_a_am(a, b, c, d) {
                 "\\draw[dashed] (-1,0) -- " + c1.d1 + ";\n" +
                 "\\draw[dashed] (1,0) -- " + c1.d2 + ";\n" +
                 "\\draw[thick,samples=200,domain=-2.06:2.03] plot(\\x,{-(\\x)^3+3*(\\x)" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
-                "\\end{tikzpicture}$$";
+                "\\end{tikzpicture}";
         }
     }
 
@@ -421,7 +421,7 @@ function dothibacba_a_am(a, b, c, d) {
         };
         var c2 = conf2[d];
         if (c2) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
+            result = "\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
                 "\\draw[->,>=stealth, line width = 1pt] (-1.6,0)--node[below, pos = 0.98]{$x$}(3.7,0);\n" +
                 "\\draw[->,>=stealth, line width = 1pt] (0," + c2.yMin + ")--node[right, pos = 0.97]{$y$}(0," + c2.yMax + ");\n" +
                 "\\draw (0,0) node[" + c2.nO + "]{\\footnotesize $O$} circle (1.2pt);\n" +
@@ -429,7 +429,7 @@ function dothibacba_a_am(a, b, c, d) {
                 c2.yNodes + "\n" +
                 "\\draw[dashed] (2,0) -- " + c2.dash + ";\n" +
                 "\\draw[thick,samples=200,domain=-1.04:" + c2.dom + "] plot(\\x,{-(\\x)^3+3*(\\x)^2" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
-                "\\end{tikzpicture}$$";
+                "\\end{tikzpicture}";
         }
     }
 
@@ -446,7 +446,7 @@ function dothibacba_a_am(a, b, c, d) {
         };
         var c3 = conf3[d];
         if (c3) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
+            result = "\\begin{tikzpicture}[>=stealth,thick,scale=0.9]\n" +
                 "\\draw[->,>=stealth, line width = 1pt] (-3.5,0)--node[below, pos = 0.98]{$x$}(1.6,0);\n" +
                 "\\draw[->,>=stealth, line width = 1pt] (0," + c3.yMin + ")--node[right, pos = 0.97]{$y$}(0," + c3.yMax + ");\n" +
                 "\\draw (0,0) node[" + c3.nO + "]{\\footnotesize $O$} circle (1.2pt);\n" +
@@ -454,7 +454,7 @@ function dothibacba_a_am(a, b, c, d) {
                 c3.yNodes + "\n" +
                 "\\draw[dashed] (-2,0) -- " + c3.d1 + ";\n" +
                 "\\draw[thick,samples=200,domain=" + c3.dom + "] plot(\\x,{-(\\x)^3-3*(\\x)^2" + (d >= 0 ? (d === 0 ? "" : "+" + d) : d) + "});\n" +
-                "\\end{tikzpicture}$$";
+                "\\end{tikzpicture}";
         }
     }
 
