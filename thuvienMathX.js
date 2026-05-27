@@ -68,7 +68,6 @@ function ngaunhien(mang) {
 
 function dothihamtrungphuong_a_duong(a, b, c) {
     var result = "";
-
     // BỘ 1: y = x^4 - 2x^2 + c (Cực trị tại x = 0, x = -1, x = 1)
     if (a === 1 && b === -2) {
         var conf1 = {
@@ -94,7 +93,6 @@ function dothihamtrungphuong_a_duong(a, b, c) {
                 "\\end{tikzpicture}$$";
         }
     }
-
     // BỘ 2: y = 0.25*x^4 - 2x^2 + c (Cực trị tại x = 0, x = -2, x = 2)
     else if (a === 0.25 && b === -2) {
         var conf2 = {
@@ -122,8 +120,6 @@ function dothihamtrungphuong_a_duong(a, b, c) {
     }
     return result;
 }
-
-
 
 function dothibacba_a_duong(a, b, c, d) {
     var result = "";
