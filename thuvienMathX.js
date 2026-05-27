@@ -171,7 +171,7 @@ function dothihamtrungphuong_a_am(a, b, c) {
 \\draw (0,0) node[below right = -1.5px]{\\footnotesize $O$} circle (1.2pt);
 \\draw (-1,0) node[below]{$-1$} circle (0.9pt);
 \\draw (1,0) node[below]{$1$} circle (0.9pt);
-\\draw (0,1) node[below left = -1.5px]{$1$} circle (0.9pt);
+\\draw (0,1) node[below left]{$1$} circle (0.9pt);
 \\draw (0,2) node[above left = -1.5px]{$2$} circle (0.9pt);
 \\draw[dashed] (1,0) -- (1,2) -- (0,2);
 \\draw[dashed] (-1,0) -- (-1,2) -- (0,2);
