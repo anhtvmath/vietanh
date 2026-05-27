@@ -123,55 +123,145 @@ function dothihamtrungphuong_a_duong(a, b, c) {
 
 function dothihamtrungphuong_a_am(a, b, c) {
     var result = "";
+    var cStr = String(c); // Đảm bảo c luôn ở dạng chuỗi để so khớp key
     
     // BỘ 1: y = -x^4 + 2x^2 + c (Cực trị tại x = 0, x = -1, x = 1)
     if (a === -1 && b === 2) {
         var conf1 = {
-            "-2": { yMin: -2.7, yMax: 1,   scale: 0.9, nO: "below right = -1.5px", nC: "above left = -1.5px",  maxNode: "\\draw (0,-1) node[above left = -1.5px]{$-1$} circle (0.9pt);", cNode: "\\draw (0,-2) node[below left = -1.5px]{$-2$} circle (0.9pt);", dash: "\\draw[dashed] (1,0) -- (1,-1) -- (0,-1);\n\\draw[dashed] (-1,0) -- (-1,-1) -- (0,-1);", dom: "-1.5:1.5", xMin: "-2", xMax: "2", posRight: "0.96", circleO: "1.2pt", circleX: "0.9pt" },
-            "-1": { yMin: -1.7, yMax: 1.1, scale: 0.9, nO: "below right = -1.5px", nC: "below left = -1.5px",   maxNode: "",                                                             cNode: "\\draw (0,-1) node[below left = -1.5px]{$-1$} circle (0.9pt);", dash: "",                                                           dom: "-1.5:1.5", xMin: "-2", xMax: "2", posRight: "0.95", circleO: "1.2pt", circleX: "0.9pt" },
-            "0":  { yMin: -0.7, yMax: 1.8, scale: 0.9, nO: "below right = -1.5px", nC: "above left = -1.5px",  maxNode: "\\draw (0,1) node[above left = -1.5px]{$1$} circle (0.9pt);",  cNode: "",                                                             dash: "\\draw[dashed] (1,0) -- (1,1) -- (0,1);\n\\draw[dashed] (-1,0) -- (-1,1) -- (0,1);", dom: "-1.5:1.5", xMin: "-2", xMax: "2", posRight: "0.95", circleO: "1.2pt", circleX: "0.9pt" },
-            "1":  { yMin: -0.7, yMax: 2.8, scale: 0.9, nO: "below right = -1.5px", nC: "below left = -1.5px",   maxNode: "\\draw (0,2) node[above left = -1.5px]{$2$} circle (0.9pt);",  cNode: "\\draw (0,1) node[below left = -1.5px]{$1$} circle (0.9pt);",   dash: "\\draw[dashed] (1,0) -- (1,2) -- (0,2);\n\\draw[dashed] (-1,0) -- (-1,2) -- (0,2);", dom: "-1.61:1.61", xMin: "-2", xMax: "2", posRight: "0.96", circleO: "1.2pt", circleX: "0.9pt" },
-            "2":  { yMin: -0.9, yMax: 3.8, scale: 0.9, nO: "below right = -1.5px", nC: "below left = -1.5px",   maxNode: "\\draw (0,3) node[above left = -1.5px]{$3$} circle (0.9pt);",  cNode: "\\draw (0,2) node[below left = -1.5px]{$2$} circle (0.9pt);",   dash: "\\draw[dashed] (1,0) -- (1,3) -- (0,3);\n\\draw[dashed] (-1,0) -- (-1,3) -- (0,3);", dom: "-1.71:1.71", xMin: "-2.1", xMax: "2.1", posRight: "0.97", circleO: "1.2pt", circleX: "0.9pt" },
-            "3":  { yMin: -0.9, yMax: 4.9, scale: 0.8, nO: "below right = -1.5px", nC: "below left = -1.5px",   maxNode: "\\draw (0,4) node[above left = -1.5px]{$4$} circle (0.9pt);",  cNode: "\\draw (0,3) node[below left = -1.5px]{$3$} circle (0.9pt);",   dash: "\\draw[dashed] (1,0) -- (1,4) -- (0,4);\n\\draw[dashed] (-1,0) -- (-1,4) -- (0,4);", dom: "-1.78:1.78", xMin: "-2.2", xMax: "2.2", posRight: "0.97", circleO: "1.2pt", circleX: "0.9pt" }
+            "-2": {
+                scale: "0.9", xMin: "-2", xMax: "2", yMin: "-2.7", yMax: 1, posRight: "0.96",
+                nO: "below right = -1.5px", nX: "above",
+                extraNodes: "\\draw (0,-2) node[below left = -1.5px]{$-2$} circle (0.9pt);\n" +
+                            "\\draw (0,-1) node[above left = -1.5px]{$-1$} circle (0.9pt);\n" +
+                            "\\draw[dashed] (1,0) -- (1,-1) -- (0,-1);\n" +
+                            "\\draw[dashed] (-1,0) -- (-1,-1) -- (0,-1);",
+                dom: "-1.5:1.5", expr: "-2"
+            },
+            "-1": {
+                scale: "0.9", xMin: "-2", xMax: "2", yMin: "-1.7", yMax: "1.1", posRight: "0.95",
+                nO: "below right = -1.5px", nX: "above",
+                extraNodes: "\\draw (0,-1) node[below left = -1.5px]{$-1$} circle (0.9pt);",
+                dom: "-1.5:1.5", expr: "-1"
+            },
+            "0": {
+                scale: "0.9", xMin: "-2", xMax: "2", yMin: "-0.7", yMax: "1.8", posRight: "0.95",
+                nO: "below right = -1.5px", nX: "below",
+                extraNodes: "\\draw (0,1) node[above left = -1.5px]{$1$} circle (0.9pt);\n" +
+                            "\\draw[dashed] (1,0) -- (1,1) -- (0,1);\n" +
+                            "\\draw[dashed] (-1,0) -- (-1,1) -- (0,1);",
+                dom: "-1.5:1.5", expr: ""
+            },
+            "1": {
+                scale: "0.9", xMin: "-2", xMax: "2", yMin: "-0.7", yMax: "2.8", posRight: "0.96",
+                nO: "below right = -1.5px", nX: "below",
+                extraNodes: "\\draw (0,1) node[below left = -1.5px]{$1$} circle (0.9pt);\n" +
+                            "\\draw (0,2) node[above left = -1.5px]{$2$} circle (0.9pt);\n" +
+                            "\\draw[dashed] (1,0) -- (1,2) -- (0,2);\n" +
+                            "\\draw[dashed] (-1,0) -- (-1,2) -- (0,2);",
+                dom: "-1.61:1.61", expr: "+1"
+            },
+            "2": {
+                scale: "0.9", xMin: "-2.1", xMax: "2.1", yMin: "-0.9", yMax: "3.8", posRight: "0.97",
+                nO: "below right = -1.5px", nX: "below",
+                extraNodes: "\\draw (0,2) node[below left = -1.5px]{$2$} circle (0.9pt);\n" +
+                            "\\draw (0,3) node[above left = -1.5px]{$3$} circle (0.9pt);\n" +
+                            "\\draw[dashed] (1,0) -- (1,3) -- (0,3);\n" +
+                            "\\draw[dashed] (-1,0) -- (-1,3) -- (0,3);",
+                dom: "-1.71:1.71", expr: "+2"
+            },
+            "3": {
+                scale: "0.8", xMin: "-2.2", xMax: "2.2", yMin: "-0.9", yMax: "4.9", posRight: "0.97",
+                nO: "below right = -1.5px", nX: "below",
+                extraNodes: "\\draw (0,3) node[below left = -1.5px]{$3$} circle (0.9pt);\n" +
+                            "\\draw (0,4) node[above left = -1.5px]{$4$} circle (0.9pt);\n" +
+                            "\\draw[dashed] (1,0) -- (1,4) -- (0,4);\n" +
+                            "\\draw[dashed] (-1,0) -- (-1,4) -- (0,4);",
+                dom: "-1.78:1.78", expr: "+3"
+            }
         };
-        var c1 = conf1[c];
-        if (c1) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=" + c1.scale + "]\n" +
-                "\\draw[->,line width = 1pt] (" + c1.xMin + ",0) -- (" + c1.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
-                "\\draw[->,line width = 1pt] (0," + c1.yMin + ") -- (0," + c1.yMax + ") node[right, pos = " + c1.posRight + "]{$y$};\n" +
-                "\\draw (0,0) node[" + c1.nO + "]{\\footnotesize $O$} circle (" + c1.circleO + ");\n" +
-                "\\draw (-1,0) node[" + (c === "-2" || c === "-1" ? "above" : "below") + "]{$-1$} circle (" + c1.circleX + ");\n" +
-                "\\draw (1,0) node[" + (c === "-2" || c === "-1" ? "above" : "below") + "]{$1$} circle (" + c1.circleX + ");\n" +
-                (c1.cNode !== "" ? c1.cNode + "\n" : "") +
-                (c1.maxNode !== "" ? c1.maxNode + "\n" : "") +
-                (c1.dash !== "" ? c1.dash + "\n" : "") +
-                "\\draw[thick,samples=200,domain=" + c1.dom + "] plot(\\x,{-(\\x)^4+2*(\\x)^2" + (c >= 0 ? (c === 0 ? "" : "+" + c) : c) + "});\n" +
-                "\\end{tikzpicture}$$";
+
+        var cfg = conf1[cStr];
+        if (cfg) {
+            result = "\\begin{tikzpicture}[>=stealth,thick,scale=" + cfg.scale + "]\n" +
+                "\\draw[->,line width = 1pt] (" + cfg.xMin + ",0) -- (" + cfg.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
+                "\\draw[->,line width = 1pt] (0," + cfg.yMin + ") -- (0," + cfg.yMax + ") node[right, pos = " + cfg.posRight + "]{$y$};\n" +
+                "\\draw (0,0) node[" + cfg.nO + "]{\\footnotesize $O$} circle (1.2pt);\n" +
+                "\\draw (-1,0) node[" + cfg.nX + "]{$-1$} circle (0.9pt);\n" +
+                "\\draw (1,0) node[" + cfg.nX + "]{$1$} circle (0.9pt);\n" +
+                cfg.extraNodes + "\n" +
+                "\\draw[thick,samples=200,domain=" + cfg.dom + "] plot(\\x,{-(\\x)^4+2*(\\x)^2" + cfg.expr + "});\n" +
+                "\\end{tikzpicture}";
         }
     }
     // BỘ 2: y = -0.25*x^4 + 2x^2 + c (Cực trị tại x = 0, x = -2, x = 2)
     else if (a === -0.25 && b === 2) {
         var conf2 = {
-            "-3": { yMin: -4,   yMax: 2,   scale: 0.6, nO: "below right = -1.5px", nX: "below",           cNode: "\\draw (0,-3) node[below left = -1.5px]{$-3$} circle (1.2pt);", maxNode: "\\draw (0,1) node[below left = -1.5px]{$1$} circle (1.2pt);",  dash: "\\draw[dashed] (2,0) -- (2,1) -- (0,1);\n\\draw[dashed] (-2,0) -- (-2,1) -- (0,1);", dom: "-2.89:2.89", xMin: "-3.5", xMax: "3.5", posRight: "0.96", circleO: "1.7pt", circleX: "1.2pt" },
-            "-2": { yMin: -3,   yMax: 3,   scale: 0.6, nO: "below right = -1.5px", nX: "below = -1.5px",  cNode: "\\draw (0,-2) node[below left = -1.5px]{$-2$} circle (1.2pt);", maxNode: "\\draw (0,2) node[below left]{$2$} circle (1.2pt);",   dash: "\\draw[dashed] (2,0) -- (2,2) -- (0,2);\n\\draw[dashed] (-2,0) -- (-2,2) -- (0,2);", dom: "-2.89:2.89", xMin: "-3.5", xMax: "3.5", posRight: "0.96", circleO: "1.7pt", circleX: "1.2pt" },
-            "-1": { yMin: -2.2, yMax: 4,   scale: 0.6, nO: "above right = -1.5px", nX: "below",           cNode: "\\draw (0,-1) node[below left = -1.5px]{$-1$} circle (1.2pt);", maxNode: "\\draw (0,3) node[below left = -1.5px]{$3$} circle (1.2pt);",  dash: "\\draw[dashed] (2,0) -- (2,3) -- (0,3);\n\\draw[dashed] (-2,0) -- (-2,3) -- (0,3);", dom: "-2.9:2.9",   xMin: "-3.5", xMax: "3.5", posRight: "0.96", circleO: "1.7pt", circleX: "1.2pt" },
-            "0":  { yMin: -1.3, yMax: 4.9, scale: 0.6, nO: "below right = -1.5px", nX: "below",           cNode: "",                                                             maxNode: "\\draw (0,4) node[below left = -1.5px]{$4$} circle (1.2pt);",  dash: "\\draw[dashed] (2,0) -- (2,4) -- (0,4);\n\\draw[dashed] (-2,0) -- (-2,4) -- (0,4);", dom: "-2.9:2.9",   xMin: "-3.5", xMax: "3.5", posRight: "0.96", circleO: "1.7pt", circleX: "1.2pt" },
-            "1":  { yMin: -1.3, yMax: 5.9, scale: 0.5, nO: "below right = -1.5px", nX: "below",           cNode: "\\draw (0,1) node[below left = -1.5px]{$1$} circle (1.5pt);",   maxNode: "\\draw (0,5) node[below left = -1.5px]{$5$} circle (1.5pt);",  dash: "\\draw[dashed] (2,0) -- (2,5) -- (0,5);\n\\draw[dashed] (-2,0) -- (-2,5) -- (0,5);", dom: "-2.98:2.98", xMin: "-3.8", xMax: "3.8", posRight: "0.96", circleO: "1.8pt", circleX: "1.5pt" },
-            "2":  { yMin: -1.3, yMax: 6.9, scale: 0.5, nO: "below right = -1.5px", nX: "below",           cNode: "\\draw (0,2) node[below left = -1.5px]{$2$} circle (1.5pt);",   maxNode: "\\draw (0,6) node[below left = -1.5px]{$6$} circle (1.5pt);",  dash: "\\draw[dashed] (2,0) -- (2,6) -- (0,6);\n\\draw[dashed] (-2,0) -- (-2,6) -- (0,6);", dom: "-3.05:3.05", xMin: "-3.8", xMax: "3.8", posRight: "0.96", circleO: "1.8pt", circleX: "1.5pt" }
+            "-3": {
+                scale: "0.6", xMin: "-3.5", xMax: "3.5", yMin: "-4", yMax: "2", posRight: "0.96", cO: "1.7pt", cX: "1.2pt",
+                nO: "below right = -1.5px", nX2: "below",
+                extraNodes: "\\draw (0,-3) node[below left = -1.5px]{$-3$} circle (1.2pt);\n" +
+                            "\\draw (0,1) node[below left = -1.5px]{$1$} circle (1.2pt);\n" +
+                            "\\draw[dashed] (2,0) -- (2,1) -- (0,1);\n" +
+                            "\\draw[dashed] (-2,0) -- (-2,1) -- (0,1);",
+                dom: "-2.89:2.89", expr: "-3"
+            },
+            "-2": {
+                scale: "0.6", xMin: "-3.5", xMax: "3.5", yMin: "-3", yMax: "3", posRight: "0.96", cO: "1.7pt", cX: "1.2pt",
+                nO: "below right = -1.5px", nX2: "below = -1.5px",
+                extraNodes: "\\draw (0,-2) node[below left = -1.5px]{$-2$} circle (1.2pt);\n" +
+                            "\\draw (0,2) node[below left]{$2$} circle (1.2pt);\n" +
+                            "\\draw[dashed] (2,0) -- (2,2) -- (0,2);\n" +
+                            "\\draw[dashed] (-2,0) -- (-2,2) -- (0,2);",
+                dom: "-2.89:2.89", expr: "-2"
+            },
+            "-1": {
+                scale: "0.6", xMin: "-3.5", xMax: "3.5", yMin: "-2.2", yMax: "4", posRight: "0.96", cO: "1.7pt", cX: "1.2pt",
+                nO: "above right = -1.5px", nX2: "below",
+                extraNodes: "\\draw (0,-1) node[below left = -1.5px]{$-1$} circle (1.2pt);\n" +
+                            "\\draw (0,3) node[below left = -1.5px]{$3$} circle (1.2pt);\n" +
+                            "\\draw[dashed] (2,0) -- (2,3) -- (0,3);\n" +
+                            "\\draw[dashed] (-2,0) -- (-2,3) -- (0,3);",
+                dom: "-2.9:2.9", expr: "-1"
+            },
+            "0": {
+                scale: "0.6", xMin: "-3.5", xMax: "3.5", yMin: "-1.3", yMax: "4.9", posRight: "0.96", cO: "1.7pt", cX: "1.2pt",
+                nO: "below right = -1.5px", nX2: "below",
+                extraNodes: "\\draw (0,4) node[below left = -1.5px]{$4$} circle (1.2pt);\n" +
+                            "\\draw[dashed] (2,0) -- (2,4) -- (0,4);\n" +
+                            "\\draw[dashed] (-2,0) -- (-2,4) -- (0,4);",
+                dom: "-2.9:2.9", expr: ""
+            },
+            "1": {
+                scale: "0.5", xMin: "-3.8", xMax: "3.8", yMin: "-1.3", yMax: "5.9", posRight: "0.96", cO: "1.8pt", cX: "1.5pt",
+                nO: "below right = -1.5px", nX2: "below",
+                extraNodes: "\\draw (0,1) node[below left = -1.5px]{$1$} circle (1.5pt);\n" +
+                            "\\draw (0,5) node[below left = -1.5px]{$5$} circle (1.5pt);\n" +
+                            "\\draw[dashed] (2,0) -- (2,5) -- (0,5);\n" +
+                            "\\draw[dashed] (-2,0) -- (-2,5) -- (0,5);",
+                dom: "-2.98:2.98", expr: "+1"
+            },
+            "2": {
+                scale: "0.5", xMin: "-3.8", xMax: "3.8", yMin: "-1.3", yMax: "6.9", posRight: "0.96", cO: "1.8pt", cX: "1.5pt",
+                nO: "below right = -1.5px", nX2: "below",
+                extraNodes: "\\draw (0,2) node[below left = -1.5px]{$2$} circle (1.5pt);\n" +
+                            "\\draw (0,6) node[below left = -1.5px]{$6$} circle (1.5pt);\n" +
+                            "\\draw[dashed] (2,0) -- (2,6) -- (0,6);\n" +
+                            "\\draw[dashed] (-2,0) -- (-2,6) -- (0,6);",
+                dom: "-3.05:3.05", expr: "+2"
+            }
         };
-        var c2 = conf2[c];
-        if (c2) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=" + c2.scale + "]\n" +
-                "\\draw[->,line width = 1pt] (" + c2.xMin + ",0) -- (" + c2.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
-                "\\draw[->,line width = 1pt] (0," + c2.yMin + ") -- (0," + c2.yMax + ") node[right, pos = " + c2.posRight + "]{$y$};\n" +
-                "\\draw (0,0) node[" + c2.nO + "]{\\footnotesize $O$} circle (" + c2.circleO + ");\n" +
-                "\\draw (-2,0) node[below]{$-2$} circle (" + c2.circleX + ");\n" +
-                "\\draw (2,0) node[" + c2.nX + "]{$2$} circle (" + c2.circleX + ");\n" +
-                (c2.cNode !== "" ? c2.cNode + "\n" : "") +
-                (c2.maxNode !== "" ? c2.maxNode + "\n" : "") +
-                (c2.dash !== "" ? c2.dash + "\n" : "") +
-                "\\draw[thick,samples=200,domain=" + c2.dom + "] plot(\\x,{-(1/4)*(\\x)^4+2*(\\x)^2" + (c >= 0 ? (c === 0 ? "" : "+" + c) : c) + "});\n" +
-                "\\end{tikzpicture}$$";
+
+        var cfg = conf2[cStr];
+        if (cfg) {
+            result = "\\begin{tikzpicture}[>=stealth,thick,scale=" + cfg.scale + "]\n" +
+                "\\draw[->,line width = 1pt] (" + cfg.xMin + ",0) -- (" + cfg.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
+                "\\draw[->,line width = 1pt] (0," + cfg.yMin + ") -- (0," + cfg.yMax + ") node[right, pos = " + cfg.posRight + "]{$y$};\n" +
+                "\\draw (0,0) node[" + cfg.nO + "]{\\footnotesize $O$} circle (" + cfg.cO + ");\n" +
+                "\\draw (-2,0) node[below]{$-2$} circle (" + cfg.cX + ");\n" +
+                "\\draw (2,0) node[" + cfg.nX2 + "]{$2$} circle (" + cfg.cX + ");\n" +
+                cfg.extraNodes + "\n" +
+                "\\draw[thick,samples=200,domain=" + cfg.dom + "] plot(\\x,{-(1/4)*(\\x)^4+2*(\\x)^2" + cfg.expr + "});\n" +
+                "\\end{tikzpicture}";
         }
     }
     return result;
