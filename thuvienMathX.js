@@ -80,7 +80,7 @@ function dothihamtrungphuong_a_duong(a, b, c) {
         };
         var c1 = conf1[c];
         if (c1) {
-            result = "$$\\begin{tikzpicture}[>=stealth,thick,scale=" + c1.scale + "]\n" +
+            result = "\\begin{tikzpicture}[>=stealth,thick,scale=" + c1.scale + "]\n" +
                 "\\draw[->,line width = 1pt] (" + c1.xMin + ",0) -- (" + c1.xMax + ",0) node[below, pos = 0.98]{$x$};\n" +
                 "\\draw[->,line width = 1pt] (0," + c1.yMin + ") -- (0," + c1.yMax + ") node[right, pos = " + c1.posRight + "]{$y$};\n" +
                 "\\draw (0,0) node[" + c1.nO + "]{\\footnotesize $O$} circle (" + c1.circleO + ");\n" +
@@ -90,7 +90,7 @@ function dothihamtrungphuong_a_duong(a, b, c) {
                 (c1.minNode !== "" ? c1.minNode + "\n" : "") +
                 (c1.dash !== "" ? c1.dash + "\n" : "") +
                 "\\draw[thick,samples=200,domain=" + c1.dom + "] plot(\\x,{(\\x)^4-2*(\\x)^2" + (c >= 0 ? (c === 0 ? "" : "+" + c) : c) + "});\n" +
-                "\\end{tikzpicture}$$";
+                "\\end{tikzpicture}";
         }
     }
     // BỘ 2: y = 0.25*x^4 - 2x^2 + c (Cực trị tại x = 0, x = -2, x = 2)
