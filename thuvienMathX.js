@@ -65,6 +65,22 @@ function generateValuesFlexible(size) {
     return values;
 }
 
+// Hàm sinh tần số thiết kế riêng cho Q3 (Hài hòa phân phối ở các nhóm phía sau)
+function generateValuesFlexibleQ3(size) {
+    const values = [];
+    for (let i = 0; i < size; i++) {
+        if (i === size - 1) {
+            // Nhóm cuối cùng: Ép số nhỏ (1 đến 4) để mốc 75% không bị nuốt chửng ở nhóm cuối
+            values.push(Math.floor(Math.random() * 4) + 1); 
+        } else {
+            // Các nhóm trước đó: Sinh đều số lớn (5 đến 12) để đẩy Q3 về các nhóm kế cuối
+            values.push(Math.floor(Math.random() * 8) + 5); 
+        }
+    }
+    return values;
+}
+
+
 // 5. Tìm khoảng chứa dựa trên độ chính xác precision
 function timkhoangchua(number, precision = 0.01) {
     let lower_bound = Math.floor(number / precision) * precision;
