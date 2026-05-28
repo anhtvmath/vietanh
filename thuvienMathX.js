@@ -28,7 +28,32 @@ function posvalueq3(values, n) {
     return k;
 }
 
+// 4. Sinh mảng tần số ngẫu nhiên không lặp quá max_repeats (HÀM GỐC)
 function generateValues(size, valueRange, maxRepeats) {
+    // Chặn lỗi vòng lặp vô hạn nếu kho số cung cấp nhỏ hơn kích thước yêu cầu nhân với hạn mức lặp
+    if (size > valueRange.length * maxRepeats) {
+        throw new Error("Kho số valueRange không đủ phần tử để sinh ra mảng với kích thước (size) yêu cầu.");
+    }
+
+    const values = [];
+    const counts = {}; 
+
+    while (values.length < size) {
+        const randomIndex = Math.floor(Math.random() * valueRange.length);
+        const value = valueRange[randomIndex];
+
+        const currentCount = counts[value] || 0;
+
+        if (currentCount < maxRepeats) {
+            values.push(value);
+            counts[value] = currentCount + 1; 
+        }
+    }
+
+    return values;
+}
+
+function generateValuesFlexible(size) {
     const values = [];
     for (let i = 0; i < size; i++) {
         if (i === 0) {
