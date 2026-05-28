@@ -65,6 +65,14 @@ function generateValuesFlexible(size) {
     return values;
 }
 
+function generateValuesFlexibleQ2(size) {
+    const values = [];
+    for (let i = 0; i < size; i++) {
+        values.push(Math.floor(Math.random() * 8) + 3); 
+    }
+    return values;
+}
+
 // Hàm sinh tần số thiết kế riêng cho Q3 (Hài hòa phân phối ở các nhóm phía sau)
 function generateValuesFlexibleQ3(size) {
     const values = [];
