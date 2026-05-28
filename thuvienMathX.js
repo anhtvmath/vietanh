@@ -28,28 +28,21 @@ function posvalueq3(values, n) {
     return k;
 }
 
-// 4. Sinh mảng tần số ngẫu nhiên không lặp quá max_repeats (Đã thêm cơ chế chặn crash ứng dụng)
+// 4. Sinh mảng tần số ngẫu nhiên
 function generateValues(size, valueRange, maxRepeats) {
-    // Chặn lỗi vòng lặp vô hạn nếu kho số cung cấp nhỏ hơn kích thước yêu cầu nhân với hạn mức lặp
-    if (size > valueRange.length * maxRepeats) {
-        throw new Error("Kho số valueRange không đủ phần tử để sinh ra mảng với kích thước (size) yêu cầu.");
-    }
-
     const values = [];
-    const counts = {}; 
-
-    while (values.length < size) {
-        const randomIndex = Math.floor(Math.random() * valueRange.length);
-        const value = valueRange[randomIndex];
-
-        const currentCount = counts[value] || 0;
-
-        if (currentCount < maxRepeats) {
-            values.push(value);
-            counts[value] = currentCount + 1; 
+    
+    for (let i = 0; i < size; i++) {
+        if (i < 2) {
+            // Nhóm 1 và nhóm 2 ép sinh tần số nhỏ (từ 1 đến 4) 
+            // để n/4 dễ dàng vượt qua, giúp Q1 có cơ hội nhảy sang nhóm 3
+            values.push(Math.floor(Math.random() * 4) + 1); // Sinh ngẫu nhiên từ 1 đến 4
+        } else {
+            // Các nhóm từ nhóm 3 trở đi sinh số lớn hơn (từ 5 đến 12)
+            values.push(Math.floor(Math.random() * 8) + 5); // Sinh ngẫu nhiên từ 5 đến 12
         }
     }
-
+    
     return values;
 }
 
