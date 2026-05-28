@@ -1160,6 +1160,15 @@ function sodungsau(a) {
     }
 }
 
+function sodungsaunew(a) {
+    if (a >= 0) {
+        return "+"+a;
+    }
+    if (a < 0) {
+        return a;
+    }
+}
+
 function format(a) {
     if (a >= 10) {
         return "{"+a+"}"; 
