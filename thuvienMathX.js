@@ -28,21 +28,15 @@ function posvalueq3(values, n) {
     return k;
 }
 
-// 4. Sinh mảng tần số ngẫu nhiên
 function generateValues(size, valueRange, maxRepeats) {
     const values = [];
-    
     for (let i = 0; i < size; i++) {
-        if (i < 2) {
-            // Nhóm 1 và nhóm 2 ép sinh tần số nhỏ (từ 1 đến 4) 
-            // để n/4 dễ dàng vượt qua, giúp Q1 có cơ hội nhảy sang nhóm 3
-            values.push(Math.floor(Math.random() * 4) + 1); // Sinh ngẫu nhiên từ 1 đến 4
+        if (i === 0) {
+            values.push(Math.floor(Math.random() * 4) + 1); // Nhóm 1 nhỏ (1-4)
         } else {
-            // Các nhóm từ nhóm 3 trở đi sinh số lớn hơn (từ 5 đến 12)
-            values.push(Math.floor(Math.random() * 8) + 5); // Sinh ngẫu nhiên từ 5 đến 12
+            values.push(Math.floor(Math.random() * 8) + 5); // Các nhóm sau lớn (5-12)
         }
     }
-    
     return values;
 }
 
