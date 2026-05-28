@@ -1,3 +1,58 @@
+// 1. Xác định vị trí nhóm chứa Q1 (Đã tối ưu: tính cf() 1 lần duy nhất)
+function posvalueq1(values, n) {
+    let k = 1;
+    const cfArray = cf(values); // Gọi hàm cf một lần duy nhất bên ngoài vòng lặp
+    while (k <= cfArray.length && cfArray[k - 1] < n / 4) {
+        k = k + 1;
+    }
+    return k;
+}
+
+// 2. Xác định vị trí nhóm chứa Q2 - Trung vị (Đã tối ưu)
+function posvalueq2(values, n) {
+    let k = 1;
+    const cfArray = cf(values); // Gọi hàm cf một lần duy nhất bên ngoài vòng lặp
+    while (k <= cfArray.length && cfArray[k - 1] < n / 2) {
+        k = k + 1;
+    }
+    return k;
+}
+
+// 3. Xác định vị trí nhóm chứa Q3 (Đã tối ưu)
+function posvalueq3(values, n) {
+    let k = 1;
+    const cfArray = cf(values); // Gọi hàm cf một lần duy nhất bên ngoài vòng lặp
+    while (k <= cfArray.length && cfArray[k - 1] < (3 * n) / 4) {
+        k = k + 1;
+    }
+    return k;
+}
+
+// 4. Sinh mảng tần số ngẫu nhiên không lặp quá max_repeats (Đã thêm cơ chế chặn crash ứng dụng)
+function generateValues(size, valueRange, maxRepeats) {
+    // Chặn lỗi vòng lặp vô hạn nếu kho số cung cấp nhỏ hơn kích thước yêu cầu nhân với hạn mức lặp
+    if (size > valueRange.length * maxRepeats) {
+        throw new Error("Kho số valueRange không đủ phần tử để sinh ra mảng với kích thước (size) yêu cầu.");
+    }
+
+    const values = [];
+    const counts = {}; 
+
+    while (values.length < size) {
+        const randomIndex = Math.floor(Math.random() * valueRange.length);
+        const value = valueRange[randomIndex];
+
+        const currentCount = counts[value] || 0;
+
+        if (currentCount < maxRepeats) {
+            values.push(value);
+            counts[value] = currentCount + 1; 
+        }
+    }
+
+    return values;
+}
+
 // 5. Tìm khoảng chứa dựa trên độ chính xác precision
 function timkhoangchua(number, precision = 0.01) {
     let lower_bound = Math.floor(number / precision) * precision;
