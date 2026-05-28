@@ -1,49 +1,93 @@
-function generateValues(size, valueRange, maxRepeats) {
-    const values = [];
-    const counts = {}; // Dùng Object để đếm số lần xuất hiện (thay cho Counter)
-
-    while (values.length < size) {
-        // Chọn ngẫu nhiên một phần tử từ mảng valueRange (tương đương random.choice)
-        const randomIndex = Math.floor(Math.random() * valueRange.length);
-        const value = valueRange[randomIndex];
-
-        // Lấy số lần xuất hiện hiện tại của phần tử (nếu chưa có thì mặc định là 0)
-        const currentCount = counts[value] || 0;
-
-        // Nếu số lần xuất hiện chưa đạt mức tối đa thì thêm vào mảng
-        if (currentCount < maxRepeats) {
-            values.push(value);
-            counts[value] = currentCount + 1; // Cập nhật lại bộ đếm
-        }
-    }
-
-    return values;
+// 5. Tìm khoảng chứa dựa trên độ chính xác precision
+function timkhoangchua(number, precision = 0.01) {
+    let lower_bound = Math.floor(number / precision) * precision;
+    let upper_bound = lower_bound + precision;
+    
+    lower_bound = Math.round(lower_bound * 100) / 100;
+    upper_bound = Math.round(upper_bound * 100) / 100;
+    return [lower_bound, upper_bound];
 }
 
+// 6. Tính tổng n_i * (x_i)^2 phục vụ tính phương sai
+function ketquatichphuongsai(list1, list2) {
+    if (list1.length !== list2.length) {
+        throw new Error("The length of both lists must be the same.");
+    }
+    let a = 0;
+    for (let i = 0; i < list1.length; i++) {
+        a = a + list1[i] * Math.pow(list2[i], 2);
+    }
+    return a;
+}
+
+// 7. Tính tổng tích hai list (ví dụ tổng n_i * x_i)
+function ketquatichhailist(list1, list2) {
+    if (list1.length !== list2.length) {
+        throw new Error("The length of both lists must be the same.");
+    }
+    let a = 0;
+    for (let i = 0; i < list1.length; i++) {
+        a = a + list1[i] * list2[i];
+    }
+    return a;
+}
+
+// 8. Tạo chuỗi biểu thức LaTeX tích hai list: n_1\cdot x_1 + n_2\cdot x_2 + ...
+function tichhailist(list1, list2) {
+    if (list1.length !== list2.length) {
+        throw new Error("The length of both lists must be the same.");
+    }
+    const terms = [];
+    for (let i = 0; i < list1.length; i++) {
+        terms.push(list1[i] + "\\cdot " + list2[i]);
+    }
+    return terms.join("+");
+}
+
+// 9. Tạo chuỗi biểu thức LaTeX phục vụ công thức phương sai: n_1\cdot x_1^2 + n_2\cdot x_2^2 + ...
+function tichphuongsai(list1, list2) {
+    if (list1.length !== list2.length) {
+        throw new Error("The length of both lists must be the same.");
+    }
+    const terms = [];
+    for (let i = 0; i < list1.length; i++) {
+        terms.push(list1[i] + "\\cdot " + list2[i] + "^2");
+    }
+    return terms.join("+");
+}
+
+// 10. Tính tổng các phần tử trong mảng (trả về kiểu Số)
+function tongcacphantu(list) {
+    let tong = 0;
+    for (let i = 0; i < list.length; i++) {
+        tong = tong + list[i];
+    }
+    return tong;
+}
+
+// 11. Tạo chuỗi hiển thị phép tính tổng: "n_1+n_2+n_3..." để đưa vào LaTeX
+function tonglist(list) {
+    return list.join("+");
+}
+
+// 12. Tạo bảng thống kê số liệu ghép nhóm bằng LaTeX
 function taobanglatex(text1, intervals, text2, values) {
     const num_intervals = intervals.length - 1;
     const num_values = values.length;
 
-    // Kiểm tra tính hợp lệ của dữ liệu đầu vào
     if (num_intervals !== num_values) {
         throw new Error("Số khoảng thời gian phải khớp với số giá trị.");
     }
 
-    // Tạo mảng các chuỗi khoảng (intervals)
     const interval_strings_arr = [];
     for (let i = 0; i < num_intervals; i++) {
         interval_strings_arr.push(`$[${intervals[i]}; ${intervals[i+1]})$`);
     }
 
     const interval_strings = interval_strings_arr.join(" & ");
-    
-    // Biến đổi các giá trị thành dạng $value$ và nối lại bằng &
     const values_str = values.map(value => `$${value}$`).join(" & ");
-
-    // Tạo phần định dạng cột (c|c|c...)
     const column_format = Array(num_intervals).fill("c").join("|");
 
-    // Dựng chuỗi LaTeX hoàn chỉnh
     const latex_table = `\\begin{center}
 \\begin{tabular}{|c|${column_format}|}
 \\hline
@@ -53,6 +97,102 @@ ${text2} & ${values_str} \\\\
 \\hline
 \\end{tabular}
 \\end{center}`;
+
+    return latex_table;
+}
+
+// 13. Tạo bảng thống kê có kèm Tần số tích lũy bằng LaTeX
+function taobanglatexcf(text1, intervals, text2, values1, text3, values2) {
+    const num_intervals = intervals.length - 1;
+
+    const interval_strings_arr = [];
+    for (let i = 0; i < num_intervals; i++) {
+        interval_strings_arr.push(`$[${intervals[i]}; ${intervals[i + 1]})$`);
+    }
+    const interval_strings = interval_strings_arr.join(" & ");
+
+    const values_str1 = values1.join(" & ");
+    const values_str2 = values2.join(" & ");
+    const column_format = Array(num_intervals).fill("c").join("|");
+
+    const latex_table = "\\begin{center}\n" +
+        `\\begin{tabular}{|c|${column_format}|}\n` +
+        "\\hline\n" +
+        `${text1} & ${interval_strings} \\\\\n` +
+        "\\hline\n" +
+        `${text2} & ${values_str1} \\\\\n` +
+        "\\hline\n" +
+        `${text3} & ${values_str2} \\\\\n` +
+        "\\hline\n" +
+        "\\end{tabular}\n" +
+        "\\end{center}\n";
+
+    return latex_table;
+}
+
+// 14. Tạo mảng hiển thị công thức tần số tích lũy đầy đủ (Đã tối ưu)
+function cf_full(list) {
+    const cflist = [];
+    const n = list.length;
+    let tong = 0;
+    
+    for (let k = 0; k < n; k++) {
+        tong += list[k];
+        cflist.push(`$cf_${k + 1}=${tong}$`);
+    }
+    return cflist;
+}
+
+// 15. Tạo mảng hiển thị ký hiệu tần số đầy đủ
+function f_full(list) {
+    const flist = [];
+    const n = list.length;
+    
+    for (let k = 0; k < n; k++) {
+        flist.push(`$n_${k + 1}=${list[k]}$`);
+    }
+    return flist;
+}
+
+// 16. Tính mảng tần số tích lũy dạng số (Đã tối ưu)
+function cf(list) {
+    const cflist = [];
+    const n = list.length;
+    let tong = 0;
+    
+    for (let k = 0; k < n; k++) {
+        tong += list[k];
+        cflist.push(tong);
+    }
+    return cflist;
+}
+
+// 17. Tạo bảng rút gọn (Chỉ hiển thị giá trị đơn lẻ, không ghép nhóm)
+function taobangrutgon(text1, intervals, text2, values) {
+    const num_intervals = intervals.length;
+    const num_values = values.length;
+
+    if (num_intervals !== num_values) {
+        throw new Error("Số khoảng thời gian phải khớp với số giá trị.");
+    }
+
+    // Biến đổi mảng đầu mút thành dạng $x_i$
+    const interval_strings = intervals.map(item => `$${item}$`).join(" & ");
+    
+    // Biến đổi mảng giá trị thành dạng $n_i$
+    const values_str = values.map(value => `$${value}$`).join(" & ");
+    
+    const column_format = Array(num_intervals).fill("c").join("|");
+
+    const latex_table = "\\begin{center}\n" +
+        `\\begin{tabular}{|c|${column_format}|}\n` +
+        "\\hline\n" +
+        `${text1} & ${interval_strings} \\\\\n` +
+        "\\hline\n" +
+        `${text2} & ${values_str} \\\\\n` +
+        "\\hline\n" +
+        "\\end{tabular}\n" +
+        "\\end{center}\n";
 
     return latex_table;
 }
