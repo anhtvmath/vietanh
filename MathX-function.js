@@ -6,7 +6,7 @@ function SBT_BBT_NB_hamtrungphuongCTCT(loai) {
         c = randomchoice(-6, 7);
         if (b > c) break;
     }
-    var debai = "hehe Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
+    var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
         hamtrungphuongCTCT(a, b, c) +
         "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
     var PAtrue_options = ["(" + (-a) + ";0)", "(" + a + ";+\\infty)"];
