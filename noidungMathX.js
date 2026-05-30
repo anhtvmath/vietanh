@@ -82,6 +82,17 @@ const database = [
             ] 
         }
         ]
+        },
+        {
+        title: "Chủ đề 1.4: Trắc nghiệm đúng sai",
+        subtopics: [
+        { 
+            title: "Cho bảng biến thiên", 
+            variants: [
+                {method: ["TF_SBT_BBT_hambacbaCTC", "TF_SBT_BBT_hambacbaTCT"], params: "ex", name: "Dạng 1: Hàm bậc ba"}
+            ] 
+        }
+        ]
         }
         ]
     },
