@@ -1,3 +1,197 @@
+function TF_SBT_BBT_hambacbaTCT(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(-6,-1);
+    var y2 = randomchoice(1,6);
+    while (x1 === y1 || x2 === y2) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(-6,-1);
+        y2 = randomchoice(1,6);
+    }
+    var cumtuArr = ["Dựa vào ", "Từ "];
+    var ketluanArr = [" Do đó ", " Vậy "];
+    var PAdongbien = "("+x1+";"+x2+")";
+    var PAnghichbien_options = ["(-\\infty;"+x1+")", "("+x2+";+\\infty)"];
+    var PAnghichbien = PAnghichbien_options[randomchoice(0,1)];
+    var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        hambacbaTCT("x","f",x1,x2,y1,y2);
+        // --- Ý B ---
+    var PAtrue1 = "\\True Hàm số đồng biến trên khoảng $" + PAdongbien + "$";
+    var LGPAtrue1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
+    var PAfalse1 = "Hàm số nghịch biến trên khoảng $" + PAdongbien + "$";
+    var LGPAfalse1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
+
+    // --- Ý B ---
+    var PAtrue2 = "\\True Giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$";
+    var LGPAtrue2 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$";
+    var PAfalse2 = "Giá trị cực tiểu của hàm số đã cho bằng $" + x1 + "$";
+    var LGPAfalse2 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$ chứ không phải bằng $" + x1 + ".$ Cụ thể thì $" + x1 + "$ là điểm cực tiểu của hàm số.";
+
+    var select_answers_ab = function() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse2, PAtrue1], [LGPAfalse2, LGPAtrue1]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue2, PAfalse1], [LGPAtrue2, LGPAfalse1]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAtrue2, PAtrue1], [LGPAtrue2, LGPAtrue1]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]],
+            [[PAfalse2, PAfalse1], [LGPAfalse2, LGPAfalse1]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+
+    // --- Ý C ---
+    var PAtrue3 = "\\True Hàm số nghịch biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAtrue3 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAnghichbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
+    var PAfalse3 = "Hàm số đồng biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAfalse3 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
+
+    // --- Ý D ---
+    var PAtrue4 = "\\True Điểm cực đại của hàm số đã cho là $" + x2 + "$";
+    var LGPAtrue4 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy điểm cực đại của hàm số đã cho là $" + x2 + "$";
+    var PAfalse4 = "Điểm cực đại của hàm số đã cho là $" + y2 + "$";
+    var LGPAfalse4 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy điểm cực đại của hàm số đã cho là $" + x2 + "$ chứ không phải là $" + y2 + ".$ Cụ thể thì $" + y2 + "$ là giá trị cực đại của hàm số.";
+
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse4, PAtrue3], [LGPAfalse4, LGPAtrue3]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue4, PAfalse3], [LGPAtrue4, LGPAfalse3]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAtrue4, PAtrue3], [LGPAtrue4, LGPAtrue3]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]],
+            [[PAfalse4, PAfalse3], [LGPAfalse4, LGPAfalse3]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+
+    return "\\begin{"+loai+"}\n" +
+        debai +
+        "\\choiceTFt\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+
+function TF_SBT_BBT_hambacbaCTC(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(1,6);
+    var y2 = randomchoice(-6,-1);
+    while (x1 === y2 || x2 === y1) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(1,6);
+        y2 = randomchoice(-6,-1);
+    }
+    var cumtuArr = ["Dựa vào ", "Từ "];
+    var ketluanArr = [" Do đó ", " Vậy "];
+    var PAnghichbien = "("+x1+";"+x2+")";
+    var PAdongbien_options = ["(-\\infty;"+x1+")", "("+x2+";+\\infty)"];
+    var PAdongbien = PAdongbien_options[randomchoice(0,1)];
+    var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        hambacbaCTC("x","f",x1,x2,y1,y2);
+        // --- Ý B ---
+    var PAtrue1 = "\\True Hàm số nghịch biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAtrue1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAnghichbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
+    var PAfalse1 = "Hàm số đồng biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAfalse1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAnghichbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
+
+    // --- Ý B ---
+    var PAtrue2 = "\\True Giá trị cực tiểu của hàm số đã cho bằng $" + y2 + "$";
+    var LGPAtrue2 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y2 + "$";
+    var PAfalse2 = "Giá trị cực tiểu của hàm số đã cho bằng $" + x2 + "$";
+    var LGPAfalse2 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y2 + "$ chứ không phải bằng $" + x2 + ".$ Cụ thể thì $" + x2 + "$ là điểm cực tiểu của hàm số.";
+
+    var select_answers_ab = function() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse2, PAtrue1], [LGPAfalse2, LGPAtrue1]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue2, PAfalse1], [LGPAtrue2, LGPAfalse1]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAtrue2, PAtrue1], [LGPAtrue2, LGPAtrue1]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]],
+            [[PAfalse2, PAfalse1], [LGPAfalse2, LGPAfalse1]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+
+    // --- Ý C ---
+    var PAtrue3 = "\\True Hàm số đồng biến trên khoảng $" + PAdongbien + "$";
+    var LGPAtrue3 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
+    var PAfalse3 = "Hàm số nghịch biến trên khoảng $" + PAdongbien + "$";
+    var LGPAfalse3 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
+
+    // --- Ý D ---
+    var PAtrue4 = "\\True Điểm cực đại của hàm số đã cho là $" + x1 + "$";
+    var LGPAtrue4 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy điểm cực đại của hàm số đã cho là $" + x1 + "$";
+    var PAfalse4 = "Điểm cực đại của hàm số đã cho là $" + y1 + "$";
+    var LGPAfalse4 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy điểm cực đại của hàm số đã cho là $" + x1 + "$ chứ không phải là $" + y1 + ".$ Cụ thể thì $" + y1 + "$ là giá trị cực đại của hàm số.";
+
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse4, PAtrue3], [LGPAfalse4, LGPAtrue3]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue4, PAfalse3], [LGPAtrue4, LGPAfalse3]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAtrue4, PAtrue3], [LGPAtrue4, LGPAtrue3]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]],
+            [[PAfalse4, PAfalse3], [LGPAfalse4, LGPAfalse3]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+
+    return "\\begin{"+loai+"}\n" +
+        debai +
+        "\\choiceTFt\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+
 function SBT_BBT_NB_hamtrungphuongCTCT(loai) {
     var a, b, c;
     while (true) {
