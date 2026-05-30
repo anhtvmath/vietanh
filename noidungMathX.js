@@ -168,7 +168,7 @@ const database = [
     title: "CHƯƠNG IV: NGUYÊN HÀM VÀ TÍCH PHÂN",
         topics: [
         {
-        title: "Chủ đề 4.1:...",
+        title: "Chủ đề 4.1: Nguyên hàm",
         subtopics: [
         { 
             title: "Mục 4.1.1", 
@@ -189,7 +189,28 @@ const database = [
         ]
         },
         {
-        title: "Chủ đề 4.2:...",
+        title: "Chủ đề 4.2: Tích phân",
+        subtopics: [
+        { 
+            title: "Mục 4.2.1", 
+            variants: [
+                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
+                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
+                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+            ] 
+        },
+        { 
+            title: "Mục 4.2.2", 
+            variants: [
+                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
+                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
+                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+            ] 
+        }
+        ]
+        },
+        {
+        title: "Chủ đề 4.3: Ứng dụng hình học của tích phân",
         subtopics: [
         { 
             title: "Mục 4.2.1", 
