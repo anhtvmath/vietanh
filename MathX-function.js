@@ -83,7 +83,7 @@ function TF_SBT_BBT_hambacbaTCT(loai) {
 
     return "\\begin{"+loai+"}\n" +
         debai +
-        "\\choiceTFt\n" +
+        "\\choiceTF\n" +
         "{" + PAcauAB[0] + "}\n" +
         "{" + PAcauAB[1] + "}\n" +
         "{" + PAcauCD[0] + "}\n" +
@@ -180,7 +180,7 @@ function TF_SBT_BBT_hambacbaCTC(loai) {
 
     return "\\begin{"+loai+"}\n" +
         debai +
-        "\\choiceTFt\n" +
+        "\\choiceTF\n" +
         "{" + PAcauAB[0] + "}\n" +
         "{" + PAcauAB[1] + "}\n" +
         "{" + PAcauCD[0] + "}\n" +
