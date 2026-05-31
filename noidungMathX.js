@@ -183,11 +183,12 @@ const database = [
         title: "Chủ đề 4.1: Nguyên hàm",
         subtopics: [
         { 
-            title: "Mục 4.1.1", 
+            title: "Tìm họ nguyên hàm", 
             variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+                {method: "nguyenham1", params: "ex", name: "Dạng 1"},
+                {method: "nguyenham2", params: "ex", name: "Dạng 2"},
+                {method: "nguyenham3", params: "ex", name: "Dạng 3"},
+                {method: "nguyenham4", params: "ex", name: "Dạng 4"}
             ] 
         },
         { 
@@ -248,22 +249,18 @@ const database = [
     title: "CHƯƠNG V: PHƯƠNG PHÁP TOẠ ĐỘ TRONG KHÔNG GIAN",
         topics: [
         {
-        title: "Chủ đề 5.1:...",
+        title: "Chủ đề 5.1: Mặt phẳng",
         subtopics: [
         { 
-            title: "Mục 5.1.1", 
+            title: "Vectơ pháp tuyến của mặt phẳng", 
             variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+                {method: "timvectophaptuyen_mp", params: "ex", name: "Dạng 1" }
             ] 
         },
         { 
-            title: "Mục 5.1.2", 
+            title: "Viết phương trình mặt phẳng", 
             variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+                {method: "phuongtrinhmp_diquadiem_phaptuyen", params: "ex", name: "Dạng 1: Đi qua một điểm và biết vectơ pháp tuyến"}
             ] 
         }
         ]
