@@ -91,6 +91,18 @@ const database = [
             variants: [
                 {method: ["TF_SBT_BBT_hambacbaCTC", "TF_SBT_BBT_hambacbaTCT"], params: "ex", name: "Dạng 1: Hàm bậc ba"}
             ] 
+        },
+        { 
+            title: "Cho đồ thị", 
+            variants: [
+                {method: ["TF_SBT_DT_hambacbaCTC", "TF_SBT_DT_hambacbaTCT"], params: "ex", name: "Dạng 1: Hàm bậc ba"}
+            ] 
+        },
+        { 
+            title: "Cho hàm số", 
+            variants: [
+                {method: ["TF_CHO_HS_hambacbaCTC"], params: "ex", name: "Dạng 1: Hàm bậc ba"}
+            ] 
         }
         ]
         }
