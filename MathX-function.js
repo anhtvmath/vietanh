@@ -171,7 +171,7 @@ function nguyenham1(loai) {
         b = randomchoice(-6, 6);
     if (a !== b && a !== -b && a * b !== 0 && (a > 0 || b > 0)) break;
     }
-    var debai = "Họ nguyên hàm của hàm số $f(x)="+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+"$ là";
+    var debai = "Họ nguyên hàm của hàm số $f(x) = "+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+"$ là";
     var PA1 = "{\\True $"+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C$}";
     var PA2 = "{$"+hesodau(a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$}";
     var PA3 = "{$"+hesodau(-a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$}";
@@ -291,7 +291,7 @@ function nguyenham4(loai) {
         b = randomchoice(-6, 6);
     if (a !== b && a !== -b && a * b !== 0 && (a > 0 || b > 0)) break;
     }
-    var debai = "Họ nguyên hàm của hàm số $f(x)="+hesodau(a,"\\sin x")+hesosau(b,"\\mathrm{e}^x")+"$ là";
+    var debai = "Họ nguyên hàm của hàm số $f(x) = "+hesodau(a,"\\sin x")+hesosau(b,"\\mathrm{e}^x")+"$ là";
     var PA1 = "{\\True $"+hesodau(-a,"\\cos x")+hesosau(b,"\\mathrm{e}^x")+"+C$}";
     var PA2 = "{$"+hesodau(a,"\\cos x")+hesosau(b,"\\mathrm{e}^x")+"+C$}";
     var PA3 = "{$"+hesodau(-a,"\\cos x")+hesosau(-b,"\\mathrm{e}^x")+"+C$}";
