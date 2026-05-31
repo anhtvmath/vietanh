@@ -1,3 +1,462 @@
+function nguyenham1(loai) {
+    var a, b;
+    while (true) {
+        a = randomchoice(-6, 6);
+        b = randomchoice(-6, 6);
+    if (a !== b && a !== -b && a * b !== 0 && (a > 0 || b > 0)) break;
+    }
+    var debai = "Họ nguyên hàm của hàm số $f(x)="+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+"$ là";
+    var PA1 = "{\\True $"+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C$}";
+    var PA2 = "{$"+hesodau(a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$}";
+    var PA3 = "{$"+hesodau(-a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$}";
+    var PA4 = "{$"+hesodau(a,"\\cos x")+hesosau(b,"\\sin x")+"+C$}";
+    var loigiai = "Ta có\n" + 
+                "$$\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C.$$"
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function nguyenham2(loai) {
+    function xmu(c) {
+        if (c === 0) {
+            return "";
+        }
+        if (c === 1) {
+            return "x";
+        }
+        if (c > 1 && c < 10) {
+            return "x^" + c;
+        }
+        if (c >= 10) {
+            return "x^{" + c + "}";
+        }
+        return "x";
+    }
+    var a, b, c;
+    while (true) {
+        a = randomchoice(-6, 6);
+        b = randomchoice(-6, 6);
+        c = randomchoice(1,9);
+    if (a !== b && a !== -b && a * b !== 0 && (a > 0 || b > 0)) break;
+    }
+    var debai = "Họ nguyên hàm của hàm số $f(x) = " + hesodau(a, "\\sin x") + hesosau(b, xmu(c)) + "$ là";
+    var PA1 = "{\\True $"+hesodau(-a,"\\cos x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C$}";
+    var PA2 = "{$"+hesodau(a,"\\cos x")+hesosau(b*c,xmu(c-1))+"+C$}";
+    var PA3 = "{$"+hesodau(a,"\\cos x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C$}";
+    var PA4 = "{$"+hesodau(-a,"\\cos x")+hesosau(b*c,xmu(c-1))+"+C$}";
+    var loigiai = "Ta có\n" + 
+                "$$\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b, xmu(c))+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C.$$"
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+
+function nguyenham3(loai) {
+    function xmu(c) {
+        if (c === 0) {
+            return "";
+        }
+        if (c === 1) {
+            return "x";
+        }
+        if (c > 1 && c < 10) {
+            return "x^" + c;
+        }
+        if (c >= 10) {
+            return "x^{" + c + "}";
+        }
+        return "x";
+    }
+    var a, b, c;
+    while (true) {
+        a = randomchoice(-6, 6);
+        b = randomchoice(-6, 6);
+        c = randomchoice(1,9);
+    if (a !== b && a !== -b && a * b !== 0 && (a > 0 || b > 0)) break;
+    }
+    var debai = "Họ nguyên hàm của hàm số $f(x) = " + hesodau(a, "\\cos x") + hesosau(b, xmu(c)) + "$ là";
+    var PA1 = "{\\True $"+hesodau(a,"\\sin x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C$}";
+    var PA2 = "{$"+hesodau(-a,"\\sin x")+hesosau(b*c,xmu(c-1))+"+C$}";
+    var PA3 = "{$"+hesodau(-a,"\\sin x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C$}";
+    var PA4 = "{$"+hesodau(a,"\\sin x")+hesosau(b*c,xmu(c-1))+"+C$}";
+    var loigiai = "Ta có\n" + 
+                "$$\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\cos x")+hesosau(b, xmu(c))+")\\mathrm{d}x="+hesodau(a,"\\sin x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C.$$"
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function nguyenham4(loai) {
+    var a, b;
+    while (true) {
+        a = randomchoice(-6, 6);
+        b = randomchoice(-6, 6);
+    if (a !== b && a !== -b && a * b !== 0 && (a > 0 || b > 0)) break;
+    }
+    var debai = "Họ nguyên hàm của hàm số $f(x)="+hesodau(a,"\\sin x")+hesosau(b,"\\mathrm{e}^x")+"$ là";
+    var PA1 = "{\\True $"+hesodau(-a,"\\cos x")+hesosau(b,"\\mathrm{e}^x")+"+C$}";
+    var PA2 = "{$"+hesodau(a,"\\cos x")+hesosau(b,"\\mathrm{e}^x")+"+C$}";
+    var PA3 = "{$"+hesodau(-a,"\\cos x")+hesosau(-b,"\\mathrm{e}^x")+"+C$}";
+    var PA4 = "{$"+hesodau(a,"\\cos x")+hesosau(-b,"\\mathrm{e}^x")+"+C$}";
+    var loigiai = "Ta có\n" + 
+                "$$\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b,"\\mathrm{e}^x")+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesosau(b,"\\mathrm{e}^x")+"+C.$$"
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+
+function TF_SBT_DT_hambacbaCTC(loai) {
+    var boMau = [
+        [1, 0, -3, -2], [1, 0, -3, -1], [1, 0, -3, 0], [1, 0, -3, 1], [1, 0, -3, 2], // Cực trị -1, 1
+        [1, -3, 0, -2], [1, -3, 0, -1], [1, -3, 0, 1], [1, -3, 0, 2], [1, -3, 0, 3], [1, -3, 0, 4], [1, -3, 0, 5], // Cực trị 0, 2
+        [1, 3, 0, -4], [1, 3, 0, -3], [1, 3, 0, -2], [1, 3, 0, -1], [1, 3, 0, 1], [1, 3, 0, 2] // Cực trị -2, 0
+    ];
+    var index = randomchoice(0, boMau.length - 1);
+    var boChon = boMau[index];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x1, x2, y1, y2;
+    // Xác định hoành độ và tung độ cực trị (x1 luôn bé hơn x2)
+    // Với a = 1: y1 là Cực đại, y2 là Cực tiểu. Do đó y1 > y2.
+    if (b === 0 && c === -3) { 
+        x1 = -1; x2 = 1; y1 = d + 2; y2 = d - 2; 
+    } else if (b === -3 && c === 0) { 
+        x1 = 0;  x2 = 2; y1 = d;     y2 = d - 4; 
+    } else { 
+        x1 = -2; x2 = 0; y1 = d + 4; y2 = d; 
+    }
+    var cumtuArr = ["Dựa vào ", "Từ "];
+    var ketluanArr = [" Do đó ", " Vậy "];
+    var PAnghichbien = "("+x1+";"+x2+")";
+    var PAdongbien_options = ["(-\\infty;"+x1+")", "("+x2+";+\\infty)"];
+    var PAdongbien = PAdongbien_options[randomchoice(0,1)];
+    var codehinhve = "\\begin{center}\n"+dothibacba_a_duong(a, b, c, d)+"\n\\end{center}";
+    var debai = "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.\n" +
+           codehinhve + "\n";
+        // --- Ý B ---
+    var PAtrue1 = "\\True Hàm số nghịch biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAtrue1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAnghichbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
+    var PAfalse1 = "Hàm số đồng biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAfalse1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAnghichbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
+
+    // --- Ý B ---
+    var PAtrue2 = "\\True Giá trị cực tiểu của hàm số đã cho bằng $" + y2 + "$";
+    var LGPAtrue2 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y2 + "$";
+    var PAfalse2 = "Giá trị cực tiểu của hàm số đã cho bằng $" + x2 + "$";
+    var LGPAfalse2 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y2 + "$ chứ không phải bằng $" + x2 + ".$ Cụ thể thì $" + x2 + "$ là điểm cực tiểu của hàm số.";
+
+    var select_answers_ab = function() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse2, PAtrue1], [LGPAfalse2, LGPAtrue1]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue2, PAfalse1], [LGPAtrue2, LGPAfalse1]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAtrue2, PAtrue1], [LGPAtrue2, LGPAtrue1]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]],
+            [[PAfalse2, PAfalse1], [LGPAfalse2, LGPAfalse1]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+
+    // --- Ý C ---
+    var PAtrue3 = "\\True Hàm số đồng biến trên khoảng $" + PAdongbien + "$";
+    var LGPAtrue3 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
+    var PAfalse3 = "Hàm số nghịch biến trên khoảng $" + PAdongbien + "$";
+    var LGPAfalse3 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
+
+    // --- Ý D ---
+    var PAtrue4 = "\\True Điểm cực đại của hàm số đã cho là $" + x1 + "$";
+    var LGPAtrue4 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy điểm cực đại của hàm số đã cho là $" + x1 + "$";
+    var PAfalse4 = "Điểm cực đại của hàm số đã cho là $" + y1 + "$";
+    var LGPAfalse4 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy điểm cực đại của hàm số đã cho là $" + x1 + "$ chứ không phải là $" + y1 + ".$ Cụ thể thì $" + y1 + "$ là giá trị cực đại của hàm số.";
+
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse4, PAtrue3], [LGPAfalse4, LGPAtrue3]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue4, PAfalse3], [LGPAtrue4, LGPAfalse3]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAtrue4, PAtrue3], [LGPAtrue4, LGPAtrue3]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]],
+            [[PAfalse4, PAfalse3], [LGPAfalse4, LGPAfalse3]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+
+    return "\\begin{"+loai+"}\n" +
+        debai +
+        "\\choiceTF\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+
+function TF_SBT_DT_hambacbaTCT(loai) {
+    var boMau = [
+    [-1, 0, 3, -2], [-1, 0, 3, 0], [-1, 0, 3, 2], 
+    [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -1],
+    [-1, -3, 0, 1], [-1, -3, 0, 3], [-1, -3, 0, 4]
+    ];
+    var index = randomchoice(0, boMau.length - 1);
+    var boChon = boMau[index];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x1, x2, y1, y2;
+    // Xác định x1, x2 (hoành độ) và y1, y2 (tung độ cực trị) để làm nhiễu
+    if (b === 0 && c === 3) { 
+        x1 = -1; x2 = 1; y1 = d - 2; y2 = d + 2; 
+    } else if (b === 3 && c === 0) { 
+        x1 = 0;  x2 = 2; y1 = d;     y2 = d + 4; 
+    } else { 
+        x1 = -2; x2 = 0; y1 = d - 4; y2 = d; 
+    }
+    var cumtuArr = ["Dựa vào ", "Từ "];
+    var ketluanArr = [" Do đó ", " Vậy "];
+    var PAdongbien = "("+x1+";"+x2+")";
+    var PAnghichbien_options = ["(-\\infty;"+x1+")", "("+x2+";+\\infty)"];
+    var PAnghichbien = PAnghichbien_options[randomchoice(0,1)];
+    var codehinhve = "\\begin{center}\n"+dothibacba_a_am(a, b, c, d)+"\n\\end{center}";
+    var debai = "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.\n" +
+           codehinhve + "\n";
+        // --- Ý B ---
+    var PAtrue1 = "\\True Hàm số đồng biến trên khoảng $" + PAdongbien + "$";
+    var LGPAtrue1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
+    var PAfalse1 = "Hàm số nghịch biến trên khoảng $" + PAdongbien + "$";
+    var LGPAfalse1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
+
+    // --- Ý B ---
+    var PAtrue2 = "\\True Giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$";
+    var LGPAtrue2 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$";
+    var PAfalse2 = "Giá trị cực tiểu của hàm số đã cho bằng $" + x1 + "$";
+    var LGPAfalse2 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$ chứ không phải bằng $" + x1 + ".$ Cụ thể thì $" + x1 + "$ là điểm cực tiểu của hàm số.";
+
+    var select_answers_ab = function() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse2, PAtrue1], [LGPAfalse2, LGPAtrue1]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue2, PAfalse1], [LGPAtrue2, LGPAfalse1]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAtrue2, PAtrue1], [LGPAtrue2, LGPAtrue1]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]],
+            [[PAfalse2, PAfalse1], [LGPAfalse2, LGPAfalse1]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+
+    // --- Ý C ---
+    var PAtrue3 = "\\True Hàm số nghịch biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAtrue3 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAnghichbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
+    var PAfalse3 = "Hàm số đồng biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAfalse3 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
+
+    // --- Ý D ---
+    var PAtrue4 = "\\True Điểm cực đại của hàm số đã cho là $" + x2 + "$";
+    var LGPAtrue4 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy điểm cực đại của hàm số đã cho là $" + x2 + "$";
+    var PAfalse4 = "Điểm cực đại của hàm số đã cho là $" + y2 + "$";
+    var LGPAfalse4 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy điểm cực đại của hàm số đã cho là $" + x2 + "$ chứ không phải là $" + y2 + ".$ Cụ thể thì $" + y2 + "$ là giá trị cực đại của hàm số.";
+
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse4, PAtrue3], [LGPAfalse4, LGPAtrue3]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue4, PAfalse3], [LGPAtrue4, LGPAfalse3]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAtrue4, PAtrue3], [LGPAtrue4, LGPAtrue3]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]],
+            [[PAfalse4, PAfalse3], [LGPAfalse4, LGPAfalse3]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+
+    return "\\begin{"+loai+"}\n" +
+        debai +
+        "\\choiceTF\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function TF_CHO_HS_hambacbaCTC(loai) {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = 2 * a * Math.pow(x1, 3) - 3 * a * S * Math.pow(x1, 2) + 6 * a * P * x1 + 6 * b;
+        Tu_y2 = 2 * a * Math.pow(x2, 3) - 3 * a * S * Math.pow(x2, 2) + 6 * a * P * x2 + 6 * b;
+        if (x1 < x2 && Tu_y1 > Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+    var cumtuArr = ["Dựa vào ", "Từ "];
+    var ketluanArr = [" Do đó ", " Vậy "];
+    var PAnghichbien = "("+x1+";"+x2+")";
+    var PAdongbien_options = ["(-\\infty;"+x1+")", "("+x2+";+\\infty)"];
+    var PAdongbien = PAdongbien_options[randomchoice(0,1)];
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(a, 3), "x^3") + hesoxausau(phanso(-a * S, 2), "x^2") + hesosau(a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R.$";
+    var PAtrue1 = "\\True Hàm số đã cho có đạo hàm là $f'(x)=" + hesodau(a, "x^2") + hesosau(-a * S, "x") + sodungsau(a * P) + ".$";
+    var LGPAtrue1 = "Ta có $f'(x)=" + hesodau(a, "x^2") + hesosau(-a * S, "x") + sodungsau(a * P) + ".$";
+    var PAfalse1 = "Hàm số đã cho có đạo hàm là $f'(x)=" + hesodau(-a, "x^2") + hesosau(-a * S, "x") + sodungsau(a * P) + ".$";
+    var LGPAfalse1 = "Ta có $f'(x)=" + hesodau(a, "x^2") + hesosau(-a * S, "x") + sodungsau(a * P) + ".$";
+
+    var PAtrue2 = "\\True Giá trị cực đại của hàm số đã cho bằng $" + y1 + "$";    
+    var LGPAtrue2 = "Ta có\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        hambacbaCTC("x", "f", x1, x2, y1, y2)+
+        cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y1 + ".$";
+    var PAfalse2 = "Giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$";
+    var LGPAfalse2 = LGPAtrue2;
+
+    function select_answers_ab() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+
+    // --- Ý C ---
+    var PAtrue3 = "\\True Hàm số nghịch biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAtrue3 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAnghichbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
+    var PAfalse3 = "Hàm số đồng biến trên khoảng $" + PAnghichbien + "$";
+    var LGPAfalse3 = LGPAtrue3;
+
+    // --- Ý D ---
+    var PAtrue4 = "\\True Hàm số đồng biến trên khoảng $" + PAdongbien + "$";
+    var LGPAtrue4 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
+    var PAfalse4 = "Hàm số nghịch biến trên khoảng $" + PAdongbien + "$";
+    var LGPAfalse4 = LGPAtrue4;
+
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse4, PAtrue3], [LGPAfalse4, LGPAtrue3]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue4, PAfalse3], [LGPAtrue4, LGPAfalse3]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAtrue4, PAtrue3], [LGPAtrue4, LGPAtrue3]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]],
+            [[PAfalse4, PAfalse3], [LGPAfalse4, LGPAfalse3]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+
+    return "\\begin{"+loai+"}\n" +
+        debai + 
+        "\\choiceTF\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
 function TF_SBT_BBT_hambacbaTCT(loai) {
     var x1 = randomchoice(-6,-1);
     var x2 = randomchoice(1,6);
