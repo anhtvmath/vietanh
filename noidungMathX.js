@@ -254,13 +254,13 @@ const database = [
         { 
             title: "Vectơ pháp tuyến của mặt phẳng", 
             variants: [
-                {method: "timvectophaptuyen_mp", params: "ex", name: "Dạng 1" }
+                {method: ["timvectophaptuyen_mp"], params: "ex", name: "Dạng 1"}
             ] 
         },
         { 
             title: "Viết phương trình mặt phẳng", 
             variants: [
-                {method: "phuongtrinhmp_diquadiem_phaptuyen", params: "ex", name: "Dạng 1: Đi qua một điểm và biết vectơ pháp tuyến"}
+                {method: ["phuongtrinhmp_diquadiem_phaptuyen"], params: "ex", name: "Dạng 1: Đi qua một điểm và biết vectơ pháp tuyến"}
             ] 
         }
         ]
