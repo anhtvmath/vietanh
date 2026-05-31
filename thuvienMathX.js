@@ -1130,23 +1130,36 @@ function hesodau(a,x) {
     }
 }
 
-function hesosau(a,x) {
-        if (a > 1) {
-            return "+" + a + x;
+function hesosau(a, x) {
+    // TRƯỜNG HỢP 1: Hệ số bằng 0 -> Luôn triệt tiêu bất kể x là gì
+    if (a === 0) {
+        return "";
+    }
+    
+    // TRƯỜNG HỢP 2: Nếu x là chuỗi rỗng (Xử lý hằng số tự do đứng sau)
+    if (x === "") {
+        if (a > 0) {
+            return "+" + a; // Ví dụ: +1, +5
         }
-        if (a === 1) {
-            return "+" + x;
-        }
-        if (a === -1) {
-            return "-" + x;
-        }
-        if (a === 0) {
-            return "";
-        }
-        if (a < -1) {
-            return a + x;
+        if (a < 0) {
+            return a;       // Ví dụ: -1, -5 (bản thân số a đã có sẵn dấu trừ)
         }
     }
+    
+    // TRƯỜNG HỢP 3: Nếu x có chứa biến (Giữ nguyên logic chuẩn cũ của bạn)
+    if (a === 1) {
+        return "+" + x; // Ví dụ: +\sin x
+    }
+    if (a === -1) {
+        return "-" + x; // Ví dụ: -\sin x
+    }
+    if (a > 0) {
+        return "+" + a + x; // Ví dụ: +5\sin x
+    }
+    if (a < 0) {
+        return a + x;       // Ví dụ: -5\sin x
+    }
+}
 
 function sodungsau(a) {
     if (a > 0) {
