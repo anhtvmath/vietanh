@@ -1,3 +1,169 @@
+function timvectophaptuyen_mp(loai) {
+    var a, b, c, d;
+    while (true) {
+        a = randomchoice(-5, 6);
+        b = randomchoice(-5, 6);
+        c = randomchoice(-5, 6);
+        d = randomchoice(-5, 6);
+        
+        // Điều kiện lọc bộ số đẹp của bạn
+        if (a * b * c * d !== 0 && 
+            a !== b && b !== c && c !== d && c !== -d && 
+            !(a < 0 && b < 0 && c < 0 && d < 0) && 
+            ucln(Math.abs(a), ucln(Math.abs(b), Math.abs(c))) === 1 && 
+            ucln(Math.abs(a), ucln(Math.abs(b), Math.abs(d))) === 1 && 
+            ucln(Math.abs(a), ucln(Math.abs(c), Math.abs(d))) === 1 && 
+            ucln(Math.abs(b), ucln(Math.abs(c), Math.abs(d))) === 1) break;
+    }
+    var PA1 = "(" + a + ";" + b + ";" + c + ")";
+    var PA2 = "(" + a + ";" + b + ";" + d + ")";
+    var PA3 = "(" + a + ";" + b + ";" + (-c) + ")";
+    var PA4 = "(" + a + ";" + c + ";" + d + ")"; 
+    var PA5 = "(" + b + ";" + c + ";" + d + ")";   
+    var PA6 = "(" + b + ";" + c + ";" + (-d) + ")";
+    var questionchoice = [PA1, PA2];
+    var questionwrongchoice = [PA4, PA5];
+    if (c < 0) {
+        questionwrongchoice.push(PA3);
+    }
+    if (d < 0) {
+        questionwrongchoice.push(PA6);
+    }
+    for (var i = 0; i < 2; i++) {
+        var vi_tri = randomchoice(0, questionwrongchoice.length - 1);
+        var PAwrong = questionwrongchoice[vi_tri];
+        questionchoice.push(PAwrong);
+        questionwrongchoice = questionwrongchoice.filter(function(item) {
+            return item !== PAwrong;
+        });
+    }
+    var pt_matphang = hesodau(a, "x") + hesosau(b, "y") + hesosau(c, "z") + sodungsau(d);
+    var debai = "Trong không gian $Oxyz$, cho mặt phẳng $(P)\\colon " + pt_matphang + "=0$. Vectơ nào "+ngaunhien(["dưới đây", "sau đây"])+" là một vectơ pháp tuyến của $(P)?$";
+    var options = [];
+    var i_true = 1; 
+    for (var j = 1; j <= 4; j++) {
+        var vi_tri_pa = randomchoice(0, questionchoice.length - 1);
+        var PA = questionchoice[vi_tri_pa];
+        if (PA === PA1) {
+            i_true = j; // Lưu lại chỉ số vòng lặp chính xác làm đáp án đúng cho lời giải
+            options.push("{\\True $\\overrightarrow{n_" + j + "}=" + PA + "$}");
+        } else {
+            options.push("{$\\overrightarrow{n_" + j + "}=" + PA + "$}");
+        }
+        questionchoice = questionchoice.filter(function(item) { 
+            return item !== PA; 
+        });
+    }
+    
+    shuffle(options);
+    
+    var loigiai = "Mặt phẳng $(P)\\colon " + pt_matphang + "=0$ có một vectơ pháp tuyến là $\\overrightarrow{n_" + i_true + "} = (" + a + ";" + b + ";" + c + ").$";
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+function phuongtrinhmp_diquadiem_phaptuyen(loai) {
+    var a, b, c, m, n, p, dM, dM1;
+    while (true) {
+        a = randomchoice(-5, 6);
+        b = randomchoice(-5, 6);
+        c = randomchoice(-5, 6);
+        m = randomchoice(-5, 6);
+        n = randomchoice(-5, 6);
+        p = randomchoice(-5, 6);
+        
+        dM = a * m + b * n + c * p;
+        dM1 = a * m + b * n - c * p;
+        
+        // Điều kiện lọc bộ số đẹp và chống trùng đáp án
+        if (dM !== 0 && dM1 !== 0 && a * b * c !== 0 && m * n * p !== 0 && 
+            !(a < 0 && b < 0 && c < 0) && 
+            c !== -c && dM !== -dM && dM !== dM1 && dM !== -dM1 && // Chặn trùng giữa PA1, PA2, PA3, PA4
+            ucln(Math.abs(a), ucln(Math.abs(b), Math.abs(c))) === 1) break;
+    }
+
+    // Định nghĩa các hàm phụ để dùng riêng trong phần lời giải (thay cho hello và hesosecondnew)
+    function hello(num) {
+        if (num > 0) return "-" + num;
+        if (num < 0) return "+" + (-num);
+        return "-0";
+    }
+    
+    function hesosecondnew(num) {
+        if (num >= 0) return "+" + num;
+        return num.toString();
+    }
+
+    // --- DỰNG CÁC PHƯƠNG ÁN LỰA CHỌN (SỬ DỤNG HÀM HỆ THỐNG CỦA BẠN) ---
+    var PA1 = "$" + hesodau(a, "x") + hesosau(b, "y") + hesosau(c, "z") + sodungsau(-dM) + "=0$";
+    var PA2 = "$" + hesodau(a, "x") + hesosau(b, "y") + hesosau(c, "z") + sodungsau(dM) + "=0$";
+    var PA3 = "$" + hesodau(a, "x") + hesosau(b, "y") + hesosau(-c, "z") + sodungsau(-dM1) + "=0$";
+    var PA4 = "$" + hesodau(a, "x") + hesosau(b, "y") + hesosau(-c, "z") + sodungsau(dM1) + "=0$";
+    
+    var questionchoice = [PA1];
+    var questionwrongchoice = [PA2, PA3, PA4];
+    
+    // Bốc ngẫu nhiên đáp án nhiễu (Dùng length - 1 cho hàm randomchoice của bạn)
+    for (var i = 0; i < 3; i++) {
+        var vi_tri = randomchoice(0, questionwrongchoice.length - 1);
+        var PAwrong = questionwrongchoice[vi_tri];
+        questionchoice.push(PAwrong);
+        questionwrongchoice = questionwrongchoice.filter(function(item) {
+            return item !== PAwrong;
+        });
+    }
+    
+    var debai = "Trong không gian $Oxyz$, phương trình nào dưới đây là phương trình mặt phẳng đi qua điểm $A(" + m + ";" + n + ";" + p + ")$ và có một vectơ pháp tuyến $\\overrightarrow{n}=(" + a + ";" + b + ";" + c + ")$?";
+    
+    var options = [];
+    for (var j = 0; j < 4; j++) {
+        var vi_tri_pa = randomchoice(0, questionchoice.length - 1);
+        var PA = questionchoice[vi_tri_pa];
+        
+        if (PA === PA1) {
+            options.push("{\\True " + PA + "}");
+        } else {
+            options.push("{" + PA + "}");
+        }
+        
+        questionchoice = questionchoice.filter(function(item) {
+            return item !== PA;
+        });
+    }
+    
+    shuffle(options);
+    
+    var loigiai = "Mặt phẳng đi qua điểm $A(" + m + ";" + n + ";" + p + ")$ và có vectơ pháp tuyến $\\overrightarrow{n}=(" + a + ";" + b + ";" + c + ")$ có phương trình là\n" + 
+                  "$$" + a + "(x" + hello(m) + ")" + hesosecondnew(b) + "(y" + hello(n) + ")" + hesosecondnew(c) + "(z" + hello(p) + ")=0\\Leftrightarrow " + hesodau(a, "x") + hesosau(b, "y") + hesosau(c, "z") + sodungsau(-dM) + "=0.$$";
+                  
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+
+
+
 function nguyenham1(loai) {
     var a, b;
     while (true) {
