@@ -160,8 +160,485 @@ function phuongtrinhmp_diquadiem_phaptuyen(loai) {
         "\\end{" + loai + "}\n";
 }
 
+function ungdungtichphan2(loai) {
+    var t1, t2, r1, r2, b, c, tuso;
+    t1 = randomchoice(0, 3);
+    t2 = randomchoice(5, 8);
+    r1 = randomchoice(-4, -1);
+    r2 = randomchoice(t1 + 1, t2 - 1);
+    b = -(r1 + r2);
+    c = r1 * r2;
+
+    // Hàm tính giá trị nguyên hàm đã nhân 6 để né số thập phân
+    function F6(t) {
+        return 2 * Math.pow(t, 3) + 3 * b * Math.pow(t, 2) + 6 * c * t;
+    }
+
+    // Tính tổng quãng đường (có trị tuyệt đối từng chặng dựa trên điểm đổi chiều r2)
+    var doan1 = F6(t1) - F6(r2);
+    var doan2 = F6(t2) - F6(r2);
+    tuso = doan1 + doan2; 
+
+    var k1, k2, k3;
+    while (true) {
+        k1 = randomchoice(-3, 3) * 6; 
+        k2 = randomchoice(-3, 3) * 6;
+        k3 = randomchoice(-3, 3) * 6;
+        
+        // Check chống trùng VÀ check đảm bảo các phương án nhiễu phải lớn hơn 0
+        if (k1 * k2 * k3 !== 0 && k1 !== k2 && k2 !== k3 && k1 !== k3 && 
+            (tuso + k1) > 0 && (tuso + k2) > 0 && (tuso + k3) > 0) {
+            break;
+        }
+    }    
+    var tichphan = "\\displaystyle\\int\\limits" + format_canduoi(t1) + format_cantren(t2);
+    var v_t = "t^2" + hesosau(b, "t") + sodungsau(c);
+    
+    var debai = "Một vật chuyển động dọc theo một đường thẳng sao cho vận tốc của nó tại thời điểm $t$ (giây) là $v(t) = " + v_t + "$ (m/s). " +
+                 "Tìm tổng quãng đường vật đi được trong khoảng thời gian $" + t1 + " \\leq t \\leq " + t2 + ".$";
+                 
+    var PA1 = "{\\True $" + phanso(tuso, 6) + "\\text{ (m)}$}";
+    var PA2 = "{$" + phanso(tuso + k1, 6) + "\\text{ (m)}$}";
+    var PA3 = "{$" + phanso(tuso + k2, 6) + "\\text{ (m)}$}";
+    var PA4 = "{$" + phanso(tuso + k3, 6) + "\\text{ (m)}$}";
+    
+    // Lời giải ngắn gọn: Ghi thẳng công thức trị tuyệt đối và ra ngay kết quả như bấm máy
+    var loigiai = "Tổng quãng đường vật đi được trong khoảng thời gian từ $t = " + t1 + "$ đến $t = " + t2 + "$ là\n" +
+                  "$$S = " + tichphan + "|" + v_t + "|\\mathrm{d}t = " + phanso(tuso, 6) + "\\text{ (m)}.$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
 
 
+function ungdungtichphan1(loai) {
+    var t1,t2,r1,r2,b,c,tuso;
+    t1 = randomchoice(0,3);
+    t2 = randomchoice(5,8);
+    r1 = randomchoice(-4,-1);
+    r2 = randomchoice(t1+1,t2-1);
+    b = -(r1+r2);
+    c = r1*r2;
+    function F6(t) {
+        return 2 * Math.pow(t, 3) + 3 * b * Math.pow(t, 2) + 6 * c * t;
+    }
+
+    tuso = F6(t2)-F6(t1);
+
+    var k1, k2, k3;
+    while (true) {
+        k1 = randomchoice(-3, 3);
+        k2 = randomchoice(-3, 3);
+        k3 = randomchoice(-3, 3);
+        if (k1 * k2 * k3 !== 0 && k1 !== k2 && k2 !== k3 && k1 !== k3) {
+            break;
+        }
+    }
+
+    var tichphan = "\\displaystyle\\int\\limits" + format_canduoi(t1) + format_cantren(t2);
+    var v_t = "t^2" + hesosau(b, "t") + sodungsau(c);
+    var debai = "Một vật chuyển động dọc theo một đường thẳng sao cho vận tốc của nó tại thời điểm $t$ (giây) là $v(t) = " + v_t + "$ (m/s). " +
+                 "Tìm độ dịch chuyển của vật trong khoảng thời gian $" + t1 + " \\leq t \\leq " + t2 + ".$";
+
+    var PA1 = "{\\True $" + phanso(tuso,6) + "\\text{ (m)}$}";
+    var PA2 = "{$" + phanso(tuso+k1,6) + "\\text{ (m)}$}";
+    var PA3 = "{$" + phanso(tuso+k2,6) + "\\text{ (m)}$}";
+    var PA4 = "{$" + phanso(tuso+k3,6) + "\\text{ (m)}$}";
+    var loigiai = "Độ dịch chuyển của vật trong khoảng thời gian từ $t = " + t1 + "$ đến $t = " + t2 + "$ là\n" +
+                  "$$" + tichphan + "(" + v_t + ")\\mathrm{d}t = \\left.\\left(\\dfrac{t^3}{3}" + hesoxausau(phanso(b,2), "t^2") + hesosau(c, "t") + "\\right)\\right|" + format_canduoi(t1) + format_cantren(t2) + " = " + phanso(tuso,6) + "\\text{ (m)}.$$";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function tinhchattichphan7(loai) {
+    var a, b, m, n, canduoi, cantren;
+    var res1, res2, res3, res4;
+    while (true) {
+        a = randomchoice(-5, 6); 
+        b = randomchoice(-5, 6); 
+        m = randomchoice(-4, 5); 
+        n = randomchoice(-4, 5); 
+        if (a !== 0 && b !== 0 && m !== 0 && n !== 0 && m !== n && m !== -n && !(m < 0 && n < 0)) {
+            res1 = m * a + n * b;   
+            res2 = m * a - n * b;   
+            res3 = m * b + n * a;   
+            res4 = m * a + b;       
+            if (res1 !== res2 && res1 !== res3 && res1 !== res4 && 
+                res2 !== res3 && res2 !== res4 && res3 !== res4) {
+                break;
+            }
+        }
+    }
+
+    canduoi = randomchoice(-4, 2);
+    cantren = randomchoice(3, 6);
+
+    var tichphan = "\\displaystyle\\int\\limits" + format_canduoi(canduoi) + format_cantren(cantren);
+    var dx = "\\mathrm{d}x";
+    
+    var bieu_thuc = hesodau(m, "f(x)") + hesosau(n, "g(x)"); 
+    
+    var debai = "Nếu $" + tichphan + " f(x)" + dx + "=" + a + "$ và $" + tichphan + " g(x)" + dx + "=" + b + "$ thì $" + tichphan + "\\big[" + bieu_thuc + "\\big]" + dx + "$ bằng";
+    
+    var PA1 = "{\\True $" + res1 + "$}";
+    var PA2 = "{$" + res2 + "$}";
+    var PA3 = "{$" + res3 + "$}";
+    var PA4 = "{$" + res4 + "$}";
+    
+    var loigiai = "Ta có\n" + 
+                  "\\begin{align*}\n" +
+                  tichphan + "\\big[" + bieu_thuc + "\\big]" + dx + 
+                  "&=" + hesodau(m, tichphan + " f(x)" + dx) + hesosau(n, tichphan + " g(x)" + dx ) + "\\\\\n" +
+                  "&=" + m * a + sodungsau(n * b) + "\\\\\n" +
+                  "&=" + res1 + ".\n" +
+                  "\\end{align*}";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+function tinhchattichphan6(loai) {
+    var a, b, can1, can2, can3;
+    var res1, res2, res3, res4;
+
+    while (true) {
+        a = randomchoice(-5, 6);
+        b = randomchoice(-5, 6);
+        
+        res1 = b - a;   
+        res2 = a + b;   
+        res3 = a - b;   
+        res4 = -a - b;  
+        
+        if (res1 !== res2 && res1 !== res3 && res1 !== res4 && 
+            res2 !== res3 && res2 !== res4 && res3 !== res4) {
+            break;
+        }
+    }
+
+    can1 = randomchoice(-4, 1);
+    can2 = randomchoice(2, 4);
+    can3 = randomchoice(5, 7);
+
+    var tichphan1 = "\\displaystyle\\int\\limits" + format_canduoi(can1) + format_cantren(can2);
+    var tichphan2 = "\\displaystyle\\int\\limits" + format_canduoi(can2) + format_cantren(can3);
+    var tichphan3 = "\\displaystyle\\int\\limits" + format_canduoi(can1) + format_cantren(can3);
+    var dx = "\\mathrm{d}x";
+    
+    var debai = "Nếu $" + tichphan2 + " f(x)" + dx + "=" + a + "$ và $" + tichphan3 + " f(x)" + dx + "=" + b + "$ thì $" + tichphan1 + " f(x)" + dx + "$ bằng";
+    
+    var PA1 = "{\\True $" + res1 + "$}";
+    var PA2 = "{$" + res2 + "$}";
+    var PA3 = "{$" + res3 + "$}";
+    var PA4 = "{$" + res4 + "$}";
+    
+    var loigiai = "Ta có\n" + 
+                  "$$" + tichphan1 + " f(x)" + dx + "=" + tichphan3 + " f(x)" + dx + "-" + tichphan2 + " f(x)" + dx + "=" + b + sodungsau(-a) + "=" + res1 + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+function tinhchattichphan5(loai) {
+    var a, b, can1, can2, can3;
+    var res1, res2, res3, res4;
+    while (true) {
+        a = randomchoice(-5, 6);
+        b = randomchoice(-5, 6);
+        res1 = b - a;   
+        res2 = a + b;   
+        res3 = a - b;   
+        res4 = -a - b;  
+        
+        if (res1 !== res2 && res1 !== res3 && res1 !== res4 && 
+            res2 !== res3 && res2 !== res4 && res3 !== res4) {
+            break;
+        }
+    }
+    can1 = randomchoice(-4, 1);
+    can2 = randomchoice(2, 4);
+    can3 = randomchoice(5, 7);
+    var tichphan1 = "\\displaystyle\\int\\limits" + format_canduoi(can1) + format_cantren(can2);
+    var tichphan2 = "\\displaystyle\\int\\limits" + format_canduoi(can2) + format_cantren(can3);
+    var tichphan3 = "\\displaystyle\\int\\limits" + format_canduoi(can1) + format_cantren(can3);
+    var dx = "\\mathrm{d}x";
+    var debai = "Nếu $" + tichphan1 + " f(x)" + dx + "=" + a + "$ và $" + tichphan3 + " f(x)" + dx + "=" + b + "$ thì $" + tichphan2 + " f(x)" + dx + "$ bằng";
+    var PA1 = "{\\True $" + res1 + "$}";
+    var PA2 = "{$" + res2 + "$}";
+    var PA3 = "{$" + res3 + "$}";
+    var PA4 = "{$" + res4 + "$}";
+    var loigiai = "Ta có\n" + 
+                  "$$" + tichphan2 + " f(x)" + dx + " = " + tichphan3 + " f(x)" + dx + " - " + tichphan1 + " f(x)" + dx + " = " + b + sodungsau(-a) + " = " + res1 + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function tinhchattichphan4(loai) {
+    var a, b, can1, can2, can3;
+    var res1, res2, res3, res4, res5;
+    while (true) {
+        a = randomchoice(-5, 6);
+        b = randomchoice(-5, 6);
+        res1 = a + b;   // Đúng (PA1)
+        res2 = a - b;   // Nhiễu cố định (PA2)
+        res3 = b - a;   // Nhiễu tùy chọn 1 (PA3)
+        res4 = -a - b;  // Nhiễu tùy chọn 2 (PA4)
+        res5 = a * b;   // Nhiễu tùy chọn 3 (PA5)
+        if (res1 !== res2 && res1 !== res3 && res1 !== res4 && res1 !== res5 &&
+            res2 !== res3 && res2 !== res4 && res2 !== res5 &&
+            res3 !== res4 && res3 !== res5 && res4 !== res5) {
+            break;
+        }
+    }
+    can1 = randomchoice(-4, 1);
+    can2 = randomchoice(2, 4);
+    can3 = randomchoice(5, 7);
+    var tichphan1 = "\\displaystyle\\int\\limits" + format_canduoi(can1) + format_cantren(can2);
+    var tichphan2 = "\\displaystyle\\int\\limits" + format_canduoi(can2) + format_cantren(can3);
+    var tichphan3 = "\\displaystyle\\int\\limits" + format_canduoi(can1) + format_cantren(can3);
+    var dx = "\\mathrm{d}x";
+    var PA1 = "{\\True $" + res1 + "$}";
+    var PA2 = "{$" + res2 + "$}";
+    var PA3 = "{$" + res3 + "$}";
+    var PA4 = "{$" + res4 + "$}";
+    var PA5 = "{$" + res5 + "$}";
+    var questionchoice = [PA1, PA2];
+    var questionwrongchoice = [PA3, PA4, PA5];
+    for (var i = 0; i < 2; i++) {
+        var vi_tri = randomchoice(0, questionwrongchoice.length - 1);
+        var PAwrong = questionwrongchoice[vi_tri];
+        questionchoice.push(PAwrong);
+        questionwrongchoice = questionwrongchoice.filter(function(item) {
+            return item !== PAwrong;
+        });
+    }
+    var debai = "Nếu $" + tichphan1 + " f(x)" + dx + "=" + a + "$ và $" + tichphan2 + " f(x)" + dx + "=" + b + "$ thì $" + tichphan3 + " f(x)" + dx + "$ bằng";
+    var loigiai = "Ta có\n" + 
+                  "$$" + tichphan3 + " f(x)" + dx + " = " + tichphan1 + "f(x)" + dx + "+" + tichphan2 + "f(x)" + dx + " = " + a + sodungsau(b) + " = " + res1 + ".$$";
+    shuffle(questionchoice);
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        questionchoice[0] + "\n" +
+        questionchoice[1] + "\n" +
+        questionchoice[2] + "\n" +
+        questionchoice[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function tinhchattichphan3(loai) {
+    var a, m, n, canduoi, cantren, d_c;
+    var res1, res2, res3, res4;
+    while (true) {
+        a = randomchoice(-5, 6);
+        m = randomchoice(-6, 6);
+        n = randomchoice(-5, 6);
+        canduoi = randomchoice(-5, 3);
+        cantren = randomchoice(4, 7);
+        d_c = cantren - canduoi; // Hiệu số cận (b - a)
+        if (d_c > 1 && a !== 0 && m !== 0 && m !== 1 && m !== -1 && n !== 0) {
+            res1 = a + n * d_c; 
+            res2 = a + n;       
+            res3 = a;           
+            res4 = n * d_c;         
+            if (res1 !== res2 && res1 !== res3 && res1 !== res4 && 
+                res2 !== res3 && res2 !== res4 && res3 !== res4) {
+                break;
+            }
+        }
+    }
+    var tichphan = "\\displaystyle\\int\\limits" + format_canduoi(canduoi) + format_cantren(cantren);
+    var dx = "\\mathrm{d}x";
+    var bieu_thuc = phanso(1, m) + "f(x)" + sodungsau(n);
+    var debai = "Nếu $" + tichphan + " f(x)" + dx + "=" + (m * a) + "$ thì $" + tichphan + "\\left[" + bieu_thuc + "\\right]" + dx + "$ bằng";
+    var PA1 = "{\\True $" + res1 + "$}";
+    var PA2 = "{$" + res2 + "$}";
+    var PA3 = "{$" + res3 + "$}";
+    var PA4 = "{$" + res4 + "$}";
+    var loigiai = "Ta có\n" +
+                  "\\begin{align*}\n" +
+                  tichphan + "\\left[" + bieu_thuc + "\\right]" + dx + 
+                  "&=" + phanso(1, m) + tichphan + " f(x)" + dx + sodungsau(n) + tichphan + dx + "\\\\\n" +
+                  "&=" + a + sodungsau(n * d_c) + "\\\\\n" +
+                  "&=" + res1 + ".\n" +
+                  "\\end{align*}";             
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+
+function tinhchattichphan2(loai) {
+    var a, m, canduoi, cantren;
+    var res1, res2, res3, res4;
+    while (true) {
+        a = randomchoice(-5, 6);
+        m = randomchoice(2, 7)
+        res1 = m * a; // Đúng: m * int(f(x))
+        res2 = m + a; // Sai: Nhầm tính chất tích phân thành phép cộng m + int(f(x))
+        res3 = a;     // Sai: Quên không nhân hệ số m
+        res4 = m;     // Sai: Lấy luôn hệ số m bỏ qua giá trị tích phân
+        if (res1 !== res2 && res1 !== res3 && res1 !== res4 && 
+            res2 !== res3 && res2 !== res4 && res3 !== res4) {
+            break;
+        }
+    }
+    var canduoi = randomchoice(-5, 3);
+    var cantren = randomchoice(4, 7);
+    var tichphan = "\\displaystyle\\int\\limits" + format_canduoi(canduoi) + format_cantren(cantren) + " ";
+    var dx = "\\mathrm{d}x";
+    var bieu_thuc = hesodau(m, "f(x)");
+    var debai = "Nếu $" + tichphan + "f(x)" + dx + "=" + a + "$ thì $" + tichphan + bieu_thuc + dx + "$ bằng";
+    var PA1 = "{\\True $" + res1 + "$}";
+    var PA2 = "{$" + res2 + "$}";
+    var PA3 = "{$" + res3 + "$}";
+    var PA4 = "{$" + res4 + "$}";
+    var loigiai = "Ta có\n" + 
+    "$$" + tichphan + bieu_thuc + dx + " = " + m + tichphan + "f(x)" + dx + " = " + m*a + ".$$";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+
+function tinhchattichphan1(loai) {
+    var a, m, n, canduoi, cantren, d_c;
+    var res1, res2, res3, res4;
+    while (true) {
+        a = randomchoice(-5, 6);
+        m = randomchoice(-5, 6);
+        n = randomchoice(-5, 6);
+        canduoi = randomchoice(-5, 3);
+        cantren = randomchoice(4, 7);
+        d_c = cantren - canduoi; 
+        if (d_c > 1 && a !== 0 && m !== 0 && n !== 0) {
+            res1 = m * a + n * d_c; 
+            res2 = m * a + n;       
+            res3 = m * a;           
+            res4 = n * d_c;         
+            if (res1 !== res2 && res1 !== res3 && res1 !== res4 && 
+                res2 !== res3 && res2 !== res4 && res3 !== res4) {
+                break;
+            }
+        }
+    }
+    var tichphan = "\\displaystyle\\int\\limits" + format_canduoi(canduoi) + format_cantren(cantren);
+    var dx = "\\mathrm{d}x";
+    var bieu_thuc = hesodau(m, "f(x)") + sodungsau(n);
+    var debai = "Nếu $" + tichphan + " f(x)" + dx + "=" + a + "$ thì $" + tichphan + "\\big[" + bieu_thuc + "\\big]" + dx + "$ bằng";
+    var PA1 = "{\\True $" + res1 + "$}";
+    var PA2 = "{$" + res2 + "$}";
+    var PA3 = "{$" + res3 + "$}";
+    var PA4 = "{$" + res4 + "$}";
+    var loigiai = "Ta có\n" +
+                  "\\begin{align*}\n" +
+                  tichphan + "\\big[" + bieu_thuc + "\\big]" + dx + 
+                  "&=" + hesodau(m, "") + tichphan + "f(x)" + dx + sodungsau(n) + tichphan + dx + "\\\\\n" +
+                  "&=" + (m * a) + sodungsau(n * d_c) + "\\\\\n" +
+                  "&=" + res1 + ".\n" +
+                  "\\end{align*}";         
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
 
 
 function nguyenham1(loai) {
