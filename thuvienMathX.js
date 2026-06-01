@@ -1,3 +1,14 @@
+
+function format_canduoi(num) {
+	if (num < 0 || num >= 10) return "_{" + num + "}"; 
+	return "_" + num;                                 
+}
+
+function format_cantren(num) {
+	if (num < 0 || num >= 10) return "^{" + num + "}"; 
+	return "^" + num;                                
+}
+
 // 1. Xác định vị trí nhóm chứa Q1 (Đã tối ưu: tính cf() 1 lần duy nhất)
 function posvalueq1(values, n) {
     let k = 1;
