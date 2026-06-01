@@ -190,14 +190,6 @@ const database = [
                 {method: "nguyenham3", params: "ex", name: "Dạng 3"},
                 {method: "nguyenham4", params: "ex", name: "Dạng 4"}
             ] 
-        },
-        { 
-            title: "Mục 4.1.2", 
-            variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
-            ] 
         }
         ]
         },
@@ -205,40 +197,35 @@ const database = [
         title: "Chủ đề 4.2: Tích phân",
         subtopics: [
         { 
-            title: "Mục 4.2.1", 
+            title: "Tính chất của tích phân", 
             variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
-            ] 
-        },
-        { 
-            title: "Mục 4.2.2", 
-            variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+                {method: ["tinhchattichphan1"], params: "ex", name: "Dạng 1"},
+                {method: ["tinhchattichphan2"], params: "ex", name: "Dạng 2"},
+                {method: ["tinhchattichphan3"], params: "ex", name: "Dạng 3"},
+                {method: ["tinhchattichphan4"], params: "ex", name: "Dạng 4"},
+                {method: ["tinhchattichphan5"], params: "ex", name: "Dạng 5"},
+                {method: ["tinhchattichphan6"], params: "ex", name: "Dạng 6"},
+                {method: ["tinhchattichphan7"], params: "ex", name: "Dạng 7"}
             ] 
         }
         ]
         },
         {
-        title: "Chủ đề 4.3: Ứng dụng hình học của tích phân",
+        title: "Chủ đề 4.3: Ứng dụng của tích phân",
         subtopics: [
         { 
-            title: "Mục 4.2.1", 
+            title: "Ứng dụng vật lý của tích phân", 
             variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
+                {method: "ungdungtichphan1", params: "ex", name: "Dạng 1" },
+                {method: "ungdungtichphan2", params: "ex", name: "Dạng 2" },
                 {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
             ] 
         },
         { 
-            title: "Mục 4.2.2", 
+            title: "Ứng dụng hình học của tích phân", 
             variants: [
                 {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+                {method: "secapnhat", params: "ex", name: "Dạng 2:..." }
             ] 
         }
         ]
