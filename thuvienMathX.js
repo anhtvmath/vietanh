@@ -1,3 +1,20 @@
+function kiemtrabonxau(s1, s2, s3, s4) {
+    var uniqueElements = new Set([s1, s2, s3, s4]);
+    if (uniqueElements.size === 4) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function kiemtranamxau(s1, s2, s3, s4, s5) {
+    var uniqueElements = new Set([s1, s2, s3, s4, s5]);
+    if (uniqueElements.size === 5) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function format_canduoi(num) {
 	if (num < 0 || num >= 10) return "_{" + num + "}"; 
