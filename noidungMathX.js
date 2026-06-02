@@ -247,7 +247,8 @@ const database = [
         { 
             title: "Viết phương trình mặt phẳng", 
             variants: [
-                {method: ["phuongtrinhmp_diquadiem_phaptuyen"], params: "ex", name: "Dạng 1: Đi qua một điểm và biết vectơ pháp tuyến"}
+                {method: ["phuongtrinhmp_diquadiem_phaptuyen"], params: "ex", name: "Dạng 1: Đi qua một điểm và biết vectơ pháp tuyến"},
+                {method: ["phuongtrinhmp_diquadiem_songsongmp"], params: "ex", name: "Dạng 1: Đi qua một điểm và song song với mặt phẳng cho trước"}
             ] 
         }
         ]
