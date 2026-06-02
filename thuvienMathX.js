@@ -1,3 +1,25 @@
+// Hàm phụ trợ tính giai thừa n!
+function factorial(n) {
+    if (n < 0) return 0;
+    var result = 1;
+    for (var i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+// Hàm tính Chỉnh hợp A(n, k) = n! / (n - k)!
+function A(n, k) {
+    if (k < 0 || k > n) return 0;
+    return factorial(n) / factorial(n - k);
+}
+
+// Hàm tính Tổ hợp C(n, k) = n! / (k! * (n - k)!)
+function C(n, k) {
+    if (k < 0 || k > n) return 0;
+    return factorial(n) / (factorial(k) * factorial(n - k));
+}
+
 function kiemtrabonxau(s1, s2, s3, s4) {
     var uniqueElements = new Set([s1, s2, s3, s4]);
     if (uniqueElements.size === 4) {
