@@ -1,3 +1,1534 @@
+function TF_vidu7(loai) {
+    var a = randomchoice(15, 40);
+    var a1 = randomchoice(60, 85);
+    var c = randomchoice(10, 30);
+    var c1 = randomchoice(70, 90);
+    
+    while (100 - a === a1 || 100 - c === c1) {
+        a = randomchoice(15, 40);
+        a1 = randomchoice(60, 85);
+        c = randomchoice(10, 30);
+        c1 = randomchoice(70, 90);
+    }
+    
+    var b = randomchoice(10, 30);
+    var d = randomchoice(100, 140);
+
+    var debai = "Một phần mềm nhận dạng tin nhắn quảng cáo trên điện thoại bằng cách dựa theo từ khóa để đánh dấu một số tin nhắn được gửi đến. Qua một thời gian dài sử dụng, người ta thấy rằng trong số tất cả các tin nhắn gửi đến, có $" + a + "\\%$ số tin nhắn bị đánh dấu. Trong số các tin nhắn bị đánh dấu, có $" + b + "\\%$ số tin nhắn không phải là quảng cáo. Trong số các tin nhắn không bị đánh dấu, có $" + c + "\\%$ số tin nhắn là quảng cáo. Chọn ngẫu nhiên một tin nhắn được gửi đến điện thoại.";
+
+    // Ý a
+    var PAtrue1 = "\\True Xác suất để tin nhắn đó không bị đánh dấu bằng $" + convert((100 - a) / 100) + "$";
+    var PAfalse1 = "Xác suất để tin nhắn đó không bị đánh dấu bằng $" + convert(a1 / 100) + "$";
+    var LGPAtrue1 = 'Gọi $A$ là biến cố: "Tin nhắn bị đánh dấu". Theo giả thiết $P(A)=' + convert(a / 100) + '.$ Do đó xác suất để tin nhắn không bị đánh dấu bằng $P(\\overline{A})=1-P(A)=' + convert((100 - a) / 100) + '.$';
+
+    // Ý b
+    var PAtrue2 = "\\True Xác suất để tin nhắn đó không phải là quảng cáo, biết rằng nó không bị đánh dấu, bằng $" + convert((100 - c) / 100) + "$";
+    var PAfalse2 = "Xác suất để tin nhắn đó không phải là quảng cáo, biết rằng nó không bị đánh dấu, bằng $" + convert(c1 / 100) + "$";
+    var LGPAtrue2 = 'Gọi $B$ là biến cố: "Tin nhắn là quảng cáo".\\\\\n' + 
+    'Theo đề bài\n' + 
+    '$$P(B|\\overline{A})=' + convert(c / 100) + '\\Rightarrow P(\\overline{B}|\\overline{A})=' + convert((100 - c) / 100) + '.$$\n' + 
+    'Do đó xác suất cần tìm bằng $' + convert((100 - c) / 100) + '.$';
+
+    function select_answers_ab() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAtrue2]],
+            [[PAfalse1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAfalse1, PAfalse2], [LGPAtrue1, LGPAtrue2]],
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+
+    // Ý c
+    var PAtrue3 = "\\True Xác suất để tin nhắn đó không phải là quảng cáo bằng $" + convert((a * b + (100 - a) * (100 - c)) / 10000) + "$";
+    var PAfalse3 = "Xác suất để tin nhắn đó không phải là quảng cáo bằng $" + convert((a * b + (100 - a) * (100 - c) - 1) / 10000) + "$";
+    var LGPAtrue3 = "Xác suất để tin nhắn không phải là quảng cáo là $P(\\overline{B})$. Theo công thức xác suất toàn phần\n" +
+    "$$P(\\overline{B})=P(A)P(\\overline{B}|A)+P(\\overline{A})P(\\overline{B}|\\overline{A})=" +convert(a/100)+"\\cdot "+convert(b/100)+"+"+convert((100-a)/100)+"\\cdot "+convert((100-c)/100)+"="+ convert((a * b + (100 - a) * (100 - c)) / 10000) + ".$$";
+    // Ý d
+    var PAtrue4 = "\\True Xác suất để tin nhắn đó không bị đánh dấu, biết rằng nó không phải là quảng cáo, bằng $" + phanso((100 - a) * (100 - c), a * b + (100 - a) * (100 - c)) + "$";
+    var PAfalse4 = "Xác suất để tin nhắn đó không bị đánh dấu, biết rằng nó không phải là quảng cáo, bằng $" + phanso((100 - a) * (100 - c) + d, a * b + (100 - a) * (100 - c)) + "$";
+    var LGPAtrue4 = "Xác suất cần tính là $P(\\overline{A}|\\overline{B})$. Theo công thức Bayes\n" + 
+    "$$P(\\overline{A}|\\overline{B})=\\dfrac{P(\\overline{A})P(\\overline{B}|\\overline{A})}{P(\\overline{B})}=\\dfrac{"+convert((100-a)/100)+"\\cdot "+convert((100-c)/100)+"}{"+convert((a*b+(100-a)*(100-c))/10000)+"}="+ phanso((100 - a) * (100 - c), a * b + (100 - a) * (100 - c)) + ".$$";
+
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAtrue4]],
+            [[PAfalse3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAfalse3, PAfalse4], [LGPAtrue3, LGPAtrue4]],
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+
+    var cauhoi = "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choiceTFt\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+
+    return cauhoi;
+}
+
+function TF_vidu6(loai) {
+    var a = randomchoice(3, 9);
+    var b = randomchoice(3, 9);
+    var c = randomchoice(3, 9);
+    var d = randomchoice(3, 9);
+    while (a === b || b * C(d + 1, 2) + a * C(d, 2) === b * C(d, 2) + a * C(d + 1, 2)) {
+        a = randomchoice(3, 9);
+        b = randomchoice(3, 9);
+        c = randomchoice(3, 9);
+        d = randomchoice(3, 9);
+    }
+    
+    var maulist = ["xanh", "đỏ", "tím", "vàng", "đen", "trắng"];
+    var mau1 = maulist[randomchoice(0, maulist.length - 1)];
+    var mau2 = maulist[randomchoice(0, maulist.length - 1)];
+    while (mau1 === mau2) {
+        mau1 = maulist[randomchoice(0, maulist.length - 1)];
+        mau2 = maulist[randomchoice(0, maulist.length - 1)];
+    }
+    
+    var debai = 'Hộp thứ nhất có $' + a + '$ viên bi ' + mau1 + ' và $' + b + '$ viên bi ' + mau2 + '. Hộp thứ hai có $' + c + '$ viên bi bi ' + mau1 + ' và $' + d + '$ viên bi ' + mau2 + '. Các viên bi có cùng kích thước và khối lượng. Lấy ra ngẫu nhiên $1$ viên bi từ hộp thứ nhất chuyển sang hộp thứ hai. Sau đó lại lấy ra ngẫu nhiên đồng thời $2$ viên bi từ hộp thứ hai. Gọi A là biến cố: "Hai viên bi lấy ra từ hộp thứ hai là bi ' + mau2 + '", $B$ là biến cố: "Viên bi lấy ra từ hộp thứ nhất là bi ' + mau2 + '".';
+    
+    // --- Ý A và B ---
+    var PAtrue1 = "\\True Xác suất của biến cố $\\overline{B}$ bằng $" + phanso(a, a + b) + "$";
+    var LGPAtrue1 = "Vì hộp thứ nhất có $" + a + "$ viên bi " + mau1 + " và $" + b + "$ viên bi " + mau2 + " nên $P(B)=\\dfrac{" + b + "}{" + a + "+" + b + "}=" + phanso(b, a + b) + "\\Rightarrow P(\\overline{B})=1-P(B)=" + phanso(a, a + b) + ".$";
+    var PAfalse1 = "Xác suất của biến cố $\\overline{B}$ bằng $" + phanso(b, a + b) + "$";
+    var LGPAfalse1 = "Vì hộp thứ nhất có $" + a + "$ viên bi " + mau1 + " và $" + b + "$ viên bi " + mau2 + " nên $P(B)=\\dfrac{" + b + "}{" + a + "+" + b + "}=" + phanso(b, a + b) + "\\Rightarrow P(\\overline{B})=1-P(B)=" + phanso(a, a + b) + ".$";
+    
+    var PAtrue2 = "\\True Xác suất của biến cố $A$ với điều kiện $B$ bằng $" + phanso(C(d + 1, 2), C(c + d + 1, 2)) + "$";
+    var LGPAtrue2 = "Nếu viên bi được chuyển từ hộp thứ nhất sang hộp thứ hai là viên bi " + mau2 + " thì hộp thứ hai có $" + c + "$ viên bi bi " + mau1 + " và $" + (d + 1) + "$ viên bi " + mau2 + ". Do đó $P(A|B)=\\dfrac{C_{" + (d + 1) + "}^2}{C_{" + (c + d + 1) + "}^2}=" + phanso(C(d + 1, 2), C(c + d + 1, 2)) + ".$";
+    var PAfalse2 = "Xác suất của biến cố $A$ với điều kiện $B$ bằng $" + phanso(C(d + 1, 2), C(c + d, 2)) + "$";
+    var LGPAfalse2 = "Nếu viên bi được chuyển từ hộp thứ nhất sang hộp thứ hai là viên bi " + mau2 + " thì hộp thứ hai có $" + c + "$ viên bi bi " + mau1 + " và $" + (d + 1) + "$ viên bi " + mau2 + ". Do đó $P(A|B)=\\dfrac{C_{" + (d + 1) + "}^2}{C_{" + (c + d + 1) + "}^2}=" + phanso(C(d + 1, 2), C(c + d + 1, 2)) + ".$";
+    
+    function select_answers_ab() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+    
+    // --- Ý C và D ---
+    var PAtrue3 = "\\True Xác suất của biến cố $A$ với điều kiện $\\overline{B}$ bằng $" + phanso(C(d, 2), C(c + d + 1, 2)) + "$";
+    var LGPAtrue3 = "Nếu viên bi được chuyển từ hộp thứ nhất sang hộp thứ hai là viên bi " + mau1 + " thì hộp thứ hai có $" + (c + 1) + "$ viên bi bi " + mau1 + " và $" + d + "$ viên bi " + mau2 + ". Do đó $P(A|\\overline{B})=\\dfrac{C_{" + d + "}^2}{C_{" + (c + d + 1) + "}^2}=" + phanso(C(d, 2), C(c + d + 1, 2)) + ".$";
+    var PAfalse3 = "Xác suất của biến cố $A$ với điều kiện $\\overline{B}$ bằng $" + phanso(C(d, 2), C(c + d, 2)) + "$";
+    var LGPAfalse3 = "Nếu viên bi được chuyển từ hộp thứ nhất sang hộp thứ hai là viên bi " + mau1 + " thì hộp thứ hai có $" + (c + 1) + "$ viên bi bi " + mau1 + " và $" + d + "$ viên bi " + mau2 + ". Do đó $P(A|\\overline{B})=\\dfrac{C_{" + d + "}^2}{C_{" + (c + d + 1) + "}^2}=" + phanso(C(d, 2), C(c + d + 1, 2)) + ".$";
+    
+    var PAtrue4 = "\\True Xác suất của biến cố $A$ bằng $" + phanso(b * C(d + 1, 2) + a * C(d, 2), (a + b) * C(c + d + 1, 2)) + "$";
+    // Giữ nguyên hiển thị dạng khối rời, đặt dấu chấm chèn trước cặp ký tự đóng khối thành .$$
+    var LGPAtrue4 = "Theo công thức xác suất toàn phần:\n$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=" + phanso(b, a + b) + "\\cdot" + phanso(C(d + 1, 2), C(c + d + 1, 2)) + "+" + phanso(a, a + b) + "\\cdot" + phanso(C(d, 2), C(c + d + 1, 2)) + "=" + phanso(b * C(d + 1, 2) + a * C(d, 2), (a + b) * C(c + d + 1, 2)) + ".$$";
+    var PAfalse4 = "Xác suất của biến cố $A$ bằng $" + phanso(b * C(d, 2) + a * C(d + 1, 2), (a + b) * C(c + d + 1, 2)) + "$";
+    var LGPAfalse4 = "Theo công thức xác suất toàn phần:\n$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=" + phanso(b, a + b) + "\\cdot" + phanso(C(d + 1, 2), C(c + d + 1, 2)) + "+" + phanso(a, a + b) + "\\cdot" + phanso(C(d, 2), C(c + d + 1, 2)) + "=" + phanso(b * C(d + 1, 2) + a * C(d, 2), (a + b) * C(c + d + 1, 2)) + ".$$";
+    
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+    
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+        
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choiceTF\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function TF_vidu5(loai) {
+    // Khởi tạo các biến ngẫu nhiên ban đầu
+    var a = randomchoice(3, 9);
+    var b = randomchoice(3, 9);
+    var c = randomchoice(3, 9);
+    
+    // Điều kiện lặp để lọc số liệu đẹp
+    while (a === b || a === c || b === c || phanso(C(a, 2), C(a + 1, 2)) === phanso(2, a)) {
+        a = randomchoice(3, 9);
+        b = randomchoice(3, 9);
+        c = randomchoice(3, 9);
+    }
+    
+    var maulist = ["xanh", "đỏ", "tím", "vàng", "đen", "trắng"];
+    // Chỉ dùng randomchoice chọn index từ 0 đến length-1
+    var mau1 = maulist[randomchoice(0, maulist.length - 1)];
+    var mau2 = maulist[randomchoice(0, maulist.length - 1)];
+    while (mau1 === mau2) {
+        mau1 = maulist[randomchoice(0, maulist.length - 1)];
+        mau2 = maulist[randomchoice(0, maulist.length - 1)];
+    }
+    
+    var debai = 'Hộp thứ nhất có $1$ viên bi ' + mau1 + ' và $' + a + '$ viên bi ' + mau2 + '. Hộp thứ hai có $' + b + '$ viên bi bi ' + mau1 + ' và $' + c + '$ viên bi ' + mau2 + '. Các viên bi có cùng kích thước và khối lượng. Lấy ra ngẫu nhiên đồng thời $2$ viên bi từ hộp thứ nhất chuyển sang hộp thứ hai. Sau đó lại lấy ra ngẫu nhiên đồng thời $2$ viên bi từ hộp thứ hai. Gọi A là biến cố: "Hai viên bi lấy ra từ hộp thứ hai là bi ' + mau2 + '", $B$ là biến cố: "Hai viên bi lấy ra từ hộp thứ nhất là bi ' + mau2 + '".';
+    
+    // --- Ý A và B ---
+    var PAtrue1 = "\\True Xác suất của biến cố $B$ bằng $" + phanso(C(a, 2), C(a + 1, 2)) + "$";
+    var LGPAtrue1 = "Xác suất của biến cố $B$ là $P(B)=\\dfrac{C_{" + a + "}^2}{C_{" + (a + 1) + "}^2}=" + phanso(C(a, 2), C(a + 1, 2)) + ".$";
+    var PAfalse1 = "Xác suất của biến cố $B$ bằng $" + phanso(2, a) + "$";
+    var LGPAfalse1 = "Xác suất của biến cố $B$ là $P(B)=\\dfrac{C_{" + a + "}^2}{C_{" + (a + 1) + "}^2}=" + phanso(C(a, 2), C(a + 1, 2)) + ".$";
+    
+    var PAtrue2 = "\\True Xác suất của biến cố $A$ với điều kiện $B$ bằng $" + phanso(C(c + 2, 2), C(b + c + 2, 2)) + "$";
+    var LGPAtrue2 = "Ta có $P(A|B)=\\dfrac{C_{" + (c + 2) + "}^2}{C_{" + (b + c + 2) + "}^2}=" + phanso(C(c+2, 2), C(b + c + 2, 2)) + ".$";
+    var PAfalse2 = "Xác suất của biến cố $A$ với điều kiện $B$ bằng $" + phanso(C(c + 1, 2), C(b + c + 2, 2)) + "$";
+    var LGPAfalse2 = "Ta có $P(A|B)=\\dfrac{C_{" + (c + 2) + "}^2}{C_{" + (b + c + 2) + "}^2}=" + phanso(C(c+2, 2), C(b + c + 2, 2)) + ".$";
+    
+    // Khớp chính xác 8 trường hợp hoán đổi vị trí câu hỏi AB
+    function select_answers_ab() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse2, PAtrue1], [LGPAfalse2, LGPAtrue1]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue2, PAfalse1], [LGPAtrue2, LGPAfalse1]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAtrue2, PAtrue1], [LGPAtrue2, LGPAtrue1]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]],
+            [[PAfalse2, PAfalse1], [LGPAfalse2, LGPAfalse1]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+    
+    // --- Ý C và D ---
+    var PAtrue3 = "\\True Xác suất của biến cố $A$ với điều kiện $\\overline{B}$ bằng $" + phanso(C(c + 1, 2), C(b + c + 2, 2)) + "$";
+    var LGPAtrue3 = "Ta có $P(A|\\overline{B})=\\dfrac{C_{" + (c + 1) + "}^2}{C_{" + (b + c + 2) + "}^2}=" + phanso(C(c + 1, 2), C(b + c + 2, 2)) + ".$";
+    var PAfalse3 = "Xác suất của biến cố $A$ với điều kiện $\\overline{B}$ bằng $" + phanso(C(c + 2, 2), C(b + c + 2, 2)) + "$";
+    var LGPAfalse3 = "Ta có $P(A|\\overline{B})=\\dfrac{C_{" + (c + 1) + "}^2}{C_{" + (b + c + 2) + "}^2}=" + phanso(C(c + 1, 2), C(b + c + 2, 2)) + ".$";
+    
+    var PAtrue4 = "\\True Xác suất của biến cố $A$ bằng $" + phanso(C(a, 2) * C(c + 2, 2) + C(a, 1) * C(c + 1, 2), C(a + 1, 2) * C(b + c + 2, 2)) + "$";
+    // Giữ nguyên hiển thị dạng khối rời, đặt dấu chấm chèn trước cặp ký tự đóng khối thành .$$
+    var LGPAtrue4 = "Ta có\n$$P(\\overline{B})=1-P(B)=1-" + phanso(C(a, 2), C(a + 1, 2)) + "=" + phanso(C(a, 1), C(a + 1, 2)) + ".$$\n" +
+        "Theo công thức xác suất toàn phần\n" +
+        "$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=" + phanso(C(a, 2), C(a + 1, 2)) + "\\cdot" + phanso(C(c + 2, 2), C(b + c + 2, 2)) + "+" + phanso(C(a, 1), C(a + 1, 2)) + "\\cdot" + phanso(C(c + 1, 2), C(b + c + 2, 2)) + "=" + phanso(C(a, 2) * C(c + 2, 2) + C(a, 1) * C(c + 1, 2), C(a + 1, 2) * C(b + c + 2, 2)) + ".$$";
+    
+    var PAfalse4 = "Xác suất của biến cố $A$ bằng $" + phanso(C(a, 2) * C(c + 2, 2) + C(c + 1, 2), C(a + 1, 2) * C(b + c + 2, 2)) + "$";
+    var LGPAfalse4 = "Ta có\n$$P(\\overline{B})=1-P(B)=1-" + phanso(C(a, 2), C(a + 1, 2)) + "=" + phanso(C(a, 1), C(a + 1, 2)) + ".$$\n" +
+        "Theo công thức xác suất toàn phần\n" +
+        "$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=" + phanso(C(a, 2), C(a + 1, 2)) + "\\cdot" + phanso(C(c + 2, 2), C(b + c + 2, 2)) + "+" + phanso(C(a, 1), C(a + 1, 2)) + "\\cdot" + phanso(C(c + 1, 2), C(b + c + 2, 2)) + "=" + phanso(C(a, 2) * C(c + 2, 2) + C(a, 1) * C(c + 1, 2), C(a + 1, 2) * C(b + c + 2, 2)) + ".$$";
+    
+    // Khớp chính xác 4 trường hợp của cặp CD
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+    
+    // Gộp lời giải
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+        
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choiceTF\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function TF_vidu4(loai) {
+    // Khởi tạo các biến ngẫu nhiên ban đầu
+    var a = randomchoice(60, 90);
+    var b = randomchoice(34, 49);
+    var c = randomchoice(10, 39);
+    
+    // Điều kiện lặp để lọc số liệu đẹp
+    while (a <= b || (100 - a) <= c || b === c || a >= (b + c) || (100 - a) >= (b + c) || 
+           kiemtrabaxau(phanso(a, a * b + (100 - a) * c), phanso(b, b + c), phanso(a, b + c)) === false || 
+           kiemtrabaxau(phanso(100 - a, a * b + (100 - a) * c), phanso(c, b + c), phanso(100 - a, b + c)) === false) {
+        a = randomchoice(60, 90);
+        b = randomchoice(34, 49);
+        c = randomchoice(10, 39);
+    }
+    
+    var debai = 'Một phân xưởng có $' + a + '\\%$ công nhân là nữ. Tỉ lệ công nhân nữ có tay nghề cao chiếm $' + b + '\\%$ số công nhân toàn phân xưởng, tỉ lệ công nhân nam có tay nghề cao chiếm $' + c + '\\%$ số công nhân toàn phân xưởng. Chọn ngẫu nhiên $1$ công nhân của phân xưởng. Gọi $A$ là biến cố: "Công nhân được chọn là nữ" và $B$ là biến cố: "Công nhân được chọn có tay nghề cao".';
+    
+    // --- Ý A và B ---
+    var PAtrue1 = "\\True Xác suất của biến cố $\\overline{A}$ bằng $" + convert((100 - a) / 100) + "$";
+    var LGPAtrue1 = "Vì phân xưởng có $" + a + "\\%$ công nhân là nữ nên $P(A)=" + convert(a / 100) + ".$\\\\\nDo đó $P(\\overline{A})=1-P(A)=1-" + convert(a / 100) + "=" + convert((100 - a) / 100) + ".$";
+    var PAfalse1 = "Xác suất của biến cố $\\overline{A}$ bằng $" + convert(a / 100) + "$";
+    var LGPAfalse1 = "Vì phân xưởng có $" + a + "\\%$ công nhân là nữ nên $P(A)=" + convert(a / 100) + ".$\\\\\nDo đó $P(\\overline{A})=1-P(A)=1-" + convert(a / 100) + "=" + convert((100 - a) / 100) + ".$";
+    
+    var PAtrue2 = "\\True Xác suất của biến cố $B$ bằng $" + convert((b + c) / 100) + "$";
+    var LGPAtrue2 = 'Ta thấy $AB$ là biến cố: "Công nhân được chọn là nữ có tay nghề cao" và $\\overline{A}B$ là biến cố: "Công nhân được chọn là nam có tay nghề cao. Do đó $P(AB)=' + convert(b / 100) + '$ và $P(\\overline{A}B)=' + convert(c / 100) + '.$\\\\\nDo đó $P(B)=P(AB)+P(\\overline{A}B)=' + convert(b / 100) + '+' + convert(c / 100) + '=' + convert((b + c) / 100) + '.$';
+    var PAfalse2 = "Xác suất của biến cố $B$ bằng $" + convert((a * b + (100 - a) * c) / 10000) + "$";
+    var LGPAfalse2 = 'Ta thấy $AB$ là biến cố: "Công nhân được chọn là nữ có tay nghề cao" và $\\overline{A}B$ là biến cố: "Công nhân được chọn là nam có tay nghề cao. Do đó $P(AB)=' + convert(b / 100) + '$ và $P(\\overline{A}B)=' + convert(c / 100) + '.$\\\\\nDo đó $P(B)=P(AB)+P(\\overline{A}B)=' + convert(b / 100) + '+' + convert(c / 100) + '=' + convert((b + c) / 100) + '.$';
+    
+    // Khớp chính xác bộ 4 trường hợp gốc của cặp AB
+    function select_answers_ab() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+    
+    // --- Ý C và D ---
+    var PAtrue3 = "\\True Xác suất của $A$ với điều kiện $B$ bằng $" + phanso(b, b + c) + "$";
+    // Đã chuyển đổi định dạng dấu chấm khối thành .$$ theo đúng chuẩn của thầy
+    var LGPAtrue3 = "Ta có $P(A|B)=\\dfrac{P(AB)}{P(B)}=\\dfrac{" + convert(b / 100) + "}{" + convert((b + c) / 100) + "}=" + phanso(b, b + c) + ".$";
+    
+    var variant_PAfalse3 = randomchoice(0, 1) === 0 ? "$" + phanso(a, a * b + (100 - a) * c) + "$" : "$" + phanso(a, b + c) + "$";
+    var PAfalse3 = "Xác suất của $A$ với điều kiện $B$ bằng " + variant_PAfalse3;
+    var LGPAfalse3 = "Ta có $P(A|B)=\\dfrac{P(AB)}{P(B)}=\\dfrac{" + convert(b / 100) + "}{" + convert((b + c) / 100) + "}=" + phanso(b, b + c) + ".$";
+    
+    var PAtrue4 = "\\True Xác suất của $\\overline{A}$ với điều kiện $B$ bằng $" + phanso(c, b + c) + "$";
+    var LGPAtrue4 = "Ta có $P(\\overline{A}|B)=\\dfrac{P(\\overline{A}B)}{P(B)}=\\dfrac{" + convert(c / 100) + "}{" + convert((b + c) / 100) + "}=" + phanso(c, b + c) + ".$";
+    
+    var variant_PAfalse4 = randomchoice(0, 1) === 0 ? "$" + phanso(100 - a, a * b + (100 - a) * c) + "$" : "$" + phanso(100 - a, b + c) + "$";
+    var PAfalse4 = "Xác suất của $\\overline{A}$ với điều kiện $B$ bằng " + variant_PAfalse4;
+    var LGPAfalse4 = "Ta có $P(\\overline{A}|B)=\\dfrac{P(\\overline{A}B)}{P(B)}=\\dfrac{" + convert(c / 100) + "}{" + convert((b + c) / 100) + "}=" + phanso(c, b + c) + ".$";
+    
+    // Khớp chính xác bộ 8 trường hợp gốc của cặp CD
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse4, PAtrue3], [LGPAfalse4, LGPAtrue3]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue4, PAfalse3], [LGPAtrue4, LGPAfalse3]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAtrue4, PAtrue3], [LGPAtrue4, LGPAtrue3]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]],
+            [[PAfalse4, PAfalse3], [LGPAfalse4, LGPAfalse3]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+    
+    // Gộp lời giải
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+        
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choiceTF\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function TF_vidu3(loai) {
+    // Khởi tạo các biến ngẫu nhiên ban đầu
+    var a = randomchoice(60, 90);
+    var b = randomchoice(4, 10);
+    var c = randomchoice(20, 40);
+    
+    // Điều kiện lặp để lọc số liệu đẹp
+    while (a * b === (100 - a) * c) {
+        a = randomchoice(60, 90);
+        b = randomchoice(4, 10);
+        c = randomchoice(20, 40);
+    }
+    
+    var debai = 'Tỉ lệ người dân đã tiêm vắc xin phòng bệnh $X$ ở một địa phương là $' + a + '\\%$. Trong số những người đã tiêm phòng, tỉ lệ mắc bệnh $X$ là $' + b + '\\%$; trong số những người chưa tiêm phòng, tỉ lệ mắc bệnh $X$ là $' + c + '\\%$. Chọn ngẫu nhiên một người ở địa phương đó. Gọi $A$ là biến cố: "Người được chọn đã tiêm vắc xin phòng bệnh" và $B$ là biến cố: "Người được chọn mắc bệnh $X$".';
+    
+    // --- Ý A và B ---
+    var PAtrue1 = "\\True Xác suất của biến cố $\\overline{A}$ bằng $" + convert((100 - a) / 100) + "$";
+    var LGPAtrue1 = "Vì tỉ lệ người dân đã tiêm vắc xin phòng bệnh $X$ ở địa phương là $" + a + "\\%$ nên $P(A)=" + convert(a / 100) + "$. Do đó $P(\\overline{A})=1-P(A)=1-" + convert(a / 100) + "=" + convert((100 - a) / 100) + ".$";
+    var PAfalse1 = "Xác suất của biến cố $\\overline{A}$ bằng $" + convert(a / 100) + "$";
+    var LGPAfalse1 = "Vì tỉ lệ người dân đã tiêm vắc xin phòng bệnh $X$ ở địa phương là $" + a + "\\%$ nên $P(A)=" + convert(a / 100) + "$. Do đó $P(\\overline{A})=1-P(A)=1-" + convert(a / 100) + "=" + convert((100 - a) / 100) + ".$";
+    
+    var PAtrue2 = "\\True $P(B|A)=" + convert(b / 100) + "$ và $P(B|\\overline{A})=" + convert(c / 100) + "$";
+    var LGPAtrue2 = "Vì tỉ lệ mắc bệnh $X$ trong số những người đã tiêm phòng là $" + b + "\\%$ và trong số những người chưa tiêm phòng là $" + c + "\\%$ nên $P(B|A)=" + convert(b / 100) + "$ và $P(B|\\overline{A})=" + convert(c / 100) + ".$";
+    var PAfalse2 = "$P(B|A)=" + convert(c / 100) + "$ và $P(B|\\overline{A})=" + convert(b / 100) + "$";
+    var LGPAfalse2 = "Vì tỉ lệ mắc bệnh $X$ trong số những người đã tiêm phòng là $" + b + "\\%$ và trong số những người chưa tiêm phòng là $" + c + "\\%$ nên $P(B|A)=" + convert(b / 100) + "$ và $P(B|\\overline{A})=" + convert(c / 100) + ".$";
+    
+    // Khớp chính xác 8 trường hợp hoán đổi vị trí câu hỏi AB
+    function select_answers_ab() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse2, PAtrue1], [LGPAfalse2, LGPAtrue1]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue2, PAfalse1], [LGPAtrue2, LGPAfalse1]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAtrue2, PAtrue1], [LGPAtrue2, LGPAtrue1]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]],
+            [[PAfalse2, PAfalse1], [LGPAfalse2, LGPAfalse1]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+    
+    // --- Ý C và D ---
+    var PAtrue3 = "\\True Xác suất của biến cố $B$ bằng $" + convert((a * b + (100 - a) * c) / 10000) + "$";
+    var LGPAtrue3 = "Theo công thức xác suất toàn phần\n" + 
+        "$$P(B)=P(A)P(B|A)+P(\\overline{A})P(B|\\overline{A})=" + convert(a / 100) + "\\cdot " + convert(b / 100) + "+" + convert((100 - a) / 100) + "\\cdot " + convert(c / 100) + "=" + convert((a * b + (100 - a) * c) / 10000) + ".$$";
+    var PAfalse3 = "Xác suất của biến cố $B$ bằng $" + convert(((100 - a) * (b + c)) / 10000) + "$";
+    var LGPAfalse3 = "Theo công thức xác suất toàn phần\n" +
+        "$$P(B)=P(A)P(B|A)+P(\\overline{A})P(B|\\overline{A})=" + convert(a / 100) + "\\cdot " + convert(b / 100) + "+" + convert((100 - a) / 100) + "\\cdot " + convert(c / 100) + "=" + convert((a * b + (100 - a) * c) / 10000) + ".$$";
+    var PAtrue4a = "\\True Xác suất của biến cố $\\overline{A}$ với điều kiện $B$ bằng $" + phanso((100 - a) * c, a * b + (100 - a) * c) + "$";
+    var LGPAtrue4a = "Theo công thức Bayes\n" + 
+                "$$P(\\overline{A}|B)=\\dfrac{P(\\overline{A})P(B|\\overline{A})}{P(B)}=\\dfrac{" + convert((100 - a) / 100) + "\\cdot " + convert(c / 100) + "}{" + convert((a * b + (100 - a) * c) / 10000) + "}=" + phanso((100 - a) * c, a * b + (100 - a) * c) + ".$$";
+    var PAtrue4b = "\\True Xác suất của biến cố $A$ với điều kiện $B$ bằng $" + phanso(a * b, a * b + (100 - a) * c) + "$";
+    var LGPAtrue4b = "Theo công thức Bayes\n" +
+                "$$P(A|B)=\\dfrac{P(A)P(B|A)}{P(B)}=\\dfrac{" + convert(a / 100) + "\\cdot " + convert(b / 100) + "}{" + convert((a * b + (100 - a) * c) / 10000) + "}=" + phanso(a * b, a * b + (100 - a) * c) + ".$$";
+    
+    var LGPAtrue4 = LGPAtrue4a;
+    var PAtrue4 = randomchoice(0, 1) === 0 ? PAtrue4a : PAtrue4b;
+    if (PAtrue4 === PAtrue4b) {
+        LGPAtrue4 = LGPAtrue4b;
+    }
+    
+    var PAfalse4a = "Xác suất của biến cố $\\overline{A}$ với điều kiện $B$ bằng $" + phanso(a * b, a * b + (100 - a) * c) + "$";
+    var LGPAfalse4a = "Theo công thức Bayes\n" + 
+                    "$$P(\\overline{A}|B)=\\dfrac{P(\\overline{A})P(B|\\overline{A})}{P(B)}=\\dfrac{" + convert((100 - a) / 100) + "\\cdot " + convert(c / 100) + "}{" + convert((a * b + (100 - a) * c) / 10000) + "}=" + phanso((100 - a) * c, a * b + (100 - a) * c) + ".$$";
+    var PAfalse4b = "Xác suất của biến cố $A$ với điều kiện $B$ bằng $" + phanso((100 - a) * c, a * b + (100 - a) * c) + "$";
+    var LGPAfalse4b = "Theo công thức Bayes\n" +
+                    "$$P(A|B)=\\dfrac{P(A)P(B|A)}{P(B)}=\\dfrac{" + convert(a / 100) + "\\cdot " + convert(b / 100) + "}{" + convert((a * b + (100 - a) * c) / 10000) + "}=" + phanso(a * b, a * b + (100 - a) * c) + ".$$";
+    var LGPAfalse4 = LGPAfalse4a;
+    var PAfalse4 = randomchoice(0, 1) === 0 ? PAfalse4a : PAfalse4b;
+    if (PAfalse4 === PAfalse4b) {
+        LGPAfalse4 = LGPAfalse4b;
+    }
+    
+    // Khớp chính xác 4 trường hợp của cặp CD
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+    
+    // Gộp lời giải
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+        
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choiceTF\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function TF_vidu2(loai) {
+    // Khởi tạo các biến ngẫu nhiên ban đầu
+    var m = randomchoice(5, 10);
+    var n = randomchoice(5, 10);
+    
+    // Điều kiện lặp để lọc số liệu đẹp
+    while (m === n || C(m, 3) === 3 || C(m + n, 3) - C(n, 3) === C(m, 3) + C(n, 3)) {
+        m = randomchoice(5, 10);
+        n = randomchoice(5, 10);
+    }
+    
+    var debai = 'Một đội văn nghệ gồm $' + m + '$ bạn nam và $' + n + '$ bạn nữ. Chọn ra ngẫu nhiên $3$ bạn để biểu diễn một tiết mục. Gọi $A$ là biến cố: "Có ít nhất một bạn nam trong $3$ bạn được chọn", $B$ là biến cố: "Ba bạn được chọn có cùng giới tính".';
+    
+    // --- Ý A và B ---
+    var PAtrue1 = "\\True Xác suất của biến cố $B$ bằng $" + phanso(C(m, 3) + C(n, 3), C(m + n, 3)) + "$";
+    var LGPAtrue1 = "Xác suất của biến cố $B$ là $P(B)=\\dfrac{C_{" + m + "}^3+C_{" + n + "}^3}{C_{" + (m + n) + "}^3}=" + phanso(C(m, 3) + C(n, 3), C(m + n, 3)) + ".$";
+    
+    var variant_PAfalse1 = randomchoice(0, 1) === 0 ? "$" + phanso(C(m, 3), C(m + n, 3)) + "$" : "$" + phanso(C(n, 3), C(m + n, 3)) + "$";
+    var PAfalse1 = "Xác suất của biến cố $B$ bằng " + variant_PAfalse1;
+    var LGPAfalse1 = "Xác suất của biến cố $B$ là $P(B)=\\dfrac{C_{" + m + "}^3+C_{" + n + "}^3}{C_{" + (m + n) + "}^3}=" + phanso(C(m, 3) + C(n, 3), C(m + n, 3)) + ".$";
+    
+    var PAtrue2 = "\\True Xác suất của biến cố $AB$ bằng $" + phanso(C(m, 3), C(m + n, 3)) + "$";
+    var LGPAtrue2 = 'Ta thấy $AB$ là biến cố: "Ba bạn được chọn đều là nam". Do đó $P(AB)=\\dfrac{C_{' + m + '}^3}{C_{' + (m + n) + '}^3}=' + phanso(C(m, 3), C(m + n, 3)) + '.$';
+    var PAfalse2 = "Xác suất của biến cố $AB$ bằng $" + phanso(3, C(m + n, 3)) + "$";
+    var LGPAfalse2 = 'Ta thấy $AB$ là biến cố: "Ba bạn được chọn đều là nam". Do đó $P(AB)=\\dfrac{C_{' + m + '}^3}{C_{' + (m + n) + '}^3}=' + phanso(C(m, 3), C(m + n, 3)) + '.$';
+    
+    // Khớp chính xác 8 trường hợp hoán đổi vị trí của cặp AB
+    function select_answers_ab() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse2, PAtrue1], [LGPAfalse2, LGPAtrue1]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue2, PAfalse1], [LGPAtrue2, LGPAfalse1]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAtrue2, PAtrue1], [LGPAtrue2, LGPAtrue1]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]],
+            [[PAfalse2, PAfalse1], [LGPAfalse2, LGPAfalse1]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+    
+    // --- Ý C và D ---
+    var PAtrue3 = "\\True Xác suất của biến cố $A$ với điều kiện $B$ bằng $" + phanso(C(m, 3), C(m, 3) + C(n, 3)) + "$";
+    var LGPAtrue3 = "Ta có $P(A|B)=\\dfrac{P(AB)}{P(B)}=\\dfrac{" + phanso(C(m, 3), C(m + n, 3)) + "}{" + phanso(C(m, 3) + C(n, 3), C(m + n, 3)) + "}=" + phanso(C(m, 3), C(m, 3) + C(n, 3)) + ".$";
+    var PAfalse3 = "Xác suất của biến cố $A$ với điều kiện $B$ bằng $" + phanso(3, C(m, 3) + C(n, 3)) + "$";
+    var LGPAfalse3 = "Ta có $P(A|B)=\\dfrac{P(AB)}{P(B)}=\\dfrac{" + phanso(C(m, 3), C(m + n, 3)) + "}{" + phanso(C(m, 3) + C(n, 3), C(m + n, 3)) + "}=" + phanso(C(m, 3), C(m, 3) + C(n, 3)) + ".$";
+    
+    var PAtrue4 = "\\True Xác suất của biến cố $A\\overline{B}$ bằng $" + phanso(C(m + n, 3) - C(n, 3) - C(m, 3), C(m + n, 3)) + "$";
+    var LGPAtrue4 = 'Ta thấy $\\overline{A}$ là biến cố: "Ba bạn được chọn đều là nữ".\\\\\n' +
+        'Do đó $P(A)=1-P(\\overline{A})=1-\\dfrac{C_{' + n + '}^3}{C_{' + (m + n) + '}^3}=' + phanso(C(m + n, 3) - C(n, 3), C(m + n, 3)) + '$.\\\\\n' +
+        'Vậy $P(A\\overline{B})=P(A)-P(AB)=' + phanso(C(m + n, 3) - C(n, 3), C(m + n, 3)) + '-' + phanso(C(m, 3), C(m + n, 3)) + '=' + phanso(C(m + n, 3) - C(n, 3) - C(m, 3), C(m + n, 3)) + '.$';
+    var PAfalse4 = "Xác suất của biến cố $A\\overline{B}$ bằng $" + phanso(C(n, 3), C(m + n, 3)) + "$";
+    var LGPAfalse4 = 'Ta thấy $\\overline{A}$ là biến cố: "Ba bạn được chọn đều là nữ".\\\\\n' +
+        'Do đó $P(A)=1-P(\\overline{A})=1-\\dfrac{C_{' + n + '}^3}{C_{' + (m + n) + '}^3}=' + phanso(C(m + n, 3) - C(n, 3), C(m + n, 3)) + '$.\\\\\n' +
+        'Vậy $P(A\\overline{B})=P(A)-P(AB)=' + phanso(C(m + n, 3) - C(n, 3), C(m + n, 3)) + '-' + phanso(C(m, 3), C(m + n, 3)) + '=' + phanso(C(m + n, 3) - C(n, 3) - C(m, 3), C(m + n, 3)) + '.$';
+    
+    // Khớp chính xác 4 trường hợp của cặp CD
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+    
+    // Gộp lời giải
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+        
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choiceTF\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+function TF_vidu1(loai) {
+    // Khởi tạo các biến ngẫu nhiên ban đầu
+    var a = randomchoice(1, 9);
+    var b = randomchoice(1, 9);
+    var c = randomchoice(1, 9);
+    
+    // Điều kiện lặp để lọc số liệu đẹp
+    while (b >= a || a === c || b === 5) {
+        a = randomchoice(1, 9);
+        b = randomchoice(1, 9);
+        c = randomchoice(1, 9);
+    }
+    
+    var debai = "Cho hai biến cố $A$ và $B$ có $P(B)=" + convert(b / 10) + "$ và $P(A|B)=P(A|\\overline{B})=" + convert(a / 10) + ".$";
+    
+    // --- Ý A và B ---
+    var PAtrue1 = "\\True Xác suất của biến cố $AB$ bằng $" + convert((a * b) / 100) + "$";
+    var LGPAtrue1 = "Ta có $P(AB)=P(B)P(A|B)=" + convert(b / 10) + "\\cdot " + convert(a / 10) + "=" + convert((a * b) / 100) + ".$";
+    var PAfalse1 = "Xác suất của biến cố $AB$ bằng $" + phanso(b, a) + "$";
+    var LGPAfalse1 = "Ta có $P(AB)=P(B)P(A|B)=" + convert(b / 10) + "\\cdot " + convert(a / 10) + "=" + phanso(a * b, 100) + ".$";
+    
+    var PAtrue2 = "\\True Xác suất của biến cố $A\\overline{B}$ bằng $" + convert((a * (10 - b)) / 100) + "$";
+    var LGPAtrue2 = "Ta có $P(\\overline{B})=1-P(B)=1-" + convert(b / 10) + "=" + convert((10 - b) / 10) + "$.\\\\\n" +
+        "Do đó $P(A\\overline{B})=P(\\overline{B})P(A|\\overline{B})=" + convert((10 - b) / 10) + "\\cdot " + convert(a / 10) + "=" + convert((a * (10 - b)) / 100) + ".$";
+    var PAfalse2 = "Xác suất của biến cố $A\\overline{B}$ bằng $" + convert((c * (10 - b)) / 100) + "$";
+    var LGPAfalse2 = "Ta có $P(\\overline{B})=1-P(B)=1-" + convert(b / 10) + "=" + convert((10 - b) / 10) + "$.\\\\\n" +
+        "Do đó $P(A\\overline{B})=P(\\overline{B})P(A|\\overline{B})=" + convert((10 - b) / 10) + "\\cdot " + convert(a / 10) + "=" + convert((a * (10 - b)) / 100) + ".$";
+    
+    // Khớp chính xác 8 trường hợp hoán đổi vị trí của bạn
+    function select_answers_ab() {
+        var valid_pairs = [
+            [[PAtrue1, PAfalse2], [LGPAtrue1, LGPAfalse2]],
+            [[PAfalse2, PAtrue1], [LGPAfalse2, LGPAtrue1]],
+            [[PAfalse1, PAtrue2], [LGPAfalse1, LGPAtrue2]],
+            [[PAtrue2, PAfalse1], [LGPAtrue2, LGPAfalse1]],
+            [[PAtrue1, PAtrue2], [LGPAtrue1, LGPAtrue2]],
+            [[PAtrue2, PAtrue1], [LGPAtrue2, LGPAtrue1]],
+            [[PAfalse1, PAfalse2], [LGPAfalse1, LGPAfalse2]],
+            [[PAfalse2, PAfalse1], [LGPAfalse2, LGPAfalse1]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resAB = select_answers_ab();
+    var PAcauAB = resAB[0];
+    var LGcauAB = resAB[1];
+    
+    // --- Ý C và D ---
+    var PAtrue3 = "\\True Xác suất của biến cố $A$ bằng $" + convert(a / 10) + "$";
+    var LGPAtrue3 = "Ta có $P(A)=P(AB)+P(A\\overline{B})=" + convert((a * b) / 100) + "+" + convert((a * (10 - b)) / 100) + "=" + convert(a / 10) + ".$";
+    var PAfalse3 = "Xác suất của biến cố $A$ bằng $" + convert(c / 10) + "$";
+    var LGPAfalse3 = "Ta có $P(A)=P(AB)+P(A\\overline{B})=" + convert((a * b) / 100) + "+" + convert((a * (10 - b)) / 100) + "=" + convert(a / 10) + ".$";
+    
+    var ba = randomchoice(0, 1) === 0 ? convert(b / 10) : phanso(b, 10);
+    var PAtrue4 = "\\True Xác suất của biến cố $B$ với điều kiện $A$ bằng $" + ba + "$";
+    var LGPAtrue4 = "Ta có $P(B|A)=\\dfrac{P(AB)}{P(A)}=\\dfrac{" + convert((a * b) / 100) + "}{" + convert(a / 10) + "}=" + ba + ".$";
+    var PAfalse4 = "Xác suất của biến cố $B$ với điều kiện $A$ bằng $" + phanso(b, a) + "$";
+    var LGPAfalse4 = "Ta có $P(B|A)=\\dfrac{P(AB)}{P(A)}=\\dfrac{" + convert((a * b) / 100) + "}{" + convert(a / 10) + "}=" + phanso(b, 10) + ".$";
+    
+    // Khớp chính xác 4 trường hợp của cặp CD
+    function select_answers_cd() {
+        var valid_pairs = [
+            [[PAtrue3, PAfalse4], [LGPAtrue3, LGPAfalse4]],
+            [[PAfalse3, PAtrue4], [LGPAfalse3, LGPAtrue4]],
+            [[PAtrue3, PAtrue4], [LGPAtrue3, LGPAtrue4]],
+            [[PAfalse3, PAfalse4], [LGPAfalse3, LGPAfalse4]]
+        ];
+        return valid_pairs[randomchoice(0, valid_pairs.length - 1)];
+    }
+    
+    var resCD = select_answers_cd();
+    var PAcauCD = resCD[0];
+    var LGcauCD = resCD[1];
+    
+    // Gộp lời giải
+    var loigiai = "\\begin{itemchoice}\n" +
+        "\\itemch " + LGcauAB[0] + "\n" +
+        "\\itemch " + LGcauAB[1] + "\n" +
+        "\\itemch " + LGcauCD[0] + "\n" +
+        "\\itemch " + LGcauCD[1] + "\n" +
+        "\\end{itemchoice}";
+        
+    // Trả về cấu trúc mã LaTeX hoàn chỉnh (sử dụng lệnh mẫu \choiceTF)
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choiceTF\n" +
+        "{" + PAcauAB[0] + "}\n" +
+        "{" + PAcauAB[1] + "}\n" +
+        "{" + PAcauCD[0] + "}\n" +
+        "{" + PAcauCD[1] + "}\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+
+
+function xs_vidu15(loai) {
+    var a, b, c, d;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(3, 9);
+        b = randomchoice(3, 9);
+        c = randomchoice(3, 9);
+        d = randomchoice(3, 9);
+        
+        // Kiểm tra trùng phương án dựa trên các phân số nhiễu (PA1 -> PA4)
+        var check = kiemtrabonxau(
+            phanso(b * C(d + 1, 2) + a * C(d, 2), (a + b) * C(c + d + 1, 2)),
+            phanso(C(d + 1, 2), C(c + d + 1, 2)),
+            phanso(C(d, 2), C(c + d + 1, 2)),
+            phanso(b * C(d + 1, 2) + C(d, 2), (a + b) * C(c + d + 1, 2))
+        );
+        
+        if (check === false) continue;
+        
+        break;
+    }
+    
+    // Ngẫu nhiên chọn màu cho bi
+    var maulist = ["xanh", "đỏ", "tím", "vàng", "đen", "trắng"];
+    var mau1 = maulist[Math.floor(Math.random() * maulist.length)];
+    var mau2 = maulist[Math.floor(Math.random() * maulist.length)];
+    while (mau1 === mau2) {
+        mau2 = maulist[Math.floor(Math.random() * maulist.length)];
+    }
+    
+    var debai = "Hộp thứ nhất có $" + a + "$ viên bi " + mau1 + " và $" + b + "$ viên bi " + mau2 + ". Hộp thứ hai có $" + c + "$ viên bi bi " + mau1 + " và $" + d + "$ viên bi " + mau2 + ". Các viên bi có cùng kích thước và khối lượng. Lấy ra ngẫu nhiên $1$ viên bi từ hộp thứ nhất chuyển sang hộp thứ hai. Sau đó lại lấy ra ngẫu nhiên đồng thời $2$ viên bi từ hộp thứ hai. Xác suất để $2$ viên bi lấy ra từ hộp thứ hai là bi " + mau2 + " bằng";
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(b * C(d + 1, 2) + a * C(d, 2), (a + b) * C(c + d + 1, 2)) + "$}";
+    PA2 = "{$" + phanso(C(d + 1, 2), C(c + d + 1, 2)) + "$}";
+    PA3 = "{$" + phanso(C(d, 2), C(c + d + 1, 2)) + "$}";
+    PA4 = "{$" + phanso(b * C(d + 1, 2) + C(d, 2), (a + b) * C(c + d + 1, 2)) + "$}";
+    
+    // Lời giải chi tiết áp dụng công thức xác suất toàn phần
+    var loigiai = "Gọi A là biến cố: \"Hai viên bi lấy ra từ hộp thứ hai là bi " + mau2 + "\", $B$ là biến cố: \"Viên bi lấy ra từ hộp thứ nhất là bi " + mau2 + "\". Vì hộp thứ nhất có $" + a + "$ viên bi " + mau1 + " và $" + b + "$ viên bi " + mau2 + " nên\n" + 
+                  "$$P(B)=\\dfrac{" + b + "}{" + a + "+" + b + "}=" + phanso(b, a + b) + "\\Rightarrow P(\\overline{B})=1-P(B)=" + phanso(a, a + b) + ".$$\n" + 
+                  "Ta có $P(A|B)=\\dfrac{C_{" + (d + 1) + "}^2}{C_{" + (c + d + 1) + "}^2}=" + phanso(C(d + 1, 2), C(c + d + 1, 2)) + "\\text{ và } P(A|\\overline{B})=\\dfrac{C_{" + d + "}^2}{C_{" + (c + d + 1) + "}^2}=" + phanso(C(d, 2), C(c + d + 1, 2)) + "$.\\\\\n" + 
+                  "Theo công thức xác suất toàn phần\n" + 
+                  "$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=" + phanso(b, a + b) + "\\cdot" + phanso(C(d + 1, 2), C(c + d + 1, 2)) + "+" + phanso(a, a + b) + "\\cdot" + phanso(C(d, 2), C(c + d + 1, 2)) + "=" + phanso(b * C(d + 1, 2) + a * C(d, 2), (a + b) * C(c + d + 1, 2)) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu14(loai) {
+    var a, b;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(4, 9);
+        b = randomchoice(4, 9);
+        
+        // Kiểm tra trùng phương án dựa trên các phân số nhiễu (PA1 -> PA4)
+        var check = kiemtrabonxau(
+            phanso(C(a, 3), C(a, 2) * C(b, 1) + C(a, 3)),
+            phanso(C(a, 2) * C(b, 1), C(a, 2) * C(b, 1) + C(a, 3)),
+            phanso(C(a, 3), C(a + b, 3)),
+            phanso(C(a, 2) * C(b, 1) + C(a, 3), C(a + b, 3))
+        );
+        
+        if (check === false) continue;
+        
+        break;
+    }
+    
+    var debai = "Phòng công nghệ của một công ty có $" + a + "$ kĩ sư và $" + b + "$ kĩ thuật viên. Chọn ra ngẫu nhiên đồng thời $3$ người từ phòng. Tính xác suất để cả $3$ người được chọn đều là kĩ sư, biết rằng trong $3$ người được chọn có ít nhất $2$ kĩ sư.";
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(C(a, 3), C(a, 2) * C(b, 1) + C(a, 3)) + "$}";
+    PA2 = "{$" + phanso(C(a, 2) * C(b, 1), C(a, 2) * C(b, 1) + C(a, 3)) + "$}";
+    PA3 = "{$" + phanso(C(a, 3), C(a + b, 3)) + "$}";
+    PA4 = "{$" + phanso(C(a, 2) * C(b, 1) + C(a, 3), C(a + b, 3)) + "$}";
+    
+    // Lời giải chi tiết lý luận tập hợp con AB = A
+    var loigiai = "Gọi $A$ là biến cố: \"Cả 3 người được chọn đều là kĩ sư\" và $B$ là biến cố: \"Trong 3 người được chọn có ít nhất 2 kĩ sư\".\\\\\n" + 
+                  "Ta có $P(A)=\\dfrac{C_{" + a + "}^3}{C_{" + (a + b) + "}^3}=" + phanso(C(a, 3), C(a + b, 3)) + "$ và $P(B)=\\dfrac{C_{" + a + "}^2\\cdot C_{" + b + "}^1+C_{" + a + "}^3}{C_{" + (a + b) + "}^3}=" + phanso(C(a, 2) * C(b, 1) + C(a, 3), C(a + b, 3)) + "$.\\\\\n" + 
+                  "Nếu biến cố $A$ xảy ra thì biến cố $B$ cũng xảy ra, do đó $AB=A$.\\\\\n" + 
+                  "Vậy\n" + 
+                  "$$P(A|B)=\\dfrac{P(AB)}{P(B)}=\\dfrac{P(A)}{P(B)}=\\dfrac{" + phanso(C(a, 3), C(a + b, 3)) + "}{" + phanso(C(a, 2) * C(b, 1) + C(a, 3), C(a + b, 3)) + "}=" + phanso(C(a, 3), C(a, 2) * C(b, 1) + C(a, 3)) + "$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu13(loai) {
+    var a, b, c;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(3, 9);
+        b = randomchoice(3, 9);
+        c = randomchoice(3, 9);
+        
+        if (a === b || a === c || b === c) continue;
+        
+        // Kiểm tra trùng phương án (sử dụng hàm kiemtranamxau như code Python gốc của bạn)
+        var check = kiemtranamxau(
+            phanso(C(a, 2) * C(c + 2, 2) + C(a, 1) * C(c + 1, 2), C(a + 1, 2) * C(b + c + 2, 2)),
+            phanso(C(a, 1) * C(c + 1, 2), C(a + 1, 2) * C(b + c + 2, 2)),
+            phanso(C(a, 2) * C(c + 2, 2), C(a + 1, 2) * C(b + c + 2, 2)),
+            phanso(C(c + 1, 2), C(b + c + 2, 2)),
+            phanso(C(c + 2, 2), C(b + c + 2, 2))
+        );
+        
+        if (check === false) continue;
+        
+        break;
+    }
+    
+    // Ngẫu nhiên chọn màu cho bi
+    var maulist = ["xanh", "đỏ", "tím", "vàng", "đen", "trắng"];
+    var mau1 = maulist[Math.floor(Math.random() * maulist.length)];
+    var mau2 = maulist[Math.floor(Math.random() * maulist.length)];
+    while (mau1 === mau2) {
+        mau2 = maulist[Math.floor(Math.random() * maulist.length)];
+    }
+    
+    var debai = "Hộp thứ nhất có $1$ viên bi " + mau1 + " và $" + a + "$ viên bi " + mau2 + ". Hộp thứ hai có $" + b + "$ viên bi bi " + mau1 + " và $" + c + "$ viên bi " + mau2 + ". Các viên bi có cùng kích thước và khối lượng. Lấy ra ngẫu nhiên đồng thời $2$ viên bi từ hộp thứ nhất chuyển sang hộp thứ hai. Sau đó lại lấy ra ngẫu nhiên đồng thời $2$ viên bi từ hộp thứ hai. Xác suất để hai viên bi lấy ra từ hộp thứ hai là bi " + mau2 + " bằng";
+    
+    // Định nghĩa các phương án
+    PA1 = "{\\True $" + phanso(C(a, 2) * C(c + 2, 2) + C(a, 1) * C(c + 1, 2), C(a + 1, 2) * C(b + c + 2, 2)) + "$}";
+    PA2 = "{$" + phanso(C(a, 1) * C(c + 1, 2), C(a + 1, 2) * C(b + c + 2, 2)) + "$}";
+    PA3 = "{$" + phanso(C(a, 2) * C(c + 2, 2), C(a + 1, 2) * C(b + c + 2, 2)) + "$}";
+    
+    // Random một trong hai bẫy cho PA4
+    var pa4_variants = [
+        "{$" + phanso(C(c + 1, 2), C(b + c + 2, 2)) + "$}",
+        "{$" + phanso(C(c + 2, 2), C(b + c + 2, 2)) + "$}"
+    ];
+    PA4 = pa4_variants[Math.floor(Math.random() * pa4_variants.length)];
+    
+    // Lời giải chi tiết
+    var loigiai = "Gọi A là biến cố: \"Hai viên bi lấy ra từ hộp thứ hai là bi " + mau2 + "\", $B$ là biến cố: \"Hai viên bi lấy ra từ hộp thứ nhất có màu " + mau2 + "\". Khi đó $\\overline{B}$ là biến cố: \"Hai viên bi lấy ra từ hộp thứ nhất có cả màu " + mau1 + "\" và màu " + mau2 + "\".\\\\\n" + 
+                  "Ta có $P(B)=\\dfrac{C_{" + a + "}^2}{C_{" + (a + 1) + "}^2}=" + phanso(C(a, 2), C(a + 1, 2)) + "$ và $P(\\overline{B})=\\dfrac{C_{1}^1\\cdot C_{" + a + "}^1}{C_{" + (a + 1) + "}^2}=" + phanso(C(a, 1), C(a + 1, 2)) + "$.\\\\\n" + 
+                  "Mặt khác $P(A|B)=\\dfrac{C_{" + (c + 2) + "}^2}{C_{" + (b + c + 2) + "}^2}=" + phanso(C(c + 2, 2), C(b + c + 2, 2)) + "$ và $P(A|\\overline{B})=\\dfrac{C_{" + (c + 1) + "}^2}{C_{" + (b + c + 2) + "}^2}=" + phanso(C(c + 1, 2), C(b + c + 2, 2)) + "$.\\\\\n" + 
+                  "Theo công thức xác suất toàn phần\n" + 
+                  "$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=" + phanso(C(a, 2), C(a + 1, 2)) + "\\cdot" + phanso(C(c + 2, 2), C(b + c + 2, 2)) + "+" + phanso(C(a, 1), C(a + 1, 2)) + "\\cdot" + phanso(C(c + 1, 2), C(b + c + 2, 2)) + "=" + phanso(C(a, 2) * C(c + 2, 2) + C(a, 1) * C(c + 1, 2), C(a + 1, 2) * C(b + c + 2, 2)) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+function xs_vidu12(loai) {
+    var a, b, c;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(1, 9);
+        b = randomchoice(1, 9);
+        c = randomchoice(1, 9);
+        
+        // Điều kiện ràng buộc toán học
+        if (((10 - a) * b) >= (a * b + (10 - a) * c) || (a * c) >= (a * b + (10 - a) * c)) continue;
+        
+        // Kiểm tra trùng phương án dựa trên các tử số nhiễu (PA1 -> PA4 có chung mẫu số)
+        if (kiemtrakhacnhau(a * b, (10 - a) * c, (10 - a) * b, a * c) === false) continue;
+        
+        break;
+    }
+    
+    // Chọn ngẫu nhiên mẫu câu hỏi đề bài cho P(B|A)
+    var list_debai = [
+        "Tính xác suất $P(B|A)$.", 
+        "Xác suất $P(B|A)$ bằng", 
+        "Xác suất của $B$ với điều kiện $A$ bằng"
+    ];
+    var debai_rand = list_debai[Math.floor(Math.random() * list_debai.length)];
+    
+    var debai = "Cho hai biến cố $A$ và $B$ có $P(B)=" + convert(a / 10) + "$; $P(A|B)=" + convert(b / 10) + "$ và $P(A|\\overline{B})=" + convert(c / 10) + "$. " + debai_rand;
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(a * b, a * b + (10 - a) * c) + "$}";
+    PA2 = "{$" + phanso((10 - a) * c, a * b + (10 - a) * c) + "$}";
+    PA3 = "{$" + phanso((10 - a) * b, a * b + (10 - a) * c) + "$}";
+    PA4 = "{$" + phanso(a * c, a * b + (10 - a) * c) + "$}";
+    
+    // Lời giải phối hợp công thức xác suất toàn phần và định lý Bayes
+    var loigiai = "Theo công thức xác suất toàn phần\n" + 
+                  "$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=" + convert(a / 10) + "\\cdot " + convert(b / 10) + "+" + convert((10 - a) / 10) + "\\cdot " + convert(c / 10) + "=" + convert((a * b + (10 - a) * c) / 100) + ".\n$$" + 
+                  "Theo công thức Bayes\n" + 
+                  "$$P(B|A)=\\dfrac{P(B)P(A|B)}{P(A)}=\\dfrac{" + convert(a / 10) + "\\cdot " + convert(b / 10) + "}{" + convert((a * b + (10 - a) * c) / 100) + "}=" + phanso(a * b, a * b + (10 - a) * c) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu11(loai) {
+    var a, b, c;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(1, 9);
+        b = randomchoice(1, 9);
+        c = randomchoice(1, 9);
+        
+        // Kiểm tra trùng phương án dựa trên các đáp án nhiễu (Dùng convert đồng bộ cho số thập phân)
+        if (kiemtrakhacnhau(
+            convert((a * b + (10 - a) * c) / 100), 
+            convert((a * c + (10 - a) * b) / 100), 
+            convert((a * b + a * c) / 100), 
+            convert(((10 - a) * b + (10 - a) * c) / 100)
+        ) === false) continue;
+        
+        break;
+    }
+    
+    // Chọn ngẫu nhiên mẫu câu hỏi đề bài cho P(A)
+    var list_debai = [
+        "Tính xác suất $P(A)$.", 
+        "Xác suất $P(A)$ bằng"
+    ];
+    var debai_rand = list_debai[Math.floor(Math.random() * list_debai.length)];
+    
+    var debai = "Cho hai biến cố $A$ và $B$ có $P(B)=" + convert(a / 10) + "$; $P(A|B)=" + convert(b / 10) + "$ và $P(A|\\overline{B})=" + convert(c / 10) + "$. " + debai_rand;
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn (Xuất ra số thập phân qua hàm convert)
+    PA1 = "{\\True $" + convert((a * b + (10 - a) * c) / 100) + "$}";
+    PA2 = "{$" + convert((a * c + (10 - a) * b) / 100) + "$}";
+    PA3 = "{$" + convert((a * b + a * c) / 100) + "$}";
+    PA4 = "{$" + convert(((10 - a) * b + (10 - a) * c) / 100) + "$}";
+    
+    // Lời giải chi tiết áp dụng công thức xác suất toàn phần
+    var loigiai = "Theo công thức xác suất toàn phần\n" + 
+                  "$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=" + convert(a / 10) + "\\cdot " + convert(b / 10) + "+" + convert((10 - a) / 10) + "\\cdot " + convert(c / 10) + "=" + convert((a * b + (10 - a) * c) / 100) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu10(loai) {
+    var a, b, c, d;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(30, 70);
+        b = randomchoice(1, 10);
+        c = randomchoice(1, 10);
+        d = randomchoice(-10, 10);
+        
+        // Điều kiện ràng buộc toán học
+        if (a === 50 || b === c) continue;
+        
+        // Kiểm tra trùng phương án dựa trên các đáp án nhiễu (Dùng convert đồng bộ cho số thập phân)
+        if (kiemtrakhacnhau(
+            convert((a * b + (100 - a) * c) / 10000), 
+            convert((a * c + (100 - a) * b) / 10000), 
+            convert((a * b + a * c) / 10000), 
+            convert((a * b + 100 * c) / 10000)
+        ) === false) continue;
+        
+        break;
+    }
+    
+    var debai = "Một nhà máy có hai phân xưởng $I$ và $II$. Phân xưởng $I$ sản xuất $" + a + "\\%$ số sản phẩm và phân xưởng $II$ sản xuất $" + (100 - a) + "\\%$ số sản phẩm. Tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $" + b + "\\\%$ và của phân xưởng $II$ là $" + c + "\\%$. Kiểm tra ngẫu nhiên một sản phẩm của nhà máy. Xác suất để sản phẩm đó bị lỗi bằng";
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn (Xuất ra số thập phân qua hàm convert)
+    PA1 = "{\\True $" + convert((a * b + (100 - a) * c) / 10000) + "$}";
+    PA2 = "{$" + convert((a * c + (100 - a) * b) / 10000) + "$}";
+    PA3 = "{$" + convert((a * b + a * c) / 10000) + "$}";
+    PA4 = "{$" + convert((a * b + 100 * c) / 10000) + "$}";
+    
+    // Lời giải chi tiết áp dụng công thức xác suất toàn phần
+    var loigiai = "Gọi $A$ là biến cố: \"Sản phẩm được kiểm tra bị lỗi\" và " + 
+                  "$B$ là biến cố: \"Sản phẩm được kiểm tra do phân xưởng $I$ sản xuất\".\\\\\n" + 
+                  "Vì phân xưởng $I$ sản xuất $" + a + "\\%$ số sản phẩm và phân xưởng $II$ sản xuất $" + (100 - a) + "\\%$ số sản phẩm nên " + 
+                  "$P(B)=" + convert(a / 100) + "$ và $P(\\overline{B})=" + convert((100 - a) / 100) + "$.\\\\\n" + 
+                  "Vì tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $" + b + "\\%$ và của phân xưởng $II$ là $" + c + "\\%$ nên " + 
+                  "$P(A|B)=" + convert(b / 100) + "$ và $P(A|\\overline{B})=" + convert(c / 100) + "$.\\\\\n" + 
+                  "Theo công thức xác suất toàn phần\n" + 
+                  "$$P(A)=P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})=" + convert(a / 100) + "\\cdot " + convert(b / 100) + "+" + convert((100 - a) / 100) + "\\cdot " + convert(c / 100) + "=" + convert((a * b + (100 - a) * c) / 10000) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu9(loai) {
+    var a, b, c, d;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(30, 70);
+        b = randomchoice(1, 10);
+        c = randomchoice(1, 10);
+        d = randomchoice(-10, 10);
+        
+        // Điều kiện ràng buộc toán học
+        if (a === 50 || b === c) continue;
+        
+        // Kiểm tra trùng phương án dựa trên các đáp án nhiễu (PA1 -> PA4)
+        if (kiemtrakhacnhau(a * b, (100 - a) * c, a * b + d, (100 - a) * c - d) === false) continue;
+        
+        break;
+    }
+    
+    var debai = "Một nhà máy có hai phân xưởng $I$ và $II$. Phân xưởng $I$ sản xuất $" + a + "\\%$ số sản phẩm và phân xưởng $II$ sản xuất $" + (100 - a) + "\\%$ số sản phẩm. Tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $" + b + "\\\%$ và của phân xưởng $II$ là $" + c + "\\%$. Kiểm tra ngẫu nhiên một sản phẩm của nhà máy. Biết rằng sản phẩm được kiểm tra bị lỗi. Xác suất để sản phẩm đó do phân xưởng $I$ sản xuất bằng";
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(a * b, a * b + (100 - a) * c) + "$}";
+    PA2 = "{$" + phanso((100 - a) * c, a * b + (100 - a) * c) + "$}";
+    PA3 = "{$" + phanso(a * b + d, a * b + (100 - a) * c) + "$}";
+    PA4 = "{$" + phanso((100 - a) * c - d, a * b + (100 - a) * c) + "$}";
+    
+    // Lời giải chi tiết áp dụng định lý Bayes cho hai phân xưởng
+    var loigiai = "Gọi $A$ là biến cố: \"Sản phẩm được kiểm tra bị lỗi\" và " + 
+                  "$B$ là biến cố: \"Sản phẩm được kiểm tra do phân xưởng $I$ sản xuất\".\\\\\n" + 
+                  "Vì phân xưởng $I$ sản xuất $" + a + "\\%$ số sản phẩm và phân xưởng $II$ sản xuất $" + (100 - a) + "\\%$ số sản phẩm nên " + 
+                  "$P(B)=" + convert(a / 100) + "$ và $P(\\overline{B})=" + convert((100 - a) / 100) + "$.\\\\\n" + 
+                  "Vì tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $" + b + "\\%$ và của phân xưởng $II$ là $" + c + "\\%$ nên " + 
+                  "$P(A|B)=" + convert(b / 100) + "$ và $P(A|\\overline{B})=" + convert(c / 100) + "$.\\\\\n" + 
+                  "Theo công thức Bayes\n" + 
+                  "$$P(B|A)=\\dfrac{P(B)P(A|B)}{P(B)P(A|B)+P(\\overline{B})P(A|\\overline{B})}=\\dfrac{" + convert(a / 100) + "\\cdot " + convert(b / 100) + "}{" + convert(a / 100) + "\\cdot " + convert(b / 100) + "+" + convert((100 - a) / 100) + "\\cdot " + convert(c / 100) + "}=" + phanso(a * b, a * b + (100 - a) * c) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu8(loai) {
+    var a, b, c, d;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(60, 90);
+        b = randomchoice(4, 10);
+        c = randomchoice(20, 40);
+        d = randomchoice(a + 2, 97);
+        
+        // Kiểm tra trùng phương án (Sử dụng hàm kiemtrakhacnhau từ thư viện của bạn)
+        if (kiemtrakhacnhau((100 - a) * c, a * b, (d - a) * c, a * b + (100 - d) * c) === false) continue;
+        
+        break;
+    }
+    
+    var debai = "Tỉ lệ người dân đã tiêm vắc xin phòng bệnh $X$ ở một địa phương là $" + a + "\\%$. " + 
+                "Trong số những người đã tiêm phòng, tỉ lệ mắc bệnh $X$ là $" + b + "\\%$; trong số những người " + 
+                "chưa tiêm phòng, tỉ lệ mắc bệnh $X$ là $" + c + "\\%$. Chọn ngẫu nhiên một người ở địa phương đó. " + 
+                "Biết rằng người được chọn mắc bệnh $X$. Xác suất người đó chưa tiêm vắc xin phòng bệnh $X$ bằng";
+                
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso((100 - a) * c, a * b + (100 - a) * c) + "$}";
+    PA2 = "{$" + phanso(a * b, a * b + (100 - a) * c) + "$}";
+    PA3 = "{$" + phanso((d - a) * c, a * b + (100 - a) * c) + "$}";
+    PA4 = "{$" + phanso(a * b + (100 - d) * c, a * b + (100 - a) * c) + "$}";
+    
+    // Lời giải chi tiết áp dụng công thức xác suất đầy đủ và công thức Bayes
+    var loigiai = "Gọi $A$ là biến cố: \"Người được chọn đã tiêm vắc xin phòng bệnh\" và " + 
+                  "$B$ là biến cố: \"Người được chọn mắc bệnh $X$\".\\\\\n" + 
+                  "Vì tỉ lệ người dân đã tiêm vắc xin phòng bệnh $X$ ở địa phương là $" + a + "\\%$ " + 
+                  "nên $P(A)=" + convert(a / 100) + "$ và $P(\\overline{A})=" + convert((100 - a) / 100) + "$.\\\\\n" + 
+                  "Vì tỉ lệ mắc bệnh $X$ trong số những người đã tiêm phòng là $" + b + "\\%$ và trong số những " + 
+                  "người chưa tiêm phòng là $" + c + "\\%$ nên $P(B|A)=" + convert(b / 100) + "$ và $P(B|\\overline{A})=" + convert(c / 100) + "$.\\\\\n" + 
+                  "Theo công thức Bayes\n" + 
+                  "$$P(\\overline{A}|B)=\\dfrac{P(\\overline{A})P(B|\\overline{A})}{P(A)P(B|A)+P(\\overline{A})P(B|\\overline{A})}=\\dfrac{" + convert((100 - a) / 100) + "\\cdot " + convert(c / 100) + "}{" + convert(a / 100) + "\\cdot " + convert(b / 100) + "+" + convert((100 - a) / 100) + "\\cdot " + convert(c / 100) + "}=" + phanso((100 - a) * c, a * b + (100 - a) * c) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu7(loai) {
+    var m, n;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        m = randomchoice(3, 10);
+        n = randomchoice(3, 10);
+        
+        // Điều kiện ràng buộc toán học (Sử dụng hàm C tính tổ hợp từ thư viện của bạn)
+        if (m === n || (2 * C(m, 2) + C(n, 2)) >= C(m + n, 2)) continue;
+        
+        // Kiểm tra trùng phương án dựa trên các đáp án nhiễu (PA1 -> PA4)
+        if (kiemtrabonxau(
+            phanso(C(m, 2), C(m, 2) + C(n, 2)), 
+            phanso(C(n, 2), C(m, 2) + C(n, 2)), 
+            phanso(1, C(n, 2)), 
+            phanso(2 * C(m, 2) + C(n, 2), C(m + n, 2))
+        ) === false) continue;
+        
+        break;
+    }
+    
+    // Chọn ngẫu nhiên mẫu câu hỏi đề bài cho P(A|B)
+    var list_debai = [
+        'Tính xác suất $P(A|B)$.', 
+        'Xác suất $P(A|B)$ bằng', 
+        'Xác suất của biến cố $A$ với điều kiện $B$ bằng'
+    ];
+    var debai_rand = list_debai[Math.floor(Math.random() * list_debai.length)];
+    
+    var debai = "Một đội văn nghệ gồm $" + m + "$ bạn nam và $" + n + "$ bạn nữ. Chọn ra ngẫu nhiên $2$ bạn để biểu diễn một tiết mục. Gọi $A$ là biến cố: \"Có ít nhất một bạn nam trong $2$ bạn được chọn\", $B$ là biến cố: \"Hai bạn được chọn có cùng giới tính\". " + debai_rand;
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(C(m, 2), C(m, 2) + C(n, 2)) + "$}";
+    PA2 = "{$" + phanso(C(n, 2), C(m, 2) + C(n, 2)) + "$}";
+    PA3 = "{$" + phanso(1, C(n, 2)) + "$}";
+    PA4 = "{$" + phanso(2 * C(m, 2) + C(n, 2), C(m + n, 2)) + "$}";
+    
+    // Lời giải chi tiết tính P(B), P(AB) và áp dụng công thức P(A|B)
+    var loigiai = "Ta có $P(B)=\\dfrac{C_{" + m + "}^2+C_{" + n + "}^2}{C_{" + (m + n) + "}^2}=" + phanso(C(m, 2) + C(n, 2), C(m + n, 2)) + "$.\\\\\n" + 
+                  "Vì $AB$ là biến cố: \"Hai bạn được chọn đều là nam\" nên $P(AB)=\\dfrac{C_{" + m + "}^2}{C_{" + (m + n) + "}^2}=" + phanso(C(m, 2), C(m + n, 2)) + "$.\\\\\n" + 
+                  "Do đó\n" + 
+                  "$$P(A|B)=\\dfrac{P(AB)}{P(B)}=\\dfrac{" + phanso(C(m, 2), C(m + n, 2)) + "}{" + phanso(C(m, 2) + C(n, 2), C(m + n, 2)) + "}=" + phanso(C(m, 2), C(m, 2) + C(n, 2)) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu6(loai) {
+    var a, b, c, d;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(1, 10);
+        b = randomchoice(1, 10);
+        c = randomchoice(1, 10);
+        d = randomchoice(1, 10);
+        
+        // Điều kiện ràng buộc toán học
+        if (a >= b || c >= d || (a * d) === (b * c) || (a * d + b * c) >= (b * d)) continue;
+        
+        // Kiểm tra trùng phương án (giữ nguyên hàm kiemtrakhacnhau từ thư viện của bạn)
+        if (kiemtrakhacnhau(a * c, a, c, a * d + b * c) === false) continue;
+        
+        break;
+    }
+    
+    var debai = "Cho hai biến cố $A$ và $B$ có $P(A)=" + phanso(a, b) + "$ và $P(B|A)=" + phanso(c, d) + "$. Tính $P(AB)$.";
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(a * c, b * d) + "$}";
+    PA2 = "{$" + phanso(a, b * d) + "$}";
+    PA3 = "{$" + phanso(c, b * d) + "$}";
+    PA4 = "{$" + phanso(a * d + b * c, b * d) + "$}";
+    
+    // Lời giải áp dụng công thức nhân xác suất phân số
+    var loigiai = "Theo công thức nhân xác suất\n" + 
+                  "$$P(AB)=P(A)P(B|A)=" + phanso(a, b) + "\\cdot" + phanso(c, d) + "=" + phanso(a * c, b * d) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+function xs_vidu5(loai) {
+    var a, b;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(1, 9);
+        b = randomchoice(1, 9);
+        
+        // Điều kiện ràng buộc toán học
+        if (a === b || (a + b) >= 10) continue;
+        
+        // Kiểm tra trùng phương án dựa trên các đáp án nhiễu (Sử dụng hàm convert đồng bộ cho số thập phân)
+        if (kiemtrabonxau(convert((a * b) / 100), convert((a + b) / 10), convert(Math.abs(a - b) / 10), phanso(Math.min(a, b), Math.max(a, b))) === false) continue;
+        
+        break;
+    }
+    
+    // Chọn ngẫu nhiên mẫu câu hỏi đề bài cho P(AB)
+    var list_debai = [
+        "Tính xác suất $P(AB)$.", 
+        "Xác suất $P(AB)$ bằng"
+    ];
+    var debai_rand = list_debai[Math.floor(Math.random() * list_debai.length)];
+    
+    var debai = "Cho hai biến cố $A$ và $B$ có $P(A)=" + convert(a/10) + "$ và $P(B|A)=" + convert(b/10) + "$. " + debai_rand;
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + convert((a * b) / 100) + "$}";
+    PA2 = "{$" + convert((a + b) / 10) + "$}";
+    PA3 = "{$" + convert(Math.abs(a - b) / 10) + "$}";
+    PA4 = "{$" + phanso(Math.min(a, b), Math.max(a, b)) + "$}";
+    
+    // Lời giải áp dụng công thức nhân xác suất
+    var loigiai = "Theo công thức nhân xác suất\n" + 
+                  "$$P(AB)=P(A)P(B|A)=" + convert(a/10) + "\\cdot" + convert(b/10) + "=" + convert((a * b) / 100) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+
+function xs_vidu4(loai) {
+    var a, b, c;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(1, 9);
+        b = randomchoice(1, 9);
+        c = randomchoice(1, 9);
+        
+        // Điều kiện ràng buộc toán học
+        if (a <= c || b <= c || (a + b - c) >= 10 || a === b || (a * b) === (10 * c)) continue;
+        
+        // Kiểm tra trùng phương án dựa trên các đáp án nhiễu của dạng này (PA1 -> PA4)
+        if (kiemtrabonxau(phanso(b - c, b), phanso(a - c, a), convert((10 - a) / 10), phanso(Math.max(a, b) - Math.min(a, b), Math.max(a, b))) === false) continue;
+        
+        break;
+    }
+    
+    // Chọn ngẫu nhiên mẫu câu hỏi đề bài cho P(\overline{A}|B)
+    var list_debai = [
+        "Tính xác suất $P(\\overline{A}|B)$.", 
+        "Xác suất $P(\\overline{A}|B)$ bằng", 
+        "Xác suất của $\\overline{A}$ với điều kiện $B$ bằng"
+    ];
+    var debai_rand = list_debai[Math.floor(Math.random() * list_debai.length)];
+    
+    var debai = "Cho hai biến cố $A$ và $B$ có $P(A)=" + convert(a/10) + "$; $P(B)=" + convert(b/10) + "$ và $P(AB)=" + convert(c/10) + "$. " + debai_rand;
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(b - c, b) + "$}";
+    PA2 = "{$" + phanso(a - c, a) + "$}";
+    PA3 = "{$" + convert((10 - a) / 10) + "$}";
+    PA4 = "{$" + phanso(Math.max(a, b) - Math.min(a, b), Math.max(a, b)) + "$}";
+    
+    // Lời giải chi tiết tính xác suất biến cố đối \overline{A} theo điều kiện B
+    var loigiai = "Ta có\n" + 
+                  "$$P(\\overline{A}|B)=\\dfrac{P(\\overline{A}B)}{P(B)}=\\dfrac{P(B)-P(AB)}{P(B)}=\\dfrac{" + convert(b/10) + "-" + convert(c/10) + "}{" + convert(b/10) + "}=" + phanso(b - c, b) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu3(loai) {
+    var a, b, c;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(1, 9);
+        b = randomchoice(1, 9);
+        c = randomchoice(1, 9);
+        
+        // Điều kiện ràng buộc toán học
+        if (a <= c || b <= c || (a + b - c) >= 10 || a === b || (a * b) === (10 * c)) continue;
+        
+        // Kiểm tra trùng phương án dựa trên các đáp án nhiễu của dạng này
+        if (kiemtrabonxau(phanso(a - c, a), phanso(b - c, b), convert((10 - b) / 10), phanso(Math.max(a, b) - Math.min(a, b), Math.max(a, b))) === false) continue;
+        
+        break;
+    }
+    
+    // Chọn ngẫu nhiên mẫu câu hỏi đề bài cho P(\overline{B}|A)
+    var list_debai = [
+        "Tính xác suất $P(\\overline{B}|A)$.", 
+        "Xác suất $P(\\overline{B}|A)$ bằng", 
+        "Xác suất của $\\overline{B}$ với điều kiện $A$ bằng"
+    ];
+    var debai_rand = list_debai[Math.floor(Math.random() * list_debai.length)];
+    
+    var debai = "Cho hai biến cố $A$ và $B$ có $P(A)=" + convert(a/10) + "$; $P(B)=" + convert(b/10) + "$ và $P(AB)=" + convert(c/10) + "$. " + debai_rand;
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(a - c, a) + "$}";
+    PA2 = "{$" + phanso(b - c, b) + "$}";
+    PA3 = "{$" + convert((10 - b) / 10) + "$}";
+    PA4 = "{$" + phanso(Math.max(a, b) - Math.min(a, b), Math.max(a, b)) + "$}";
+    
+    // Lời giải chi tiết biến đổi biến cố đối
+    var loigiai = "Ta có\n" + 
+                  "$$P(\\overline{B}|A)=\\dfrac{P(\\overline{B}A)}{P(A)}=\\dfrac{P(A\\overline{B})}{P(A)}=\\dfrac{P(A)-P(AB)}{P(A)}=\\dfrac{" + convert(a/10) + "-" + convert(c/10) + "}{{" + convert(a/10) + "}}=" + phanso(a - c, a) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu2(loai) {
+    var a, b, c;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(1, 9);
+        b = randomchoice(1, 9);
+        c = randomchoice(1, 9);
+        
+        // Điều kiện ràng buộc toán học và kiểm tra trùng phương án
+        if (a <= c || b <= c || (a + b - c) >= 10 || a === b || (a * b) === (10 * c)) continue;
+        if (kiemtrabonxau(phanso(c, a), phanso(c, b), phanso(b, 10), phanso(Math.min(a, b), Math.max(a, b))) === false) continue;
+        
+        break;
+    }
+    
+    // Chọn ngẫu nhiên câu hỏi đề bài cho P(B|A)
+    var list_debai = [
+        "Tính xác suất $P(B|A)$.", 
+        "Xác suất $P(B|A)$ bằng", 
+        "Xác suất của $B$ với điều kiện $A$ bằng"
+    ];
+    var debai_rand = list_debai[Math.floor(Math.random() * list_debai.length)];
+    
+    var debai = "Cho hai biến cố $A$ và $B$ có $P(A)=" + convert(a/10) + "$; $P(B)=" + convert(b/10) + "$ và $P(AB)=" + convert(c/10) + "$. " + debai_rand;
+    
+    // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(c, a) + "$}";
+    PA2 = "{$" + phanso(c, b) + "$}";
+    PA3 = "{$" + convert(b/10) + "$}";
+    PA4 = "{$" + phanso(Math.min(a, b), Math.max(a, b)) + "$}";
+    
+    var loigiai = "Ta có\n" + 
+                  "$$P(B|A)=\\dfrac{P(AB)}{P(A)}=\\dfrac{" + convert(c/10) + "}{" + convert(a/10) + "}=" + phanso(c, a) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function xs_vidu1(loai) {
+    var a, b, c;
+    var PA1, PA2, PA3, PA4;
+    
+    while (true) {
+        a = randomchoice(1, 9);
+        b = randomchoice(1, 9);
+        c = randomchoice(1, 9);
+        
+        // Điều kiện ràng buộc toán học và kiểm tra trùng phương án
+        if (a <= c || b <= c || (a + b - c) >= 10 || a === b || (a * b) === (10 * c)) continue;
+        if (kiemtrabonxau(phanso(c, b), phanso(c, a), phanso(a, 10), phanso(Math.min(a, b), Math.max(a, b))) === false) continue;
+        
+        break;
+    }
+    
+    // Chọn ngẫu nhiên câu hỏi đề bài
+    var list_debai = [
+        "Tính xác suất $P(A|B)$.", 
+        "Xác suất $P(A|B)$ bằng", 
+        "Xác suất của $A$ với điều kiện $B$ bằng"
+    ];
+    var debai_rand = list_debai[Math.floor(Math.random() * list_debai.length)];
+    
+    var debai = "Cho hai biến cố $A$ và $B$ có $P(A)=" + convert(a/10) + "$; $P(B)=" + convert(b/10) + "$ và $P(AB)=" + convert(c/10) + "$. " + debai_rand;
+    
+    // Format phương án chuẩn theo bài đầu tiên của bạn
+    PA1 = "{\\True $" + phanso(c, b) + "$}";
+    PA2 = "{$" + phanso(c, a) + "$}";
+    PA3 = "{$" + convert(a/10) + "$}";
+    PA4 = "{$" + phanso(Math.min(a, b), Math.max(a, b)) + "$}";
+    
+    var loigiai = "Ta có\n" + 
+                  "$$P(A|B)=\\dfrac{P(AB)}{P(B)}=\\dfrac{" + convert(c/10) + "}{" + convert(b/10) + "}=" + phanso(c, b) + ".$$";
+                  
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
 function khoangcachdenmatphang(loai) {
     var a, b, c, d, m, n, p, dM, tu;
     while (true) {
