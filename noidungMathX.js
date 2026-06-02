@@ -297,6 +297,28 @@ const database = [
             ] 
         }
         ]
+        },
+        {
+        title: "Chủ đề 5.5: Trắc nghiệm đúng sai",
+        subtopics: [
+        { 
+            title: "Mục 5.5.1", 
+            variants: [
+                {method: "secapnhat", params: "ex", name: "Dạng 1:..." }
+            ] 
+        }
+        ]
+        },
+        {
+        title: "Chủ đề 5.6: Trắc nghiệm điền khuyết",
+        subtopics: [
+        { 
+            title: "Một số bài tập", 
+            variants: [
+                {method: ["secapnhat"], params: "ex", name: "Dạng 1"}
+            ] 
+        }
+        ]
         }
         ]
     },
@@ -312,7 +334,7 @@ const database = [
                 {method: ["xs_vidu1", "xs_vidu2"], params: "ex", name: "Dạng 1"},
                 {method: ["xs_vidu3", "xs_vidu4"], params: "ex", name: "Dạng 2"},
                 {method: ["xs_vidu7"], params: "ex", name: "Dạng 3"},
-                {method: ["xs_vidu14"], params: "ex", name: "Dạng 4"},
+                {method: ["xs_vidu14"], params: "ex", name: "Dạng 4"}
             ] 
         },
         { 
@@ -332,7 +354,7 @@ const database = [
                 {method: ["xs_vidu10"], params: "ex", name: "Dạng 1"},
                 {method: ["xs_vidu11"], params: "ex", name: "Dạng 2"},
                 {method: ["xs_vidu13"], params: "ex", name: "Dạng 3"},
-                {method: ["xs_vidu15"], params: "ex", name: "Dạng 4"},
+                {method: ["xs_vidu15"], params: "ex", name: "Dạng 4"}
             ] 
         },
         { 
@@ -340,7 +362,7 @@ const database = [
             variants: [
                 {method: ["xs_vidu8"], params: "ex", name: "Dạng 1"},
                 {method: ["xs_vidu9"], params: "ex", name: "Dạng 2"},
-                {method: ["xs_vidu12"], params: "ex", name: "Dạng 3"},
+                {method: ["xs_vidu12"], params: "ex", name: "Dạng 3"}
             ] 
         }
         ]
@@ -362,7 +384,18 @@ const database = [
                 {method: ["TF_vidu3"], params: "ex", name: "Dạng 1"},
                 {method: ["TF_vidu5"], params: "ex", name: "Dạng 2"},
                 {method: ["TF_vidu6"], params: "ex", name: "Dạng 3"},
-                {method: ["TF_vidu7"], params: "ex", name: "Dạng 4"},
+                {method: ["TF_vidu7"], params: "ex", name: "Dạng 4"}
+            ] 
+        }
+        ]
+        },
+        {
+        title: "Chủ đề 6.3: Trắc nghiệm điền khuyết",
+        subtopics: [
+        { 
+            title: "Một số bài tập", 
+            variants: [
+                {method: ["secapnhat"], params: "ex", name: "Dạng 1"}
             ] 
         }
         ]
