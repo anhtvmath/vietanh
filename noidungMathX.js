@@ -341,10 +341,10 @@ const database = [
         { 
             title: "Công thức xác suất toàn phần và công thức Bayes", 
             variants: [
-                {method: ["TF_vidu3"], params: "ex", name: "Dạng 3"},
-                {method: ["TF_vidu5"], params: "ex", name: "Dạng 5"},
-                {method: ["TF_vidu6"], params: "ex", name: "Dạng 6"},
-                {method: ["TF_vidu7"], params: "ex", name: "Dạng 7"},
+                {method: ["TF_vidu3"], params: "ex", name: "Dạng 1"},
+                {method: ["TF_vidu5"], params: "ex", name: "Dạng 2"},
+                {method: ["TF_vidu6"], params: "ex", name: "Dạng 3"},
+                {method: ["TF_vidu7"], params: "ex", name: "Dạng 4"},
             ] 
         }
         ]
