@@ -241,7 +241,7 @@ const database = [
         { 
             title: "Vectơ pháp tuyến của mặt phẳng", 
             variants: [
-                {method: ["timvectophaptuyen_mp"], params: "ex", name: "Dạng 1"}
+                {method: ["timvectophaptuyen_mp"], params: "ex", name: "Dạng 1: Tìm vectơ pháp tuyến của mặt phẳng"}
             ] 
         },
         { 
@@ -250,7 +250,13 @@ const database = [
                 {method: ["phuongtrinhmp_diquadiem_phaptuyen"], params: "ex", name: "Dạng 1: Đi qua một điểm và biết vectơ pháp tuyến"},
                 {method: ["phuongtrinhmp_diquadiem_songsongmp"], params: "ex", name: "Dạng 2: Đi qua một điểm và song song với mặt phẳng cho trước"}
             ] 
-        }
+        },
+        { 
+            title: "Tính khoảng cách từ một điểm đến một mặt phẳng", 
+            variants: [
+                {method: ["secapnhat"], params: "ex", name: "Dạng 1"}
+            ] 
+        },
         ]
         },
         {
