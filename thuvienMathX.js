@@ -1022,6 +1022,49 @@ function phansoxausecond(m,n,x) {
 	}
 }
 
+/* Hàm tính phân số \dfrac{m\sqrt{n}}{p} với m, p dương */
+function phansocanduong(m, n, p) {
+    var cp = uoccpmax(n);
+    var a = Math.sqrt(cp);
+    var b = n / cp;
+
+    if (b === 1) {
+        return phanso(m * a, p);
+    } else {
+        var q = m * a;
+        var g = ucln(q, p);
+        var c = q / g;
+        var d = p / g;
+
+        if (d === 1) {
+            if (c === 1) {
+                return "\\sqrt{" + b + "}";
+            } else {
+                return c + "\\sqrt{" + b + "}";
+            }
+        } else {
+            if (c === 1) {
+                return "\\dfrac{\\sqrt{" + b + "}}{" + d + "}";
+            } else {
+                return "\\dfrac{" + c + "\\sqrt{" + b + "}}{" + d + "}";
+            }
+        }
+    }
+}
+
+/* Hàm tính phân số \dfrac{m\sqrt{n}}{p} với m, p bất kỳ */
+function phansocan(m, n, p) {
+    if (m * p > 0) {
+        return phansocanduong(Math.abs(m), n, Math.abs(p));
+    }
+    if (m * p < 0) {
+        return "-" + phansocanduong(Math.abs(m), n, Math.abs(p));
+    }
+    if (m === 0) {
+        return "0";
+    }
+}
+
 function vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) {
     return "$$\\begin{tikzpicture}[thick]\n" + 
     "\\begin{scope}[xscale=1.2,yscale=0.85]\n" + 
