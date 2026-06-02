@@ -236,7 +236,7 @@ const database = [
     title: "CHƯƠNG V: PHƯƠNG PHÁP TOẠ ĐỘ TRONG KHÔNG GIAN",
         topics: [
         {
-        title: "Chủ đề 5.1: Mặt phẳng",
+        title: "Chủ đề 5.1: Phương trình mặt phẳng",
         subtopics: [
         { 
             title: "Vectơ pháp tuyến của mặt phẳng", 
@@ -260,7 +260,7 @@ const database = [
         ]
         },
         {
-        title: "Chủ đề 5.2:...",
+        title: "Chủ đề 5.2: Phương trình đường thẳng",
         subtopics: [
         { 
             title: "Mục 5.2.1", 
@@ -269,9 +269,27 @@ const database = [
                 {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
                 {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
             ] 
+        }
+        ]
         },
+        {
+        title: "Chủ đề 5.3: Phương trình mặt cầu",
+        subtopics: [
         { 
-            title: "Mục 5.2.2", 
+            title: "Mục 5.3.1", 
+            variants: [
+                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
+                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
+                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+            ] 
+        }
+        ]
+        },
+        {
+        title: "Chủ đề 5.4: Công thức tính góc trong không gian",
+        subtopics: [
+        { 
+            title: "Mục 5.4.1", 
             variants: [
                 {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
                 {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
