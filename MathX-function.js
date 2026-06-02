@@ -1,3 +1,138 @@
+function khoangcachdenmatphang(loai) {
+    var a, b, c, d, m, n, p, dM, tu;
+    while (true) {
+        a = randomchoice(-5, 6);
+        b = randomchoice(-5, 6);
+        c = randomchoice(-5, 6);
+        d = randomchoice(-5, 6);
+        m = randomchoice(-5, 6);
+        n = randomchoice(-5, 6);
+        p = randomchoice(-5, 6);
+        tu = a * m + b * n + c * p + d; // Tử số trước khi trị tuyệt đối
+        dM = Math.abs(tu);             // Khoảng cách thực tế (luôn dương)
+        if (dM !== 0 && a*b*c*d*m*n*p !== 0 && 
+            a !== b && b !== c && c !== d && c !== -d && 
+            !(a < 0 && b < 0 && c < 0 && d < 0) && 
+            ucln(Math.abs(a), ucln(Math.abs(b), Math.abs(c))) === 1 && 
+            ucln(Math.abs(a), ucln(Math.abs(b), Math.abs(d))) === 1 && 
+            ucln(Math.abs(a), ucln(Math.abs(c), Math.abs(d))) === 1 && 
+            ucln(Math.abs(b), ucln(Math.abs(c), Math.abs(d))) === 1) {
+            break;
+        }
+    }
+    function ngoacso(num) {
+        if (num >= 0) {
+            return num; 
+        } else {
+            return "(" + num + ")";
+        }
+    }
+    var chuoi_a, chuoi_b, chuoi_c, chuoi_d;
+    if (a === 1) {
+        chuoi_a = m; 
+    } else if (a === -1) {
+        if (m > 0) {
+            chuoi_a = "-" + m;
+        } else {
+            chuoi_a = Math.abs(m); // Trừ của trừ thành cộng: -(-m) = m
+        }
+    } else {
+        chuoi_a = a + " \\cdot " + ngoacso(m);
+    }
+    // --- Xử lý chặng b ---
+    if (b === 1) {
+        if (n > 0) {
+            chuoi_b = " + " + n;
+        } else {
+            chuoi_b = " - " + Math.abs(n); // Cộng với số âm thành trừ: +(-n) = -n
+        }
+    } else if (b === -1) {
+        if (n > 0) {
+            chuoi_b = " - " + n;
+        } else {
+            chuoi_b = " + " + Math.abs(n); // Trừ với số âm thành cộng: -(-n) = +n
+        }
+    } else if (b > 0) {
+        chuoi_b = " + " + b + " \\cdot " + ngoacso(n);
+    } else {
+        chuoi_b = " - " + Math.abs(b) + " \\cdot " + ngoacso(n);
+    }
+    // --- Xử lý chặng c ---
+    if (c === 1) {
+        if (p > 0) {
+            chuoi_c = " + " + p;
+        } else {
+            chuoi_c = " - " + Math.abs(p);
+        }
+    } else if (c === -1) {
+        if (p > 0) {
+            chuoi_c = " - " + p;
+        } else {
+            chuoi_c = " + " + Math.abs(p);
+        }
+    } else if (c > 0) {
+        chuoi_c = " + " + c + " \\cdot " + ngoacso(p);
+    } else {
+        chuoi_c = " - " + Math.abs(c) + " \\cdot " + ngoacso(p);
+    }
+    // --- Xử lý chặng d (Hệ số tự do) ---
+    if (d > 0) {
+        chuoi_d = " + " + d;
+    } else {
+        chuoi_d = " - " + Math.abs(d);
+    }
+    var tu_so_latex = chuoi_a + chuoi_b + chuoi_c + chuoi_d;
+    var mau = a * a + b * b + c * c; // Biểu thức dưới căn ở mẫu số
+    var debai = "Trong không gian $Oxyz$, tính khoảng cách từ điểm $M(" + m + ";" + n + ";" + p + ")$ đến mặt phẳng $(P)\\colon " + hesodau(a, "x") + hesosau(b, "y") + hesosau(c, "z") + sodungsau(d) + " = 0.$";    
+    var loigiai = "Khoảng cách từ điểm $M$ đến mặt phẳng $(P)$ được tính theo công thức:\n" + 
+                  "$$\\mathrm{d}(M, (P)) = \\dfrac{|" + tu_so_latex + "|}{\\sqrt{" + ngoacso(a) + "^2 + " + ngoacso(b) + "^2 + " + ngoacso(c) + "^2}} = " + phansocan(dM, mau, mau) + ".$$";
+    // 1. Tạo các lõi toán học thuần túy (chỉ chứa chuỗi phân số căn)
+    var loi1 = phansocan(dM, mau, mau);
+    var loi2 = phansocan(dM + 2, mau, mau);
+    var loi3 = phansocan(dM, mau + 4, mau + 4);
+    
+    var tu_bay = Math.abs(a * m + b * n + c * p);
+    if (tu_bay === dM || tu_bay === 0) {
+        tu_bay = dM + 3; 
+    }
+    var loi4 = phansocan(tu_bay, mau, mau);
+
+    // 2. Vòng lặp khử trùng dựa trên lõi toán học (Lúc này so sánh chuẩn đét!)
+    while (loi2 === loi1 || loi2 === loi3 || loi2 === loi4 || 
+           loi3 === loi1 || loi3 === loi4 || loi4 === loi1) {
+        
+        var hsthem = randomchoice(1, 3); 
+        
+        // Tính toán lại các lõi nhiễu nếu phát hiện trùng
+        loi2 = phansocan(dM + hsthem + 1, mau, mau);
+        loi3 = phansocan(dM, mau + hsthem + 2, mau + hsthem + 2);
+        loi4 = phansocan(tu_bay + hsthem, mau, mau);
+    }
+
+    // 3. Sau khi đã sạch trùng, mới ráp thành các phương án hoàn chỉnh
+    var PA1 = "{\\True $" + loi1 + "$}";
+    var PA2 = "{$" + loi2 + "$}";
+    var PA3 = "{$" + loi3 + "$}";
+    var PA4 = "{$" + loi4 + "$}";
+
+    // Trộn ngẫu nhiên thứ tự các phương án
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+
+    // 6. Trả về cấu trúc khối câu hỏi dạng LaTeX toán học
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
 function timvectophaptuyen_mp(loai) {
     var a, b, c, d;
     while (true) {
