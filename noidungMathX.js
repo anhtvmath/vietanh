@@ -254,7 +254,7 @@ const database = [
         { 
             title: "Tính khoảng cách từ một điểm đến một mặt phẳng", 
             variants: [
-                {method: ["secapnhat"], params: "ex", name: "Dạng 1"}
+                {method: ["khoangcachdenmatphang"], params: "ex", name: "Dạng 1: Tính khoảng cách từ một điểm đến một mặt phẳng"}
             ] 
         },
         ]
