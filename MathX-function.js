@@ -85,7 +85,7 @@ function phuongtrinhmp_diquadiem_songsongmp(loai) {
         dM = a * m + b * n + c * p;
         dM1 = a * m + b * n - c * p;
 
-        if (dQ !== -dM && dM !== 0 && dM1 !== 0 && a * b * c !== 0 && m * n * p !== 0 && 
+        if (dQ !== -dM && dQ !== dM && dQ !== 0 && dM !== 0 && dM1 !== 0 && a * b * c !== 0 && m * n * p !== 0 && 
             !(a < 0 && b < 0 && c < 0) && 
             c !== -c && dM !== -dM && dM !== dM1 && dM !== -dM1 && // Chặn trùng giữa PA1, PA2, PA3, PA4
             ucln(Math.abs(a), ucln(Math.abs(b), Math.abs(c))) === 1) break;
@@ -108,7 +108,7 @@ function phuongtrinhmp_diquadiem_songsongmp(loai) {
     var PA1 = "$" + hesodau(a, "x") + hesosau(b, "y") + hesosau(c, "z") + sodungsau(-dM) + "=0$";
     var PA2 = "$" + hesodau(a, "x") + hesosau(b, "y") + hesosau(c, "z") + sodungsau(dM) + "=0$";
     var PA3 = "$" + hesodau(a, "x") + hesosau(b, "y") + hesosau(-c, "z") + sodungsau(-dM1) + "=0$";
-    var PA4 = "$" + hesodau(a, "x") + hesosau(b, "y") + hesosau(-c, "z") + sodungsau(dM1) + "=0$";
+    var PA4 = "$" + hesodau(a, "x") + hesosau(b, "y") + hesosau(c, "z") + sodungsau(-dQ) + "=0$";
     
     var questionchoice = [PA1];
     var questionwrongchoice = [PA2, PA3, PA4];
