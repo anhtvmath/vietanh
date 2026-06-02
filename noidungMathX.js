@@ -286,43 +286,65 @@ const database = [
     title: "CHƯƠNG VI: XÁC SUẤT CÓ ĐIỀU KIỆN",
         topics: [
         {
-        title: "Chủ đề 6.1:...",
+        title: "Chủ đề 6.1: Xác suất có điều kiện",
         subtopics: [
         { 
-            title: "Mục 6.1.1", 
+            title: "Xác suất có điều kiện", 
             variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+                {method: ["xs_vidu1", "xs_vidu2"], params: "ex", name: "Dạng 1"},
+                {method: ["xs_vidu3", "xs_vidu4"], params: "ex", name: "Dạng 2"},
+                {method: ["xs_vidu7"], params: "ex", name: "Dạng 3"},
+                {method: ["xs_vidu14"], params: "ex", name: "Dạng 4"},
             ] 
         },
         { 
-            title: "Mục 6.1.2", 
+            title: "Công thức nhân xác suất", 
             variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+                {method: ["xs_vidu5", "xs_vidu6"], params: "ex", name: "Dạng 1"},
             ] 
         }
         ]
         },
         {
-        title: "Chủ đề 6.2:...",
+        title: "Chủ đề 6.2: Công thức xác suất toàn phần và công thức Bayes",
         subtopics: [
         { 
-            title: "Mục 6.2.1", 
+            title: "Công thức xác suất toàn phần", 
             variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+                {method: ["xs_vidu10"], params: "ex", name: "Dạng 1"},
+                {method: ["xs_vidu11"], params: "ex", name: "Dạng 2"},
+                {method: ["xs_vidu13"], params: "ex", name: "Dạng 3"},
+                {method: ["xs_vidu15"], params: "ex", name: "Dạng 4"},
             ] 
         },
         { 
-            title: "Mục 6.2.2", 
+            title: "Công thức Bayes", 
             variants: [
-                {method: "secapnhat", params: "ex", name: "Dạng 1:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 2:..." },
-                {method: "secapnhat", params: "ex", name: "Dạng 3:..." }
+                {method: ["xs_vidu8"], params: "ex", name: "Dạng 1"},
+                {method: ["xs_vidu9"], params: "ex", name: "Dạng 2"},
+                {method: ["xs_vidu12"], params: "ex", name: "Dạng 3"},
+            ] 
+        }
+        ]
+        },
+        {
+        title: "Chủ đề 6.3: Trắc nghiệm đúng sai",
+        subtopics: [
+        { 
+            title: "Xác suất có điều kiện", 
+            variants: [
+                {method: ["TF_vidu1"], params: "ex", name: "Dạng 1"},
+                {method: ["TF_vidu2"], params: "ex", name: "Dạng 2"},
+                {method: ["TF_vidu4"], params: "ex", name: "Dạng 3"}
+            ] 
+        },
+        { 
+            title: "Công thức xác suất toàn phần và công thức Bayes", 
+            variants: [
+                {method: ["TF_vidu3"], params: "ex", name: "Dạng 3"},
+                {method: ["TF_vidu5"], params: "ex", name: "Dạng 5"},
+                {method: ["TF_vidu6"], params: "ex", name: "Dạng 6"},
+                {method: ["TF_vidu7"], params: "ex", name: "Dạng 7"},
             ] 
         }
         ]
