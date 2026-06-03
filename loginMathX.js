@@ -6,6 +6,7 @@ const USERS = [
     {user: "ndt", pass: "123", name: "Thầy Nguyễn Duy Thể"},
     {user: "ntm", pass: "123", name: "Thầy Nguyễn Tiến Mạnh"},
     {user: "nmt", pass: "123", name: "Thầy Nguyễn Minh Thế"},
+    {user: "nhl", pass: "123", name: "Thầy Nguyễn Hoàng Lê"},
     {user: "bin", pass: "123", name: "Phạm Gia Phúc"},
     {user: "loind", pass: "123", name: "Thầy Nguyễn Đức Lợi"},
     {user: "tva", pass: "12345", name: "Thầy Trần Việt Anh"}
