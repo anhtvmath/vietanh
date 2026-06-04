@@ -2403,7 +2403,9 @@ function nguyenham1(loai) {
     var PA3 = "{$"+hesodau(-a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$}";
     var PA4 = "{$"+hesodau(a,"\\cos x")+hesosau(b,"\\sin x")+"+C$}";
     var loigiai = "Ta có\n" + 
-                "\\begin{equation*}\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C.\\end{equation*}"
+                "\\begin{equation*}\n" + 
+                "\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C.\n" + 
+                "\\end{equation*}";
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
     return "\\begin{"+loai+"}\n" +
