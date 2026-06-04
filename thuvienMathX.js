@@ -1120,7 +1120,8 @@ function vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) {
 }
 
 function hambacbaCTC(x,f,x1,x2,y1,y2) {
-    return "$$\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" + 
+    return "\\begin{center}\n" +
+	"\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" + 
     "\\def\\a{8}\n" + 
     "\\def\\b{7}\n" + 
     "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
@@ -1147,7 +1148,8 @@ function hambacbaCTC(x,f,x1,x2,y1,y2) {
     "\\draw[->,>=stealth] (A)--(B);\n" + 
     "\\draw[->,>=stealth] (B)--(C);\n" + 
     "\\draw[->,>=stealth] (C)--(D);\n" + 
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n" + 
+	"\\end{center}\n";
 }
 
 function hambacbaTCT(x, f, x1, x2, y1, y2) {
