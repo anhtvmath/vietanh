@@ -2119,7 +2119,7 @@ function tinhchattichphan6(loai) {
     var PA4 = "{$" + res4 + "$}";
     
     var loigiai = "Ta có\n" + 
-                  "$$" + tichphan1 + " f(x)" + dx + "=" + tichphan3 + " f(x)" + dx + "-" + tichphan2 + " f(x)" + dx + "=" + b + sodungsau(-a) + "=" + res1 + ".$$";
+                  "\\begin{equation*}" + tichphan1 + " f(x)" + dx + "=" + tichphan3 + " f(x)" + dx + "-" + tichphan2 + " f(x)" + dx + "=" + b + sodungsau(-a) + "=" + res1 + ".\\end{equation*}";
                   
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -2167,7 +2167,7 @@ function tinhchattichphan5(loai) {
     var PA3 = "{$" + res3 + "$}";
     var PA4 = "{$" + res4 + "$}";
     var loigiai = "Ta có\n" + 
-                  "$$" + tichphan2 + " f(x)" + dx + " = " + tichphan3 + " f(x)" + dx + " - " + tichphan1 + " f(x)" + dx + " = " + b + sodungsau(-a) + " = " + res1 + ".$$";
+                  "\\begin{equation*}" + tichphan2 + " f(x)" + dx + " = " + tichphan3 + " f(x)" + dx + " - " + tichphan1 + " f(x)" + dx + " = " + b + sodungsau(-a) + " = " + res1 + ".\\end{equation*}";
                   
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -2226,7 +2226,7 @@ function tinhchattichphan4(loai) {
     }
     var debai = "Nếu $" + tichphan1 + " f(x)" + dx + "=" + a + "$ và $" + tichphan2 + " f(x)" + dx + "=" + b + "$ thì $" + tichphan3 + " f(x)" + dx + "$ bằng";
     var loigiai = "Ta có\n" + 
-                  "$$" + tichphan3 + " f(x)" + dx + " = " + tichphan1 + "f(x)" + dx + "+" + tichphan2 + "f(x)" + dx + " = " + a + sodungsau(b) + " = " + res1 + ".$$";
+                  "\\begin{equation*}" + tichphan3 + " f(x)" + dx + " = " + tichphan1 + "f(x)" + dx + "+" + tichphan2 + "f(x)" + dx + " = " + a + sodungsau(b) + " = " + res1 + ".\\end{equation*}";
     shuffle(questionchoice);
     return "\\begin{" + loai + "}\n" +
         debai + "\n" +
@@ -2403,7 +2403,7 @@ function nguyenham1(loai) {
     var PA3 = "{$"+hesodau(-a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$}";
     var PA4 = "{$"+hesodau(a,"\\cos x")+hesosau(b,"\\sin x")+"+C$}";
     var loigiai = "Ta có\n" + 
-                "$$\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C.$$"
+                "\\begin{equation*}\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C.\\end{equation*}"
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
     return "\\begin{"+loai+"}\n" +
@@ -2448,7 +2448,7 @@ function nguyenham2(loai) {
     var PA3 = "{$"+hesodau(a,"\\cos x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C$}";
     var PA4 = "{$"+hesodau(-a,"\\cos x")+hesosau(b*c,xmu(c-1))+"+C$}";
     var loigiai = "Ta có\n" + 
-                "$$\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b, xmu(c))+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C.$$"
+                "\\begin{equation*}\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b, xmu(c))+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C.\\end{equation*}"
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
     return "\\begin{"+loai+"}\n" +
@@ -2494,7 +2494,7 @@ function nguyenham3(loai) {
     var PA3 = "{$"+hesodau(-a,"\\sin x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C$}";
     var PA4 = "{$"+hesodau(a,"\\sin x")+hesosau(b*c,xmu(c-1))+"+C$}";
     var loigiai = "Ta có\n" + 
-                "$$\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\cos x")+hesosau(b, xmu(c))+")\\mathrm{d}x="+hesodau(a,"\\sin x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C.$$"
+                "\\begin{equation*}\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\cos x")+hesosau(b, xmu(c))+")\\mathrm{d}x="+hesodau(a,"\\sin x")+hesoxausau(phanso(b,c+1),xmu(c+1))+"+C.\\end{equation*}"
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
     return "\\begin{"+loai+"}\n" +
@@ -2523,7 +2523,7 @@ function nguyenham4(loai) {
     var PA3 = "{$"+hesodau(-a,"\\cos x")+hesosau(-b,"\\mathrm{e}^x")+"+C$}";
     var PA4 = "{$"+hesodau(a,"\\cos x")+hesosau(-b,"\\mathrm{e}^x")+"+C$}";
     var loigiai = "Ta có\n" + 
-                "$$\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b,"\\mathrm{e}^x")+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesosau(b,"\\mathrm{e}^x")+"+C.$$"
+                "\\begin{equation*}\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b,"\\mathrm{e}^x")+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesosau(b,"\\mathrm{e}^x")+"+C.\\end{equation*}"
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
     return "\\begin{"+loai+"}\n" +
