@@ -31,7 +31,7 @@ document.getElementById("PA3Cau4").innerHTML = "$\\dfrac{3}{4}$";
 document.getElementById("loigiaicau4").innerHTML = "Ta có<br/>$$P(B|A)=\\dfrac{P(AB)}{P(A)}=\\dfrac{0,3}{0,6}=\\dfrac{1}{2}.$$";
 
 // Câu 5
-document.getElementById("debaicau5").innerHTML = "Đề bài câu 5";
+document.getElementById("debaicau5").innerHTML = "Đề bài câu 5 nhé nhé nhé nhé";
 document.getElementById("PAdung5").innerHTML = "Đáp án đúng câu 5";
 document.getElementById("PA1Cau5").innerHTML = "Đáp án sai 1 của câu 5";
 document.getElementById("PA2Cau5").innerHTML = "Đáp án sai 2 của câu 5";
@@ -39,7 +39,7 @@ document.getElementById("PA3Cau5").innerHTML = "Đáp án sai 3 của câu 5";
 document.getElementById("loigiaicau5").innerHTML = "Lời giải câu 5.<br/>";
 
 // Câu 6
-document.getElementById("debaicau6").innerHTML = "Đề bài câu 6 nhé";
+document.getElementById("debaicau6").innerHTML = "Đề bài câu 6 nhé nhé nhé";
 document.getElementById("PAdung6").innerHTML = "Đáp án đúng câu 6";
 document.getElementById("PA1Cau6").innerHTML = "Đáp án sai 1 của câu 6";
 document.getElementById("PA2Cau6").innerHTML = "Đáp án sai 2 của câu 6";
@@ -47,7 +47,7 @@ document.getElementById("PA3Cau6").innerHTML = "Đáp án sai 3 của câu 6";
 document.getElementById("loigiaicau6").innerHTML = "Lời giải câu 6.<br/>";
 
 // Câu 7
-document.getElementById("debaicau7").innerHTML = "Đề bài câu 7 nhé";
+document.getElementById("debaicau7").innerHTML = "Đề bài câu 7 nhé nhé nhé";
 document.getElementById("PAdung7").innerHTML = "Đáp án đúng câu 7";
 document.getElementById("PA1Cau7").innerHTML = "Đáp án sai 1 của câu 7";
 document.getElementById("PA2Cau7").innerHTML = "Đáp án sai 2 của câu 7";
@@ -55,7 +55,7 @@ document.getElementById("PA3Cau7").innerHTML = "Đáp án sai 3 của câu 7";
 document.getElementById("loigiaicau7").innerHTML = "Lời giải câu 7.<br/>";
 
 // Câu 8
-document.getElementById("debaicau8").innerHTML = "Đề bài câu 8";
+document.getElementById("debaicau8").innerHTML = "Đề bài câu 8 nhé nhé nhé nhé";
 document.getElementById("PAdung8").innerHTML = "Đáp án đúng câu 8";
 document.getElementById("PA1Cau8").innerHTML = "Đáp án sai 1 của câu 8";
 document.getElementById("PA2Cau8").innerHTML = "Đáp án sai 2 của câu 8";
