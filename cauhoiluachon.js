@@ -1,26 +1,52 @@
-// [LỰA CHỌN] Câu 1
-document.getElementById("debaicau1").innerHTML = "Một công ty cung cấp nước sạch thống kê lượng nước sạch mỗi hộ gia đình ở một khu vực sử dụng trong tháng 09/2023 ở bảng sau (đơn vị: $\\text{m}^3$).<br/><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; text-align:center; margin: 15px auto; font-size: inherit; line-height: 1.3; vertical-align: middle;\"><tr><td style=\"vertical-align: middle;\">Lượng nước ($\\text{m}^3$)</td><td style=\"vertical-align: middle;\">$[9; 11)$</td><td style=\"vertical-align: middle;\">$[11; 13)$</td><td style=\"vertical-align: middle;\">$[13; 15)$</td><td style=\"vertical-align: middle;\">$[15; 17)$</td><td style=\"vertical-align: middle;\">$[17; 19)$</td></tr><tr><td style=\"vertical-align: middle;\">Số hộ gia đình</td><td style=\"vertical-align: middle;\">$1$</td><td style=\"vertical-align: middle;\">$5$</td><td style=\"vertical-align: middle;\">$10$</td><td style=\"vertical-align: middle;\">$12$</td><td style=\"vertical-align: middle;\">$9$</td></tr></table><br/>Tứ phân vị thứ nhất của mẫu số liệu ghép nhóm trên là";
-document.getElementById("PAdung1").innerHTML = "$13,65$";
-document.getElementById("PA1Cau1").innerHTML = "$12,85$";
-document.getElementById("PA2Cau1").innerHTML = "$13,45$";
-document.getElementById("PA3Cau1").innerHTML = "$13,85$";
-document.getElementById("loigiaicau1").innerHTML = "Ta có bảng<br/><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; text-align:center; margin: 15px auto; font-size: inherit; line-height: 1.3; vertical-align: middle;\"><tr><td style=\"vertical-align: middle;\">Nhóm</td><td style=\"vertical-align: middle;\">$[9; 11)$</td><td style=\"vertical-align: middle;\">$[11; 13)$</td><td style=\"vertical-align: middle;\">$[13; 15)$</td><td style=\"vertical-align: middle;\">$[15; 17)$</td><td style=\"vertical-align: middle;\">$[17; 19)$</td></tr><tr><td style=\"vertical-align: middle;\">Tần số</td><td style=\"vertical-align: middle;\">$n_1=1$</td><td style=\"vertical-align: middle;\">$n_2=5$</td><td style=\"vertical-align: middle;\">$n_3=10$</td><td style=\"vertical-align: middle;\">$n_4=12$</td><td style=\"vertical-align: middle;\">$n_5=9$</td></tr><tr><td style=\"vertical-align: middle;\">Tần số tích lũy</td><td style=\"vertical-align: middle;\">$cf_1=1$</td><td style=\"vertical-align: middle;\">$cf_2=6$</td><td style=\"vertical-align: middle;\">$cf_3=16$</td><td style=\"vertical-align: middle;\">$cf_4=28$</td><td style=\"vertical-align: middle;\">$cf_5=37$</td></tr></table><br/>Cỡ mẫu là $n=1+5+10+12+9=37$.\\\\<br/>Ta thấy $cf_2=6 < \\dfrac{n}{4}=\\dfrac{37}{4}\\leq cf_3=16$ nên nhóm chứa tứ phân vị thứ nhất là nhóm $[13; 15)$.\\\\<br/>Vậy tứ phân vị thứ nhất của mẫu số liệu ghép nhóm là<br/>$$Q_1=a_3+\\dfrac{\\dfrac{n}{4}-cf_2}{n_3}(a_4-a_3)=13+\\dfrac{\\dfrac{37}{4}-6}{10}(15-13)=13,65.$$";
-
-// [LỰA CHỌN] Câu 2
-document.getElementById("debaicau2").innerHTML = "Họ nguyên hàm của hàm số $f(x) = -4\\cos x+2x^7$ là";
-document.getElementById("PAdung2").innerHTML = "$-4\\sin x+\\dfrac{1}{4}x^8+C$";
-document.getElementById("PA1Cau2").innerHTML = "$-4\\sin x+14x^6+C$";
-document.getElementById("PA2Cau2").innerHTML = "$4\\sin x+\\dfrac{1}{4}x^8+C$";
-document.getElementById("PA3Cau2").innerHTML = "$4\\sin x+14x^6+C$";
-document.getElementById("loigiaicau2").innerHTML = "Ta có<br/>\\begin{equation*}\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int (-4\\cos x+2x^7)\\mathrm{d}x=-4\\sin x+\\dfrac{1}{4}x^8+C.\\end{equation*}";
-
-// [LỰA CHỌN] Câu 3
-document.getElementById("debaicau3").innerHTML = "Họ nguyên hàm của hàm số $f(x) = 3\\sin x-6\\mathrm{e}^x$ là";
-document.getElementById("PAdung3").innerHTML = "$-3\\cos x-6\\mathrm{e}^x+C$";
-document.getElementById("PA1Cau3").innerHTML = "$-3\\cos x+6\\mathrm{e}^x+C$";
-document.getElementById("PA2Cau3").innerHTML = "$3\\cos x-6\\mathrm{e}^x+C$";
-document.getElementById("PA3Cau3").innerHTML = "$3\\cos x+6\\mathrm{e}^x+C$";
-document.getElementById("loigiaicau3").innerHTML = "Ta có<br/>$$\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int (3\\sin x-6\\mathrm{e}^x)\\mathrm{d}x=-3\\cos x-6\\mathrm{e}^x+C.$$";
+ // Câu 1
+    document.getElementById("debaicau1").innerHTML = "Hằng ngày bà Oanh đều đi xe buýt từ nhà đến cơ quan. Dưới đây là bảng thống kê thời gian của những lần bà Oanh đi xe buýt từ nhà đến cơ quan. <table border='1' cellpadding='6' style='border-collapse: collapse; text-align:center; margin: 10px auto;'><tr><td style='padding:5px;'>Thời gian (phút)</td><td style='padding:5px;'>$[15; 19)$</td><td style='padding:5px;'>$[19; 23)$</td><td style='padding:5px;'>$[23; 27)$</td><td style='padding:5px;'>$[27; 31)$</td><td style='padding:5px;'>$[31; 35)$</td></tr><tr><td style='padding:5px;'>Số lần</td><td style='padding:5px;'>$12$</td><td style='padding:5px;'>$7$</td><td style='padding:5px;'>$5$</td><td style='padding:5px;'>$12$</td><td style='padding:5px;'>$3$</td></tr></table> Tứ phân vị thứ ba của mẫu số liệu ghép nhóm trên là";
+    document.getElementById("PAdung1").innerHTML = "$28,75$";
+    document.getElementById("PA1Cau1").innerHTML = "$29,65$";
+    document.getElementById("PA2Cau1").innerHTML = "$27,85$";
+    document.getElementById("PA3Cau1").innerHTML = "$27,95$";
+    document.getElementById("loigiaicau1").innerHTML = "Ta có bảng <table border='1' cellpadding='6' style='border-collapse: collapse; text-align:center; margin: 10px auto;'><tr><td style='padding:5px;'>Nhóm</td><td style='padding:5px;'>$[15; 19)$</td><td style='padding:5px;'>$[19; 23)$</td><td style='padding:5px;'>$[23; 27)$</td><td style='padding:5px;'>$[27; 31)$</td><td style='padding:5px;'>$[31; 35)$</td></tr><tr><td style='padding:5px;'>Tần số</td><td style='padding:5px;'>$n_1=12$</td><td style='padding:5px;'>$n_2=7$</td><td style='padding:5px;'>$n_3=5$</td><td style='padding:5px;'>$n_4=12$</td><td style='padding:5px;'>$n_5=3$</td></tr><tr><td style='padding:5px;'>Tần số tích lũy</td><td style='padding:5px;'>$cf_1=12$</td><td style='padding:5px;'>$cf_2=19$</td><td style='padding:5px;'>$cf_3=24$</td><td style='padding:5px;'>$cf_4=36$</td><td style='padding:5px;'>$cf_5=39$</td></tr></table> Cỡ mẫu là $n=12+7+5+12+3=39$.<br/> Ta thấy $cf_3=24 < \\dfrac{3n}{4}=\\dfrac{117}{4}\\leq cf_4=36$ nên nhóm chứa tứ phân vị thứ ba là nhóm $[27; 31)$.<br/> Vậy tứ phân vị thứ ba của mẫu số liệu ghép nhóm là $$Q_3=a_4+\\dfrac{\\dfrac{3n}{4}-cf_3}{n_4}(a_5-a_4)=27+\\dfrac{\\dfrac{117}{4}-24}{12}(31-27)=28,75.$$";
+    // Câu 2
+    document.getElementById("debaicau2").innerHTML = "Cho hai biến cố $A$ và $B$ có $P(A)=0,6$; $P(B)=0,4$ và $P(AB)=0,3$. Xác suất $P(B|A)$ bằng";
+    document.getElementById("PAdung2").innerHTML = "$\\dfrac{1}{2}$";
+    document.getElementById("PA1Cau2").innerHTML = "$\\dfrac{2}{3}$";
+    document.getElementById("PA2Cau2").innerHTML = "$0,4$";
+    document.getElementById("PA3Cau2").innerHTML = "$\\dfrac{3}{4}$";
+    document.getElementById("loigiaicau2").innerHTML = "Ta có $$P(B|A)=\\dfrac{P(AB)}{P(A)}=\\dfrac{0,3}{0,6}=\\dfrac{1}{2}.$$";
+    // Câu 3
+    document.getElementById("debaicau3").innerHTML = "Đề bài câu 3";
+    document.getElementById("PAdung3").innerHTML = "Đáp án đúng câu 3";
+    document.getElementById("PA1Cau3").innerHTML = "Đáp án sai 1 của câu 3";
+    document.getElementById("PA2Cau3").innerHTML = "Đáp án sai 2 của câu 3";
+    document.getElementById("PA3Cau3").innerHTML = "Đáp án sai 3 của câu 3";
+    document.getElementById("loigiaicau3").innerHTML = "Bảng biến thiên\n" +
+    "\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" + 
+    "\\def\\a{8}\n" + 
+    "\\def\\b{7}\n" + 
+    "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
+    "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" + 
+    "\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);\n" + 
+    "\\draw (0.5,0.5)--(0.5,-\\b+0.5);\n" + 
+    "\\path\n" + 
+    "(0,0) node{$"+"x"+"$}\n" + 
+    "(0,-1) node{$"+"f"+"'("+"x"+")$}\n" + 
+    "(0,-4) node{$"+"f"+"("+"x"+")$}\n" + 
+    "(1,0) node{$-\\infty$}\n" + 
+    "(1,-6) node(A){$-\\infty$}\n" + 
+    "(3,0) node{$"+1+"$}\n" + 
+    "(3,-1) node{$0$}\n" + 
+    "(3,-3) node(B){$"+3+"$}\n" + 
+    "(5,0) node{$"+2+"$}\n" + 
+    "(5,-1) node{$0$}\n" + 
+    "(5,-5) node(C){$"+4+"$}\n" + 
+    "(7,0) node{$+\\infty$}\n" + 
+    "(7,-2) node(D){$+\\infty$}\n" + 
+    "(2,-1) node{$+$}\n" + 
+    "(4,-1) node{$-$}\n" + 
+    "(6,-1) node{$+$};\n" + 
+    "\\draw[->,>=stealth] (A)--(B);\n" + 
+    "\\draw[->,>=stealth] (B)--(C);\n" + 
+    "\\draw[->,>=stealth] (C)--(D);\n" + 
+    "\\end{tikzpicture}";
 
 // [LỰA CHỌN] Câu 4
 document.getElementById("debaicau4").innerHTML = "Cho hai biến cố $A$ và $B$ có $P(A)=0,6$; $P(B)=0,4$ và $P(AB)=0,3$. Xác suất $P(B|A)$ bằng";
