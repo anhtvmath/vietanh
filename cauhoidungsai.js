@@ -1,7 +1,7 @@
 // =================================================================
 // CÂU HỎI VÀ NỘI DUNG CÂU 1
 // =================================================================
-document.getElementById("debaiquestionTF1").innerHTML = "Nội dung đề bài câu 1 nhé"; 
+document.getElementById("debaiquestionTF1").innerHTML = "Nội dung đề bài câu 1 nhé nhé nhé"; 
 
 // Ý thứ nhất (Bản chất là Đúng)
 document.getElementById("y1cauTF1").innerHTML = "a) Nội dung ý ĐÚNG thứ nhất câu 1";
@@ -27,7 +27,7 @@ document.getElementById("dapany4cauTF1").innerHTML = "d) Lời giải ý thứ t
 // =================================================================
 // CÂU HỎI VÀ NỘI DUNG CÂU 2
 // =================================================================
-document.getElementById("debaiquestionTF2").innerHTML = "Nội dung đề bài câu 2"; 
+document.getElementById("debaiquestionTF2").innerHTML = "Nội dung đề bài câu 2 nhé nhé"; 
 
 // Ý thứ nhất (Bản chất là Đúng)
 document.getElementById("y1cauTF2").innerHTML = "a) Nội dung ý ĐÚNG thứ nhất câu 2";
@@ -53,7 +53,7 @@ document.getElementById("dapany4cauTF2").innerHTML = "d) Lời giải ý thứ t
 // =================================================================
 // CÂU HỎI VÀ NỘI DUNG CÂU 3
 // =================================================================
-document.getElementById("debaiquestionTF3").innerHTML = "Nội dung đề bài câu 3"; 
+document.getElementById("debaiquestionTF3").innerHTML = "Nội dung đề bài câu 3 nhé nhé"; 
 
 // Ý thứ nhất (Bản chất là Sai)
 document.getElementById("y1cauTF3").innerHTML = "a) Nội dung ý SAI thứ nhất câu 3";
