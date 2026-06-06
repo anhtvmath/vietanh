@@ -743,7 +743,8 @@ function dothibacba_a_am(a, b, c, d) {
 }
 
 function hamtrungphuongCTCT(a, b, c) {
-    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.6]\n" +
+    return "\\begin{center}\n" +
+	"\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.6]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{7}\n" +
 	"\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
@@ -775,7 +776,8 @@ function hamtrungphuongCTCT(a, b, c) {
     "\\draw[->,>=stealth] (B)--(C);\n" +
     "\\draw[->,>=stealth] (C)--(D);\n" +
     "\\draw[->,>=stealth] (D)--(E);\n" +
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n" +
+	"\\end{center}\n";
 }
 
 function hamtrungphuongTCTC(a, b, c) {
