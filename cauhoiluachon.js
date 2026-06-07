@@ -57,7 +57,7 @@ document.getElementById("PA1Cau3").innerHTML = "Đáp án sai 1 của câu 3";
 document.getElementById("PA2Cau3").innerHTML = "Đáp án sai 2 của câu 3";
 document.getElementById("PA3Cau3").innerHTML = "Đáp án sai 3 của câu 3";
 document.getElementById("loigiaicau3").innerHTML = "Bảng biến thiên\n" +
-"\\begin{tikzpicture}[thick,xscale=0.8,yscale=0.6]\n" + 
+"\\begin{tikzpicture}[thick,xscale=0.8,yscale=0.6, every node/.style={font=\\fontsize{18}{20}\\selectfont}]\n" + 
 "\\def\\a{8}\n" + 
 "\\def\\b{7}\n" + 
 "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
