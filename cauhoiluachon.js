@@ -57,7 +57,7 @@ document.getElementById("PA1Cau3").innerHTML = "Đáp án sai 1 của câu 3";
 document.getElementById("PA2Cau3").innerHTML = "Đáp án sai 2 của câu 3";
 document.getElementById("PA3Cau3").innerHTML = "Đáp án sai 3 của câu 3";
 document.getElementById("loigiaicau3").innerHTML = "Bảng biến thiên\n" +
-"\\begin{tikzpicture}[thick,xscale=1.4,yscale=0.9]\n" + 
+"\\begin{tikzpicture}[thick,xscale=0.8,yscale=0.6]\n" + 
 "\\def\\a{8}\n" + 
 "\\def\\b{7}\n" + 
 "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
@@ -114,7 +114,7 @@ var ketluanArr = [" Do đó ", " Vậy "];
 var cumtu = cumtuArr[randomchoice(0, 1)];
 var ketluan = ketluanArr[randomchoice(0, 1)];
 var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
-            "\\begin{tikzpicture}[thick,xscale=0.7,yscale=0.6]\n" +
+            "\\begin{tikzpicture}[thick,xscale=0.6,yscale=0.5]\n" +
             "\\def\\a{10}\n" +
             "\\def\\b{7}\n" +
             "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
