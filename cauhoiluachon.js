@@ -57,7 +57,7 @@ document.getElementById("PA1Cau3").innerHTML = "Đáp án sai 1 của câu 3";
 document.getElementById("PA2Cau3").innerHTML = "Đáp án sai 2 của câu 3";
 document.getElementById("PA3Cau3").innerHTML = "Đáp án sai 3 của câu 3";
 document.getElementById("loigiaicau3").innerHTML = "Bảng biến thiên\n" +
-"\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" + 
+"\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.5]\n" + 
 "\\def\\a{8}\n" + 
 "\\def\\b{7}\n" + 
 "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
@@ -90,7 +90,7 @@ document.getElementById("loigiaicau3").innerHTML = "Bảng biến thiên\n" +
 document.getElementById("debaicau4").innerHTML = "Cho hai biến cố $A$ và $B$ có $P(A)=0,6$; $P(B)=0,4$ và $P(AB)=0,3$. Xác suất $P(B|A)$ bằng";
 document.getElementById("PAdung4").innerHTML = "$\\dfrac{1}{2}$";
 document.getElementById("PA1Cau4").innerHTML = "$\\dfrac{2}{3}$";
-document.getElementById("PA2Cau4").innerHTML = "$0,4$";
+document.getElementById("PA2Cau4").innerHTML = "$\\dfrac{2}{5}$";
 document.getElementById("PA3Cau4").innerHTML = "$\\dfrac{3}{4}$";
 document.getElementById("loigiaicau4").innerHTML = "Ta có \\begin{equation*}P(B|A)=\\dfrac{P(AB)}{P(A)}=\\dfrac{0,3}{0,6}=\\dfrac{1}{2}.\\end{equation*}";
 // Câu 5
