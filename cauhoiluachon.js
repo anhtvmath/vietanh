@@ -57,7 +57,7 @@ document.getElementById("PA1Cau3").innerHTML = "Đáp án sai 1 của câu 3";
 document.getElementById("PA2Cau3").innerHTML = "Đáp án sai 2 của câu 3";
 document.getElementById("PA3Cau3").innerHTML = "Đáp án sai 3 của câu 3";
 document.getElementById("loigiaicau3").innerHTML = "Bảng biến thiên\n" +
-"\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.5]\n" + 
+"\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" + 
 "\\def\\a{8}\n" + 
 "\\def\\b{7}\n" + 
 "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
@@ -87,12 +87,13 @@ document.getElementById("loigiaicau3").innerHTML = "Bảng biến thiên\n" +
 "\\end{tikzpicture}";
 
 // Câu 4
-document.getElementById("debaicau4").innerHTML = "Cho hai biến cố $A$ và $B$ có $P(A)=0,6$; $P(B)=0,4$ và $P(AB)=0,3$. Xác suất $P(B|A)$ bằng";
-document.getElementById("PAdung4").innerHTML = "$\\dfrac{1}{2}$";
-document.getElementById("PA1Cau4").innerHTML = "$\\dfrac{2}{3}$";
-document.getElementById("PA2Cau4").innerHTML = "$\\dfrac{2}{5}$";
-document.getElementById("PA3Cau4").innerHTML = "$\\dfrac{3}{4}$";
-document.getElementById("loigiaicau4").innerHTML = "Ta có \\begin{equation*}P(B|A)=\\dfrac{P(AB)}{P(A)}=\\dfrac{0,3}{0,6}=\\dfrac{1}{2}.\\end{equation*}";
+document.getElementById("debaicau4").innerHTML = "Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên. \\begin{tikzpicture}[>=stealth,thick,scale=0.9] \\draw[->,>=stealth, line width = 1pt] (-2.5,0)--node[below, pos = 0.98]{$x$}(2.5,0); \\draw[->,>=stealth, line width = 1pt] (0,-1.4)--node[right, pos = 0.97]{$y$}(0,3.8); \\draw (0,0) node[below right]{\\footnotesize $O$} circle (1.2pt); \\draw (-1,0) node[above]{$-1$} circle (1pt); \\draw (1,0) node[below]{$1$} circle (1pt); \\draw (0,-1) node[right]{$-1$} circle (1pt); \\draw (0,3) node[left]{$3$} circle (1pt); \\draw[dashed] (-1,0) -- (-1,-1) -- (0,-1); \\draw[dashed] (1,0) -- (1,3) -- (0,3); \\draw[thick,samples=200,domain=-2.06:2.03] plot(\\x,{-(\\x)^3+3*(\\x)+1}); \\end{tikzpicture} Điểm cực tiểu của hàm số đã cho bằng";
+document.getElementById("PAdung4").innerHTML = "$-1$";
+document.getElementById("PA1Cau4").innerHTML = "$3$";
+document.getElementById("PA2Cau4").innerHTML = "$0$";
+document.getElementById("PA3Cau4").innerHTML = "$1$";
+document.getElementById("loigiaicau4").innerHTML = "Dựa vào đồ thị, ta thấy hoành độ điểm cực tiểu của đồ thị hàm số là $-1$. Vậy điểm cực tiểu của hàm số là $x_{\\mathrm{CT}}=-1.$";
+
 // Câu 5
 var a, b, c;
 while (true) {
@@ -113,7 +114,7 @@ var ketluanArr = [" Do đó ", " Vậy "];
 var cumtu = cumtuArr[randomchoice(0, 1)];
 var ketluan = ketluanArr[randomchoice(0, 1)];
 var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
-            "\\begin{tikzpicture}[thick,xscale=0.9,yscale=0.5]\n" +
+            "\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" +
             "\\def\\a{10}\n" +
             "\\def\\b{7}\n" +
             "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
