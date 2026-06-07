@@ -113,7 +113,7 @@ var ketluanArr = [" Do đó ", " Vậy "];
 var cumtu = cumtuArr[randomchoice(0, 1)];
 var ketluan = ketluanArr[randomchoice(0, 1)];
 var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
-            "\\begin{tikzpicture}[thick,xscale=2.95,yscale=1.5]\n" +
+            "\\begin{tikzpicture}[thick,xscale=0.75,yscale=0.3]\n" +
             "\\def\\a{10}\n" +
             "\\def\\b{7}\n" +
             "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
