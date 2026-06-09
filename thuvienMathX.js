@@ -16,7 +16,7 @@ function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
 }
 
 function bangsolieunew(tieude1, tieude2, tieude3, arrKhoang, arrTanso, arrDuLieu3) {
-    let html = '<table border="1" style="border-collapse: collapse; text-align: center;">';
+    let html = '<table>';
     
     // Hàm phụ tạo dòng
     const taoDong = (label, data) => {
