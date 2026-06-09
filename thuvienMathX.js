@@ -17,12 +17,12 @@ function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
 
 
 function bangsolieunew(tieude1, tieude2, tieude3 = null, arrKhoang, arrTanso, arrDuLieu3 = null) {
-    let html = '<table>';
+    let html = '<table border="1" style="border-collapse: collapse; text-align: center;">';
     
-    // Hàm phụ tạo dòng
+    // Hàm phụ tạo dòng để tránh lặp code
     const taoDong = (label, data) => {
-        if (!label || !data) return ""; // Tránh lỗi nếu dữ liệu trống
-        let row = `<tr><td>${label}</td>`;
+        if (!label || !data) return ""; 
+        let row = `<tr><td><strong>${label}</strong></td>`;
         data.forEach(item => {
             row += `<td>$${item}$</td>`;
         });
@@ -30,11 +30,11 @@ function bangsolieunew(tieude1, tieude2, tieude3 = null, arrKhoang, arrTanso, ar
         return row;
     };
 
-    // Tạo dòng 1 và 2
+    // Tạo dòng 1 và 2 (Bắt buộc)
     html += taoDong(tieude1, arrKhoang);
     html += taoDong(tieude2, arrTanso);
 
-    // Tạo dòng 3 nếu có
+    // Tạo dòng 3 (Nếu có)
     if (tieude3 !== null && arrDuLieu3 !== null) {
         html += taoDong(tieude3, arrDuLieu3);
     }
