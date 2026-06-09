@@ -2,7 +2,7 @@ document.getElementById("debaicau1").innerHTML =
 "Khối lượng của một số quả trứng gà trong một trang trại được thống kê lại ở bảng sau: " +
 "<table>" +
 "<tr>" +
-"<td>Khối lượng (gam)</td>" +
+"<td>Khối lượng nhé (gam)</td>" +
 "<td>$[39; 42)$</td>" +
 "<td>$[42; 45)$</td>" +
 "<td>$[45; 48)$</td>" +
