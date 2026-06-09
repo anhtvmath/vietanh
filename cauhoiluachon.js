@@ -5,7 +5,7 @@ var a, b;
         b = randomchoice(-6, 6);
     if (a !== b && a !== -b && a * b !== 0 && (a > 0 || b > 0)) break;
     }
-document.getElementById("debaicau1").innerHTML = `Họ ta có $\\sin x$ hay $\sin x$ nguyên hàm của hàm số
+document.getElementById("debaicau1").innerHTML = `Họ ta có $\\sin x$ nguyên hàm của hàm số
 $f(x) = ${hesodau(a,"\\sin x")}${hesosau(b,"\\cos x")}$ là
 <div class="table-wrap">
     <table class="debaicau1-table">
