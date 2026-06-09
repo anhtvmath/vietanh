@@ -743,8 +743,7 @@ function dothibacba_a_am(a, b, c, d) {
 }
 
 function hamtrungphuongCTCT(a, b, c) {
-    return "\\begin{center}\n" +
-	"\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.6]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.6]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{7}\n" +
 	"\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
@@ -776,12 +775,11 @@ function hamtrungphuongCTCT(a, b, c) {
     "\\draw[->,>=stealth] (B)--(C);\n" +
     "\\draw[->,>=stealth] (C)--(D);\n" +
     "\\draw[->,>=stealth] (D)--(E);\n" +
-    "\\end{tikzpicture}\n" +
-	"\\end{center}\n";
+    "\\end{tikzpicture}\n";
 }
 
 function hamtrungphuongTCTC(a, b, c) {
-    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.6]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.6]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{7}\n" +
 	"\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
@@ -813,11 +811,11 @@ function hamtrungphuongTCTC(a, b, c) {
     "\\draw[->,>=stealth] (B)--(C);\n" +
     "\\draw[->,>=stealth] (C)--(D);\n" +
     "\\draw[->,>=stealth] (D)--(E);\n" +
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n";
 }
 
 function bangxetdauCTC(x, f, x1, x2) {
-    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
     "\\def\\a{8}\n" +
     "\\def\\b{2}\n" +
     "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
@@ -834,11 +832,11 @@ function bangxetdauCTC(x, f, x1, x2) {
     "(4,-1) node{$-$}\n" +
     "(5,-1) node{$0$}\n" +
     "(6,-1) node{$+$};\n" +
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n";
 }
 
 function bangxetdauTCT(x, f, x1, x2) {
-    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
     "\\def\\a{8}\n" +
     "\\def\\b{2}\n" +
     "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
@@ -855,11 +853,11 @@ function bangxetdauTCT(x, f, x1, x2) {
     "(4,-1) node{$+$}\n" +
     "(5,-1) node{$0$}\n" +
     "(6,-1) node{$-$};\n" +
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n";
 }
 
 function bangxetdauCTCT(x, f, x1, x2, x3) {
-    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{2}\n" +
     "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
@@ -879,11 +877,11 @@ function bangxetdauCTCT(x, f, x1, x2, x3) {
     "(6,-1) node{$+$}\n" +
     "(7,-1) node{$0$}\n" +
     "(8,-1) node{$-$};\n" +
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n";
 }
 
 function bangxetdauCTTC(x, f, x1, x2, x3) {
-    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{2}\n" +
     "\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);\n" +
@@ -903,11 +901,11 @@ function bangxetdauCTTC(x, f, x1, x2, x3) {
     "(6,-1) node{$-$}\n" +
     "(7,-1) node{$0$}\n" +
     "(8,-1) node{$+$};\n" +
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n";
 }
 
 function bangxetdauTCTCT(x, f, x1, x2, x3, x4) {
-    return "$$\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.7]\n" +
     "\\begin{tikzpicture}[line width=1.2pt,xscale=1.1,yscale=0.7]\n" +
     "\\def\\a{12}\n" +
     "\\def\\b{2}\n" +
@@ -931,7 +929,7 @@ function bangxetdauTCTCT(x, f, x1, x2, x3, x4) {
     "(8,-1) node{$+$}\n" +
     "(9,-1) node{$0$}\n" +
     "(10,-1) node{$-$};\n" +
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n";
 }
 
 function ngoacnew(a) {
@@ -1122,8 +1120,7 @@ function vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) {
 }
 
 function hambacbaCTC(x,f,x1,x2,y1,y2) {
-    return "\\begin{center}\n" +
-	"\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" + 
+    return "\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" + 
     "\\def\\a{8}\n" + 
     "\\def\\b{7}\n" + 
     "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
@@ -1150,12 +1147,11 @@ function hambacbaCTC(x,f,x1,x2,y1,y2) {
     "\\draw[->,>=stealth] (A)--(B);\n" + 
     "\\draw[->,>=stealth] (B)--(C);\n" + 
     "\\draw[->,>=stealth] (C)--(D);\n" + 
-    "\\end{tikzpicture}\n" + 
-	"\\end{center}\n";
+    "\\end{tikzpicture}\n";
 }
 
 function hambacbaTCT(x, f, x1, x2, y1, y2) {
-    return "$$\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" +
     "\\def\\a{8}\n" +
     "\\def\\b{7}\n" +
     "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" +
@@ -1182,7 +1178,7 @@ function hambacbaTCT(x, f, x1, x2, y1, y2) {
     "\\draw[->,>=stealth] (A)--(B);\n" +
     "\\draw[->,>=stealth] (B)--(C);\n" +
     "\\draw[->,>=stealth] (C)--(D);\n" +
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n";
 }
 
 
