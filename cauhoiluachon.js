@@ -143,6 +143,8 @@ var cumtu = cumtuArr[randomchoice(0, 1)];
 var ketluan = ketluanArr[randomchoice(0, 1)];
 var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau NHÉ NHÉ:\n" +
             hamtrungphuongCTCT(a, b, c) +
+            hambacbaCTC("x","f",1,2,6,4) + 
+            hambacbaTCT("x","f",1,2,"\\dfrac{1}{2}","\\dfrac{4}{3}") + 
             "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
 var loigiai = cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + ".$";
 var options = [PA2, PA3, PA4];
