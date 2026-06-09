@@ -1,3 +1,20 @@
+function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
+    let html = '<table border="1" style="border-collapse: collapse; text-align: center;">';
+    
+    // Dòng 1
+    html += `<tr><td><strong>${tieude1}</strong></td>`;
+    arrKhoang.forEach(k => html += `<td>$${k}$</td>`);
+    html += '</tr>';
+
+    // Dòng 2
+    html += `<tr><td><strong>${tieude2}</strong></td>`;
+    arrTanso.forEach(t => html += `<td>$${t}$</td>`);
+    html += '</tr>';
+    
+    html += '</table>';
+    return html;
+}
+
 // Hàm phụ trợ tính giai thừa n!
 function factorial(n) {
     if (n < 0) return 0;
