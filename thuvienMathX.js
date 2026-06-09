@@ -15,11 +15,11 @@ function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
     return html;
 }
 
-function bangsolieunew(tieude1, tieude2, tieude3, arrKhoang, arrTanso, arrDuLieu3) {
-    let html = '<table>';
+function bangsolieunew(tieude1, tieude2, tieude3, arrKhoang, arrTanso, arrDuLieu3 = null) {
+    let html = '<table border="1" style="border-collapse: collapse; text-align: center;">';
     
-    // Hàm phụ tạo dòng
     const taoDong = (label, data) => {
+        if (!label || !data) return "";
         let row = `<tr><td><strong>${label}</strong></td>`;
         data.forEach(item => {
             row += `<td>$${item}$</td>`;
@@ -28,10 +28,14 @@ function bangsolieunew(tieude1, tieude2, tieude3, arrKhoang, arrTanso, arrDuLieu
         return row;
     };
 
-    // Tạo 3 dòng dựa trên thứ tự tham số mới
+    // Tạo 2 dòng bắt buộc
     html += taoDong(tieude1, arrKhoang);
     html += taoDong(tieude2, arrTanso);
-    html += taoDong(tieude3, arrDuLieu3);
+
+    // Tạo dòng 3 nếu arrDuLieu3 khác null
+    if (arrDuLieu3 !== null) {
+        html += taoDong(tieude3, arrDuLieu3);
+    }
     
     html += '</table>';
     return html;
