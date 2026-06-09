@@ -8,6 +8,7 @@ document.getElementById("debaicau1").innerHTML =
 "<td>$[45; 48)$</td>" +
 "<td>$[48; 51)$</td>" +
 "<td>$[51; 54)$</td>" +
+"<td>$[54; 57)$</td>" +
 "</tr>" +
 "<tr>" +
 "<td>Số quả trứng</td>" +
@@ -16,6 +17,7 @@ document.getElementById("debaicau1").innerHTML =
 "<td>$2$</td>" +
 "<td>$3$</td>" +
 "<td>$7$</td>" +
+"<td>$10$</td>" +
 "</tr>" +
 "</table> Số trung bình của mẫu số liệu ghép nhóm trên là";
 
