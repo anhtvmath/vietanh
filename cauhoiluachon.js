@@ -9,7 +9,7 @@ document.getElementById("PA3Cau1").innerHTML = "$45,34$";
 
 document.getElementById("loigiaicau1").innerHTML =
 "Ta có bảng thống kê theo giá trị đại diện " +
-bangsolieu("Tốc độ (km/h)", "Số xe ôtô", ["40,5", "43,5", "46,5", "49,5"], [7, 6, 2, 3]) +
+bangsolieu("Tốc độ (km/h)", "Số xe ôtô", ["40,5", "43,5", "46,5", "49,5"], ["n_1=7", "n_2=6", 2, 3]) +
 "Cỡ mẫu là $n=25$.<br/>" +
 "Số trung bình là \\(\\overline{x} = 46,14\\).";
 
