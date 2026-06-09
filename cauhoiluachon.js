@@ -1,20 +1,17 @@
 document.getElementById("debaicau1").innerHTML =
 "Khối lượng của một số quả trứng gà trong một trang trại được thống kê lại ở bảng sau: " + 
-bangsolieu2dong("Tốc độ (km/h)", "Số xe ôtô", ["[39; 42)", "[42; 45)", "[45; 48)", "[48; 51)"], [7, 6, 2, 3]) + 
+bangsolieu2dong("Tốc độ (km/h)", "Số xe ôtô", ["[39; 42)", "[42; 45)", "[45; 48)", "[48; 51)"], ["7", "6", "2", "3"]) + 
 "Số trung bình của mẫu số liệu ghép nhóm trên là";
 document.getElementById("PAdung1").innerHTML = "$46,14$";
 document.getElementById("PA1Cau1").innerHTML = "$45,74$";
 document.getElementById("PA2Cau1").innerHTML = "$46,94$";
 document.getElementById("PA3Cau1").innerHTML = "$45,34$";
-
-document.getElementById("loigiaicau1").innerHTML =
-"Ta có bảng thống kê theo giá trị đại diện " +
-bangsolieu2dong("Tốc độ (km/h)", "Số xe ôtô", ["40,5", "43,5", "46,5", "49,5"], ["n_1=7", "n_2=6", "n_3=4", "n_4=3"]) +
-bangsolieu3dong("Nhóm", "Tần số", "Tần số tích luỹ", ["40,5", "43,5", "46,5", "49,5"], ["n_1=7", "n_2=6", "n_3=4", "n_4=3"], ["cf_1=7", "cf_2=13", "cf_3=17", "cf_4=20"]) +
-"Cỡ mẫu là $n=25$.<br/>" +
-"Số trung bình là \\(\\overline{x} = 46,14\\).";
-
-
+document.getElementById("loigiaicau1").innerHTML = `Ta có bảng thống kê theo giá trị 
+    đại diện nhé ${bangsolieu2dong("Tốc độ (km/h)", "Số xe ôtô", ["40,5", "43,5", "46,5", "49,5"], ["n_1=7", "n_2=6", "n_3=4", "n_4=3"])}
+    ${bangsolieu3dong("Nhóm", "Tần số", "Tần số tích luỹ", ["40,5", "43,5", "46,5", "49,5"], ["n_1=7", "n_2=6", "n_3=4", "n_4=3"], ["cf_1=7", "cf_2=13", "cf_3=17", "cf_4=20"])}
+    Cỡ mẫu là $n=25$.
+    Số trung bình là $\\overline{x}=46,14.$
+`;
 // Câu 2
 var a, b, m, n, canduoi, cantren;
 var res1, res2, res3, res4;
