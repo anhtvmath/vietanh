@@ -2,12 +2,12 @@ function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
     let html = '<table>';
     
     // Dòng 1
-    html += `<tr><td><strong>${tieude1}</strong></td>`;
+    html += `<tr><td>${tieude1}</td>`;
     arrKhoang.forEach(k => html += `<td>$${k}$</td>`);
     html += '</tr>';
 
     // Dòng 2
-    html += `<tr><td><strong>${tieude2}</strong></td>`;
+    html += `<tr><td>${tieude2}</td>`;
     arrTanso.forEach(t => html += `<td>$${t}$</td>`);
     html += '</tr>';
     
