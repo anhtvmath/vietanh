@@ -1,7 +1,6 @@
-// Câu 1
 document.getElementById("debaicau1").innerHTML =
 "Khối lượng của một số quả trứng gà trong một trang trại được thống kê lại ở bảng sau: " +
-"<table class='cau1-table'>" +
+"<table class='quiz-table'>" +
 "<tr>" +
 "<td>Khối lượng (gam)</td>" +
 "<td>$[39; 42)$</td>" +
@@ -19,6 +18,7 @@ document.getElementById("debaicau1").innerHTML =
 "<td>$7$</td>" +
 "</tr>" +
 "</table> Số trung bình của mẫu số liệu ghép nhóm trên là";
+
 document.getElementById("PAdung1").innerHTML = "$46,14$";
 document.getElementById("PA1Cau1").innerHTML = "$45,74$";
 document.getElementById("PA2Cau1").innerHTML = "$46,94$";
@@ -26,7 +26,7 @@ document.getElementById("PA3Cau1").innerHTML = "$45,34$";
 
 document.getElementById("loigiaicau1").innerHTML =
 "Ta có bảng thống kê theo giá trị đại diện " +
-"<table class='cau1-table'>" +
+"<table class='quiz-table'>" +
 "<tr>" +
 "<td>Giá trị đại diện</td>" +
 "<td>$40,5$</td>" +
@@ -46,6 +46,8 @@ document.getElementById("loigiaicau1").innerHTML =
 "</table>" +
 "Cỡ mẫu là $n=25$.<br/>" +
 "Số trung bình là \\(\\overline{x} = 46,14\\).";
+
+
 // Câu 2
 var a, b, m, n, canduoi, cantren;
 var res1, res2, res3, res4;
