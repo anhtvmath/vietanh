@@ -5,8 +5,28 @@ var a, b;
         b = randomchoice(-6, 6);
     if (a !== b && a !== -b && a * b !== 0 && (a > 0 || b > 0)) break;
     }
-document.getElementById("debaicau1").innerHTML = "Họ nguyên hàm của hàm số $f(x) = "+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+"$ là" + 
-'<div class="table-wrap"><table><tr><th>Khối lượng (gam)</th><th>$[39; 42)$</th><th>$[42; 45)$</th><th>$[45; 48)$</th><th>$[48; 51)$</th><th>$[51; 54)$</th></tr><tr><td>Số quả trứng</td><td>$7$</td><td>$6$</td><td>$2$</td><td>$3$</td><td>$7$</td></tr></table></div>';
+document.getElementById("debaicau1").innerHTML = `Họ ta có $\\sin x$ hay $\sin x$ nguyên hàm của hàm số
+$f(x) = ${hesodau(a,"\\sin x")}${hesosau(b,"\\cos x")}$ là
+<div class="table-wrap">
+    <table class="debaicau1-table">
+        <tr>
+            <th>Khối lượng (gam)</th>
+            <th>$[39; 42)$</th>
+            <th>$[42; 45)$</th>
+            <th>$[45; 48)$</th>
+            <th>$[48; 51)$</th>
+            <th>$[51; 54)$</th>
+        </tr>
+        <tr>
+            <td>Số quả trứng</td>
+            <td>$7$</td>
+            <td>$6$</td>
+            <td>$2$</td>
+            <td>$3$</td>
+            <td>$7$</td>
+        </tr>
+    </table>
+</div>`;
 document.getElementById("PAdung1").innerHTML = "$"+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C$";
 document.getElementById("PA1Cau1").innerHTML = "$"+hesodau(a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$";
 document.getElementById("PA2Cau1").innerHTML = "$"+hesodau(-a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$";
