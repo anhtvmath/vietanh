@@ -1,40 +1,11 @@
 // Câu 1
-var a, b;
-    while (true) {
-        a = randomchoice(-6, 6);
-        b = randomchoice(-6, 6);
-    if (a !== b && a !== -b && a * b !== 0 && (a > 0 || b > 0)) break;
-    }
-document.getElementById("debaicau1").innerHTML = `Họ ta có $\\sin x$ nguyên hàm của hàm số
-$f(x) = ${hesodau(a,"\\sin x")}${hesosau(b,"\\cos x")}$ là
-<div class="table-wrap">
-    <table class="debaicau1-table">
-        <tr>
-            <th>Khối lượng (gam)</th>
-            <th>$[39; 42)$</th>
-            <th>$[42; 45)$</th>
-            <th>$[45; 48)$</th>
-            <th>$[48; 51)$</th>
-            <th>$[51; 54)$</th>
-        </tr>
-        <tr>
-            <td>Số quả trứng</td>
-            <td>$7$</td>
-            <td>$6$</td>
-            <td>$2$</td>
-            <td>$3$</td>
-            <td>$7$</td>
-        </tr>
-    </table>
-</div>`;
-document.getElementById("PAdung1").innerHTML = "$"+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C$";
-document.getElementById("PA1Cau1").innerHTML = "$"+hesodau(a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$";
-document.getElementById("PA2Cau1").innerHTML = "$"+hesodau(-a,"\\cos x")+hesosau(-b,"\\sin x")+"+C$";
-document.getElementById("PA3Cau1").innerHTML = "$"+hesodau(a,"\\cos x")+hesosau(b,"\\sin x")+"+C$";
-document.getElementById("loigiaicau1").innerHTML = "Ta có\n" + 
-                "\\begin{equation*}\n" + 
-                "\\displaystyle\\int f(x)\\mathrm{d}x=\\displaystyle\\int ("+hesodau(a,"\\sin x")+hesosau(b,"\\cos x")+")\\mathrm{d}x="+hesodau(-a,"\\cos x")+hesosau(b,"\\sin x")+"+C.\n" + 
-                "\\end{equation*}";
+// [LỰA CHỌN] Câu 1
+document.getElementById("debaicau1").innerHTML = "Khối lượng của một số quả trứng gà trong một trang trại được thống kê lại ở bảng sau: <table border='1' cellpadding='6' style='border-collapse: collapse; text-align:center; margin: 10px auto;'><tr><td style='padding:5px;'>Khối lượng (gam)</td><td style='padding:5px;'>$[39; 42)$</td><td style='padding:5px;'>$[42; 45)$</td><td style='padding:5px;'>$[45; 48)$</td><td style='padding:5px;'>$[48; 51)$</td><td style='padding:5px;'>$[51; 54)$</td></tr><tr><td style='padding:5px;'>Số quả trứng</td><td style='padding:5px;'>$7$</td><td style='padding:5px;'>$6$</td><td style='padding:5px;'>$2$</td><td style='padding:5px;'>$3$</td><td style='padding:5px;'>$7$</td></tr></table> Số trung bình của mẫu số liệu ghép nhóm trên là";
+document.getElementById("PAdung1").innerHTML = "$46,14$";
+document.getElementById("PA1Cau1").innerHTML = "$45,74$";
+document.getElementById("PA2Cau1").innerHTML = "$46,94$";
+document.getElementById("PA3Cau1").innerHTML = "$45,34$";
+document.getElementById("loigiaicau1").innerHTML = "Ta có bảng thống kê theo giá trị đại diện <table border='1' cellpadding='6' style='border-collapse: collapse; text-align:center; margin: 10px auto;'><tr><td style='padding:5px;'>Giá trị đại diện</td><td style='padding:5px;'>$40,5$</td><td style='padding:5px;'>$43,5$</td><td style='padding:5px;'>$46,5$</td><td style='padding:5px;'>$49,5$</td><td style='padding:5px;'>$52,5$</td></tr><tr><td style='padding:5px;'>Tần số</td><td style='padding:5px;'>$7$</td><td style='padding:5px;'>$6$</td><td style='padding:5px;'>$2$</td><td style='padding:5px;'>$3$</td><td style='padding:5px;'>$7$</td></tr></table> Cỡ mẫu là $n=7+6+2+3+7=25$.<br/> Số trung bình của mẫu số liệu ghép nhóm là \\begin{align*} \\overline{x}&=\\dfrac{7\\cdot 40,5+6\\cdot 43,5+2\\cdot 46,5+3\\cdot 49,5+7\\cdot 52,5}{25}\\\\ &=\\dfrac{2307}{50}=46,14. \\end{align*}";
 // Câu 2
 var a, b, m, n, canduoi, cantren;
 var res1, res2, res3, res4;
