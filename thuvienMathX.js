@@ -1,4 +1,4 @@
-function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
+function bangsolieu2dong(tieude1, tieude2, arrKhoang, arrTanso) {
     let html = '<table>';
     
     // Dòng 1
@@ -15,30 +15,20 @@ function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
     return html;
 }
 
-function bangsolieunew(tieude1, tieude2, tieude3, arrKhoang, arrTanso, arrDuLieu3 = null) {
+function bangsolieu3dong(tieude1, tieude2, tieude3, arrKhoang, arrTanso, arrDuLieu3) {
     let html = '<table>';
-    
     const taoDong = (label, data) => {
-        if (!label || !data) return "";
-        let row = `<tr><td><strong>${label}</strong></td>`;
-        data.forEach(item => {
-            row += `<td>$${item}$</td>`;
-        });
-        row += '</tr>';
-        return row;
+        let row = `<tr><td>${label}</td>`;
+        data.forEach(item => row += `<td>$${item}$</td>`);
+        return row + '</tr>';
     };
 
-    // Tạo 2 dòng bắt buộc
+    // Tạo luôn 3 dòng
     html += taoDong(tieude1, arrKhoang);
     html += taoDong(tieude2, arrTanso);
-
-    // Tạo dòng 3 nếu arrDuLieu3 khác null
-    if (arrDuLieu3 !== null) {
-        html += taoDong(tieude3, arrDuLieu3);
-    }
+    html += taoDong(tieude3, arrDuLieu3);
     
-    html += '</table>';
-    return html;
+    return html + '</table>';
 }
 
 // Hàm phụ trợ tính giai thừa n!
