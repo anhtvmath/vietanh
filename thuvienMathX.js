@@ -15,6 +15,34 @@ function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
     return html;
 }
 
+
+function bangsolieunew(tieude1, tieude2, tieude3 = null, arrKhoang, arrTanso, arrDuLieu3 = null) {
+    let html = '<table>';
+    
+    // Hàm phụ tạo dòng
+    const taoDong = (label, data) => {
+        if (!label || !data) return ""; // Tránh lỗi nếu dữ liệu trống
+        let row = `<tr><td>${label}</td>`;
+        data.forEach(item => {
+            row += `<td>$${item}$</td>`;
+        });
+        row += '</tr>';
+        return row;
+    };
+
+    // Tạo dòng 1 và 2
+    html += taoDong(tieude1, arrKhoang);
+    html += taoDong(tieude2, arrTanso);
+
+    // Tạo dòng 3 nếu có
+    if (tieude3 !== null && arrDuLieu3 !== null) {
+        html += taoDong(tieude3, arrDuLieu3);
+    }
+    
+    html += '</table>';
+    return html;
+}
+
 // Hàm phụ trợ tính giai thừa n!
 function factorial(n) {
     if (n < 0) return 0;
