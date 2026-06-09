@@ -1,26 +1,7 @@
 document.getElementById("debaicau1").innerHTML =
-"Khối lượng của một số quả trứng gà trong một trang trại được thống kê lại ở bảng sau: " +
-"<table>" +
-"<tr>" +
-"<td>Khối lượng nhé (gam)</td>" +
-"<td>$[39; 42)$</td>" +
-"<td>$[42; 45)$</td>" +
-"<td>$[45; 48)$</td>" +
-"<td>$[48; 51)$</td>" +
-"<td>$[51; 54)$</td>" +
-"<td>$[54; 57)$</td>" +
-"</tr>" +
-"<tr>" +
-"<td>Số quả trứng</td>" +
-"<td>$7$</td>" +
-"<td>$6$</td>" +
-"<td>$2$</td>" +
-"<td>$3$</td>" +
-"<td>$7$</td>" +
-"<td>$10$</td>" +
-"</tr>" +
-"</table> Số trung bình của mẫu số liệu ghép nhóm trên là";
-
+"Khối lượng của một số quả trứng gà trong một trang trại được thống kê lại ở bảng sau: " + 
+bangsolieu("Tốc độ (km/h)", "Số xe ôtô", ["$[39; 42)$", "$[42; 45)$", "$[45; 48)$", "$[48; 51)$"], [$7$, $6$, $2$, $3$]) + 
+"Số trung bình của mẫu số liệu ghép nhóm trên là";
 document.getElementById("PAdung1").innerHTML = "$46,14$";
 document.getElementById("PA1Cau1").innerHTML = "$45,74$";
 document.getElementById("PA2Cau1").innerHTML = "$46,94$";
@@ -28,24 +9,7 @@ document.getElementById("PA3Cau1").innerHTML = "$45,34$";
 
 document.getElementById("loigiaicau1").innerHTML =
 "Ta có bảng thống kê theo giá trị đại diện " +
-"<table class='quiz-table'>" +
-"<tr>" +
-"<td>Giá trị đại diện</td>" +
-"<td>$40,5$</td>" +
-"<td>$43,5$</td>" +
-"<td>$46,5$</td>" +
-"<td>$49,5$</td>" +
-"<td>$52,5$</td>" +
-"</tr>" +
-"<tr>" +
-"<td>Tần số</td>" +
-"<td>$7$</td>" +
-"<td>$6$</td>" +
-"<td>$2$</td>" +
-"<td>$3$</td>" +
-"<td>$7$</td>" +
-"</tr>" +
-"</table>" +
+bangsolieu("Tốc độ (km/h)", "Số xe ôtô", ["$40,5$", "$43,5$", "$46,5$", "$49,5$"], [$7$, $6$, $2$, $3$]) +
 "Cỡ mẫu là $n=25$.<br/>" +
 "Số trung bình là \\(\\overline{x} = 46,14\\).";
 
