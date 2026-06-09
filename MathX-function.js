@@ -2784,7 +2784,9 @@ function TF_CHO_HS_hambacbaCTC(loai) {
     var LGPAtrue2 = "Ta có\n" +
         "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
         "Bảng biến thiên\n" +
-        hambacbaCTC("x", "f", x1, x2, y1, y2)+
+        "\\begin{center}\n" +
+         hambacbaCTC("x", "f", x1, x2, y1, y2)+
+        "\\end{center}\n" + 
         cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y1 + ".$";
     var PAfalse2 = "Giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$";
     var LGPAfalse2 = LGPAtrue2;
@@ -2868,7 +2870,9 @@ function TF_SBT_BBT_hambacbaTCT(loai) {
     var PAnghichbien_options = ["(-\\infty;"+x1+")", "("+x2+";+\\infty)"];
     var PAnghichbien = PAnghichbien_options[randomchoice(0,1)];
     var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
-        hambacbaTCT("x","f",x1,x2,y1,y2);
+        "\\begin{center}\n" +
+        hambacbaTCT("x","f",x1,x2,y1,y2) +
+        "\\end{center}\n";
         // --- Ý B ---
     var PAtrue1 = "\\True Hàm số đồng biến trên khoảng $" + PAdongbien + "$";
     var LGPAtrue1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAdongbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho đồng biến trên khoảng $" + PAdongbien + ".$";
@@ -2965,7 +2969,9 @@ function TF_SBT_BBT_hambacbaCTC(loai) {
     var PAdongbien_options = ["(-\\infty;"+x1+")", "("+x2+";+\\infty)"];
     var PAdongbien = PAdongbien_options[randomchoice(0,1)];
     var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
-        hambacbaCTC("x","f",x1,x2,y1,y2);
+        "\\begin{center}\n" +
+        hambacbaCTC("x","f",x1,x2,y1,y2) +
+        "\\end{center}\n";
         // --- Ý B ---
     var PAtrue1 = "\\True Hàm số nghịch biến trên khoảng $" + PAnghichbien + "$";
     var LGPAtrue1 = cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAnghichbien + "$." + ketluanArr[randomchoice(0, 1)] + "hàm số đã cho nghịch biến trên khoảng $" + PAnghichbien + ".$";
@@ -3054,7 +3060,9 @@ function SBT_BBT_NB_hamtrungphuongCTCT(loai) {
         if (b > c) break;
     }
     var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
+        "\\begin{center}\n" +
         hamtrungphuongCTCT(a, b, c) +
+        "\\end{center}\n" + 
         "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
     var PAtrue_options = ["(" + (-a) + ";0)", "(" + a + ";+\\infty)"];
     var PAtrue = PAtrue_options[randomchoice(0, 1)];
@@ -3092,7 +3100,9 @@ function SBT_BBT_DB_hamtrungphuongCTCT(loai) {
         if (b > c) break;
     }
     var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
+        "\\begin{center}\n" +
         hamtrungphuongCTCT(a, b, c) + 
+        "\\end{center}\n" + 
         "Hàm số đã cho đồng biến trên khoảng nào dưới đây?";
     var PAtrue_options = ["(0;" + a + ")", "(-\\infty;" + (-a) + ")"];
     var PAtrue = PAtrue_options[randomchoice(0, 1)];
@@ -3130,7 +3140,9 @@ function SBT_BBT_DB_hamtrungphuongTCTC(loai) {
         if (c > b) break;
     }
     var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
+        "\\begin{center}\n" +
         hamtrungphuongTCTC(a, b, c) +
+        "\\end{center}\n" + 
         "Hàm số đã cho đồng biến trên khoảng nào dưới đây?";
     var PAtrue_options = ["(" + (-a) + ";0)", "(" + a + ";+\\infty)"];
     var PAtrue = PAtrue_options[randomchoice(0, 1)];
@@ -3168,7 +3180,9 @@ function SBT_BBT_NB_hamtrungphuongTCTC(loai) {
         if (c > b) break;
     }
     var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
-        hamtrungphuongTCTC(a, b, c) + 
+        "\\begin{center}\n" +
+        hamtrungphuongTCTC(a, b, c) +
+        "\\end{center}\n" + 
         "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?";
     var PAtrue_options = ["(0;" + a + ")", "(-\\infty;" + (-a) + ")"];
     var PAtrue = PAtrue_options[randomchoice(0, 1)];
@@ -3223,7 +3237,10 @@ function SBT_BBT_NB_hambacbaCTC(loai) {
     var loigiai = cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + ".$";
     return "\\begin{"+loai+"}\n" +
         "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
-        hambacbaCTC("x","f",x1,x2,y1,y2) + "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?\n" + 
+        "\\begin{center}\n" +
+        hambacbaCTC("x","f",x1,x2,y1,y2) +
+        "\\end{center}\n" + 
+        "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?\n" + 
         "\\choice\n" +
         options[0] + "\n" +
         options[1] + "\n" +
@@ -3261,7 +3278,10 @@ function SBT_BBT_DB_hambacbaCTC(loai) {
     var loigiai = cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
     return "\\begin{"+loai+"}\n" +
         "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
-        hambacbaCTC("x","f",x1,x2,y1,y2) + "Hàm số đã cho đồng biến trên khoảng nào dưới đây?\n" + 
+        "\\begin{center}\n" +
+        hambacbaCTC("x","f",x1,x2,y1,y2) +
+        "\\end{center}\n" + 
+        "Hàm số đã cho đồng biến trên khoảng nào dưới đây?\n" + 
         "\\choice\n" +
         options[0] + "\n" +
         options[1] + "\n" +
@@ -3299,7 +3319,10 @@ function SBT_BBT_DB_hambacbaTCT(loai) {
     var loigiai = cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
     return "\\begin{"+loai+"}\n" +
         "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
-        hambacbaTCT("x","f",x1,x2,y1,y2) + "Hàm số đã cho đồng biến trên khoảng nào dưới đây?\n" + 
+        "\\begin{center}\n" +
+        hambacbaTCT("x","f",x1,x2,y1,y2) + 
+        "\\end{center}\n" +         
+        "Hàm số đã cho đồng biến trên khoảng nào dưới đây?\n" + 
         "\\choice\n" +
         options[0] + "\n" +
         options[1] + "\n" +
@@ -3337,7 +3360,10 @@ function SBT_BBT_NB_hambacbaTCT(loai) {
     var loigiai = cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + ".$";
     return "\\begin{"+loai+"}\n" +
         "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
-        hambacbaTCT("x","f",x1,x2,y1,y2) + "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?\n" + 
+        "\\begin{center}\n" +
+        hambacbaTCT("x","f",x1,x2,y1,y2) + 
+        "\\end{center}\n" +    
+        "Hàm số đã cho nghịch biến trên khoảng nào dưới đây?\n" + 
         "\\choice\n" +
         options[0] + "\n" +
         options[1] + "\n" +
@@ -3715,7 +3741,9 @@ function SBT_CHO_HS_NB_hamtrungphuongCTCT(loai) {
         "Do đó\n" +
         "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
         "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
         hamtrungphuongCTCT(a, b, c) + 
+        "\\end{center}\n" +  
         cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + ".$";
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -3756,7 +3784,9 @@ function SBT_CHO_HS_DB_hamtrungphuongCTCT(loai) {
         "Do đó\n" +
         "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
         "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
         hamtrungphuongCTCT(a, b, c) + 
+        "\\end{center}\n" +  
         cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -3797,7 +3827,9 @@ function SBT_CHO_HS_NB_hamtrungphuongTCTC(loai) {
         "Do đó\n" +
         "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
         "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
         hamtrungphuongTCTC(a, b, c) + 
+        "\\end{center}\n" +  
         cumtu + "bảng biến thiên, ta thấy $f'(x)<0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho nghịch biến trên khoảng $" + PAtrue + ".$";
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -3838,7 +3870,9 @@ function SBT_CHO_HS_DB_hamtrungphuongTCTC(loai) {
         "Do đó\n" +
         "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
         "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
         hamtrungphuongTCTC(a, b, c) + 
+        "\\end{center}\n" + 
         cumtu + "bảng biến thiên, ta thấy $f'(x)>0$ với mọi $x\\in " + PAtrue + "$." + ketluan + "hàm số đã cho đồng biến trên khoảng $" + PAtrue + ".$";
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -4177,7 +4211,9 @@ function CUCTRI_CHO_HS_hambacbaCTC(loai) {
         "Do đó\n" +
         "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
         "Bảng biến thiên\n" +
-        hambacbaCTC("x", "f", x1, x2, y1, y2);
+        "\\begin{center}\n" +
+        hambacbaCTC("x", "f", x1, x2, y1, y2) +
+        "\\end{center}\n";
     var loaiCauHoi = randomchoice(1, 4);
     var decauhoi, PA1, PA2, PA3, PA4, loigiai;
     var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
@@ -4251,7 +4287,9 @@ function CUCTRI_CHO_HS_hambacbaTCT(loai) {
         "Do đó\n" +
         "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
         "Bảng biến thiên\n" +
-        hambacbaTCT("x", "f", x1, x2, y1, y2);
+        "\\begin{center}\n" +
+        hambacbaTCT("x", "f", x1, x2, y1, y2) + 
+        "\\end{center}\n";
     var loaiCauHoi = randomchoice(1, 4);
     var decauhoi, PA1, PA2, PA3, PA4, loigiai;
     var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
@@ -4453,7 +4491,9 @@ function CUCTRI_BBT_hamtrungphuongCTCT(loai) {
         if (b > c && kiemtrakhacnhau(c, 0, b, -a)) break;
     }
     var debai = "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +
-        hamtrungphuongCTCT(a, b, c) + 
+        "\\begin{center}\n" +
+        hamtrungphuongCTCT(a, b, c) +  
+        "\\end{center}\n" +            
         "Giá trị cực tiểu của hàm số đã cho bằng";
     var PA1 = "{\\True $" + c + "$}";
     var PA2 = "{$0$}";
@@ -4498,7 +4538,9 @@ function CUCTRI_CHO_HS_hamtrungphuongCTCT(loai) {
         "Do đó\n" +
         "$$f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + a + "\\\\ x=0\\end{array}\\right.$$\n" +
         "Bảng biến thiên\n" +
-        hamtrungphuongCTCT(a, b, c) + 
+        "\\begin{center}\n" +
+        hamtrungphuongCTCT(a, b, c) +  
+        "\\end{center}\n" +     
         cumtu + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + c + ".$";
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -4533,7 +4575,9 @@ function CUCTRI_CHO_DAOHAM_SODIEMCUCTRI_hamsobacba1(loai) {
     var loigiai = "Ta có\n" +
         "$$f'(x)=0\\Leftrightarrow x^2" + hesosau(a + b, "x") + sodungsau(a * b) + "=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + (-b) + "\\end{array}\\right.$$\n" +
         "Bảng xét dấu của đạo hàm\n" +
+        "\\begin{center}\n" +
         bangxetdauCTC("x", "f", -b, -a) + 
+        "\\end{center}\n" + 
         cumtu + "số điểm cực trị của hàm số đã bằng $2.$";
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -4567,7 +4611,9 @@ function CUCTRI_CHO_DAOHAM_SODIEMCUCTRI_hamsobacba2(loai) {
     var loigiai = "Ta có\n" +
         "$$f'(x)=0\\Leftrightarrow " + ngoacnew(a) + ngoacnew(b) + "=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + (-b) + "\\end{array}\\right.$$\n" +
         "Bảng xét dấu của đạo hàm\n" +
+        "\\begin{center}\n" +
         bangxetdauCTC("x", "f", -b, -a) + 
+        "\\end{center}\n" +    
         cumtu + "số điểm cực trị của hàm số đã bằng $2.$";
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
@@ -4601,7 +4647,9 @@ function CUCTRI_CHO_DAOHAM_SODIEMCUCTRI_hamsobacba3(loai) {
     var loigiai = "Ta có\n" +
         "$$f'(x)=0\\Leftrightarrow -x^2" + hesosau(-a - b, "x") + sodungsau(-a * b) + "=0\\Leftrightarrow\\left[\\begin{array}{l} x=" + (-a) + "\\\\ x=" + (-b) + "\\end{array}\\right.$$\n" +
         "Bảng xét dấu của đạo hàm\n" +
+        "\\begin{center}\n" +
         bangxetdauTCT("x", "f", -b, -a)  +
+        "\\end{center}\n" +   
         cumtu + "số điểm cực trị của hàm số đã bằng $2.$";
     var options = [PA1, PA2, PA3, PA4];
     shuffle(options);
