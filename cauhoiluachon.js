@@ -106,8 +106,8 @@ if (dang === "NB") {
 }
 var options = [PA2, PA3, PA4];
 shuffle(options);
-document.getElementById("debaicau3").innerHTML = "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.\n" +
-           dothibacba_a_duong(a, b, c, d) + "\n" + cauHoiTxt;
+document.getElementById("debaicau3").innerHTML = "Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên nha nha nha nha.\n" +
+           dothibacba_a_duong(a, b, c, d) + cauHoiTxt;
 document.getElementById("PAdung3").innerHTML = PA1;
 document.getElementById("PA1Cau3").innerHTML = options[0];
 document.getElementById("PA2Cau3").innerHTML = options[1];
