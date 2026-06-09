@@ -15,33 +15,23 @@ function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
     return html;
 }
 
-
-function bangsolieunew(tieude1, tieude2, arrKhoang, arrTanso, tieude3 = null, arrDuLieu3 = null) {
+function bangsolieunew(tieude1, tieude2, tieude3, arrKhoang, arrTanso, arrDuLieu3) {
     let html = '<table border="1" style="border-collapse: collapse; text-align: center;">';
     
     // Hàm phụ tạo dòng
     const taoDong = (label, data) => {
         let row = `<tr><td><strong>${label}</strong></td>`;
-        // Nếu data là mảng, chạy vòng lặp
-        if (Array.isArray(data)) {
-            data.forEach(item => {
-                row += `<td>$${item}$</td>`;
-            });
-        } else {
-            row += `<td>${data}</td>`;
-        }
+        data.forEach(item => {
+            row += `<td>$${item}$</td>`;
+        });
         row += '</tr>';
         return row;
     };
 
-    // Tạo dòng 1 và 2
+    // Tạo 3 dòng dựa trên thứ tự tham số mới
     html += taoDong(tieude1, arrKhoang);
     html += taoDong(tieude2, arrTanso);
-
-    // Tạo dòng 3 nếu có đủ thông tin
-    if (tieude3 !== null && arrDuLieu3 !== null) {
-        html += taoDong(tieude3, arrDuLieu3);
-    }
+    html += taoDong(tieude3, arrDuLieu3);
     
     html += '</table>';
     return html;
