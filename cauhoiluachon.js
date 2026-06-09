@@ -1,6 +1,6 @@
 document.getElementById("debaicau1").innerHTML =
 "Khối lượng của một số quả trứng gà trong một trang trại được thống kê lại ở bảng sau: " + 
-bangsolieu("Tốc độ (km/h)", "Số xe ôtô", ["$[39; 42)$", "$[42; 45)$", "$[45; 48)$", "$[48; 51)$"], [$7$, $6$, $2$, $3$]) + 
+bangsolieu("Tốc độ (km/h)", "Số xe ôtô", ["[39; 42)", "[42; 45)", "[45; 48)", "[48; 51)"], [7, 6, 2, 3]) + 
 "Số trung bình của mẫu số liệu ghép nhóm trên là";
 document.getElementById("PAdung1").innerHTML = "$46,14$";
 document.getElementById("PA1Cau1").innerHTML = "$45,74$";
