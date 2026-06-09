@@ -1,5 +1,5 @@
 function bangsolieu(tieude1, tieude2, arrKhoang, arrTanso) {
-    let html = '<table border="1" style="border-collapse: collapse; text-align: center;">';
+    let html = '<table>';
     
     // Dòng 1
     html += `<tr><td><strong>${tieude1}</strong></td>`;
