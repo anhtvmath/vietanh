@@ -6,9 +6,7 @@ diencauhoi(1, {
     sai2: `$x=\\dfrac{3}{2}$`,
     sai3: `$x=\\dfrac{5}{2}$`,
     loigiai: `Ta có nhé
-    \\begin{equation*}
-    2^{2x+1}=8\\Leftrightarrow 2x+1=3\\Leftrightarrow x=1.
-    \\end{equation*}
+    \\begin{equation*}2^{2x+1}=8\\Leftrightarrow 2x+1=3\\Leftrightarrow x=1.\\end{equation*}
     `
 });
 // Câu 2
