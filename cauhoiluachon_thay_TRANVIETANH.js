@@ -5,19 +5,31 @@ diencauhoi(1, {
     sai1: `$x=3$`,
     sai2: `$x=\\dfrac{3}{2}$`,
     sai3: `$x=\\dfrac{5}{2}$`,
-    loigiai: `Ta có nhé
+    loigiai: `Ta có
     \\begin{equation*}
     2^{2x+1}=8\\Leftrightarrow 2x+1=3\\Leftrightarrow x=1.
     \\end{equation*}`
 });
 // Câu 2
 diencauhoi(2, {
-    debai: "Đề bài câu 2",
-    dung: "Đáp án đúng 2",
-    sai1: "Sai 1",
-    sai2: "Sai 2",
-    sai3: "Sai 3",
-    loigiai: "Lời giải chi tiết câu 2."
+    debai: `Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.
+\\begin{tikzpicture}[>=stealth,thick,yscale=0.8]
+\\draw[->,line width = 1pt] (-3.3,0) -- (1.4,0) node[below, pos = 0.98]{$x$};
+\\draw[->,line width = 1pt] (0,-0.8) -- (0,4.8) node[right, pos = 0.97]{$y$};
+\\draw (0,0) node[below left = -1px]{\\footnotesize $O$} circle (1.2pt);
+\\draw (-2,0) node[below]{$-2$} circle (1pt);
+\\draw (0,4) node[right]{$4$} circle (1pt);
+\\draw[dashed] (-2,0) -- (-2,4) -- (0,4);
+\\draw[thick,samples=200,domain=-3.07:1.05] plot(\\x,{(\\x)^3+3*(\\x)^2});
+\\end{tikzpicture}
+Hàm số đã cho đồng biến trên khoảng nào dưới đây?`,
+    dung: `$(-\\infty;-2)$`,
+    sai1: `$(-2;0)$`,
+    sai2: `$(-2;+\\infty)$`,
+    sai3: `$(-\\infty;0)$`,
+    loigiai: `Dựa vào đồ thị, ta thấy đồ thị hàm số đi lên từ trái sang phải 
+    trên các khoảng $(-\\infty;-2)$ và $(0;+\\infty)$. 
+    Trong các phương án đã cho, có khoảng $(-\\infty;-2)$ là thỏa mãn.`
 });
 // Câu 3
 diencauhoi(3, {
@@ -45,13 +57,4 @@ diencauhoi(5, {
     sai2: "Sai 2",
     sai3: "Sai 3",
     loigiai: "Lời giải chi tiết câu 5."
-});
-// Câu 6
-diencauhoi(6, {
-    debai: "Đề bài câu 6",
-    dung: "Đáp án đúng 6",
-    sai1: "Sai 1",
-    sai2: "Sai 2",
-    sai3: "Sai 3",
-    loigiai: "Lời giải chi tiết câu 6."
 });
