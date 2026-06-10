@@ -28,7 +28,8 @@ sai1: `$(-2;0)$`,
 sai2: `$(-2;+\\infty)$`,
 sai3: `$(-\\infty;0)$`,
 loigiai: `Dựa vào đồ thị, ta thấy đồ thị hàm số đi lên từ trái sang phải trên các khoảng $(-\\infty;-2)$ và $(0;+\\infty)$. 
-Trong các phương án đã cho thì chỉ có khoảng $(-\\infty;-2)$ là thỏa mãn.`
+Trong các phương án đã cho thì chỉ có khoảng $(-\\infty;-2)$ là thỏa mãn.
+${hambacbaTCT("x","f","-5","-4","\\dfrac{151}{6}","\\dfrac{76}{3}")}`
 });
 // Câu 3
 diencauhoi(3, {
