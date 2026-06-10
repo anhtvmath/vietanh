@@ -49,3 +49,27 @@ document.getElementById("y4cauTF2").innerHTML = "d) Nội dung ý SAI thứ tư 
 document.getElementById("y4cauTF2").setAttribute("data-ans", "Sai");
 document.getElementById("dapany4cauTF2").innerHTML = "d) Lời giải ý thứ tư câu 2";
 
+// =================================================================
+// CÂU HỎI VÀ NỘI DUNG CÂU 3
+// =================================================================
+document.getElementById("debaiquestionTF3").innerHTML = "Nội dung đề bài câu 3 nhé nhé"; 
+
+// Ý thứ nhất (Bản chất là Sai)
+document.getElementById("y1cauTF3").innerHTML = "a) Nội dung ý SAI thứ nhất câu 3";
+document.getElementById("y1cauTF3").setAttribute("data-ans", "Sai");
+document.getElementById("dapany1cauTF3").innerHTML = "a) Lời giải ý thứ nhất câu 3";
+
+// Ý thứ hai (Bản chất là Đúng)
+document.getElementById("y2cauTF3").innerHTML = "b) Nội dung ý ĐÚNG thứ hai câu 3";
+document.getElementById("y2cauTF3").setAttribute("data-ans", "Đúng");
+document.getElementById("dapany2cauTF3").innerHTML = "b) Lời giải ý thứ hai câu 3";
+
+// Ý thứ ba (Bản chất là Sai)
+document.getElementById("y3cauTF3").innerHTML = "c) Nội dung ý SAI thứ ba câu 3";
+document.getElementById("y3cauTF3").setAttribute("data-ans", "Sai");
+document.getElementById("dapany3cauTF3").innerHTML = "c) Lời giải ý thứ ba câu 3";
+
+// Ý thứ tư (Bản chất là Đúng)
+document.getElementById("y4cauTF3").innerHTML = "d) Nội dung ý ĐÚNG thứ tư câu 3";
+document.getElementById("y4cauTF3").setAttribute("data-ans", "Đúng");
+document.getElementById("dapany4cauTF3").innerHTML = "d) Lời giải ý thứ tư câu 3";
