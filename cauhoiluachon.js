@@ -1,39 +1,54 @@
-// Câu 1
-document.getElementById("debaicau1").innerHTML = "Đề bài câu 1";
-document.getElementById("PAdung1").innerHTML = "Đáp án đúng câu 1";
-document.getElementById("PA1Cau1").innerHTML = "Đáp án sai 1 của câu 1";
-document.getElementById("PA2Cau1").innerHTML = "Đáp án sai 2 của câu 1";
-document.getElementById("PA3Cau1").innerHTML = "Đáp án sai 3 của câu 1";
-document.getElementById("loigiaicau1").innerHTML = "Lời giải câu 1.<br/>";
+// Ví dụ câu 1
+diencauhoi(1, {
+    debai: "Đề bài câu 1",
+    dung: "Đáp án đúng 1",
+    sai1: "Sai 1",
+    sai2: "Sai 2",
+    sai3: "Sai 3",
+    loigiai: "Lời giải chi tiết câu 1."
+});
 
-// Câu 2
-document.getElementById("debaicau2").innerHTML = "Đề bài câu 2";
-document.getElementById("PAdung2").innerHTML = "Đáp án đúng câu 2";
-document.getElementById("PA1Cau2").innerHTML = "Đáp án sai 1 của câu 2";
-document.getElementById("PA2Cau2").innerHTML = "Đáp án sai 2 của câu 2";
-document.getElementById("PA3Cau2").innerHTML = "Đáp án sai 3 của câu 2";
-document.getElementById("loigiaicau2").innerHTML = "Lời giải câu 2.<br/>";
+diencauhoi(2, {
+    debai: "Đề bài câu 2",
+    dung: "Đáp án đúng 2",
+    sai1: "Sai 1",
+    sai2: "Sai 2",
+    sai3: "Sai 3",
+    loigiai: "Lời giải chi tiết câu 2."
+});
 
-// Câu 3
-document.getElementById("debaicau3").innerHTML = "Đề bài câu 3";
-document.getElementById("PAdung3").innerHTML = "Đáp án đúng câu 3";
-document.getElementById("PA1Cau3").innerHTML = "Đáp án sai 1 của câu 3";
-document.getElementById("PA2Cau3").innerHTML = "Đáp án sai 2 của câu 3";
-document.getElementById("PA3Cau3").innerHTML = "Đáp án sai 3 của câu 3";
-document.getElementById("loigiaicau3").innerHTML = "Lời giải câu 3.<br/>";
+diencauhoi(3, {
+    debai: "Đề bài câu 3",
+    dung: "Đáp án đúng 3",
+    sai1: "Sai 1",
+    sai2: "Sai 2",
+    sai3: "Sai 3",
+    loigiai: "Lời giải chi tiết câu 3."
+});
 
-// Câu 4
-document.getElementById("debaicau4").innerHTML = "Đề bài câu 4";
-document.getElementById("PAdung4").innerHTML = "Đáp án đúng câu 4";
-document.getElementById("PA1Cau4").innerHTML = "Đáp án sai 1 của câu 4";
-document.getElementById("PA2Cau4").innerHTML = "Đáp án sai 2 của câu 4";
-document.getElementById("PA3Cau4").innerHTML = "Đáp án sai 3 của câu 4";
-document.getElementById("loigiaicau4").innerHTML = "Lời giải câu 4.<br/>";
+diencauhoi(4, {
+    debai: "Đề bài câu 4",
+    dung: "Đáp án đúng 4",
+    sai1: "Sai 1",
+    sai2: "Sai 2",
+    sai3: "Sai 3",
+    loigiai: "Lời giải chi tiết câu 4."
+});
 
-// Câu 5
-document.getElementById("debaicau5").innerHTML = "Đề bài câu 5";
-document.getElementById("PAdung5").innerHTML = "Đáp án đúng câu 5";
-document.getElementById("PA1Cau5").innerHTML = "Đáp án sai 1 của câu 5";
-document.getElementById("PA2Cau5").innerHTML = "Đáp án sai 2 của câu 5";
-document.getElementById("PA3Cau5").innerHTML = "Đáp án sai 3 của câu 5";
-document.getElementById("loigiaicau5").innerHTML = "Lời giải câu 5.<br/>";
+diencauhoi(5, {
+    debai: "Đề bài câu 5",
+    dung: "Đáp án đúng 5",
+    sai1: "Sai 1",
+    sai2: "Sai 2",
+    sai3: "Sai 3",
+    loigiai: "Lời giải chi tiết câu 5."
+});
+
+diencauhoi(6, {
+    debai: "Đề bài câu 6",
+    dung: "Đáp án đúng 6",
+    sai1: "Sai 1",
+    sai2: "Sai 2",
+    sai3: "Sai 3",
+    loigiai: "Lời giải chi tiết câu 6."
+});
