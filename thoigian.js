@@ -1,7 +1,7 @@
 let countdownTimer;
 
 function startTimer(name, onTimeUp) {
-    let totalSeconds = 20;
+    let totalSeconds = 8;
     const timerDisplay = document.getElementById("timer");
 
     countdownTimer = setInterval(() => {
