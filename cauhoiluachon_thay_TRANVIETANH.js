@@ -39,8 +39,8 @@ diencauhoi(3, {
     sai3: `$2$`,
     loigiai: `Ta có
     \\begin{align*}
-    \\displaystyle\\int\\limits_{-2}^5\\left[\\dfrac{1}{3}f(x)-4\\right]\\mathrm{d}x&=\\dfrac{1}{3}\\displaystyle\\int\\limits_{-2}^5 f(x)\\mathrm{d}x-4\\displaystyle\\int\\limits_{-2}^5\\mathrm{d}x\\
-    &=6-28\\
+    \\displaystyle\\int\\limits_{-2}^5\\left[\\dfrac{1}{3}f(x)-4\\right]\\mathrm{d}x&=\\dfrac{1}{3}\\displaystyle\\int\\limits_{-2}^5 f(x)\\mathrm{d}x-4\\displaystyle\\int\\limits_{-2}^5\\mathrm{d}x\\\\
+    &=6-28\\\\
     &=-22.
     \\end{align*}`
 });
