@@ -55,20 +55,6 @@ sai2: `$-3$`,
 sai3: `$0$`,
 loigiai: `Dựa vào đồ thị, ta thấy tung độ điểm cực đại của đồ thị hàm số là $1$. Vậy giá trị cực đại của hàm số là $y_{\\mathrm{CĐ}}=1.$`
 });
-
-
-\begin{ex}
-
-\choice
-
-\loigiai{
-}
-\end{ex}
-
-{}
-{}
-{\True }
-{}\
 // Câu 5
 diencauhoi(5, {
 debai: `Cho hàm số $f(x)=-\\dfrac{1}{3}x^3-\\dfrac{9}{2}x^2-20x-4$ với mọi $x\in\\Bbb R$. Hàm số đã cho đạt cực tiểu tại`,
