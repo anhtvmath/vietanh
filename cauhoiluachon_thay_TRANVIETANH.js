@@ -32,13 +32,17 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?`,
 });
 // Câu 3
 diencauhoi(3, {
-    debai: "Đề bài câu 3",
-    dung: "Đáp án đúng 3",
-    sai1: "Sai 1",
-    sai2: "Sai 2",
-    sai3: "Sai 3",
-    loigiai: "Lời giải chi tiết câu 3."
-    
+    debai: `Nếu $\\displaystyle\\int\\limits_{-2}^5 f(x)\\mathrm{d}x=18$ thì $\\displaystyle\\int\\limits_{-2}^5\\left[\\dfrac{1}{3}f(x)-4\\right]\\mathrm{d}x$ bằng`,
+    dung: `$-22$`,
+    sai1: `$6$`,
+    sai2: `$-28$`,
+    sai3: `$2$`,
+    loigiai: `Ta có
+    \\begin{align*}
+    \\displaystyle\\int\\limits_{-2}^5\\left[\\dfrac{1}{3}f(x)-4\\right]\\mathrm{d}x&=\\dfrac{1}{3}\\displaystyle\\int\\limits_{-2}^5 f(x)\\mathrm{d}x-4\\displaystyle\\int\\limits_{-2}^5\\mathrm{d}x\\
+    &=6-28\\
+    &=-22.
+    \\end{align*}`
 });
 // Câu 4
 diencauhoi(4, {
