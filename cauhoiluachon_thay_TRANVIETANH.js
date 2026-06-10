@@ -49,18 +49,60 @@ diencauhoi(4, {
 debai: `Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.
         ${dothibacba_a_am(-1, 3, 0, -3)}
         Giá trị cực đại của hàm số đã cho bằng`,
-dung: "Đáp án đúng 4",
+dung: `$1$`,
 sai1: `$2$`,
 sai2: `$-3$`,
 sai3: `$0$`,
 loigiai: `Dựa vào đồ thị, ta thấy tung độ điểm cực đại của đồ thị hàm số là $1$. Vậy giá trị cực đại của hàm số là $y_{\\mathrm{CĐ}}=1.$`
 });
+
+
+\begin{ex}
+
+\choice
+
+\loigiai{
+}
+\end{ex}
+
+{}
+{}
+{\True }
+{}\
 // Câu 5
 diencauhoi(5, {
-debai: "Đề bài câu 5",
-dung: "Đáp án đúng 5",
-sai1: "Sai 1",
-sai2: "Sai 2",
-sai3: "Sai 3",
-loigiai: "Lời giải chi tiết câu 5."
+debai: `Cho hàm số $f(x)=-\\dfrac{1}{3}x^3-\\dfrac{9}{2}x^2-20x-4$ với mọi $x\in\\Bbb R$. Hàm số đã cho đạt cực tiểu tại`,
+dung: `$-5$`,
+sai1: `$-4$`,
+sai2: `$\\dfrac{151}{6}$`,
+sai3: `$\\dfrac{76}{3}$`,
+loigiai:`Ta có $f'(x)=-x^2-9x-20$.
+Do đó
+\\begin{equation*}
+f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l}x=-5\\x=-4\\end{array}\\right.
+\\end{equation*}
+Bảng biến thiên
+hambacbaTCT("x","f","-5","-4","\\dfrac{151}{6}","\\dfrac{76}{3}")
+Quan sát bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=-5.$`
+});
+
+// Câu 6
+diencauhoi(6, {
+debai: `Đề bài câu 6`,
+dung: `Đáp án đúng 6`,
+sai1: `Sai 1`,
+sai2: `Sai 2`,
+sai3: `Sai 3`,
+loigiai: `Lời giải chi tiết câu 6.`
+});
+
+
+// Câu 7
+diencauhoi(7, {
+debai: `Đề bài câu 7`,
+dung: `Đáp án đúng 7`,
+sai1: `Sai 1`,
+sai2: `Sai 2`,
+sai3: `Sai 3`,
+loigiai: `Lời giải chi tiết câu 7.`
 });
