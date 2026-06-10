@@ -28,8 +28,7 @@ sai1: `$(-2;0)$`,
 sai2: `$(-2;+\\infty)$`,
 sai3: `$(-\\infty;0)$`,
 loigiai: `Dựa vào đồ thị, ta thấy đồ thị hàm số đi lên từ trái sang phải trên các khoảng $(-\\infty;-2)$ và $(0;+\\infty)$. 
-Trong các phương án đã cho thì chỉ có khoảng $(-\\infty;-2)$ là thỏa mãn.
-${hambacbaTCT("x","f","-5","-4","\\dfrac{151}{6}","\\dfrac{76}{3}")}`
+Trong các phương án đã cho thì chỉ có khoảng $(-\\infty;-2)$ là thỏa mãn.`
 });
 // Câu 3
 diencauhoi(3, {
@@ -66,7 +65,7 @@ sai3: `$\\dfrac{76}{3}$`,
 loigiai: `Ta có $f'(x)=-x^2-9x-20$.
 Do đó
 Bảng biến thiên
-${hambacbaTCT("x","f","-5","-4","\\dfrac{151}{6}","\\dfrac{76}{3}")}
+${dothibacba_a_am(-1, 3, 0, -3)}
 Quan sát bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=-5.$`
 });
 
