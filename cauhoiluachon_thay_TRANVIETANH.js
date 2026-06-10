@@ -62,7 +62,7 @@ dung: `$-5$`,
 sai1: `$-4$`,
 sai2: `$\\dfrac{151}{6}$`,
 sai3: `$\\dfrac{76}{3}$`,
-loigiai:`Ta có $f'(x)=-x^2-9x-20$.
+loigiai: `Ta có $f'(x)=-x^2-9x-20$.
 Do đó
 \\begin{equation*}
 f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l}x=-5\\x=-4\\end{array}\\right.
