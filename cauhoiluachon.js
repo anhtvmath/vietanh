@@ -29,11 +29,3 @@ document.getElementById("PA1Cau4").innerHTML = "Đáp án sai 1 của câu 4";
 document.getElementById("PA2Cau4").innerHTML = "Đáp án sai 2 của câu 4";
 document.getElementById("PA3Cau4").innerHTML = "Đáp án sai 3 của câu 4";
 document.getElementById("loigiaicau4").innerHTML = "Lời giải câu 4.<br/>";
-
-// Câu 5
-document.getElementById("debaicau5").innerHTML = "Đề bài câu 5";
-document.getElementById("PAdung5").innerHTML = "Đáp án đúng câu 5";
-document.getElementById("PA1Cau5").innerHTML = "Đáp án sai 1 của câu 5";
-document.getElementById("PA2Cau5").innerHTML = "Đáp án sai 2 của câu 5";
-document.getElementById("PA3Cau5").innerHTML = "Đáp án sai 3 của câu 5";
-document.getElementById("loigiaicau5").innerHTML = "Lời giải câu 5.<br/>";
