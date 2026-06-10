@@ -27,9 +27,8 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?`,
     sai1: `$(-2;0)$`,
     sai2: `$(-2;+\\infty)$`,
     sai3: `$(-\\infty;0)$`,
-    loigiai: `Dựa vào đồ thị, ta thấy đồ thị hàm số đi lên từ trái sang phải 
-    trên các khoảng $(-\\infty;-2)$ và $(0;+\\infty)$. 
-    Trong các phương án đã cho, có khoảng $(-\\infty;-2)$ là thỏa mãn.`
+    loigiai: `Dựa vào đồ thị, ta thấy đồ thị hàm số đi lên từ trái sang phải trên các khoảng $(-\\infty;-2)$ và $(0;+\\infty)$. 
+    Trong các phương án đã cho thì chỉ có khoảng $(-\\infty;-2)$ là thỏa mãn.`
 });
 // Câu 3
 diencauhoi(3, {
@@ -39,6 +38,7 @@ diencauhoi(3, {
     sai2: "Sai 2",
     sai3: "Sai 3",
     loigiai: "Lời giải chi tiết câu 3."
+    
 });
 // Câu 4
 diencauhoi(4, {
