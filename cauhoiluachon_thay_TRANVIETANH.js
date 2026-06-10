@@ -65,7 +65,7 @@ sai3: `$\\dfrac{76}{3}$`,
 loigiai: `Ta có $f'(x)=-x^2-9x-20$.
 Do đó
 Bảng biến thiên
-${dothibacba_a_am(-1, 3, 0, -3)}
+${hambacbaTCT("x","f","-5","-4","\\dfrac{151}{6}","\\dfrac{76}{3}")}
 Quan sát bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=-5.$`
 });
 
