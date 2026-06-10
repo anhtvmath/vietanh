@@ -57,7 +57,7 @@ loigiai: `Dựa vào đồ thị, ta thấy tung độ điểm cực đại củ
 });
 // Câu 5
 diencauhoi(5, {
-debai: `Cho hàm số $f(x)=-\\dfrac{1}{3}x^3-\\dfrac{9}{2}x^2-20x-4$ với mọi $x\in\\Bbb R$. Hàm số đã cho đạt cực tiểu tại`,
+debai: `Cho hàm số $f(x)=-\\dfrac{1}{3}x^3-\\dfrac{9}{2}x^2-20x-4$ với mọi $x\\in\\Bbb R$. Hàm số đã cho đạt cực tiểu tại`,
 dung: `$-5$`,
 sai1: `$-4$`,
 sai2: `$\\dfrac{151}{6}$`,
@@ -68,7 +68,7 @@ Do đó
 f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l}x=-5\\x=-4\\end{array}\\right.
 \\end{equation*}
 Bảng biến thiên
-hambacbaTCT("x","f","-5","-4","\\dfrac{151}{6}","\\dfrac{76}{3}")
+${hambacbaTCT("x","f","-5","-4","\\dfrac{151}{6}","\\dfrac{76}{3}")}
 Quan sát bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=-5.$`
 });
 
