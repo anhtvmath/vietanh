@@ -4,7 +4,7 @@ function diencauhoi(id, data) {
     document.getElementById(`PA1Cau${id}`).innerHTML = data.sai1;
     document.getElementById(`PA2Cau${id}`).innerHTML = data.sai2;
     document.getElementById(`PA3Cau${id}`).innerHTML = data.sai3;
-    document.getElementById(`loigiaicau${id}`).innerHTML = data.loigiai + "<br/>";
+    document.getElementById(`loigiaicau${id}`).innerHTML = data.loigiai;
 }
 
 
