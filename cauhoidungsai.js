@@ -13,7 +13,7 @@ document.getElementById("y2cauTF1").innerHTML = "b) Nội dung ý ĐÚNG thứ h
 document.getElementById("y2cauTF1").setAttribute("data-ans", "Đúng");
 document.getElementById("dapany2cauTF1").innerHTML = "b) Lời giải ý thứ hai câu 1";
 
-// Ý thứ ba (Bản chất là Sai)
+// Ý thứ ba (Bản chất là Sai) 
 document.getElementById("y3cauTF1").innerHTML = "c) Nội dung ý SAI thứ ba câu 1";
 document.getElementById("y3cauTF1").setAttribute("data-ans", "Sai");
 document.getElementById("dapany3cauTF1").innerHTML = "c) Lời giải ý thứ ba câu 1";
