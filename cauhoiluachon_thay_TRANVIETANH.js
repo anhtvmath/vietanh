@@ -47,7 +47,7 @@ loigiai: `Ta có
 // Câu 4
 diencauhoi(4, {
 debai: `Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.
-        dothibacba_a_am(-1, 3, 0, -3)
+        ${dothibacba_a_am(-1, 3, 0, -3)}
         Giá trị cực đại của hàm số đã cho bằng`,
 dung: "Đáp án đúng 4",
 sai1: `$2$`,
