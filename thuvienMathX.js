@@ -39,25 +39,37 @@ function diencauhoi(id, data) {
 }
 
 function diencauhoiTF(i, data) {
-    document.getElementById(`debaiquestionTF${i}`).innerHTML = data.debai;
+    const debaiEl = document.getElementById(`debaiquestionTF${i}`);
+    if (debaiEl) {
+        debaiEl.innerHTML = data.debai || "";
+    }
+
     const options = [
-        [`y1cauTF${i}`, 'caua', 'loigiaicaua'],
-        [`y2cauTF${i}`, 'caub', 'loigiaicaub'],
-        [`y3cauTF${i}`, 'cauc', 'loigiaicauc'],
-        [`y4cauTF${i}`, 'caud', 'loigiaicaud']
+        { id: `y1cauTF${i}`, key: 'caua', sol: `dapany1cauTF${i}`, lg: 'loigiaicaua' },
+        { id: `y2cauTF${i}`, key: 'caub', sol: `dapany2cauTF${i}`, lg: 'loigiaicaub' },
+        { id: `y3cauTF${i}`, key: 'cauc', sol: `dapany3cauTF${i}`, lg: 'loigiaicauc' },
+        { id: `y4cauTF${i}`, key: 'caud', sol: `dapany4cauTF${i}`, lg: 'loigiaicaud' }
     ];
-    options.forEach(([id, key, loidungKey]) => {
-        const actualKey = Object.keys(data).find(k => k.endsWith(key));
+
+    options.forEach(opt => {
+        const actualKey = Object.keys(data).find(k => k.endsWith(opt.key));
+        
         if (actualKey) {
             const isCorrect = actualKey.startsWith('Đ');
-            const el = document.getElementById(id);
-            el.innerHTML = data[actualKey];
-            el.setAttribute("data-ans", isCorrect ? "Đúng" : "Sai");
-            document.getElementById(`dapany${id.substring(1)}`).innerHTML = data[loidungKey];
+            
+            const el = document.getElementById(opt.id);
+            if (el) {
+                el.innerHTML = data[actualKey];
+                el.setAttribute("data-ans", isCorrect ? "Đúng" : "Sai");
+            }
+            
+            const solEl = document.getElementById(opt.sol);
+            if (solEl) {
+                solEl.innerHTML = data[opt.lg] || "";
+            }
         }
     });
 }
-
 
 function bangsolieu2dong(tieude1, tieude2, arrKhoang, arrTanso) {
     let html = '<table>';
