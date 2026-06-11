@@ -1,3 +1,1 @@
-function thoigian() {
-    return thoigianhambai(40);
-}
+eval(thoigianhambai(40));
