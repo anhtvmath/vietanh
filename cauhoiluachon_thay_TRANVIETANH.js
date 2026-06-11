@@ -47,7 +47,7 @@ loigiai: `Ta có
 // Câu 4
 diencauhoi(4, {
 debai: `Cho hàm số bậc ba $y=f(x)$ có đồ thị là đường cong trong hình bên.
-        ${hambacbaTCT("x","f","-5","-4","\\dfrac{151}{6}","\\dfrac{76}{3}")}
+        ${dothibacba_a_am(-1, 3, 0, -3)}
         Giá trị cực đại của hàm số đã cho bằng`,
 dung: `$1$`,
 sai1: `$2$`,
@@ -64,6 +64,9 @@ sai2: `$\\dfrac{151}{6}$`,
 sai3: `$\\dfrac{76}{3}$`,
 loigiai: `Ta có $f'(x)=-x^2-9x-20$.
 Do đó
+\\begin{equation*}
+f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l}x=-5\\\\x=-4\\end{array}\\right.
+\\end{equation*}
 Bảng biến thiên
 ${hambacbaTCT("x","f","-5","-4","\\dfrac{151}{6}","\\dfrac{76}{3}")}
 Quan sát bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=-5.$`
