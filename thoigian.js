@@ -1,8 +1,19 @@
 let countdownTimer;
 
 function startTimer(name, onTimeUp) {
-    let totalSeconds = parseInt(document.getElementById("timeInput").value);
+    // File JS tự lấy dữ liệu từ HTML thông qua ID
+    const inputElement = document.getElementById("timeInput");
+    let totalSeconds = parseInt(inputElement.value);
+
+    // Nếu không nhập gì thì lấy giá trị mặc định là 8
+    if (isNaN(totalSeconds) || totalSeconds <= 0) {
+        totalSeconds = 8;
+    }
+
     const timerDisplay = document.getElementById("timer");
+
+    // Xóa timer cũ để không bị chạy chồng lên nhau
+    clearInterval(countdownTimer);
 
     countdownTimer = setInterval(() => {
         const hours = Math.floor(totalSeconds / 3600);
@@ -16,7 +27,6 @@ function startTimer(name, onTimeUp) {
         
         if (totalSeconds <= 0) {
             clearInterval(countdownTimer);
-            // Gọi hàm callback khi hết giờ (ví dụ: myfunction)
             if (onTimeUp) onTimeUp();
         }
         totalSeconds--;
