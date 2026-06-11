@@ -1,1 +1,1 @@
-eval(thoigianlambai(40));
+thoigianlambai(40);
