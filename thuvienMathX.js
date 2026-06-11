@@ -30,13 +30,32 @@ function startTimer(name, onTimeUp) {
 
 
 function diencauhoi(id, data) {
-
     document.getElementById(`debaicau${id}`).innerHTML = data.debai;
     document.getElementById(`PAdung${id}`).innerHTML = data.dung;
     document.getElementById(`PA1Cau${id}`).innerHTML = data.sai1;
     document.getElementById(`PA2Cau${id}`).innerHTML = data.sai2;
     document.getElementById(`PA3Cau${id}`).innerHTML = data.sai3;
     document.getElementById(`loigiaicau${id}`).innerHTML = data.loigiai;
+}
+
+function diencauhoiTF(i, data) {
+    document.getElementById(`debaiquestionTF${i}`).innerHTML = data.debai;
+    const options = [
+        [`y1cauTF${i}`, 'caua', 'loigiaicaua'],
+        [`y2cauTF${i}`, 'caub', 'loigiaicaub'],
+        [`y3cauTF${i}`, 'cauc', 'loigiaicauc'],
+        [`y4cauTF${i}`, 'caud', 'loigiaicaud']
+    ];
+    options.forEach(([id, key, loidungKey]) => {
+        const actualKey = Object.keys(data).find(k => k.endsWith(key));
+        if (actualKey) {
+            const isCorrect = actualKey.startsWith('Đ');
+            const el = document.getElementById(id);
+            el.innerHTML = data[actualKey];
+            el.setAttribute("data-ans", isCorrect ? "Đúng" : "Sai");
+            document.getElementById(`dapany${id.substring(1)}`).innerHTML = data[loidungKey];
+        }
+    });
 }
 
 
