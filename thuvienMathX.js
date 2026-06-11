@@ -1,4 +1,4 @@
-function thoigianhambai(thoigian) {
+function thoigianlambai(thoigian) {
     return `let countdownTimer;
 
 function startTimer(name, onTimeUp) {
