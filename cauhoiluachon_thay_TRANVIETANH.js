@@ -27,7 +27,7 @@ dung: `$(-\\infty;-2)$`,
 sai1: `$(-2;0)$`,
 sai2: `$(-2;+\\infty)$`,
 sai3: `$(-\\infty;0)$`,
-loigiai: `Dựa vào đồ thị, ta thấy đồ thị hàm số đi lên từ trái sang phải trên các khoảng $(-\\infty;-2)$ và $(0;+\\infty)$. 
+loigiai: `Dựa vào đồ thị, ta thấy đồ thị hàm số đi lên từ trái sang phải trên các khoảng $(-\\infty;-2)$ và $(0;+\\infty)$.<br/>
 Trong các phương án đã cho thì chỉ có khoảng $(-\\infty;-2)$ là thỏa mãn.`
 });
 // Câu 3
@@ -62,7 +62,7 @@ dung: `$-5$`,
 sai1: `$-4$`,
 sai2: `$\\dfrac{151}{6}$`,
 sai3: `$\\dfrac{76}{3}$`,
-loigiai: `Ta có $f'(x)=-x^2-9x-20$.
+loigiai: `Ta có $f'(x)=-x^2-9x-20$.<br/>
 Do đó
 \\begin{equation*}
 f'(x)=0\\Leftrightarrow\\left[\\begin{array}{l}x=-5\\\\x=-4\\end{array}\\right.
