@@ -1,1 +1,1 @@
-window.eval(thoigianlambai(69));
+window.eval(thoigianlambai(53));
