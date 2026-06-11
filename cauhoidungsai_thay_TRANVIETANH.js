@@ -1,60 +1,50 @@
-// Câu 1
-diencauhoiTF(1, {
-    debai: `Nội dung đề bài câu 1`,
-    Scaua: `a) Nội dung ý SAI thứ nhất`, 
-    Đcaub: `b) Nội dung ý ĐÚNG thứ hai`, 
-    Đcauc: `c) Nội dung ý ĐÚNG thứ ba`, 
-    Đcaud: `d) Nội dung ý ĐÚNG thứ tư`, 
-    loigiaicaua: `a) Lời giải ý a) câu 1`,
-    loigiaicaub: `b) Lời giải ý b) câu 1`,
-    loigiaicauc: `c) Lời giải ý c) câu 1`,
-    loigiaicaud: `d) Lời giải ý d) câu 1`
-});
-// Câu 2
-diencauhoiTF(2, {
-    debai: `Nội dung đề bài câu 2`,
-    Đcaua: `a) Nội dung ý ĐÚNG thứ nhất`,
-    Scaub: `b) Nội dung ý SAI thứ hai`,
-    Đcauc: `c) Nội dung ý ĐÚNG thứ ba`,
-    Scaud: `d) Nội dung ý SAI thứ tư`,
-    loigiaicaua: `a) Lời giải ý a) câu 2`,
-    loigiaicaub: `b) Lời giải ý b) câu 2`,
-    loigiaicauc: `c) Lời giải ý c) câu 2`,
-    loigiaicaud: `d) Lời giải ý d) câu 2`
-});
-// Câu 3
-diencauhoiTF(3, {
-    debai: `Nội dung đề bài câu 3`,
-    Scaua: `a) Nội dung ý SAI thứ nhất`,
-    Scaub: `b) Nội dung ý SAI thứ hai`,
-    Đcauc: `c) Nội dung ý ĐÚNG thứ ba`,
-    Đcaud: `d) Nội dung ý ĐÚNG thứ tư`,
-    loigiaicaua: `a) Lời giải ý a) câu 3`,
-    loigiaicaub: `b) Lời giải ý b) câu 3`,
-    loigiaicauc: `c) Lời giải ý c) câu 3`,
-    loigiaicaud: `d) Lời giải ý d) câu 3`
-});
-// Câu 4
-diencauhoiTF(4, {
-    debai: `Nội dung đề bài câu 4`,
-    Đcaua: `a) Nội dung ý ĐÚNG thứ nhất`,
-    Đcaub: `b) Nội dung ý ĐÚNG thứ hai`,
-    Đcauc: `c) Nội dung ý ĐÚNG thứ ba`,
-    Scaud: `d) Nội dung ý SAI thứ tư`,
-    loigiaicaua: `a) Lời giải ý a) câu 4`,
-    loigiaicaub: `b) Lời giải ý b) câu 4`,
-    loigiaicauc: `c) Lời giải ý c) câu 4`,
-    loigiaicaud: `d) Lời giải ý d) câu 4`
-});
-// Câu 5
-diencauhoiTF(5, {
-    debai: `Nội dung đề bài câu 5`,
-    Scaua: `a) Nội dung ý SAI thứ nhất`,
-    Đcaub: `b) Nội dung ý ĐÚNG thứ hai`,
-    Scauc: `c) Nội dung ý SAI thứ ba`,
-    Đcaud: `d) Nội dung ý ĐÚNG thứ tư`,
-    loigiaicaua: `a) Lời giải ý a) câu 5`,
-    loigiaicaub: `b) Lời giải ý b) câu 5`,
-    loigiaicauc: `c) Lời giải ý c) câu 5`,
-    loigiaicaud: `d) Lời giải ý d) câu 5`
-});
+// =================================================================
+// CÂU HỎI VÀ NỘI DUNG CÂU 1
+// =================================================================
+document.getElementById("debaiquestionTF1").innerHTML = "Nội dung đề bài câu 1 nhé nhé nhé"; 
+
+// Ý thứ nhất (Bản chất là Đúng)
+document.getElementById("y1cauTF1").innerHTML = "a) Nội dung ý ĐÚNG thứ nhất câu 1";
+document.getElementById("y1cauTF1").setAttribute("data-ans", "Đúng");
+document.getElementById("dapany1cauTF1").innerHTML = "a) Lời giải ý thứ nhất câu 1";
+
+// Ý thứ hai (Bản chất là Đúng)
+document.getElementById("y2cauTF1").innerHTML = "b) Nội dung ý ĐÚNG thứ hai câu 1";
+document.getElementById("y2cauTF1").setAttribute("data-ans", "Đúng");
+document.getElementById("dapany2cauTF1").innerHTML = "b) Lời giải ý thứ hai câu 1";
+
+// Ý thứ ba (Bản chất là Sai)
+document.getElementById("y3cauTF1").innerHTML = "c) Nội dung ý SAI thứ ba câu 1";
+document.getElementById("y3cauTF1").setAttribute("data-ans", "Sai");
+document.getElementById("dapany3cauTF1").innerHTML = "c) Lời giải ý thứ ba câu 1";
+
+// Ý thứ tư (Bản chất là Đúng)
+document.getElementById("y4cauTF1").innerHTML = "d) Nội dung ý ĐÚNG thứ tư câu 1";
+document.getElementById("y4cauTF1").setAttribute("data-ans", "Đúng");
+document.getElementById("dapany4cauTF1").innerHTML = "d) Lời giải ý thứ tư câu 1";
+
+
+// =================================================================
+// CÂU HỎI VÀ NỘI DUNG CÂU 2
+// =================================================================
+document.getElementById("debaiquestionTF2").innerHTML = "Nội dung đề bài câu 2 nhé nhé"; 
+
+// Ý thứ nhất (Bản chất là Đúng)
+document.getElementById("y1cauTF2").innerHTML = "a) Nội dung ý ĐÚNG thứ nhất câu 2";
+document.getElementById("y1cauTF2").setAttribute("data-ans", "Đúng");
+document.getElementById("dapany1cauTF2").innerHTML = "a) Lời giải ý thứ nhất câu 2";
+
+// Ý thứ hai (Bản chất là Sai)
+document.getElementById("y2cauTF2").innerHTML = "b) Nội dung ý SAI thứ hai câu 2";
+document.getElementById("y2cauTF2").setAttribute("data-ans", "Sai");
+document.getElementById("dapany2cauTF2").innerHTML = "b) Lời giải ý thứ hai câu 2";
+
+// Ý thứ ba (Bản chất là Đúng)
+document.getElementById("y3cauTF2").innerHTML = "c) Nội dung ý ĐÚNG thứ ba câu 2";
+document.getElementById("y3cauTF2").setAttribute("data-ans", "Đúng");
+document.getElementById("dapany3cauTF2").innerHTML = "c) Lời giải ý thứ ba câu 2";
+
+// Ý thứ tư (Bản chất là Sai)
+document.getElementById("y4cauTF2").innerHTML = "d) Nội dung ý SAI thứ tư câu 2";
+document.getElementById("y4cauTF2").setAttribute("data-ans", "Sai");
+document.getElementById("dapany4cauTF2").innerHTML = "d) Lời giải ý thứ tư câu 2";
