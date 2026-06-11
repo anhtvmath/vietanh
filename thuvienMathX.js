@@ -39,36 +39,27 @@ function diencauhoi(id, data) {
 }
 
 function diencauhoiTF(i, data) {
-    const debaiEl = document.getElementById(`debaiquestionTF${i}`);
-    if (debaiEl) {
-        debaiEl.innerHTML = data.debai || "";
-    }
+    document.getElementById(`debaiquestionTF${i}`).innerHTML = data.debai;
 
-    const options = [
-        { id: `y1cauTF${i}`, key: 'caua', sol: `dapany1cauTF${i}`, lg: 'loigiaicaua' },
-        { id: `y2cauTF${i}`, key: 'caub', sol: `dapany2cauTF${i}`, lg: 'loigiaicaub' },
-        { id: `y3cauTF${i}`, key: 'cauc', sol: `dapany3cauTF${i}`, lg: 'loigiaicauc' },
-        { id: `y4cauTF${i}`, key: 'caud', sol: `dapany4cauTF${i}`, lg: 'loigiaicaud' }
-    ];
+    // Ý a
+    document.getElementById(`y1cauTF${i}`).innerHTML = data.Scaua || data.Đcaua;
+    document.getElementById(`y1cauTF${i}`).setAttribute("data-ans", (data.Scaua ? "Sai" : "Đúng"));
+    document.getElementById(`dapany1cauTF${i}`).innerHTML = data.loigiaicaua;
 
-    options.forEach(opt => {
-        const actualKey = Object.keys(data).find(k => k.endsWith(opt.key));
-        
-        if (actualKey) {
-            const isCorrect = actualKey.startsWith('Đ');
-            
-            const el = document.getElementById(opt.id);
-            if (el) {
-                el.innerHTML = data[actualKey];
-                el.setAttribute("data-ans", isCorrect ? "Đúng" : "Sai");
-            }
-            
-            const solEl = document.getElementById(opt.sol);
-            if (solEl) {
-                solEl.innerHTML = data[opt.lg] || "";
-            }
-        }
-    });
+    // Ý b
+    document.getElementById(`y2cauTF${i}`).innerHTML = data.Scaub || data.Đcaub;
+    document.getElementById(`y2cauTF${i}`).setAttribute("data-ans", (data.Scaub ? "Sai" : "Đúng"));
+    document.getElementById(`dapany2cauTF${i}`).innerHTML = data.loigiaicaub;
+
+    // Ý c
+    document.getElementById(`y3cauTF${i}`).innerHTML = data.Scauc || data.Đcauc;
+    document.getElementById(`y3cauTF${i}`).setAttribute("data-ans", (data.Scauc ? "Sai" : "Đúng"));
+    document.getElementById(`dapany3cauTF${i}`).innerHTML = data.loigiaicauc;
+
+    // Ý d
+    document.getElementById(`y4cauTF${i}`).innerHTML = data.Scaud || data.Đcaud;
+    document.getElementById(`y4cauTF${i}`).setAttribute("data-ans", (data.Scaud ? "Sai" : "Đúng"));
+    document.getElementById(`dapany4cauTF${i}`).innerHTML = data.loigiaicaud;
 }
 
 function bangsolieu2dong(tieude1, tieude2, arrKhoang, arrTanso) {
