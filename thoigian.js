@@ -1,18 +1,16 @@
 let countdownTimer;
 
+// Chỉ giữ lại name và onTimeUp, duration được JS tự tìm trong HTML
 function startTimer(name, onTimeUp) {
-    // File JS tự lấy dữ liệu từ HTML thông qua ID
-    const inputElement = document.getElementById("timeInput");
-    let totalSeconds = parseInt(inputElement.value);
+    // JS tự lấy giá trị từ ô có id="timeInput"
+    const inputVal = document.getElementById("timeInput").value;
+    let totalSeconds = parseInt(inputVal);
 
-    // Nếu không nhập gì thì lấy giá trị mặc định là 8
-    if (isNaN(totalSeconds) || totalSeconds <= 0) {
-        totalSeconds = 8;
-    }
+    // Kiểm tra nếu không có số thì mặc định là 8 giây
+    if (isNaN(totalSeconds) || totalSeconds <= 0) totalSeconds = 8;
 
     const timerDisplay = document.getElementById("timer");
 
-    // Xóa timer cũ để không bị chạy chồng lên nhau
     clearInterval(countdownTimer);
 
     countdownTimer = setInterval(() => {
