@@ -1,3 +1,12 @@
+function dethiso(so) {
+    return `
+<div style="text-align:center">
+  <span style="border:1px solid green;color:green;padding:4px 12px;font-size:30px;font-weight:bold">
+    Đề số ${so}
+  </span>
+</div>`;
+}
+
 function thoigianlambai(thoigian) {
     return `let countdownTimer;
 
