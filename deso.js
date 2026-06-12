@@ -1,1 +1,1 @@
-document.body.innerHTML = dethiso(12);
+document.getElementById("dethiso").innerHTML = dethiso(12);
