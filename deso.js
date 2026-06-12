@@ -1,0 +1,1 @@
+window.eval(dethiso(12));
