@@ -1284,6 +1284,32 @@ function hambacbaTCT(x, f, x1, x2, y1, y2) {
     "\\end{tikzpicture}\n";
 }
 
+function hamphanthucTT(m, n, a, b) {
+    return `\\begin{tikzpicture}[line width=1.2pt,xscale=1.1,yscale=0.6]
+			\\draw[double distance=1pt] (5,-0.5)--(5,-6.5);
+			\\def\\a{10}
+			\\def\\b{7}
+			\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);
+			\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);
+			\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);
+			\\draw (0.5,0.5)--(0.5,-\\b+0.5);
+			\\path
+			(0,0) node{$x$}
+			(0,-1) node{$${m}$}
+			(0,-4) node{$${n}$}
+			(1,0) node{$-\\infty$}
+			(1,-3) node(A){$${b}$}
+			(3,-1) node{$-$}
+			(5,0) node{${a}$}
+			(7,-1) node{$-$}
+			(9,0) node{$+\\infty$}
+			(9,-5) node(C){$${b}$}
+			(4.6,-6) node(B1){$-\\infty$}
+			(5.4,-2) node(B2){$+\\infty$};
+			\\draw[-stealth,thick] (A)--(B1);
+			\\draw[-stealth,thick] (B2)--(C);
+			\\end{tikzpicture}`;
+}
 
 
 function convert(number) {
