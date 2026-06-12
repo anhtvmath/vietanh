@@ -37,7 +37,6 @@ function startTimer(name, onTimeUp) {
 }`;
 }
 
-
 function diencauhoi(id, data) {
     document.getElementById(`debaicau${id}`).innerHTML = data.debai;
     document.getElementById(`PAdung${id}`).innerHTML = data.dung;
@@ -49,26 +48,24 @@ function diencauhoi(id, data) {
 
 function diencauhoiTF(i, data) {
     document.getElementById(`debaiquestionTF${i}`).innerHTML = data.debai;
-
-    // Ý a
     document.getElementById(`y1cauTF${i}`).innerHTML = data.Scaua || data.Đcaua;
     document.getElementById(`y1cauTF${i}`).setAttribute("data-ans", (data.Scaua ? "Sai" : "Đúng"));
     document.getElementById(`dapany1cauTF${i}`).innerHTML = data.loigiaicaua;
-
-    // Ý b
     document.getElementById(`y2cauTF${i}`).innerHTML = data.Scaub || data.Đcaub;
     document.getElementById(`y2cauTF${i}`).setAttribute("data-ans", (data.Scaub ? "Sai" : "Đúng"));
     document.getElementById(`dapany2cauTF${i}`).innerHTML = data.loigiaicaub;
-
-    // Ý c
     document.getElementById(`y3cauTF${i}`).innerHTML = data.Scauc || data.Đcauc;
     document.getElementById(`y3cauTF${i}`).setAttribute("data-ans", (data.Scauc ? "Sai" : "Đúng"));
     document.getElementById(`dapany3cauTF${i}`).innerHTML = data.loigiaicauc;
-
-    // Ý d
     document.getElementById(`y4cauTF${i}`).innerHTML = data.Scaud || data.Đcaud;
     document.getElementById(`y4cauTF${i}`).setAttribute("data-ans", (data.Scaud ? "Sai" : "Đúng"));
     document.getElementById(`dapany4cauTF${i}`).innerHTML = data.loigiaicaud;
+}
+
+function diencauhoiTLN(stt, data) {
+    document.getElementById("debaicauTLN" + stt).innerHTML = data.debai;
+    document.getElementById("keycauTLN" + stt).innerHTML = data.key;
+    document.getElementById("loigiaicauTLN" + stt).innerHTML = data.loigiai;
 }
 
 function bangsolieu2dong(tieude1, tieude2, arrKhoang, arrTanso) {
