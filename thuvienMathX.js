@@ -846,7 +846,7 @@ function dothibacba_a_am(a, b, c, d) {
 }
 
 function hamtrungphuongCTCT(a, b, c) {
-    return "\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.6]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{7}\n" +
 	"\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
@@ -882,7 +882,7 @@ function hamtrungphuongCTCT(a, b, c) {
 }
 
 function hamtrungphuongTCTC(a, b, c) {
-    return "\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.6]\n" +
+    return "\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" +
     "\\def\\a{10}\n" +
     "\\def\\b{7}\n" +
 	"\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
