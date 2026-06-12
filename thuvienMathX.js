@@ -1300,7 +1300,7 @@ function hamphanthucTT(m, n, a, b) {
 			(1,0) node{$-\\infty$}
 			(1,-3) node(A){$${b}$}
 			(3,-1) node{$-$}
-			(5,0) node{${a}$}
+			(5,0) node{$${a}$}
 			(7,-1) node{$-$}
 			(9,0) node{$+\\infty$}
 			(9,-5) node(C){$${b}$}
