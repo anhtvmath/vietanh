@@ -7,6 +7,15 @@ function dethiso(so) {
 </div>`;
 }
 
+function dethisonew(content) {
+    return `
+<div style="text-align:center">
+  <span style="border:1px solid green;color:green;padding:4px 12px;font-size:30px;font-weight:bold">
+    ${content}
+  </span>
+</div>`;
+}
+
 function thoigianlambai(thoigian) {
     return `let countdownTimer;
 
