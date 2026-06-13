@@ -1,13 +1,4 @@
-function dethiso(so) {
-    return `
-<div style="text-align:center">
-  <span style="border:1px solid green;color:green;padding:4px 12px;font-size:30px;font-weight:bold">
-    Đề số ${so}
-  </span>
-</div>`;
-}
-
-function dethisonew(content) {
+function tieude(content) {
     return `
 <div style="text-align:center">
   <span style="border:1px solid green;color:green;padding:4px 12px;font-size:30px;font-weight:bold">
