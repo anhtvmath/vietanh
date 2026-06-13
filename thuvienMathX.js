@@ -1,3 +1,44 @@
+
+function tinhchattichphan() {
+    return `var a, b, m, n, canduoi, cantren;
+            var res1, res2, res3, res4;
+            while (true) {
+                a = randomchoice(-5, 6);
+                b = randomchoice(-5, 6);
+                m = randomchoice(-4, 5);
+                n = randomchoice(-4, 5);
+                if (a !== 0 && b !== 0 && m !== 0 && n !== 0 && m !== n && m !== -n && !(m < 0 && n < 0)) {
+                    res1 = m * a + n * b;
+                    res2 = m * a - n * b;
+                    res3 = m * b + n * a;
+                    res4 = m * a + b;
+                    if (res1 !== res2 && res1 !== res3 && res1 !== res4 &&
+                        res2 !== res3 && res2 !== res4 && res3 !== res4) {
+                        break;
+                    }
+                }
+            }
+            canduoi = randomchoice(-4, 2);
+            cantren = randomchoice(3, 6);
+            var tichphan = "\\displaystyle\\int\\limits" + format_canduoi(canduoi) + format_cantren(cantren);
+            var dx = "\\mathrm{d}x";
+            var bieu_thuc = hesodau(m, "f(x)") + hesosau(n, "g(x)");
+            diencauhoi(i++, {
+            debai: "Nếu $" + tichphan + " f(x)" + dx + "=" + a + "$ và $" + tichphan + " g(x)" + dx + "=" + b + "$ thì $" + tichphan + "\\big[" + bieu_thuc + "\\big]" + dx + "$ bằng",
+            dung: "$" + res1 + "$",
+            sai1: "$" + res2 + "$",
+            sai2: "$" + res3 + "$",
+            sai3: "$" + res4 + "$",
+            loigiai: "Ta có\n" +
+            "\\begin{align*}\n" +
+            tichphan + "\\big[" + bieu_thuc + "\\big]" + dx +
+            "&=" + hesodau(m, tichphan + " f(x)" + dx) + hesosau(n, tichphan + " g(x)" + dx) + "\\\\\n" +
+            "&=" + m * a + sodungsau(n * b) + "\\\\\n" +
+            "&=" + res1 + ".\n" +
+            "\\end{align*}"
+            });`;
+}
+
 function tieude(content) {
     return `
 <div style="text-align:center">
