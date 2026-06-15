@@ -1,4 +1,3 @@
-
 function tinhchattichphan() {
     return `var a, b, m, n, canduoi, cantren;
             var res1, res2, res3, res4;
@@ -1327,56 +1326,56 @@ function hambacbaTCT(x, f, x1, x2, y1, y2) {
 
 function hamphanthucTT(m, n, a, b) {
     return `\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.5]
-	\\draw[double distance=1pt] (5,-0.5)--(5,-6.5);
-	\\def\\a{10}
-	\\def\\b{7}
-	\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);
-	\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);
-	\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);
-	\\draw (0.5,0.5)--(0.5,-\\b+0.5);
-	\\path
-	(0,0) node{$x$}
-	(0,-1) node{$${m}$}
-	(0,-4) node{$${n}$}
-	(1,0) node{$-\\infty$}
-	(1,-3) node(A){$${b}$}
-	(3,-1) node{$-$}
-	(5,0) node{$${a}$}
-	(7,-1) node{$-$}
-	(9,0) node{$+\\infty$}
-	(9,-5) node(C){$${b}$}
-	(4.6,-6) node(B1){$-\\infty$}
-	(5.4,-2) node(B2){$+\\infty$};
-	\\draw[-stealth,thick] (A)--(B1);
-	\\draw[-stealth,thick] (B2)--(C);
-	\\end{tikzpicture}`;
+\\draw[double distance=1pt] (5,-0.5)--(5,-6.5);
+\\def\\a{10}
+\\def\\b{7}
+\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);
+\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);
+\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);
+\\draw (0.5,0.5)--(0.5,-\\b+0.5);
+\\path
+(0,0) node{$x$}
+(0,-1) node{$${m}$}
+(0,-4) node{$${n}$}
+(1,0) node{$-\\infty$}
+(1,-3) node(A){$${b}$}
+(3,-1) node{$-$}
+(5,0) node{$${a}$}
+(7,-1) node{$-$}
+(9,0) node{$+\\infty$}
+(9,-5) node(C){$${b}$}
+(4.6,-6) node(B1){$-\\infty$}
+(5.4,-2) node(B2){$+\\infty$};
+\\draw[-stealth,thick] (A)--(B1);
+\\draw[-stealth,thick] (B2)--(C);
+\\end{tikzpicture}`;
 }
 
 function hamphanthucCC(m, n, a, b) {
     return `\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.5]
-	\\draw[double distance=1pt] (5,-0.5)--(5,-6.5);
-	\\def\\a{10}
-	\\def\\b{7}
-	\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);
-	\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);
-	\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);
-	\\draw (0.5,0.5)--(0.5,-\\b+0.5);
-	\\path
-	(0,0) node{$x$}
-	(0,-1) node{$${m}$}
-	(0,-4) node{$${n}$}
-	(1,0) node{$-\\infty$}
-	(1,-5) node(A){$${b}$}
-	(3,-1) node{$+$}
-	(5,0) node{$${a}$}
-	(7,-1) node{$+$}
-	(9,0) node{$+\\infty$}
-	(9,-3) node(C){$${b}$}
-	(4.6,-2) node(B1){$+\\infty$}
-	(5.4,-6) node(B2){$-\\infty$};
-	\\draw[-stealth,thick] (A)--(B1);
-	\\draw[-stealth,thick] (B2)--(C);
-	\\end{tikzpicture}`;
+\\draw[double distance=1pt] (5,-0.5)--(5,-6.5);
+\\def\\a{10}
+\\def\\b{7}
+\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);
+\\draw (-0.5,-0.5)--(\\a-0.5,-0.5);
+\\draw (-0.5,-1.5)--(\\a-0.5,-1.5);
+\\draw (0.5,0.5)--(0.5,-\\b+0.5);
+\\path
+(0,0) node{$x$}
+(0,-1) node{$${m}$}
+(0,-4) node{$${n}$}
+(1,0) node{$-\\infty$}
+(1,-5) node(A){$${b}$}
+(3,-1) node{$+$}
+(5,0) node{$${a}$}
+(7,-1) node{$+$}
+(9,0) node{$+\\infty$}
+(9,-3) node(C){$${b}$}
+(4.6,-2) node(B1){$+\\infty$}
+(5.4,-6) node(B2){$-\\infty$};
+\\draw[-stealth,thick] (A)--(B1);
+\\draw[-stealth,thick] (B2)--(C);
+\\end{tikzpicture}`;
 }
 
 
