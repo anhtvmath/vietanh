@@ -1018,7 +1018,7 @@ function xs_vidu10(loai) {
         break;
     }
     
-    var debai = "Một nhà máy có hai phân xưởng $I$ và $II$. Phân xưởng $I$ sản xuất $" + a + "\\%$ số sản phẩm và phân xưởng $II$ sản xuất $" + (100 - a) + "\\%$ số sản phẩm. Tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $" + b + "\\\%$ và của phân xưởng $II$ là $" + c + "\\%$. Kiểm tra ngẫu nhiên một sản phẩm của nhà máy. Xác suất để sản phẩm đó bị lỗi bằng";
+    var debai = "Một nhà máy có hai phân xưởng $I$ và $II$. Phân xưởng $I$ sản xuất $" + a + "\\%$ số sản phẩm và phân xưởng $II$ sản xuất $" + (100 - a) + "\\%$ số sản phẩm. Tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $" + b + "\\%$ và của phân xưởng $II$ là $" + c + "\\%$. Kiểm tra ngẫu nhiên một sản phẩm của nhà máy. Xác suất để sản phẩm đó bị lỗi bằng";
     
     // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn (Xuất ra số thập phân qua hàm convert)
     PA1 = "{\\True $" + convert((a * b + (100 - a) * c) / 10000) + "$}";
@@ -1071,7 +1071,7 @@ function xs_vidu9(loai) {
         break;
     }
     
-    var debai = "Một nhà máy có hai phân xưởng $I$ và $II$. Phân xưởng $I$ sản xuất $" + a + "\\%$ số sản phẩm và phân xưởng $II$ sản xuất $" + (100 - a) + "\\%$ số sản phẩm. Tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $" + b + "\\\%$ và của phân xưởng $II$ là $" + c + "\\%$. Kiểm tra ngẫu nhiên một sản phẩm của nhà máy. Biết rằng sản phẩm được kiểm tra bị lỗi. Xác suất để sản phẩm đó do phân xưởng $I$ sản xuất bằng";
+    var debai = "Một nhà máy có hai phân xưởng $I$ và $II$. Phân xưởng $I$ sản xuất $" + a + "\\%$ số sản phẩm và phân xưởng $II$ sản xuất $" + (100 - a) + "\\%$ số sản phẩm. Tỉ lệ sản phẩm bị lỗi của phân xưởng $I$ là $" + b + "\\%$ và của phân xưởng $II$ là $" + c + "\\%$. Kiểm tra ngẫu nhiên một sản phẩm của nhà máy. Biết rằng sản phẩm được kiểm tra bị lỗi. Xác suất để sản phẩm đó do phân xưởng $I$ sản xuất bằng";
     
     // Định nghĩa các phương án đúng theo format bài đầu tiên của bạn
     PA1 = "{\\True $" + phanso(a * b, a * b + (100 - a) * c) + "$}";
