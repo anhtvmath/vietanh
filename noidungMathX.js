@@ -334,7 +334,8 @@ const database = [
                 {method: ["xs_vidu1", "xs_vidu2"], params: "ex", name: "Dạng 1"},
                 {method: ["xs_vidu3", "xs_vidu4"], params: "ex", name: "Dạng 2"},
                 {method: ["xs_vidu7"], params: "ex", name: "Dạng 3"},
-                {method: ["xs_vidu14"], params: "ex", name: "Dạng 4"}
+                {method: ["xs_vidu8"], params: "ex", name: "Dạng 4"},
+                {method: ["xs_vidu14"], params: "ex", name: "Dạng 5"}
             ] 
         },
         { 
