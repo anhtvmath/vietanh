@@ -125,12 +125,12 @@ const database = [
         title: "Chủ đề 1.4: Tìm tiệm cận",
         subtopics: [
         { 
-            title: "Hàm số bậc nhất trên bậc nhất$", 
+            title: "Hàm số bậc nhất trên bậc nhất", 
             variants: [
                 {method: ["TCĐ_hamphanthucTT"], params: "ex", name: "Dạng 1: Tìm tiệm cận đứng của đồ thị hàm số với đạo hàm âm"},
                 {method: ["TCĐ_hamphanthucCC"], params: "ex", name: "Dạng 2: Tìm tiệm cận đứng của đồ thị hàm số với đạo hàm dương"},
                 {method: ["TCN_hamphanthucTT"], params: "ex", name: "Dạng 3: Tìm tiệm cận ngang của đồ thị hàm số với đạo hàm âm"},
-                {method: ["TCN_hamphanthucCC"], params: "ex", name: "Dạng 4: Tìm tiệm cận ngang của đồ thị hàm số với đạo hàm dương}
+                {method: ["TCN_hamphanthucCC"], params: "ex", name: "Dạng 4: Tìm tiệm cận ngang của đồ thị hàm số với đạo hàm dương"}
             ] 
         },
         { 
