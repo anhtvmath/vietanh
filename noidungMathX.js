@@ -1,36 +1,50 @@
 const database = [
-    {
-    title: "CHƯƠNG I: HÀM SỐ",
-        topics: [
         {
         title: "Chủ đề 1.1: Sự biến thiên của hàm số",
         subtopics: [
-        { 
-            title: "Cho bảng biến thiên", 
-            variants: [
-                {method: ["SBT_BBT_NB_hambacbaCTC","SBT_BBT_DB_hambacbaCTC","SBT_BBT_DB_hambacbaTCT","SBT_BBT_NB_hambacbaTCT"], params: "ex", name: "Dạng 1: Sự biến thiên của hàm bậc ba"},
-                {method: ["SBT_BBT_NB_hamtrungphuongCTCT", "SBT_BBT_DB_hamtrungphuongCTCT", "SBT_BBT_NB_hamtrungphuongTCTC", "SBT_BBT_DB_hamtrungphuongTCTC"], params: "ex", name: "Dạng 2: Sự biến thiên của hàm trùng phương"}
+        {
+          title: "Cho bảng biến thiên", 
+          variants: [
+                {method: ["SBT_BBT_NB_hambacbaCTC"], params: "ex", name: "Dạng 1: Sự nghịch biến của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["SBT_BBT_DB_hambacbaCTC"], params: "ex", name: "Dạng 2: Sự đồng biến của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["SBT_BBT_NB_hambacbaTCT"], params: "ex", name: "Dạng 3: Sự nghịch biến của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["SBT_BBT_DB_hambacbaTCT"], params: "ex", name: "Dạng 4: Sự đồng biến của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["SBT_BBT_NB_hamtrungphuongCTCT"], params: "ex", name: "Dạng 5: Sự nghịch biến của hàm trùng phương với dấu đạo hàm + - + -"},
+                {method: ["SBT_BBT_DB_hamtrungphuongCTCT"], params: "ex", name: "Dạng 6: Sự đồng biến của hàm trùng phương với dấu đạo hàm + - + -"},
+                {method: ["SBT_BBT_NB_hamtrungphuongTCTC"], params: "ex", name: "Dạng 7: Sự nghịch biến của hàm trùng phương với dấu đạo hàm - + - +"},
+                {method: ["SBT_BBT_DB_hamtrungphuongTCTC"], params: "ex", name: "Dạng 8: Sự đồng biến của hàm trùng phương với dấu đạo hàm - + - +"}
             ] 
         },
         { 
-            title: "Cho đồ thị hàm số", 
-            variants: [
-                {method: ["SBT_DT_hambacbaTCT", "SBT_DT_hambacbaCTC"], params: "ex", name: "Dạng 1: Cho đồ thị của hàm bậc ba"},
-                {method: ["SBT_DT_hamtrungphuongCTCT", "SBT_DT_hamtrungphuongTCTC"], params: "ex", name: "Dạng 2: Cho đồ thị của hàm trùng phương"}
-            ] 
+          title: "Cho đồ thị hàm số", 
+          variants: [
+              {method: ["SBT_DT_hambacbaCTC"], params: "ex", name: "Dạng 1: Cho đồ thị của hàm bậc ba với dấu đạo hàm + - +"},
+              {method: ["SBT_DT_hambacbaTCT"], params: "ex", name: "Dạng 2: Cho đồ thị của hàm bậc ba với dấu đạo hàm - + -"},
+              {method: ["SBT_DT_hamtrungphuongCTCT"], params: "ex", name: "Dạng 3: Cho đồ thị của hàm trùng phương với dấu đạo hàm + - + -"},
+              {method: ["SBT_DT_hamtrungphuongTCTC"], params: "ex", name: "Dạng 4: Cho đồ thị của hàm trùng phương với dấu đạo hàm - + - +"}
+          ] 
         },
         { 
-            title: "Cho hàm số", 
-            variants: [
-                {method: ["SBT_CHO_HS_DB_hambacbaCTC", "SBT_CHO_HS_NB_hambacbaCTC", "SBT_CHO_HS_DB_hambacbaTCT", "SBT_CHO_HS_NB_hambacbaTCT"], params: "ex", name: "Dạng 1: Sự biến thiên của hàm bậc ba"}, 
-                {method: ["SBT_CHO_HS_NB_hamtrungphuongCTCT", "SBT_CHO_HS_DB_hamtrungphuongCTCT", "SBT_CHO_HS_NB_hamtrungphuongTCTC", "SBT_CHO_HS_DB_hamtrungphuongTCTC"], params: "ex", name: "Dạng 2: Sự biến thiên của hàm trùng phương"}
-            ] 
+          title: "Cho hàm số", 
+          variants: [
+              {method: ["SBT_CHO_HS_DB_hambacbaCTC"], params: "ex", name: "Dạng 1: Khoảng đồng biến của hàm bậc ba với dấu đạo hàm + - +"},
+              {method: ["SBT_CHO_HS_NB_hambacbaCTC"], params: "ex", name: "Dạng 2: Khoảng nghịch biến của hàm bậc ba với dấu đạo hàm + - +"},
+              {method: ["SBT_CHO_HS_DB_hambacbaTCT"], params: "ex", name: "Dạng 3: Khoảng đồng biến của hàm bậc ba với dấu đạo hàm - + -"},
+              {method: ["SBT_CHO_HS_NB_hambacbaTCT"], params: "ex", name: "Dạng 4: Khoảng nghịch biến của hàm bậc ba với dấu đạo hàm - + -"},
+              {method: ["SBT_CHO_HS_NB_hamtrungphuongCTCT"], params: "ex", name: "Dạng 5: Khoảng nghịch biến của hàm trùng phương với dấu đạo hàm + - + -"},
+              {method: ["SBT_CHO_HS_DB_hamtrungphuongCTCT"], params: "ex", name: "Dạng 6: Khoảng đồng biến của hàm trùng phương với dấu đạo hàm + - + -"},
+              {method: ["SBT_CHO_HS_NB_hamtrungphuongTCTC"], params: "ex", name: "Dạng 7: Khoảng nghịch biến của hàm trùng phương với dấu đạo hàm - + - +"},
+              {method: ["SBT_CHO_HS_DB_hamtrungphuongTCTC"], params: "ex", name: "Dạng 8: Khoảng đồng biến của hàm trùng phương với dấu đạo hàm - + - +"}
+          ] 
         },
         { 
-            title: "Cho đạo hàm", 
-            variants: [
-                {method: ["SBT_CHO_DAOHAM_hambacba_1", "SBT_CHO_DAOHAM_hambacba_2", "SBT_CHO_DAOHAM_hambacba_3", "SBT_CHO_DAOHAM_hambacba_4"], params: "ex", name: "Dạng 1: Sự biến thiên của hàm bậc ba"}
-            ] 
+          title: "Cho đạo hàm", 
+          variants: [
+              {method: ["SBT_CHO_DAOHAM_hambacba_1"], params: "ex", name: "Dạng 1: Cho đạo hàm của hàm bậc ba"},
+              {method: ["SBT_CHO_DAOHAM_hambacba_2"], params: "ex", name: "Dạng 2: Cho đạo hàm của hàm bậc ba"},
+              {method: ["SBT_CHO_DAOHAM_hambacba_3"], params: "ex", name: "Dạng 3: Cho đạo hàm của hàm bậc ba"},
+              {method: ["SBT_CHO_DAOHAM_hambacba_4"], params: "ex", name: "Dạng 4: Cho đạo hàm của hàm bậc ba"}
+          ] 
         }
         ]
         },
@@ -40,20 +54,41 @@ const database = [
         { 
             title: "Cho bảng biến thiên", 
             variants: [
-                {method: ["CUCTRI_BBT_hamtrungphuongCTCT"], params: "ex", name: "Dạng 1: Cực trị của hàm trùng phương"}
+                {method: ["CUCTRI_BBT_hambacbaCTC_yCD"], params: "ex", name: "Dạng 1: Giá trị cực đại của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_BBT_hambacbaCTC_yCT"], params: "ex", name: "Dạng 2: Giá trị cực tiểu của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_BBT_hambacbaCTC_xCD"], params: "ex", name: "Dạng 3: Điểm cực đại của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_BBT_hambacbaCTC_xCT"], params: "ex", name: "Dạng 4: Điểm cực tiểu của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_BBT_hambacbaTCT_yCD"], params: "ex", name: "Dạng 5: Giá trị cực đại của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_BBT_hambacbaTCT_yCT"], params: "ex", name: "Dạng 6: Giá trị cực tiểu của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_BBT_hambacbaTCT_xCD"], params: "ex", name: "Dạng 7: Điểm cực đại của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_BBT_hambacbaTCT_xCT"], params: "ex", name: "Dạng 8: Điểm cực tiểu của hàm bậc ba với dấu đạo hàm - + -"}
             ] 
         },
         { 
             title: "Cho đồ thị hàm số", 
             variants: [
-                {method: ["CUCTRI_DOTHI_hambacbaTCT", "CUCTRI_DOTHI_hambacbaCTC"], params: "ex", name: "Dạng 1: Cực trị của hàm bậc ba"}
+                {method: ["CUCTRI_DOTHI_hambacbaCTC_yCD"], params: "ex", name: "Dạng 1: Giá trị cực đại của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_DOTHI_hambacbaCTC_yCT"], params: "ex", name: "Dạng 2: Giá trị cực tiểu của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_DOTHI_hambacbaCTC_xCD"], params: "ex", name: "Dạng 3: Điểm cực đại của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_DOTHI_hambacbaCTC_xCT"], params: "ex", name: "Dạng 4: Điểm cực tiểu của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_DOTHI_hambacbaTCT_yCD"], params: "ex", name: "Dạng 5: Giá trị cực đại của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_DOTHI_hambacbaTCT_yCT"], params: "ex", name: "Dạng 6: Giá trị cực tiểu của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_DOTHI_hambacbaTCT_xCD"], params: "ex", name: "Dạng 7: Điểm cực đại của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_DOTHI_hambacbaTCT_xCT"], params: "ex", name: "Dạng 8: Điểm cực tiểu của hàm bậc ba với dấu đạo hàm - + -"}
             ] 
         },
         { 
             title: "Cho hàm số", 
             variants: [
-                {method: ["CUCTRI_CHO_HS_hambacbaCTC", "CUCTRI_CHO_HS_hambacbaTCT"], params: "ex", name: "Dạng 1: Cực trị của hàm bậc ba"},
-                {method: ["CUCTRI_CHO_HS_hamtrungphuongCTCT"], params: "ex", name: "Dạng 2: Cực trị của hàm trùng phương"}
+                {method: ["CUCTRI_CHO_HS_hambacbaCTC_yCD"], params: "ex", name: "Dạng 1: Giá trị cực đại của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_CHO_HS_hambacbaCTC_yCT"], params: "ex", name: "Dạng 2: Giá trị cực tiểu của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_CHO_HS_hambacbaCTC_xCD"], params: "ex", name: "Dạng 3: Điểm cực đại của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_CHO_HS_hambacbaCTC_xCT"], params: "ex", name: "Dạng 4: Điểm cực tiểu của hàm bậc ba với dấu đạo hàm + - +"},
+                {method: ["CUCTRI_CHO_HS_hambacbaTCT_yCD"], params: "ex", name: "Dạng 5: Giá trị cực đại của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_CHO_HS_hambacbaTCT_yCT"], params: "ex", name: "Dạng 6: Giá trị cực tiểu của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_CHO_HS_hambacbaTCT_xCD"], params: "ex", name: "Dạng 7: Điểm cực đại của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_CHO_HS_hambacbaTCT_xCT"], params: "ex", name: "Dạng 8: Điểm cực tiểu của hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["CUCTRI_CHO_HS_hamtrungphuongCTCT"], params: "ex", name: "Dạng 9: Cực trị của hàm trùng phương"}
             ] 
         },
         { 
@@ -84,12 +119,34 @@ const database = [
         ]
         },
         {
-        title: "Chủ đề 1.4: Trắc nghiệm đúng sai",
+        title: "Chủ đề 1.4: Tìm tiệm cận",
+        subtopics: [
+        { 
+            title: "Hàm số $y=\\dfrac{ax+b}{cx+d}$", 
+            variants: [
+                {method: ["TCĐ_hamphanthucTT"], params: "ex", name: "Dạng 1: Tìm tiệm cận đứng của đồ thị hàm số với $y'<0$"},
+                {method: ["TCĐ_hamphanthucCC"], params: "ex", name: "Dạng 2: Tìm tiệm cận đứng của đồ thị hàm số với $y'>0$"},
+                {method: ["TCN_hamphanthucTT"], params: "ex", name: "Dạng 3: Tìm tiệm cận ngang của đồ thị hàm số với $y'<0$"},
+                {method: ["TCN_hamphanthucCC"], params: "ex", name: "Dạng 4: Tìm tiệm cận ngang của đồ thị hàm số với $y'>0$"},
+                {method: ["secapnhat"], params: "ex", name: "Dạng 2: Hàm trùng phương"}
+            ] 
+        },
+        { 
+            title: "Hàm số $y=\\dfrac{ax^2+bx+c}{px+q}$",
+            variants: [
+                {method: ["secapnhat"], params: "ex", name: "Dạng 1: Hàm bậc ba"},
+                {method: ["secapnhat"], params: "ex", name: "Dạng 2: Hàm trùng phương"}
+            ] 
+        }
+        ]
+        },
+        {
+        title: "Chủ đề 1.5: Trắc nghiệm đúng sai",
         subtopics: [
         { 
             title: "Cho bảng biến thiên", 
             variants: [
-                {method: ["TF_SBT_BBT_hambacbaCTC", "TF_SBT_BBT_hambacbaTCT"], params: "ex", name: "Dạng 1: Hàm bậc ba"}
+                {method: ["TF_SBT_BBT_hambacbaCTC", "TF_SBT_BBT_hambacbaTCT", "TF_CHO_HS_hambacbaCTC"], params: "ex", name: "Dạng 1: Hàm bậc ba"}
             ] 
         },
         { 
@@ -108,7 +165,6 @@ const database = [
         }
         ]
     },
-    {
     title: "CHƯƠNG II: VECTƠ VÀ HỆ TRỤC TOẠ ĐỘ TRONG KHÔNG GIAN",
         topics: [
         {
