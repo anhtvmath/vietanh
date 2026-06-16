@@ -1,4 +1,7 @@
 const database = [
+    {
+    title: "CHƯƠNG I: HÀM SỐ",
+        topics: [
         {
         title: "Chủ đề 1.1: Sự biến thiên của hàm số",
         subtopics: [
