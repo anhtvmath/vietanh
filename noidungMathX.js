@@ -108,15 +108,15 @@ const database = [
         { 
             title: "Cho bảng biến thiên", 
             variants: [
-                {method: ["secapnhat"], params: "ex", name: "Dạng 1: Hàm bậc ba"},
-                {method: ["secapnhat"], params: "ex", name: "Dạng 2: Hàm trùng phương"}
+                {method: ["secapnhat"], params: "ex", name: "Dạng 1: Hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["secapnhat"], params: "ex", name: "Dạng 1: Hàm bậc ba với dấu đạo hàm + - +"}
             ] 
         },
         { 
             title: "Cho đồ thị hàm số", 
             variants: [
-                {method: ["TIM_HAM_SO_BIET_DOTHI_hambacbaTCT", "TIM_HAM_SO_BIET_DOTHI_hambacbaCTC"], params: "ex", name: "Dạng 1: Hàm bậc ba"},
-                {method: ["secapnhat"], params: "ex", name: "Dạng 2: Hàm trùng phương"}
+                {method: ["TIM_HAM_SO_BIET_DOTHI_hambacbaTCT"], params: "ex", name: "Dạng 1: Hàm bậc ba với dấu đạo hàm - + -"},
+                {method: ["TIM_HAM_SO_BIET_DOTHI_hambacbaCTC"], params: "ex", name: "Dạng 1: Hàm bậc ba với dấu đaọ hàm + - +"}
             ] 
         }
         ]
@@ -125,20 +125,19 @@ const database = [
         title: "Chủ đề 1.4: Tìm tiệm cận",
         subtopics: [
         { 
-            title: "Hàm số $y=\\dfrac{ax+b}{cx+d}$", 
+            title: "Hàm số bậc nhất trên bậc nhất$", 
             variants: [
-                {method: ["TCĐ_hamphanthucTT"], params: "ex", name: "Dạng 1: Tìm tiệm cận đứng của đồ thị hàm số với $y'<0$"},
-                {method: ["TCĐ_hamphanthucCC"], params: "ex", name: "Dạng 2: Tìm tiệm cận đứng của đồ thị hàm số với $y'>0$"},
-                {method: ["TCN_hamphanthucTT"], params: "ex", name: "Dạng 3: Tìm tiệm cận ngang của đồ thị hàm số với $y'<0$"},
-                {method: ["TCN_hamphanthucCC"], params: "ex", name: "Dạng 4: Tìm tiệm cận ngang của đồ thị hàm số với $y'>0$"},
-                {method: ["secapnhat"], params: "ex", name: "Dạng 2: Hàm trùng phương"}
+                {method: ["TCĐ_hamphanthucTT"], params: "ex", name: "Dạng 1: Tìm tiệm cận đứng của đồ thị hàm số với đạo hàm âm"},
+                {method: ["TCĐ_hamphanthucCC"], params: "ex", name: "Dạng 2: Tìm tiệm cận đứng của đồ thị hàm số với đạo hàm dương"},
+                {method: ["TCN_hamphanthucTT"], params: "ex", name: "Dạng 3: Tìm tiệm cận ngang của đồ thị hàm số với đạo hàm âm"},
+                {method: ["TCN_hamphanthucCC"], params: "ex", name: "Dạng 4: Tìm tiệm cận ngang của đồ thị hàm số với đạo hàm dương}
             ] 
         },
         { 
-            title: "Hàm số $y=\\dfrac{ax^2+bx+c}{px+q}$",
+            title: "Hàm số bậc hai trên bậc nhất",
             variants: [
-                {method: ["secapnhat"], params: "ex", name: "Dạng 1: Hàm bậc ba"},
-                {method: ["secapnhat"], params: "ex", name: "Dạng 2: Hàm trùng phương"}
+                {method: ["secapnhat"], params: "ex", name: "Dạng 1"},
+                {method: ["secapnhat"], params: "ex", name: "Dạng 2"}
             ] 
         }
         ]
