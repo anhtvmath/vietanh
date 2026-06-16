@@ -1,3 +1,1080 @@
+function CUCTRI_CHO_HS_hambacbaCTC_yCT(loai) {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = 2 * a * Math.pow(x1, 3) - 3 * a * S * Math.pow(x1, 2) + 6 * a * P * x1 + 6 * b;
+        Tu_y2 = 2 * a * Math.pow(x2, 3) - 3 * a * S * Math.pow(x2, 2) + 6 * a * P * x2 + 6 * b;
+        if (x1 < x2 && Tu_y1 > Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(a, "x^2") + hesosau(-a * S, "x") + sodungsau(a * P) + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
+        hambacbaCTC("x", "f", x1, x2, y1, y2) +
+        "\\end{center}\n";
+    var decauhoi, PA1, PA2, PA3, PA4, loigiai;
+    var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
+    var cumtu = cumtuArr[randomchoice(0, 2)]; 
+    decauhoi = "Giá trị cực tiểu của hàm số đã cho bằng";
+    PA1 = "{\\True $" + y2 + "$}";
+    PA2 = "{$" + y1 + "$}";
+    PA3 = "{$" + x1 + "$}";
+    PA4 = "{$" + x2 + "$}";
+    loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y2 + ".$";
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(a, 3), "x^3") + hesoxausau(phanso(-a * S, 2), "x^2") + hesosau(a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options); 
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function CUCTRI_CHO_HS_hambacbaCTC_yCD(loai) {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = 2 * a * Math.pow(x1, 3) - 3 * a * S * Math.pow(x1, 2) + 6 * a * P * x1 + 6 * b;
+        Tu_y2 = 2 * a * Math.pow(x2, 3) - 3 * a * S * Math.pow(x2, 2) + 6 * a * P * x2 + 6 * b;
+        if (x1 < x2 && Tu_y1 > Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(a, "x^2") + hesosau(-a * S, "x") + sodungsau(a * P) + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
+        hambacbaCTC("x", "f", x1, x2, y1, y2) +
+        "\\end{center}\n";
+    var decauhoi, PA1, PA2, PA3, PA4, loigiai;
+    var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
+    var cumtu = cumtuArr[randomchoice(0, 2)]; 
+    decauhoi = "Giá trị cực đại của hàm số đã cho bằng";
+    PA1 = "{\\True $" + y1 + "$}";
+    PA2 = "{$" + y2 + "$}";
+    PA3 = "{$" + x1 + "$}";
+    PA4 = "{$" + x2 + "$}";
+    loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y1 + ".$";
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(a, 3), "x^3") + hesoxausau(phanso(-a * S, 2), "x^2") + hesosau(a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options); 
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function CUCTRI_CHO_HS_hambacbaCTC_xCT(loai) {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = 2 * a * Math.pow(x1, 3) - 3 * a * S * Math.pow(x1, 2) + 6 * a * P * x1 + 6 * b;
+        Tu_y2 = 2 * a * Math.pow(x2, 3) - 3 * a * S * Math.pow(x2, 2) + 6 * a * P * x2 + 6 * b;
+        if (x1 < x2 && Tu_y1 > Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(a, "x^2") + hesosau(-a * S, "x") + sodungsau(a * P) + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
+        hambacbaCTC("x", "f", x1, x2, y1, y2) +
+        "\\end{center}\n";
+    var decauhoi, PA1, PA2, PA3, PA4, loigiai;
+    var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
+    var cumtu = cumtuArr[randomchoice(0, 2)]; 
+    decauhoi = "Hàm số đã cho đạt cực tiểu tại";
+    PA1 = "{\\True $" + x2 + "$}";
+    PA2 = "{$" + y2 + "$}";
+    PA3 = "{$" + x1 + "$}";
+    PA4 = "{$" + y1 + "$}";
+    loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=" + x2 + ".$";
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(a, 3), "x^3") + hesoxausau(phanso(-a * S, 2), "x^2") + hesosau(a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options); 
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function CUCTRI_CHO_HS_hambacbaCTC_xCD(loai) {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = 2 * a * Math.pow(x1, 3) - 3 * a * S * Math.pow(x1, 2) + 6 * a * P * x1 + 6 * b;
+        Tu_y2 = 2 * a * Math.pow(x2, 3) - 3 * a * S * Math.pow(x2, 2) + 6 * a * P * x2 + 6 * b;
+        if (x1 < x2 && Tu_y1 > Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(a, "x^2") + hesosau(-a * S, "x") + sodungsau(a * P) + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
+        hambacbaCTC("x", "f", x1, x2, y1, y2) +
+        "\\end{center}\n";
+    var decauhoi, PA1, PA2, PA3, PA4, loigiai;
+    var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
+    var cumtu = cumtuArr[randomchoice(0, 2)]; 
+    decauhoi = "Hàm số đã cho đạt cực đại tại";
+    PA1 = "{\\True $" + x1 + "$}";
+    PA2 = "{$" + y2 + "$}";
+    PA3 = "{$" + x2 + "$}";
+    PA4 = "{$" + y1 + "$}";
+    loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực đại tại $x=" + x1 + ".$";
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(a, 3), "x^3") + hesoxausau(phanso(-a * S, 2), "x^2") + hesosau(a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options); 
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function CUCTRI_CHO_HS_hambacbaTCT_yCT(loai) {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = -2 * a * Math.pow(x1, 3) + 3 * a * S * Math.pow(x1, 2) - 6 * a * P * x1 + 6 * b;
+        Tu_y2 = -2 * a * Math.pow(x2, 3) + 3 * a * S * Math.pow(x2, 2) - 6 * a * P * x2 + 6 * b;
+
+        if (x1 < x2 && Tu_y1 < Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(-a, "x^2") + hesosau(a * S, "x") + sodungsau(-a * P) + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
+        hambacbaTCT("x", "f", x1, x2, y1, y2) + 
+        "\\end{center}\n";
+    var decauhoi, PA1, PA2, PA3, PA4, loigiai;
+    var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
+    var cumtu = cumtuArr[randomchoice(0, 2)]; 
+    decauhoi = "Giá trị cực tiểu của hàm số đã cho bằng";
+    PA1 = "{\\True $" + y1 + "$}";
+    PA2 = "{$" + y2 + "$}";
+    PA3 = "{$" + x1 + "$}";
+    PA4 = "{$" + x2 + "$}";
+    loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y1 + ".$";
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(-a, 3), "x^3") + hesoxausau(phanso(a * S, 2), "x^2") + hesosau(-a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options); 
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function CUCTRI_CHO_HS_hambacbaTCT_yCD(loai) {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = -2 * a * Math.pow(x1, 3) + 3 * a * S * Math.pow(x1, 2) - 6 * a * P * x1 + 6 * b;
+        Tu_y2 = -2 * a * Math.pow(x2, 3) + 3 * a * S * Math.pow(x2, 2) - 6 * a * P * x2 + 6 * b;
+
+        if (x1 < x2 && Tu_y1 < Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(-a, "x^2") + hesosau(a * S, "x") + sodungsau(-a * P) + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
+        hambacbaTCT("x", "f", x1, x2, y1, y2) + 
+        "\\end{center}\n";
+    var decauhoi, PA1, PA2, PA3, PA4, loigiai;
+    var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
+    var cumtu = cumtuArr[randomchoice(0, 2)]; 
+    decauhoi = "Giá trị cực đại của hàm số đã cho bằng";
+    PA1 = "{\\True $" + y2 + "$}";
+    PA2 = "{$" + y1 + "$}";
+    PA3 = "{$" + x1 + "$}";
+    PA4 = "{$" + x2 + "$}";
+    loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y2 + ".$";
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(-a, 3), "x^3") + hesoxausau(phanso(a * S, 2), "x^2") + hesosau(-a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options); 
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function CUCTRI_CHO_HS_hambacbaTCT_xCT(loai) {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = -2 * a * Math.pow(x1, 3) + 3 * a * S * Math.pow(x1, 2) - 6 * a * P * x1 + 6 * b;
+        Tu_y2 = -2 * a * Math.pow(x2, 3) + 3 * a * S * Math.pow(x2, 2) - 6 * a * P * x2 + 6 * b;
+
+        if (x1 < x2 && Tu_y1 < Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(-a, "x^2") + hesosau(a * S, "x") + sodungsau(-a * P) + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
+        hambacbaTCT("x", "f", x1, x2, y1, y2) + 
+        "\\end{center}\n";
+    var decauhoi, PA1, PA2, PA3, PA4, loigiai;
+    var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
+    var cumtu = cumtuArr[randomchoice(0, 2)];
+    decauhoi = "Hàm số đã cho đạt cực tiểu tại";
+    PA1 = "{\\True $" + x1 + "$}";
+    PA2 = "{$" + y2 + "$}";
+    PA3 = "{$" + x2 + "$}";
+    PA4 = "{$" + y1 + "$}";
+    loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực tiểu tại $x=" + x1 + ".$";
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(-a, 3), "x^3") + hesoxausau(phanso(a * S, 2), "x^2") + hesosau(-a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options); 
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+
+function CUCTRI_CHO_HS_hambacbaTCT_xCD(loai) {
+    var x1, x2, S, P, a, b, Tu_y1, Tu_y2;
+    while (true) {
+        x1 = randomchoice(-6, 7);
+        x2 = randomchoice(-6, 7);
+        S = x1 + x2;
+        P = x1 * x2;
+        a = randomchoice(1, 7);
+        b = randomchoice(-6, 7);
+        Tu_y1 = -2 * a * Math.pow(x1, 3) + 3 * a * S * Math.pow(x1, 2) - 6 * a * P * x1 + 6 * b;
+        Tu_y2 = -2 * a * Math.pow(x2, 3) + 3 * a * S * Math.pow(x2, 2) - 6 * a * P * x2 + 6 * b;
+
+        if (x1 < x2 && Tu_y1 < Tu_y2 && kiemtrakhacnhau(6 * x1, 6 * x2, Tu_y1, Tu_y2) !== false) {
+            break; 
+        }
+    }
+    var y1 = phanso(Tu_y1, 6);
+    var y2 = phanso(Tu_y2, 6);
+    var loigiaibegin = "Ta có $f'(x)=" + hesodau(-a, "x^2") + hesosau(a * S, "x") + sodungsau(-a * P) + "$.\\\\\n" +
+        "Do đó\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
+        hambacbaTCT("x", "f", x1, x2, y1, y2) + 
+        "\\end{center}\n";
+    var decauhoi, PA1, PA2, PA3, PA4, loigiai;
+    var cumtuArr = ["Dựa vào ", "Quan sát ", "Dựa trên "];
+    var cumtu = cumtuArr[randomchoice(0, 2)]; 
+    decauhoi = "Hàm số đã cho đạt cực đại tại";
+    PA1 = "{\\True $" + x2 + "$}";
+    PA2 = "{$" + y2 + "$}";
+    PA3 = "{$" + x1 + "$}";
+    PA4 = "{$" + y1 + "$}";
+    loigiai = loigiaibegin + cumtu + "bảng biến thiên, ta thấy hàm số đã cho đạt cực đại tại $x=" + x2 + ".$";
+    var debai = "Cho hàm số $f(x)=" + hesoxaudau(phanso(-a, 3), "x^3") + hesoxausau(phanso(a * S, 2), "x^2") + hesosau(-a * P, "x") + sodungsau(b) + "$ với mọi $x\\in\\Bbb R$. " + decauhoi;
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options); 
+    return "\\begin{"+loai+"}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{" + loigiai + "\n" +
+        "}\n" +
+        "\\end{"+loai+"}\n";
+}
+
+function CUCTRI_BBT_hambacbaCTC_xCD(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(1,6);
+    var y2 = randomchoice(-6,-1);
+    while (x1 === y2 || x2 === y1) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(1,6);
+        y2 = randomchoice(-6,-1);
+    }
+    var x_CD = x1;
+    var x_CT = x2;
+    var y_CD = y1;
+    var y_CT = y2;
+    var PA1 = "{\\True $" + x_CD + "$}";
+    var PA2 = "{$" + x_CT + "$}";
+    var PA3 = "{$" + y_CT + "$}";
+    var PA4 = "{$" + y_CD + "$}";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        "\\begin{center}\n" +
+        hambacbaCTC("x","f",x1,x2,y1,y2) +
+        "\\end{center}\n" + 
+        "Điểm cực đại của hàm số đã cho bằng\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{Dựa vào bảng biến thiên, ta thấy điểm cực đại của hàm số là $x_{\\mathrm{CĐ}}=" + x_CD + "$.}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_BBT_hambacbaCTC_xCT(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(1,6);
+    var y2 = randomchoice(-6,-1);
+    while (x1 === y2 || x2 === y1) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(1,6);
+        y2 = randomchoice(-6,-1);
+    }
+    var x_CD = x1;
+    var x_CT = x2;
+    var y_CD = y1;
+    var y_CT = y2;
+    var PA1 = "{\\True $" + x_CT + "$}";
+    var PA2 = "{$" + x_CD + "$}";
+    var PA3 = "{$" + y_CT + "$}";
+    var PA4 = "{$" + y_CD + "$}";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        "\\begin{center}\n" +
+        hambacbaCTC("x","f",x1,x2,y1,y2) +
+        "\\end{center}\n" + 
+        "Điểm cực tiểu của hàm số đã cho bằng\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{Dựa vào bảng biến thiên, ta thấy điểm cực tiểu của hàm số là $x_{\\mathrm{CT}}=" + x_CT + "$.}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_BBT_hambacbaCTC_yCD(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(1,6);
+    var y2 = randomchoice(-6,-1);
+    while (x1 === y2 || x2 === y1) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(1,6);
+        y2 = randomchoice(-6,-1);
+    }
+    var x_CD = x1;
+    var x_CT = x2;
+    var y_CD = y1;
+    var y_CT = y2;
+    var PA1 = "{\\True $" + y_CD + "$}";
+    var PA2 = "{$" + x_CT + "$}";
+    var PA3 = "{$" + y_CT + "$}";
+    var PA4 = "{$" + x_CD + "$}";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        "\\begin{center}\n" +
+        hambacbaCTC("x","f",x1,x2,y1,y2) +
+        "\\end{center}\n" + 
+        "Giá trị cực đại của hàm số đã cho bằng\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{Dựa vào bảng biến thiên, ta thấy giá trị cực đại của hàm số là $y_{\\mathrm{CĐ}}=" + y_CD + "$.}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_BBT_hambacbaCTC_yCT(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(1,6);
+    var y2 = randomchoice(-6,-1);
+    while (x1 === y2 || x2 === y1) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(1,6);
+        y2 = randomchoice(-6,-1);
+    }
+    var x_CD = x1;
+    var x_CT = x2;
+    var y_CD = y1;
+    var y_CT = y2;
+    var PA1 = "{\\True $" + y_CT + "$}";
+    var PA2 = "{$" + x_CT + "$}";
+    var PA3 = "{$" + y_CD + "$}";
+    var PA4 = "{$" + x_CD + "$}";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        "\\begin{center}\n" +
+        hambacbaCTC("x","f",x1,x2,y1,y2) +
+        "\\end{center}\n" + 
+        "Giá trị cực tiểu của hàm số đã cho bằng\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{Dựa vào bảng biến thiên, ta thấy giá trị cực tiểu của hàm số là $y_{\\mathrm{CT}}=" + y_CT + "$.}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_BBT_hambacbaTCT_xCD(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(-6,-1);
+    var y2 = randomchoice(1,6);
+    while (x1 === y1 || x2 === y2) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(-6,-1);
+        y2 = randomchoice(1,6);
+    }
+    var x_CD = x2;
+    var x_CT = x1;
+    var y_CD = y2;
+    var y_CT = y1;
+    var PA1 = "{\\True $" + x_CD + "$}";
+    var PA2 = "{$" + x_CT + "$}";
+    var PA3 = "{$" + y_CT + "$}";
+    var PA4 = "{$" + y_CD + "$}";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        "\\begin{center}\n" +
+        hambacbaTCT("x","f",x1,x2,y1,y2) + 
+        "\\end{center}\n" + 
+        "Điểm cực đại của hàm số đã cho bằng\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{Dựa vào bảng biến thiên, ta thấy điểm cực đại của hàm số là $x_{\\mathrm{CĐ}}=" + x_CD + "$.}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_BBT_hambacbaTCT_xCT(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(-6,-1);
+    var y2 = randomchoice(1,6);
+    while (x1 === y1 || x2 === y2) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(-6,-1);
+        y2 = randomchoice(1,6);
+    }
+    var x_CD = x2;
+    var x_CT = x1;
+    var y_CD = y2;
+    var y_CT = y1;
+    var PA1 = "{\\True $" + x_CT + "$}";
+    var PA2 = "{$" + x_CD + "$}";
+    var PA3 = "{$" + y_CT + "$}";
+    var PA4 = "{$" + y_CD + "$}";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        "\\begin{center}\n" +
+        hambacbaTCT("x","f",x1,x2,y1,y2) + 
+        "\\end{center}\n" + 
+        "Điểm cực tiểu của hàm số đã cho bằng\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{Dựa vào bảng biến thiên, ta thấy điểm cực tiểu của hàm số là $x_{\\mathrm{CT}}=" + x_CT + "$.}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_BBT_hambacbaTCT_yCD(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(-6,-1);
+    var y2 = randomchoice(1,6);
+    while (x1 === y1 || x2 === y2) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(-6,-1);
+        y2 = randomchoice(1,6);
+    }
+    var x_CD = x2;
+    var x_CT = x1;
+    var y_CD = y2;
+    var y_CT = y1;
+    var PA1 = "{\\True $" + y_CD + "$}";
+    var PA2 = "{$" + x_CT + "$}";
+    var PA3 = "{$" + y_CT + "$}";
+    var PA4 = "{$" + x_CD + "$}";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        "\\begin{center}\n" +
+        hambacbaTCT("x","f",x1,x2,y1,y2) + 
+        "\\end{center}\n" + 
+        "Giá trị cực đại của hàm số đã cho bằng\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{Dựa vào bảng biến thiên, ta thấy giá trị cực đại của hàm số là $y_{\\mathrm{CĐ}}=" + y_CD + "$.}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_BBT_hambacbaTCT_yCT(loai) {
+    var x1 = randomchoice(-6,-1);
+    var x2 = randomchoice(1,6);
+    var y1 = randomchoice(-6,-1);
+    var y2 = randomchoice(1,6);
+    while (x1 === y1 || x2 === y2) {
+        x1 = randomchoice(-6,-1);
+        x2 = randomchoice(1,6);
+        y1 = randomchoice(-6,-1);
+        y2 = randomchoice(1,6);
+    }
+    var x_CD = x2;
+    var x_CT = x1;
+    var y_CD = y2;
+    var y_CT = y1;
+    var PA1 = "{\\True $" + y_CT + "$}";
+    var PA2 = "{$" + x_CT + "$}";
+    var PA3 = "{$" + y_CD + "$}";
+    var PA4 = "{$" + x_CD + "$}";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{"+loai+"}\n" +
+        "Cho hàm số $y=f(x)$ có bảng biến thiên như sau:\n" +  
+        "\\begin{center}\n" +
+        hambacbaTCT("x","f",x1,x2,y1,y2) + 
+        "\\end{center}\n" + 
+        "Giá trị cực tiểu của hàm số đã cho bằng\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{Dựa vào bảng biến thiên, ta thấy giá trị cực tiểu của hàm số là $y_{\\mathrm{CT}}=" + y_CT + "$.}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_DOTHI_hambacbaCTC_yCD(loai) {
+    var boMau = [
+        [1, 0, -3, -2], [1, 0, -3, -1], [1, 0, -3, 0], [1, 0, -3, 1], [1, 0, -3, 2], // Cực trị -1, 1
+        [1, -3, 0, -2], [1, -3, 0, -1], [1, -3, 0, 0], [1, -3, 0, 1], [1, -3, 0, 2], [1, -3, 0, 3], [1, -3, 0, 4], [1, -3, 0, 5], // Cực trị 0, 2
+        [1, 3, 0, -4], [1, 3, 0, -3], [1, 3, 0, -2], [1, 3, 0, -1], [1, 3, 0, 0], [1, 3, 0, 1], [1, 3, 0, 2] // Cực trị -2, 0
+    ];
+    var boChon = boMau[randomchoice(0, boMau.length - 1)];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x_CD = (b === 0 && c === -3) ? -1 : (b === -3 && c === 0) ? 0 : -2;
+    var y_CD = (b === 0 && c === -3) ? d + 2 : (b === -3 && c === 0) ? d : d + 4;
+    var y_CT = (b === 0 && c === -3) ? d - 2 : (b === -3 && c === 0) ? d - 4 : d;
+    var x_CT = (b === 0 && c === -3) ? 1 : (b === -3 && c === 0) ? 2 : 0;
+    var ans = y_CD;
+    var distractors = [...new Set([y_CD, y_CT, x_CD, x_CT])].filter(v => v !== ans);
+    while (distractors.length < 3) { distractors.push(ans + distractors.length + 1); }
+    var options = ["{\\True $" + ans + "$}", "{$" + distractors[0] + "$}", "{$" + distractors[1] + "$}", "{$" + distractors[2] + "$}"];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+           "Cho hàm số bậc ba $y=f(x)$ có đồ thị như hình bên.\n" +
+           "\\begin{center}\n" + 
+           dothibacba_a_duong(a, b, c, d) + "\n" +
+           "\\end{center}\n" + 
+           "Giá trị cực đại của hàm số đã cho bằng\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{Dựa vào đồ thị, ta thấy tung độ điểm cực đại của đồ thị hàm số là $" + ans + "$. Vậy giá trị cực đại của hàm số là $y_{\\mathrm{CĐ}}=" + ans + "$.}\n" +
+           "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_DOTHI_hambacbaCTC_yCT(loai) {
+    var boMau = [
+        [1, 0, -3, -2], [1, 0, -3, -1], [1, 0, -3, 0], [1, 0, -3, 1], [1, 0, -3, 2], // Cực trị -1, 1
+        [1, -3, 0, -2], [1, -3, 0, -1], [1, -3, 0, 0], [1, -3, 0, 1], [1, -3, 0, 2], [1, -3, 0, 3], [1, -3, 0, 4], [1, -3, 0, 5], // Cực trị 0, 2
+        [1, 3, 0, -4], [1, 3, 0, -3], [1, 3, 0, -2], [1, 3, 0, -1], [1, 3, 0, 0], [1, 3, 0, 1], [1, 3, 0, 2] // Cực trị -2, 0
+    ];
+    var boChon = boMau[randomchoice(0, boMau.length - 1)];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x_CD = (b === 0 && c === -3) ? -1 : (b === -3 && c === 0) ? 0 : -2;
+    var y_CD = (b === 0 && c === -3) ? d + 2 : (b === -3 && c === 0) ? d : d + 4;
+    var y_CT = (b === 0 && c === -3) ? d - 2 : (b === -3 && c === 0) ? d - 4 : d;
+    var x_CT = (b === 0 && c === -3) ? 1 : (b === -3 && c === 0) ? 2 : 0;
+    var ans = y_CT;
+    var distractors = [...new Set([y_CD, y_CT, x_CD, x_CT])].filter(v => v !== ans);
+    while (distractors.length < 3) { distractors.push(ans + distractors.length + 1); }
+    var options = ["{\\True $" + ans + "$}", "{$" + distractors[0] + "$}", "{$" + distractors[1] + "$}", "{$" + distractors[2] + "$}"];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+           "Cho hàm số bậc ba $y=f(x)$ có đồ thị như hình bên.\n" +
+           "\\begin{center}\n" + 
+           dothibacba_a_duong(a, b, c, d) + "\n" +
+           "\\end{center}\n" + 
+           "Giá trị cực tiểu của hàm số đã cho bằng\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{Dựa vào đồ thị, ta thấy tung độ điểm cực tiểu của đồ thị hàm số là $" + ans + "$. Vậy giá trị cực tiểu của hàm số là $y_{\\mathrm{CT}}=" + ans + "$.}\n" +
+           "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_DOTHI_hambacbaCTC_xCD(loai) {
+    var boMau = [
+        [1, 0, -3, -2], [1, 0, -3, -1], [1, 0, -3, 0], [1, 0, -3, 1], [1, 0, -3, 2], // Cực trị -1, 1
+        [1, -3, 0, -2], [1, -3, 0, -1], [1, -3, 0, 0], [1, -3, 0, 1], [1, -3, 0, 2], [1, -3, 0, 3], [1, -3, 0, 4], [1, -3, 0, 5], // Cực trị 0, 2
+        [1, 3, 0, -4], [1, 3, 0, -3], [1, 3, 0, -2], [1, 3, 0, -1], [1, 3, 0, 0], [1, 3, 0, 1], [1, 3, 0, 2] // Cực trị -2, 0
+    ];
+    var boChon = boMau[randomchoice(0, boMau.length - 1)];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x_CD = (b === 0 && c === -3) ? -1 : (b === -3 && c === 0) ? 0 : -2;
+    var y_CD = (b === 0 && c === -3) ? d + 2 : (b === -3 && c === 0) ? d : d + 4;
+    var y_CT = (b === 0 && c === -3) ? d - 2 : (b === -3 && c === 0) ? d - 4 : d;
+    var x_CT = (b === 0 && c === -3) ? 1 : (b === -3 && c === 0) ? 2 : 0;
+    var ans = x_CD;
+    var distractors = [...new Set([y_CD, y_CT, x_CD, x_CT])].filter(v => v !== ans);
+    while (distractors.length < 3) { distractors.push(ans + distractors.length + 1); }
+    var options = ["{\\True $" + ans + "$}", "{$" + distractors[0] + "$}", "{$" + distractors[1] + "$}", "{$" + distractors[2] + "$}"];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+           "Cho hàm số bậc ba $y=f(x)$ có đồ thị như hình bên.\n" +
+           "\\begin{center}\n" + 
+           dothibacba_a_duong(a, b, c, d) + "\n" +
+           "\\end{center}\n" + 
+           "Điểm cực đại của hàm số đã cho bằng\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{Dựa vào đồ thị, ta thấy hoành độ điểm cực đại của đồ thị hàm số là $" + ans + "$. Vậy điểm cực đại của hàm số là $x_{\\mathrm{CĐ}}=" + ans + "$.}\n" +
+           "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_DOTHI_hambacbaCTC_xCT(loai) {
+    var boMau = [
+        [1, 0, -3, -2], [1, 0, -3, -1], [1, 0, -3, 0], [1, 0, -3, 1], [1, 0, -3, 2], // Cực trị -1, 1
+        [1, -3, 0, -2], [1, -3, 0, -1], [1, -3, 0, 0], [1, -3, 0, 1], [1, -3, 0, 2], [1, -3, 0, 3], [1, -3, 0, 4], [1, -3, 0, 5], // Cực trị 0, 2
+        [1, 3, 0, -4], [1, 3, 0, -3], [1, 3, 0, -2], [1, 3, 0, -1], [1, 3, 0, 0], [1, 3, 0, 1], [1, 3, 0, 2] // Cực trị -2, 0
+    ];
+    var boChon = boMau[randomchoice(0, boMau.length - 1)];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x_CD = (b === 0 && c === -3) ? -1 : (b === -3 && c === 0) ? 0 : -2;
+    var y_CD = (b === 0 && c === -3) ? d + 2 : (b === -3 && c === 0) ? d : d + 4;
+    var y_CT = (b === 0 && c === -3) ? d - 2 : (b === -3 && c === 0) ? d - 4 : d;
+    var x_CT = (b === 0 && c === -3) ? 1 : (b === -3 && c === 0) ? 2 : 0;
+    var ans = x_CT;
+    var distractors = [...new Set([y_CD, y_CT, x_CD, x_CT])].filter(v => v !== ans);
+    while (distractors.length < 3) { distractors.push(ans + distractors.length + 1); }
+    var options = ["{\\True $" + ans + "$}", "{$" + distractors[0] + "$}", "{$" + distractors[1] + "$}", "{$" + distractors[2] + "$}"];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+           "Cho hàm số bậc ba $y=f(x)$ có đồ thị như hình bên.\n" +
+           "\\begin{center}\n" + 
+           dothibacba_a_duong(a, b, c, d) + "\n" +
+           "\\end{center}\n" + 
+           "Điểm cực tiểu của hàm số đã cho bằng\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{Dựa vào đồ thị, ta thấy hoành độ điểm cực tiểu của đồ thị hàm số là $" + ans + "$. Vậy điểm cực tiểu của hàm số là $x_{\\mathrm{CT}}=" + ans + "$.}\n" + 
+           "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_DOTHI_hambacbaTCT_yCD(loai) {
+    var boMau = [
+        [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
+        [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -2], [-1, 3, 0, -1], [-1, 3, 0, 0],
+        [-1, -3, 0, 0], [-1, -3, 0, 1], [-1, -3, 0, 2], [-1, -3, 0, 3], [-1, -3, 0, 4]
+    ];
+    var boChon = boMau[randomchoice(0, boMau.length - 1)];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x_CT = (b === 0 && c === 3) ? -1 : (b === 3 && c === 0) ? 0 : -2;
+    var y_CT = (b === 0 && c === 3) ? d - 2 : (b === 3 && c === 0) ? d : d - 4;
+    var x_CD = (b === 0 && c === 3) ? 1 : (b === 3 && c === 0) ? 2 : 0;
+    var y_CD = (b === 0 && c === 3) ? d + 2 : (b === 3 && c === 0) ? d + 4 : d;
+    var ans = y_CD;
+    var distractors = [...new Set([y_CD, y_CT, x_CD, x_CT])].filter(v => v !== ans);
+    while (distractors.length < 3) { distractors.push(ans + distractors.length + 1); }
+    var options = ["{\\True $" + ans + "$}", "{$" + distractors[0] + "$}", "{$" + distractors[1] + "$}", "{$" + distractors[2] + "$}"];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+           "Cho hàm số bậc ba $y=f(x)$ có đồ thị như hình bên.\n" +
+           "\\begin{center}\n" + 
+           dothibacba_a_am(a, b, c, d) + "\n" +
+           "\\end{center}\n" + 
+           "Giá trị cực đại của hàm số đã cho bằng\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{Dựa vào đồ thị, ta thấy tung độ điểm cực đại của đồ thị hàm số là $" + ans + "$. Vậy giá trị cực đại của hàm số là $y_{\\mathrm{CĐ}}=" + ans + "$.}\n" +
+           "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_DOTHI_hambacbaTCT_yCT(loai) {
+    var boMau = [
+        [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
+        [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -2], [-1, 3, 0, -1], [-1, 3, 0, 0],
+        [-1, -3, 0, 0], [-1, -3, 0, 1], [-1, -3, 0, 2], [-1, -3, 0, 3], [-1, -3, 0, 4]
+    ];
+    var boChon = boMau[randomchoice(0, boMau.length - 1)];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x_CT = (b === 0 && c === 3) ? -1 : (b === 3 && c === 0) ? 0 : -2;
+    var y_CT = (b === 0 && c === 3) ? d - 2 : (b === 3 && c === 0) ? d : d - 4;
+    var x_CD = (b === 0 && c === 3) ? 1 : (b === 3 && c === 0) ? 2 : 0;
+    var y_CD = (b === 0 && c === 3) ? d + 2 : (b === 3 && c === 0) ? d + 4 : d;
+    var ans = y_CT;
+    var distractors = [...new Set([y_CD, y_CT, x_CD, x_CT])].filter(v => v !== ans);
+    while (distractors.length < 3) { distractors.push(ans + distractors.length + 1); }
+    var options = ["{\\True $" + ans + "$}", "{$" + distractors[0] + "$}", "{$" + distractors[1] + "$}", "{$" + distractors[2] + "$}"];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+           "Cho hàm số bậc ba $y=f(x)$ có đồ thị như hình bên.\n" +
+           "\\begin{center}\n" + 
+           dothibacba_a_am(a, b, c, d) + "\n" +
+           "\\end{center}\n" + 
+           "Giá trị cực tiểu của hàm số đã cho bằng\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{Dựa vào đồ thị, ta thấy tung độ điểm cực tiểu của đồ thị hàm số là $" + ans + "$. Vậy giá trị cực tiểu của hàm số là $y_{\\mathrm{CT}}=" + ans + "$.}\n" +
+           "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_DOTHI_hambacbaTCT_xCD(loai) {
+    var boMau = [
+        [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
+        [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -2], [-1, 3, 0, -1], [-1, 3, 0, 0],
+        [-1, -3, 0, 0], [-1, -3, 0, 1], [-1, -3, 0, 2], [-1, -3, 0, 3], [-1, -3, 0, 4]
+    ];
+    var boChon = boMau[randomchoice(0, boMau.length - 1)];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x_CT = (b === 0 && c === 3) ? -1 : (b === 3 && c === 0) ? 0 : -2;
+    var y_CT = (b === 0 && c === 3) ? d - 2 : (b === 3 && c === 0) ? d : d - 4;
+    var x_CD = (b === 0 && c === 3) ? 1 : (b === 3 && c === 0) ? 2 : 0;
+    var y_CD = (b === 0 && c === 3) ? d + 2 : (b === 3 && c === 0) ? d + 4 : d;
+    var ans = x_CD;
+    var distractors = [...new Set([y_CD, y_CT, x_CD, x_CT])].filter(v => v !== ans);
+    while (distractors.length < 3) { distractors.push(ans + distractors.length + 1); }
+    var options = ["{\\True $" + ans + "$}", "{$" + distractors[0] + "$}", "{$" + distractors[1] + "$}", "{$" + distractors[2] + "$}"];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+           "Cho hàm số bậc ba $y=f(x)$ có đồ thị như hình bên.\n" +
+           "\\begin{center}\n" + 
+           dothibacba_a_am(a, b, c, d) + "\n" +
+           "\\end{center}\n" + 
+           "Điểm cực đại của hàm số đã cho bằng\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{Dựa vào đồ thị, ta thấy hoành độ điểm cực đại của đồ thị hàm số là $" + ans + "$. Vậy điểm cực đại của hàm số là $x_{\\mathrm{CĐ}}=" + ans + "$.}\n" +
+           "\\end{" + loai + "}\n";
+}
+
+function CUCTRI_DOTHI_hambacbaTCT_xCT(loai) {
+    var boMau = [
+        [-1, 0, 3, -2], [-1, 0, 3, -1], [-1, 0, 3, 0], [-1, 0, 3, 1], [-1, 0, 3, 2],
+        [-1, 3, 0, -4], [-1, 3, 0, -3], [-1, 3, 0, -2], [-1, 3, 0, -1], [-1, 3, 0, 0],
+        [-1, -3, 0, 0], [-1, -3, 0, 1], [-1, -3, 0, 2], [-1, -3, 0, 3], [-1, -3, 0, 4]
+    ];
+    var boChon = boMau[randomchoice(0, boMau.length - 1)];
+    var a = boChon[0], b = boChon[1], c = boChon[2], d = boChon[3];
+    var x_CT = (b === 0 && c === 3) ? -1 : (b === 3 && c === 0) ? 0 : -2;
+    var y_CT = (b === 0 && c === 3) ? d - 2 : (b === 3 && c === 0) ? d : d - 4;
+    var x_CD = (b === 0 && c === 3) ? 1 : (b === 3 && c === 0) ? 2 : 0;
+    var y_CD = (b === 0 && c === 3) ? d + 2 : (b === 3 && c === 0) ? d + 4 : d;
+    var ans = x_CT;
+    var distractors = [...new Set([y_CD, y_CT, x_CD, x_CT])].filter(v => v !== ans);
+    while (distractors.length < 3) { distractors.push(ans + distractors.length + 1); }
+    var options = ["{\\True $" + ans + "$}", "{$" + distractors[0] + "$}", "{$" + distractors[1] + "$}", "{$" + distractors[2] + "$}"];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+           "Cho hàm số bậc ba $y=f(x)$ có đồ thị như hình bên.\n" +
+           "\\begin{center}\n" + 
+           dothibacba_a_am(a, b, c, d) + "\n" +
+           "\\end{center}\n" + 
+           "Điểm cực tiểu của hàm số đã cho bằng\n" +
+           "\\choice\n" +
+           options[0] + "\n" +
+           options[1] + "\n" +
+           options[2] + "\n" +
+           options[3] + "\n" +
+           "\\loigiai{Dựa vào đồ thị, ta thấy hoành độ điểm cực tiểu của đồ thị hàm số là $" + ans + "$. Vậy điểm cực tiểu của hàm số là $x_{\\mathrm{CT}}=" + ans + "$.}\n" +
+           "\\end{" + loai + "}\n";
+}
+
+
+
+
+
+function TCĐ_hamphanthucTT(loai) {
+    var a, b, c, d;
+    var PA1, PA2, PA3, PA4;
+    while (true) {
+        a = randomchoice(-5, 5);
+        b = randomchoice(-5, 5);
+        if (a == b || a == -b || a * b == 0) continue;
+        break;
+    }
+    var debai = "Cho hàm số $y=\\dfrac{ax+b}{cx+d}$ ($ac\\neq 0$, $ad-bc\\neq 0$) có " +
+                "bảng biến thiên như hình dưới đây:\n" +  
+                "\\begin{center}\n" +   
+                hamphanthucTT("y'","y",-b,a) + "\n" +
+                "\\end{center}\n" +
+                "Đường tiệm cận đứng của đồ thị hàm số đã cho có phương trình là";
+    PA1 = "{\\True $x="+(-b)+"$}";
+    PA2 = "{$y="+(-b)+"$}";
+    PA3 = "{$x="+a+"$}";
+    PA4 = "{$y="+a+"$}";
+    var loigiai = "Từ bảng biến thiên ta thấy đường tiệm cận đứng của đồ thị hàm số đã cho có phương trình $x="+(-b)+".$";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function TCĐ_hamphanthucCC(loai) {
+    var a, b, c, d;
+    var PA1, PA2, PA3, PA4;
+    while (true) {
+        a = randomchoice(-5, 5);
+        b = randomchoice(-5, 5);
+        if (a == b || a == -b || a * b == 0) continue;
+        break;
+    }
+    var debai = "Cho hàm số $y=\\dfrac{ax+b}{cx+d}$ ($ac\\neq 0$, $ad-bc\\neq 0$) có " +
+                "bảng biến thiên như hình dưới đây:\n" + 
+                "\\begin{center}\n" +     
+                hamphanthucCC("y'","y",-b,a) + "\n" +
+                "\\end{center}\n" +
+                "Đường tiệm cận đứng của đồ thị hàm số đã cho có phương trình là";
+    PA1 = "{\\True $x="+(-b)+"$}";
+    PA2 = "{$y="+(-b)+"$}";
+    PA3 = "{$x="+a+"$}";
+    PA4 = "{$y="+a+"$}";
+    var loigiai = "Từ bảng biến thiên ta thấy đường tiệm cận đứng của đồ thị hàm số đã cho có phương trình $x="+(-b)+".$";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function TCN_hamphanthucTT(loai) {
+    var a, b, c, d;
+    var PA1, PA2, PA3, PA4;
+    while (true) {
+        a = randomchoice(-5, 5);
+        b = randomchoice(-5, 5);
+        if (a == b || a == -b || a * b == 0) continue;
+        break;
+    }
+    var debai = "Cho hàm số $y=\\dfrac{ax+b}{cx+d}$ ($ac\\neq 0$, $ad-bc\\neq 0$) có " +
+                "bảng biến thiên như hình dưới đây:\n" +   
+                "\\begin{center}\n" +   
+                hamphanthucTT("y'","y",-b,a) + "\n" +
+                "\\end{center}\n" +
+                "Đường tiệm cận ngang của đồ thị hàm số đã cho có phương trình là";
+    PA1 = "{\\True $y="+a+"$}";
+    PA2 = "{$y="+(-b)+"$}";
+    PA3 = "{$x="+a+"$}";
+    PA4 = "{$x="+(-b)+"$}";
+    var loigiai = "Từ bảng biến thiên ta thấy đường tiệm cận ngang của đồ thị hàm số đã cho có phương trình $y="+a+".$";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
+function TCN_hamphanthucCC(loai) {
+    var a, b, c, d;
+    var PA1, PA2, PA3, PA4;
+    while (true) {
+        a = randomchoice(-5, 5);
+        b = randomchoice(-5, 5);
+        if (a == b || a == -b || a * b == 0) continue;
+        break;
+    }
+    var debai = "Cho hàm số $y=\\dfrac{ax+b}{cx+d}$ ($ac\\neq 0$, $ad-bc\\neq 0$) có " +
+                "bảng biến thiên như hình dưới đây:\n" + 
+                "\\begin{center}\n" +     
+                hamphanthucCC("y'","y",-b,a) + "\n" +
+                "\\end{center}\n" +
+                "Đường tiệm cận ngang của đồ thị hàm số đã cho có phương trình là";
+    PA1 = "{\\True $y="+a+"$}";
+    PA2 = "{$y="+(-b)+"$}";
+    PA3 = "{$x="+a+"$}";
+    PA4 = "{$x="+(-b)+"$}";
+    var loigiai = "Từ bảng biến thiên ta thấy đường tiệm cận ngang của đồ thị hàm số đã cho có phương trình $y="+a+".$";
+    var options = [PA1, PA2, PA3, PA4];
+    shuffle(options);
+    return "\\begin{" + loai + "}\n" +
+        debai + "\n" +
+        "\\choice\n" +
+        options[0] + "\n" +
+        options[1] + "\n" +
+        options[2] + "\n" +
+        options[3] + "\n" +
+        "\\loigiai{\n" +
+        loigiai + "\n" +
+        "}\n" +
+        "\\end{" + loai + "}\n";
+}
+
 function TF_vidu7(loai) {
     var a = randomchoice(15, 40);
     var a1 = randomchoice(60, 85);
