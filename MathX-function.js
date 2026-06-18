@@ -3866,7 +3866,13 @@ function TF_CHO_HS_hambacbaCTC(loai) {
         "\\end{center}\n" + 
         cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực đại của hàm số đã cho bằng $" + y1 + ".$";
     var PAfalse2 = "Giá trị cực tiểu của hàm số đã cho bằng $" + y1 + "$";
-    var LGPAfalse2 = LGPAtrue2;
+    var LGPAfalse2 = "Ta có\n" +
+        "$$f'(x) = 0\\Leftrightarrow\\left[\\begin{array}{l} x = "+x1+" \\\\ x = "+x2+"\\end{array}\\right.$$\n" + 
+        "Bảng biến thiên\n" +
+        "\\begin{center}\n" +
+         hambacbaCTC("x", "f", x1, x2, y1, y2)+
+        "\\end{center}\n" + 
+        cumtuArr[randomchoice(0, 1)] + "bảng biến thiên, ta thấy giá trị cực tiểu của hàm số đã cho bằng $" + y2 + ".$";
 
     function select_answers_ab() {
         var valid_pairs = [
