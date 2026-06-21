@@ -1262,6 +1262,38 @@ function vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) {
     "\\end{tikzpicture}\n";
 }
 
+function vectobaba(x1,x2,x3,y1,y2,y3,p11,p12,p13,p21,p22,p23,p31,p32,p33) {
+    return "\\begin{tikzpicture}[thick]\n" + 
+    "\\begin{scope}[xscale=1.2,yscale=0.85]\n" + 
+    "\\path\n" + 
+    "(0,0) foreach \\i[count=\\k] in {$"+y1+"$,$"+y2+"$,$"+y3+"$} {++(1,0) node(1\\k){\\i}}\n" + 			
+    "(0,-1) node{$"+x1+"$} foreach \\i[count=\\k] in {{$"+p11+"$},{$"+p12+"$},{$"+p13+"$}} {++(1,0) node(2\\k){\\i}}\n" + 
+    "(0,-2) node{$"+x2+"$} foreach \\i[count=\\k] in {{$"+p21+"$},{$"+p22+"$},{$"+p23+"$}} {++(1,0) node(3\\k){\\i}}\n" + 
+    "(0,-3) node{$"+x3+"$} foreach \\i[count=\\k] in {{$"+p31+"$},{$"+p32+"$},{$"+p33+"$}} {++(1,0) node(4\\k){\\i}};\n" + 
+    "\\draw[shift={(-0.5,0.5)}] (0,0) grid (4,-4)\n" + 
+    "(0,0)--(1,-1)\n" + 
+    "(0,-1) node[above right]{$X$}\n" + 
+    "(1,0) node[below left]{$Y$};\n" + 
+    "\\end{scope}\n" + 
+    "\\end{tikzpicture}\n";
+}
+
+function vectobabon(x1,x2,x3,y1,y2,y3,y4,p11,p12,p13,p14,p21,p22,p23,p24,p31,p32,p33,p34) {
+    return "\\begin{tikzpicture}[thick]\n" + 
+    "\\begin{scope}[xscale=1.2,yscale=0.85]\n" + 
+    "\\path\n" + 
+    "(0,0) foreach \\i[count=\\k] in {$"+y1+"$,$"+y2+"$,$"+y3+"$,$"+y4+"$} {++(1,0) node(1\\k){\\i}}\n" + 			
+    "(0,-1) node{$"+x1+"$} foreach \\i[count=\\k] in {{$"+p11+"$},{$"+p12+"$},{$"+p13+"$},{$"+p14+"$}} {++(1,0) node(2\\k){\\i}}\n" + 
+    "(0,-2) node{$"+x2+"$} foreach \\i[count=\\k] in {{$"+p21+"$},{$"+p22+"$},{$"+p23+"$},{$"+p24+"$}} {++(1,0) node(3\\k){\\i}}\n" + 
+    "(0,-3) node{$"+x3+"$} foreach \\i[count=\\k] in {{$"+p31+"$},{$"+p32+"$},{$"+p33+"$},{$"+p34+"$}} {++(1,0) node(4\\k){\\i}};\n" + 
+    "\\draw[shift={(-0.5,0.5)}] (0,0) grid (5,-4)\n" + 
+    "(0,0)--(1,-1)\n" + 
+    "(0,-1) node[above right]{$X$}\n" + 
+    "(1,0) node[below left]{$Y$};\n" + 
+    "\\end{scope}\n" + 
+    "\\end{tikzpicture}\n";
+}
+
 function hambacbaCTC(x,f,x1,x2,y1,y2) {
     return "\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" + 
     "\\def\\a{8}\n" + 
