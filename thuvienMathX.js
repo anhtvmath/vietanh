@@ -1248,7 +1248,7 @@ function phansocan(m, n, p) {
 }
 
 function vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) {
-    return "$$\\begin{tikzpicture}[thick]\n" + 
+    return "\\begin{tikzpicture}[thick]\n" + 
     "\\begin{scope}[xscale=1.2,yscale=0.85]\n" + 
     "\\path\n" + 
     "(0,0) foreach \\i[count=\\k] in {$"+y1+"$,$"+y2+"$,$"+y3+"$} {++(1,0) node(1\\k){\\i}}\n" + 			
@@ -1259,7 +1259,7 @@ function vectohaiba(x1,x2,y1,y2,y3,p11,p12,p13,p21,p22,p23) {
     "(0,-1) node[above right]{$X$}\n" + 
     "(1,0) node[below left]{$Y$};\n" + 
     "\\end{scope}\n" + 
-    "\\end{tikzpicture}$$\n";
+    "\\end{tikzpicture}\n";
 }
 
 function hambacbaCTC(x,f,x1,x2,y1,y2) {
