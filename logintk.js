@@ -16,6 +16,7 @@ const USERS = [
     { user: "ntd", pass: "123", name: "Thầy Nguyễn Tri Đức" },
     { user: "phc", pass: "123", name: "Cô Phùng Hoàng Cúc" },
     { user: "ttt", pass: "123", name: "Cô Tô Thị Thảo"},
+    { user: "dxn", pass: "0804", name: "Thầy Đinh Xuân Nhân"},
     { user: "ntp", pass: "123", name: "Thầy Nguyễn Tuấn Phú" },
     { user: "dtt", pass: "123", name: "Thầy Đặng Thành Thắng" },
     {user: "nhl", pass: "123", name: "Thầy Nguyễn Hoàng Lê"},
