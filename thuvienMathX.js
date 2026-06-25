@@ -1384,7 +1384,7 @@ function hamphanthucTT(m, n, a, b) {
 }
 
 function hamphanthucCC(m, n, a, b) {
-    return `\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.5]
+    return `\\begin{tikzpicture}[thick,xscale=0.7,yscale=0.5]
 \\draw[double distance=1pt] (5,-0.5)--(5,-6.5);
 \\def\\a{10}
 \\def\\b{7}
@@ -1403,8 +1403,8 @@ function hamphanthucCC(m, n, a, b) {
 (7,-1) node{$+$}
 (9,0) node{$+\\infty$}
 (9,-3) node(C){$${b}$}
-(4.6,-2) node(B1){$+\\infty$}
-(5.4,-6) node(B2){$-\\infty$};
+(4.4,-2) node(B1){$+\\infty$}
+(5.6,-6) node(B2){$-\\infty$};
 \\draw[-stealth,thick] (A)--(B1);
 \\draw[-stealth,thick] (B2)--(C);
 \\end{tikzpicture}`;
