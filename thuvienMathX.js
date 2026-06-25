@@ -1357,7 +1357,7 @@ function hambacbaTCT(x, f, x1, x2, y1, y2) {
 }
 
 function hamphanthucTT(m, n, a, b) {
-    return `\\begin{tikzpicture}[thick,xscale=1.1,yscale=0.5]
+    return `\\begin{tikzpicture}[thick,xscale=0.9,yscale=0.5]
 \\draw[double distance=1pt] (5,-0.5)--(5,-6.5);
 \\def\\a{10}
 \\def\\b{7}
