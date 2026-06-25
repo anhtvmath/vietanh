@@ -1376,8 +1376,8 @@ function hamphanthucTT(m, n, a, b) {
 (7,-1) node{$-$}
 (9,0) node{$+\\infty$}
 (9,-5) node(C){$${b}$}
-(4.6,-6) node(B1){$-\\infty$}
-(5.4,-2) node(B2){$+\\infty$};
+(4.4,-6) node(B1){$-\\infty$}
+(5.6,-2) node(B2){$+\\infty$};
 \\draw[-stealth,thick] (A)--(B1);
 \\draw[-stealth,thick] (B2)--(C);
 \\end{tikzpicture}`;
