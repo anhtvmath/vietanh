@@ -1295,7 +1295,7 @@ function vectobabon(x1,x2,x3,y1,y2,y3,y4,p11,p12,p13,p14,p21,p22,p23,p24,p31,p32
 }
 
 function hambacbaCTC(x,f,x1,x2,y1,y2) {
-    return "\\begin{tikzpicture}[thick,xscale=0.95,yscale=0.5]\n" + 
+    return "\\begin{tikzpicture}[thick,xscale=0.65,yscale=0.5]\n" + 
     "\\def\\a{8}\n" + 
     "\\def\\b{7}\n" + 
     "\\draw (-0.5,0.5) rectangle (\\a-0.5,-\\b+0.5);\n" + 
